@@ -1,0 +1,56 @@
+ncverilog: 06.20-s004: (c) Copyright 1995-2008 Cadence Design Systems, Inc.
+TOOL:	ncverilog	06.20-s004: Started on Apr 15, 2016 at 21:24:39 JST
+ncverilog
+	-s
+	+gui
+	+access+r
+	mux_4_test.v
+	mux_4.v
+file: mux_4_test.v
+	module worklib.mux_4_test:v
+		errors: 0, warnings: 0
+file: mux_4.v
+	module worklib.mux_4:v
+		errors: 0, warnings: 0
+		Caching library 'worklib' ....... Done
+	Elaborating the design hierarchy:
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.mux_4:v <0x5e1e4519>
+			streams:   2, words:   681
+		worklib.mux_4_test:v <0x4b5298e1>
+			streams:   8, words:  5817
+	Loading native compiled code:     .................... Done
+	Building instance specific data structures.
+	Design hierarchy summary:
+		             Instances  Unique
+		Modules:             2       2
+		Registers:           6       6
+		Vectored wires:      6       -
+		Always blocks:       1       1
+		Initial blocks:      2       2
+		Pseudo assignments:  5       5
+	Writing initial simulation snapshot: worklib.mux_4_test:v
+
+-------------------------------------
+Relinquished control to SimVision...
+ncsim> 
+ncsim> source /opt/cadence/CDROM/IUS06.20.004/tools/inca/files/ncsimrc
+ncsim> database -open waves -into waves.shm -default
+Created default SHM database waves
+ncsim> probe -create -shm mux_4_test.in1 mux_4_test.in2 mux_4_test.in3 mux_4_test.in4 mux_4_test.out mux_4_test.sel mux_4_test.unit1.a mux_4_test.unit1.b mux_4_test.unit1.c mux_4_test.unit1.d mux_4_test.unit1.out mux_4_test.unit1.sel
+Created probe 1
+ncsim> run
+         0 in1=         0 in2=         0 in3=         0 in4=         0 Sel=0 out=         0
+         5 in1=         1 in2=         0 in3=         0 in4=         0 Sel=0 out=         1
+        10 in1=         1 in2=         0 in3=         0 in4=         0 Sel=1 out=         1
+        15 in1=         1 in2=         1 in3=         0 in4=         0 Sel=1 out=         1
+        20 in1=         1 in2=         1 in3=         0 in4=         0 Sel=2 out=         1
+        25 in1=         1 in2=         1 in3=         1 in4=         0 Sel=2 out=         1
+        30 in1=         1 in2=         1 in3=         1 in4=         0 Sel=3 out=         1
+        35 in1=         1 in2=         1 in3=         1 in4=         1 Sel=3 out=         1
+Simulation complete via $finish(1) at time 40 NS + 0
+./mux_4_test.v:29 		$finish;
+ncsim> ^C
+ncsim> exit
+TOOL:	ncverilog	06.20-s004: Exiting on Apr 15, 2016 at 21:27:58 JST  (total: 00:03:19)
