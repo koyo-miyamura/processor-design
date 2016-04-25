@@ -1,10 +1,11 @@
 module sll_2_test;
-	wire[31:0]in,out;
-	sll_2 unit1(in(in),out(out));
+	reg [31:0] in;
+	wire[31:0] out;
+	sll_2 unit1(.out(out), .in(in));
 
 	initial
 	begin
-		in=32'b0000_0000_0000_0000_0000_0000_0000_0101;
+		in <= 32'b0000_0000_0000_0000_0000_0000_0000_0101;
 	end
 	
 	initial

@@ -1,10 +1,9 @@
 Host command: /opt/cadence/CDROM/IUS06.20.004/tools/verilog/bin/verilog.exe
 Command arguments:
-    sll_2_test.v
-    sll_2.v
+    id_ex_reg.v
 
-Tool:	VERILOG-XL	06.20.001-s log file created Apr 18, 2016  16:20:10
-Tool:	VERILOG-XL	06.20.001-s   Apr 18, 2016  16:20:10
+Tool:	VERILOG-XL	06.20.001-s log file created Apr 25, 2016  17:44:19
+Tool:	VERILOG-XL	06.20.001-s   Apr 25, 2016  17:44:19
 
 Copyright (c) 1995-2004 Cadence Design Systems, Inc.  All Rights Reserved.
 Unpublished -- rights reserved under the copyright laws of the United States.
@@ -33,10 +32,10 @@ For technical assistance please contact the Cadence Response Center at
 For more information on Cadence's Verilog-XL product line send email to
 talkv@cadence.com
 
-Compiling source file "sll_2_test.v"
-Compiling source file "sll_2.v"
+Compiling source file "id_ex_reg.v"
+Highest level modules:
+id_ex_reg
 
-Error!    Illegal left-hand-side assignment                 [Verilog-ILHSA]    
-          "sll_2_test.v", 7: in = 32'b101;
-1 error
-End of Tool:	VERILOG-XL	06.20.001-s   Apr 18, 2016  16:20:10
+0 simulation events (use +profile or +listcounts option to count)
+CPU time: 0.0 secs to compile + 0.0 secs to link + 0.0 secs in simulation
+End of Tool:	VERILOG-XL	06.20.001-s   Apr 25, 2016  17:44:20
