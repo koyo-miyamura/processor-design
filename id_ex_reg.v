@@ -7,7 +7,7 @@ module id_ex_reg(control_out,pc_4_out,rs_out,rt_out,offset_out,id_ex_rs,id_ex_rt
 	input reset,clk;
 	
 	output [31:0]pc_4_out,rs_out,rt_out,offset_out;
-	output [11:0]control_out;
+	output [12:0]control_out;
 	output [4:0]id_ex_rs,id_ex_rt,id_ex_rd;
 
 	reg [31:0]pc_4_out,rs_out,rt_out,offset_out;
@@ -16,7 +16,7 @@ module id_ex_reg(control_out,pc_4_out,rs_out,rt_out,offset_out,id_ex_rs,id_ex_rt
 
 	always @ (posedge clk or negedge reset)
 	begin
-		casez(reset) //reset is active low
+		case(reset) //reset is active low
 			//normal
 			1'b1:
 			begin

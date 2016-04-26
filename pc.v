@@ -11,10 +11,11 @@ module pc(out,beq,jr,pc_4_if,pc_4_id,offset28,pc_write,pc_src,clk);
 	always @ (posedge clk)
 	begin
 		case({pc_write,pc_src})
-			3'b100: out<=pc_4_if+3'b100;
+			3'b100: out<=pc_4_if;
 			3'b101: out<={pc_4_id,offset28};
 			3'b110: out<=beq;
 			3'b111: out<=jr;
+			default: out<=out;
 		endcase
 	end
 endmodule

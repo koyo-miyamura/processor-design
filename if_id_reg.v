@@ -16,17 +16,17 @@ module if_id_reg(ins_out,pc_4_out,pc_4_in,ins_in,if_flush,if_id_write,reset,clk)
 			//normal
 			3'b101:
 			begin
-			ins_out<=ins_in;  pc_4_out<=pc_4_in+3'b100;
+			ins_out<=ins_in;  pc_4_out<=pc_4_in;
 			end
 			//flush
 			3'b11z:
 			begin
-			ins_out<=32'b0;   pc_4_out<=pc_4_in+3'b100;
+			ins_out<=32'b0;   pc_4_out<=pc_4_in;
 			end
 			//reset
 			3'b0zz:
 			begin
-			ins_out<=32'b0;   pc_4_out<=pc_4_in+3'b100;   
+			ins_out<=32'b0;   pc_4_out<=pc_4_in;   
 			end
 		endcase
 	end
