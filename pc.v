@@ -1,21 +1,18 @@
-module pc(out,beq,jr,pc_4_if,pc_4_id,offset28,pc_write,pc_src,clk);
-	input [31:0]beq,jr,pc_4_if;
-	input [27:0]offset28;
-	input [3:0]pc_4_id;
-	input pc_write,clk;
-	input [1:0]pc_src;
+module pc(out,
+	in,pc_write,reset,clk);
+
+	input [31:0]in;
+	input pc_write,reset,clk;
 	output [31:0]out;
 	
 	reg [31:0]out;
 	
-	always @ (posedge clk)
+	always @ (posedge clk or negedge reset)
 	begin
-		case({pc_write,pc_src})
-			3'b100: out<=pc_4_if;
-			3'b101: out<={pc_4_id,offset28};
-			3'b110: out<=beq;
-			3'b111: out<=jr;
-			default: out<=out;
+		case({reset,pc_write})
+			2'b11: out<=in;
+			2'b10: out<=out;
+			default out<=32'h0001_0000;
 		endcase
 	end
 endmodule
