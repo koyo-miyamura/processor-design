@@ -14,8 +14,8 @@ module if_stage(pc_4_out,pc_out,
 	
 	mux_4 mux4(.out(pc_in), .a(pc_4_out), .b({pc_4_id,offset28}), .c(beq), .d(jr), .sel(pc_src));
 
-	assign pc_4_out=pc_out+3'b100; //PC+4
 
 	pc unit1 (.out(pc_out), .in(pc_in), .pc_write(pc_write), .reset(reset), .clk(clk));
 
+	assign pc_4_out=pc_out+3'b100; //PC+4
 endmodule

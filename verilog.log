@@ -1,10 +1,12 @@
 Host command: /opt/cadence/CDROM/IUS06.20.004/tools/verilog/bin/verilog.exe
 Command arguments:
-    branch_test.v
-    branch.v
+    if_stage_test.v
+    if_stage.v
+    mux_4.v
+    pc.v
 
-Tool:	VERILOG-XL	06.20.001-s log file created Apr 27, 2016  22:10:08
-Tool:	VERILOG-XL	06.20.001-s   Apr 27, 2016  22:10:08
+Tool:	VERILOG-XL	06.20.001-s log file created Apr 29, 2016  18:12:33
+Tool:	VERILOG-XL	06.20.001-s   Apr 29, 2016  18:12:33
 
 Copyright (c) 1995-2004 Cadence Design Systems, Inc.  All Rights Reserved.
 Unpublished -- rights reserved under the copyright laws of the United States.
@@ -33,13 +35,24 @@ For technical assistance please contact the Cadence Response Center at
 For more information on Cadence's Verilog-XL product line send email to
 talkv@cadence.com
 
-Compiling source file "branch_test.v"
-Compiling source file "branch.v"
+Compiling source file "if_stage_test.v"
+Compiling source file "if_stage.v"
+Compiling source file "mux_4.v"
+Compiling source file "pc.v"
+Highest level modules:
+if_stage_test
 
-Error!    Identifier (singed) not defined                   [Verilog-IDNOD]    
-          "branch_test.v", 15: singed(-4);
-
-Error!    Identifier (singed) not defined                   [Verilog-IDNOD]    
-          "branch_test.v", 15: singed(-4);
-2 errors
-End of Tool:	VERILOG-XL	06.20.001-s   Apr 27, 2016  22:10:08
+         0 clk=0 reset=1 pc_out=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx pc_4_out=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+         5 clk=1 reset=0 pc_out=00000000000000010000000000000000 pc_4_out=00000000000000010000000000000100
+        10 clk=0 reset=1 pc_out=00000000000000010000000000000000 pc_4_out=00000000000000010000000000000100
+        15 clk=1 reset=1 pc_out=00000000000000010000000000000100 pc_4_out=00000000000000010000000000001000
+        20 clk=0 reset=1 pc_out=00000000000000010000000000000100 pc_4_out=00000000000000010000000000001000
+        25 clk=1 reset=1 pc_out=00000000000000010000000000001000 pc_4_out=00000000000000010000000000001100
+        30 clk=0 reset=1 pc_out=00000000000000010000000000001000 pc_4_out=00000000000000010000000000001100
+        35 clk=1 reset=1 pc_out=00000000000000010000000000001100 pc_4_out=00000000000000010000000000010000
+        40 clk=0 reset=1 pc_out=00000000000000010000000000001100 pc_4_out=00000000000000010000000000010000
+        45 clk=1 reset=1 pc_out=00000000000000010000000000010000 pc_4_out=00000000000000010000000000010100
+L29 "if_stage_test.v": $finish at simulation time 50
+0 simulation events (use +profile or +listcounts option to count)
+CPU time: 0.0 secs to compile + 0.0 secs to link + 0.0 secs in simulation
+End of Tool:	VERILOG-XL	06.20.001-s   Apr 29, 2016  18:12:35
