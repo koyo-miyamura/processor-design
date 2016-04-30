@@ -1,5 +1,5 @@
 module branch_test;
-	reg [31:0]rs,rt;
+	reg signed [31:0]rs,rt;
 	reg [5:0]op,func;
 	reg [4:0]rt_field;
 	wire [1:0]pc_src;
