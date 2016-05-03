@@ -1,10 +1,9 @@
 Host command: /opt/cadence/CDROM/IUS06.20.004/tools/verilog/bin/verilog.exe
 Command arguments:
-    branch_test.v
-    branch.v
+    control.v
 
-Tool:	VERILOG-XL	06.20.001-s log file created Apr 29, 2016  19:57:54
-Tool:	VERILOG-XL	06.20.001-s   Apr 29, 2016  19:57:54
+Tool:	VERILOG-XL	06.20.001-s log file created May  3, 2016  21:25:46
+Tool:	VERILOG-XL	06.20.001-s   May  3, 2016  21:25:46
 
 Copyright (c) 1995-2004 Cadence Design Systems, Inc.  All Rights Reserved.
 Unpublished -- rights reserved under the copyright laws of the United States.
@@ -33,20 +32,21 @@ For technical assistance please contact the Cadence Response Center at
 For more information on Cadence's Verilog-XL product line send email to
 talkv@cadence.com
 
-Compiling source file "branch_test.v"
-Compiling source file "branch.v"
-Highest level modules:
-branch_test
+Compiling source file "control.v"
 
-         0 rs=         -4,rt=         12,pc_src=11
-        10 rs=         -4,rt=         12,pc_src=10
-        20 rs=         -4,rt=         12,pc_src=01
-        40 rs=         -4,rt=         12,pc_src=00
-        50 rs=         -4,rt=         12,pc_src=10
-        60 rs=         -4,rt=         12,pc_src=00
-        70 rs=         -4,rt=         12,pc_src=10
-        80 rs=         -4,rt=         12,pc_src=00
-L26 "branch_test.v": $finish at simulation time 90
-0 simulation events (use +profile or +listcounts option to count)
-CPU time: 0.0 secs to compile + 0.0 secs to link + 0.0 secs in simulation
-End of Tool:	VERILOG-XL	06.20.001-s   Apr 29, 2016  19:57:55
+Warning!  ERROR (LMF-02018): License call failed for                           
+          feature VERILOG-XL, version 6.200 and quantity                       
+          1. The license server search path is defined as                      
+          5280@{133.11.58.5}:5280@{133.11.58.6}:5280@{133.1                    
+          1.58.7}:1700@{133.11.58.5}:1700@{133.11.58.6}:170                    
+          0@{133.11.58.7}:/opt/cadence/CDROM/IUS06.20.004/s                    
+          hare/license/license.dat. The FLEXnet error                          
+          message is as follows,                                               
+          FLEXnet ERROR(-18, 0, 0): License server system                      
+          does not support this feature.                                       
+                                                                               
+          Run 'lic_error LMF-02018' for more information..                     
+          Feature is VERILOG-XL                             [Verilog-LICENSE]
+
+Error!    Check-in of license for feature VERILOG-XL was                       
+          not possible                                      [Verilog-LMFCIN]

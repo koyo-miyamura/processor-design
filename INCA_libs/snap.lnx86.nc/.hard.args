@@ -1,2 +1,1 @@
-id_ex_reg.v
--ACCESS +r
+control.v
