@@ -1,19 +1,25 @@
 ncverilog: 06.20-s004: (c) Copyright 1995-2008 Cadence Design Systems, Inc.
-TOOL:	ncverilog	06.20-s004: Started on May 03, 2016 at 21:26:11 JST
+TOOL:	ncverilog	06.20-s004: Started on May 06, 2016 at 18:59:26 JST
 ncverilog
 	-c
+	id_stage.v
 	control.v
+	branch.v
+	rf32x32.v
+	DW_ram_2r_w_s_dff.v
+file: id_stage.v
 file: control.v
+file: branch.v
+file: rf32x32.v
+file: DW_ram_2r_w_s_dff.v
 		Caching library 'worklib' ....... Done
 	Elaborating the design hierarchy:
-	Building instance overlay tables: .................... Done
-	Loading native compiled code:     .................... Done
-	Building instance specific data structures.
-	Design hierarchy summary:
-		            Instances  Unique
-		Modules:            1       1
-		Registers:          4       4
-		Vectored wires:     4       -
-		Cont. assignments:  1       1
-	Writing initial simulation snapshot: worklib.control:v
-TOOL:	ncverilog	06.20-s004: Exiting on May 03, 2016 at 21:26:11 JST  (total: 00:00:00)
+	Modules w/wo timescales:
+		timescale of worklib.rf32x32:v = 1ns/1ps
+		timescale of worklib.id_stage:v = NOTSET
+		timescale of worklib.control:v = NOTSET
+		timescale of worklib.branch:v = NOTSET
+		timescale of worklib.DW_ram_2r_w_s_dff:v = 1ns/1ps
+ncelab: *F,CUMSTS: Timescale directive missing on one or more modules.
+ncverilog: *E,ELBERR: Error during elaboration (status 2), exiting.
+TOOL:	ncverilog	06.20-s004: Exiting on May 06, 2016 at 18:59:26 JST  (total: 00:00:00)

@@ -1,1 +1,2 @@
 define VIEW_MAP ( $VIEW_MAP, .v => v)
+define LIB_MAP ( $LIB_MAP, ../../../../usr/synopsys/H-2013.03-SP4/dw/sim_ver => sim_ver )

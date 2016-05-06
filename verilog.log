@@ -1,9 +1,13 @@
 Host command: /opt/cadence/CDROM/IUS06.20.004/tools/verilog/bin/verilog.exe
 Command arguments:
+    id_stage.v
     control.v
+    branch.v
+    rf32x32.v
+    DW_ram_2r_w_s_dff.v
 
-Tool:	VERILOG-XL	06.20.001-s log file created May  3, 2016  21:25:46
-Tool:	VERILOG-XL	06.20.001-s   May  3, 2016  21:25:46
+Tool:	VERILOG-XL	06.20.001-s log file created May  6, 2016  18:59:22
+Tool:	VERILOG-XL	06.20.001-s   May  6, 2016  18:59:22
 
 Copyright (c) 1995-2004 Cadence Design Systems, Inc.  All Rights Reserved.
 Unpublished -- rights reserved under the copyright laws of the United States.
@@ -32,7 +36,7 @@ For technical assistance please contact the Cadence Response Center at
 For more information on Cadence's Verilog-XL product line send email to
 talkv@cadence.com
 
-Compiling source file "control.v"
+Compiling source file "id_stage.v"
 
 Warning!  ERROR (LMF-02018): License call failed for                           
           feature VERILOG-XL, version 6.200 and quantity                       
