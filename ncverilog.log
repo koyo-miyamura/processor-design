@@ -1,7 +1,9 @@
 ncverilog: 06.20-s004: (c) Copyright 1995-2008 Cadence Design Systems, Inc.
-TOOL:	ncverilog	06.20-s004: Started on May 06, 2016 at 18:59:26 JST
+TOOL:	ncverilog	06.20-s004: Started on May 07, 2016 at 08:55:10 JST
 ncverilog
-	-c
+	-s
+	+gui
+	+accesser+r
 	id_stage.v
 	control.v
 	branch.v
@@ -12,14 +14,6 @@ file: control.v
 file: branch.v
 file: rf32x32.v
 file: DW_ram_2r_w_s_dff.v
-		Caching library 'worklib' ....... Done
-	Elaborating the design hierarchy:
-	Modules w/wo timescales:
-		timescale of worklib.rf32x32:v = 1ns/1ps
-		timescale of worklib.id_stage:v = NOTSET
-		timescale of worklib.control:v = NOTSET
-		timescale of worklib.branch:v = NOTSET
-		timescale of worklib.DW_ram_2r_w_s_dff:v = 1ns/1ps
-ncelab: *F,CUMSTS: Timescale directive missing on one or more modules.
+ncelab: *F,ILACC: illegal ACCESS specification (er+r).
 ncverilog: *E,ELBERR: Error during elaboration (status 2), exiting.
-TOOL:	ncverilog	06.20-s004: Exiting on May 06, 2016 at 18:59:26 JST  (total: 00:00:00)
+TOOL:	ncverilog	06.20-s004: Exiting on May 07, 2016 at 08:55:10 JST  (total: 00:00:00)

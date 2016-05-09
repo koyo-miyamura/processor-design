@@ -2,7 +2,7 @@ module alu(alu_out,
 	   rs,rt,alu_control,shamt);
 	input [31:0]rs,rt;
 	input [4:0]alu_control,shamt;
-	output[31:0]alu_out; 
+	output signed [31:0]alu_out; 
 	
 	//alu_control
 	parameter sll_alu=5'b00000,srl_alu=5'b00001,sra_alu=5'b00010,sllv_alu=5'b00011,srlv_alu=5'b00100,srav_alu=5'b00101,add_alu=5'b00110,addu_alu=5'b00111,

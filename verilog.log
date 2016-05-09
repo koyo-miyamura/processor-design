@@ -1,13 +1,10 @@
 Host command: /opt/cadence/CDROM/IUS06.20.004/tools/verilog/bin/verilog.exe
 Command arguments:
-    id_stage.v
-    control.v
-    branch.v
-    rf32x32.v
-    DW_ram_2r_w_s_dff.v
+    alu_test.v
+    alu.v
 
-Tool:	VERILOG-XL	06.20.001-s log file created May  6, 2016  18:59:22
-Tool:	VERILOG-XL	06.20.001-s   May  6, 2016  18:59:22
+Tool:	VERILOG-XL	06.20.001-s log file created May  9, 2016  12:41:12
+Tool:	VERILOG-XL	06.20.001-s   May  9, 2016  12:41:12
 
 Copyright (c) 1995-2004 Cadence Design Systems, Inc.  All Rights Reserved.
 Unpublished -- rights reserved under the copyright laws of the United States.
@@ -36,21 +33,30 @@ For technical assistance please contact the Cadence Response Center at
 For more information on Cadence's Verilog-XL product line send email to
 talkv@cadence.com
 
-Compiling source file "id_stage.v"
+Compiling source file "alu_test.v"
+Compiling source file "alu.v"
+Highest level modules:
+alu_test
 
-Warning!  ERROR (LMF-02018): License call failed for                           
-          feature VERILOG-XL, version 6.200 and quantity                       
-          1. The license server search path is defined as                      
-          5280@{133.11.58.5}:5280@{133.11.58.6}:5280@{133.1                    
-          1.58.7}:1700@{133.11.58.5}:1700@{133.11.58.6}:170                    
-          0@{133.11.58.7}:/opt/cadence/CDROM/IUS06.20.004/s                    
-          hare/license/license.dat. The FLEXnet error                          
-          message is as follows,                                               
-          FLEXnet ERROR(-18, 0, 0): License server system                      
-          does not support this feature.                                       
-                                                                               
-          Run 'lic_error LMF-02018' for more information..                     
-          Feature is VERILOG-XL                             [Verilog-LICENSE]
-
-Error!    Check-in of license for feature VERILOG-XL was                       
-          not possible                                      [Verilog-LMFCIN]
+         0 alu_control=00000, rs=          3 00000000000000000000000000000011 rt=        -36 11111111111111111111111111011100 alu_out=       -144  11111111111111111111111101110000
+        10 alu_control=00001, rs=          3 00000000000000000000000000000011 rt=        -36 11111111111111111111111111011100 alu_out= 1073741815  00111111111111111111111111110111
+        20 alu_control=00010, rs=          3 00000000000000000000000000000011 rt=        -36 11111111111111111111111111011100 alu_out=         -9  11111111111111111111111111110111
+        30 alu_control=00011, rs=          3 00000000000000000000000000000011 rt=        -36 11111111111111111111111111011100 alu_out=       -288  11111111111111111111111011100000
+        40 alu_control=00100, rs=          3 00000000000000000000000000000011 rt=        -36 11111111111111111111111111011100 alu_out=  536870907  00011111111111111111111111111011
+        50 alu_control=00101, rs=          3 00000000000000000000000000000011 rt=        -36 11111111111111111111111111011100 alu_out=         -5  11111111111111111111111111111011
+        60 alu_control=00110, rs=          3 00000000000000000000000000000011 rt=        -36 11111111111111111111111111011100 alu_out=        -33  11111111111111111111111111011111
+        70 alu_control=00111, rs=          3 00000000000000000000000000000011 rt=        -36 11111111111111111111111111011100 alu_out=        -33  11111111111111111111111111011111
+        80 alu_control=01000, rs=          3 00000000000000000000000000000011 rt=        -36 11111111111111111111111111011100 alu_out=         39  00000000000000000000000000100111
+        90 alu_control=01001, rs=          3 00000000000000000000000000000011 rt=        -36 11111111111111111111111111011100 alu_out=         39  00000000000000000000000000100111
+       100 alu_control=01010, rs=          3 00000000000000000000000000000011 rt=        -36 11111111111111111111111111011100 alu_out=          0  00000000000000000000000000000000
+       110 alu_control=01011, rs=          3 00000000000000000000000000000011 rt=        -36 11111111111111111111111111011100 alu_out=        -33  11111111111111111111111111011111
+       120 alu_control=01100, rs=          3 00000000000000000000000000000011 rt=        -36 11111111111111111111111111011100 alu_out=        -33  11111111111111111111111111011111
+       130 alu_control=01101, rs=          3 00000000000000000000000000000011 rt=        -36 11111111111111111111111111011100 alu_out=         32  00000000000000000000000000100000
+       140 alu_control=01110, rs=          3 00000000000000000000000000000011 rt=        -36 11111111111111111111111111011100 alu_out=          0  00000000000000000000000000000000
+       150 alu_control=01111, rs=          3 00000000000000000000000000000011 rt=        -36 11111111111111111111111111011100 alu_out=          1  00000000000000000000000000000001
+       160 alu_control=10000, rs=          3 00000000000000000000000000000011 rt=        -36 11111111111111111111111111011100 alu_out=   -2359296  11111111110111000000000000000000
+       170 alu_control=10001, rs=          3 00000000000000000000000000000011 rt=        -36 11111111111111111111111111011100 alu_out=          0  00000000000000000000000000000000
+L35 "alu_test.v": $finish at simulation time 180
+0 simulation events (use +profile or +listcounts option to count)
+CPU time: 0.0 secs to compile + 0.0 secs to link + 0.0 secs in simulation
+End of Tool:	VERILOG-XL	06.20.001-s   May  9, 2016  12:41:13
