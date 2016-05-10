@@ -56,8 +56,12 @@ module control(control_out,
 		xori:  control=14'b0111_1_00_00_0_0_10_0;
 		lui:   control=14'b1000_1_00_00_0_0_10_0;
 
-		lb,lbu:control=14'b0001_1_00_10_0_1_01_0;
-		lh,lhu:control=14'b0001_1_00_01_0_1_01_0;
+		lb:    control=14'b1001_1_00_10_0_1_01_0;
+		lbu:   control=14'b0001_1_00_10_0_1_01_0;
+
+		lh:    control=14'b1001_1_00_01_0_1_01_0;
+		lhu:   control=14'b0001_1_00_01_0_1_01_0;
+
 		lw:    control=14'b0001_1_00_00_0_1_01_0;
 
 		sb:    control=14'b0001_1_00_10_1_0_00_1;

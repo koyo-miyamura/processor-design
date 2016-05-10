@@ -1,9 +1,11 @@
+`timescale              1 ns/1 ps
+
 module id_stage(data1_out,data2_out,pc_4_out,control,offset,rs_field,rt_field,rd_field,branch,pc_src,offset28,
-		pc_4_in,ins,rd_add,data,reg_write,control_sel,forward_c,forward_d,ex_mem_data,clk);
+		pc_4_in,ins,rd_add,data,reg_write,control_sel,forward_c,forward_d,ex_mem_data,clk,reset);
 
 	input [31:0]pc_4_in,ins,data,ex_mem_data;
 	input [4:0]rd_add;
-	input reg_write,control_sel,forward_c,forward_d,clk;
+	input reg_write,control_sel,forward_c,forward_d,clk,reset;
 
 	output [31:0]data1_out,data2_out,pc_4_out,offset,branch;
 	output [27:0]offset28;
@@ -38,7 +40,7 @@ module id_stage(data1_out,data2_out,pc_4_out,control,offset,rs_field,rt_field,rd
 	assign control=(control_sel)? control_out:13'b0000_0000_0000_0;
 
 	rf32x32 unit1(.data1_out(data1_out), .data2_out(data2_out),
-		     .clk(clk), .wr_n(reg_write), .rd1_addr(rs_field), .rd2_addr(rt_field), .wr_addr(rd_add), .data_in(data));
+		     .clk(clk), .wr_n(reg_write), .rst_n(reset), .rd1_addr(rs_field), .rd2_addr(rt_field), .wr_addr(rd_add), .data_in(data));
 
 	branch  unit2(.pc_src(pc_src),
 		     .op(op), .func(func), .rt_field(rt_field), .rs(rs), .rt(rt));

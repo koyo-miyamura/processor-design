@@ -2,16 +2,16 @@ module ex_mem_reg(control_out,pc_4_out,alu_out,sw_out,regdst_out,
 		control_in,pc_4_in,alu_in,sw_in,regdst_in,
 		reset,clk);
 	input [31:0]pc_4_in,alu_in,sw_in;
-	input [6:0]control_in;
+	input [7:0]control_in;
 	input [4:0]regdst_in;
 	input reset,clk;
 	
 	output [31:0]pc_4_out,alu_out,sw_out;
-	output [6:0]control_out;
+	output [7:0]control_out;
 	output [4:0]regdst_out;
 
 	reg [31:0]pc_4_out,alu_out,sw_out;
-	reg [6:0]control_out;
+	reg [7:0]control_out;
 	reg [4:0]regdst_out;
 
 	always @ (posedge clk or negedge reset)

@@ -28,12 +28,12 @@ module alu(alu_out,
 		srav_alu: alu_exe=($signed(rt))>>>rs;
 		
 		//overflow is to be supported
-		add_alu:  alu_exe=($signed(rs))+($signed(rt));
+		add_alu:  alu_exe=rs+rt;
 
 		addu_alu: alu_exe=rs+rt;
 
 		//underflow is to be supported
-		sub_alu:  alu_exe=($signed(rs))-($signed(rt));
+		sub_alu:  alu_exe=rs-rt;
 
 		subu_alu: alu_exe=rs-rt;
 

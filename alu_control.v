@@ -11,7 +11,7 @@ module alu_control(alu_control_out,shamt_out,
 		  Nor=6'b100111,slt=6'b101010,sltu=6'b101011;
 
 	//alu_op
-	parameter func_op=4'b0000,add_s=4'b0001,add_uns=4'b0010,slt_s=4'b0011,slt_uns=4'b0100,and_op=4'b0101,or_op=4'b0110,xor_op=4'b0111,lui_op=4'b1000;
+	parameter func_op=4'b0000,add_s=4'b0001,add_uns=4'b0010,slt_s=4'b0011,slt_uns=4'b0100,and_op=4'b0101,or_op=4'b0110,xor_op=4'b0111,lui_op=4'b1000,lb_lh_op=4'b1001;
 	
 	//alu_control_out
 	parameter sll_alu=5'b00000,srl_alu=5'b00001,sra_alu=5'b00010,sllv_alu=5'b00011,srlv_alu=5'b00100,srav_alu=5'b00101,add_alu=5'b00110,addu_alu=5'b00111,
@@ -19,7 +19,7 @@ module alu_control(alu_control_out,shamt_out,
 		  lui_alu=5'b10000;
 
 	//shamt
-	parameter highz=5'b00000;
+	parameter zero=5'b00000;
 
 
 	function [9:0] alu_control;
@@ -33,35 +33,35 @@ module alu_control(alu_control_out,shamt_out,
 			   sll:alu_control={sll_alu,shamt};
 			   srl:alu_control={srl_alu,shamt};
 		           sra:alu_control={sra_alu,shamt};	  
-			   sllv:alu_control={sllv_alu,highz};			
-			   srlv:alu_control={srlv_alu,highz};
-			   srav:alu_control={srav_alu,highz};
+			   sllv:alu_control={sllv_alu,zero};			
+			   srlv:alu_control={srlv_alu,zero};
+			   srav:alu_control={srav_alu,zero};
 			   //alu is not work
-			   jr,jalr:alu_control={5'b00000,highz};
-			   add:alu_control={add_alu,highz};
-		           addu:alu_control={addu_alu,highz};	  
-			   sub:alu_control={sub_alu,highz};			
-			   subu:alu_control={subu_alu,highz};
-		           And:alu_control={and_alu,highz};	  
-			   Or:alu_control={or_alu,highz};			
-			   Xor:alu_control={xor_alu,highz};
-		           Nor:alu_control={nor_alu,highz};	  
-			   slt:alu_control={slt_alu,highz};
-			   sltu:alu_control={sltu_alu,highz};
+			   jr,jalr:alu_control={5'b00000,zero};
+			   add:alu_control={add_alu,zero};
+		           addu:alu_control={addu_alu,zero};	  
+			   sub:alu_control={sub_alu,zero};			
+			   subu:alu_control={subu_alu,zero};
+		           And:alu_control={and_alu,zero};	  
+			   Or:alu_control={or_alu,zero};			
+			   Xor:alu_control={xor_alu,zero};
+		           Nor:alu_control={nor_alu,zero};	  
+			   slt:alu_control={slt_alu,zero};
+			   sltu:alu_control={sltu_alu,zero};
 
 			   //the instruction isn't defined. maybe it is exception.
 			   default:alu_control=10'b00000_00000;
 			endcase
 			end
 
-		add_s:   alu_control={add_alu,highz};
-		add_uns: alu_control={addu_alu,highz};
-		slt_s:   alu_control={slt_alu,highz};
-		slt_uns: alu_control={sltu_alu,highz};
-		and_op:  alu_control={and_alu,highz};
-		or_op:   alu_control={or_alu,highz};
-		xor_op:  alu_control={xor_alu,highz};
-		lui_op:  alu_control={lui_alu,highz};
+		add_s,lb_lh_op:   alu_control={add_alu,zero};
+		add_uns: alu_control={addu_alu,zero};
+		slt_s:   alu_control={slt_alu,zero};
+		slt_uns: alu_control={sltu_alu,zero};
+		and_op:  alu_control={and_alu,zero};
+		or_op:   alu_control={or_alu,zero};
+		xor_op:  alu_control={xor_alu,zero};
+		lui_op:  alu_control={lui_alu,zero};
 
 		//the instruction isn't defined. maybe it is exception.
 		default:alu_control=10'b00000_00000;

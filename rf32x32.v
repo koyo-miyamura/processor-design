@@ -8,7 +8,7 @@ module rf32x32(
 		clk,
 
 		// Inputs
-		wr_n,
+		wr_n,rst_n,
 		rd1_addr, rd2_addr, wr_addr,
 		data_in,
 
@@ -19,13 +19,14 @@ module rf32x32(
    parameter data_width      = 32;
    parameter depth           = 32;
    parameter bit_width_depth = 5;  // ceil(log2(depth))
-   parameter rst_mode        = 0;  // 0: asynchronously initializes the RAM
+   parameter rst_mode        = 1;  // 0: asynchronously initializes the RAM
                                    // 1: synchronously
 
    //*** I/O declarations ***//
    input                          clk;       // clock
    
    input                          wr_n;      // Write enable, active low
+   input                         rst_n;
    input  [bit_width_depth-1 : 0] rd1_addr;  // Read0 address bus  
    input  [bit_width_depth-1 : 0] rd2_addr;  // Read1 address bus
    input  [bit_width_depth-1 : 0] wr_addr;   // Write address bus
@@ -48,7 +49,7 @@ module rf32x32(
    // Instance of DW_ram_2r_w_s_lat
    DW_ram_2r_w_s_dff #(data_width, depth, rst_mode)
       u_DW_ram_2r_w_s_dff(
-             .clk(clk_inv), .rst_n(`HIGH),
+             .clk(clk_inv), .rst_n(rst_n),
              .cs_n(`LOW), .wr_n(wr_n),
              .rd1_addr(rd1_addr), .rd2_addr(rd2_addr),
              .wr_addr(wr_addr),
