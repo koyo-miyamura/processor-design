@@ -1,3 +1,4 @@
+`timescale              1 ns/1 ps
 module mem_wb_reg(control_out,pc_4_out,data_out,alu_out,regdst_out,
 		control_in,pc_4_in,data_in,alu_in,regdst_in,
 		reset,clk);

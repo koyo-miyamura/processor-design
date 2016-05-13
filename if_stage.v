@@ -1,3 +1,5 @@
+`timescale              1 ns/1 ps
+
 module if_stage(pc_4_out,pc_out,
 		beq,jr,pc_4_id,offset28,pc_write,pc_src,reset,clk);
 	input [31:0]beq,jr;

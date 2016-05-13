@@ -1,3 +1,4 @@
+`timescale              1 ns/1 ps
 module id_ex_reg(control_out,pc_4_out,rs_out,rt_out,offset_out,id_ex_rs,id_ex_rt,id_ex_rd,
 		control_in,pc_4_in,rs_in,rt_in,offset_in,if_id_rs,if_id_rt,if_id_rd,
 		reset,clk);

@@ -1,3 +1,4 @@
+`timescale              1 ns/1 ps
 module control(control_out,
 	      op,func,rt_field);
 	input [5:0]op,func;
@@ -21,7 +22,7 @@ module control(control_out,
 		input [5:0]op,func;
 		input [4:0]rt_field;
 
-		case({op,func})
+		case(op)
 		
 		R:begin
 		  case(func)

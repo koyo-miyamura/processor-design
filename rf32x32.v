@@ -19,7 +19,7 @@ module rf32x32(
    parameter data_width      = 32;
    parameter depth           = 32;
    parameter bit_width_depth = 5;  // ceil(log2(depth))
-   parameter rst_mode        = 1;  // 0: asynchronously initializes the RAM
+   parameter rst_mode        = 0;  // 0: asynchronously initializes the RAM
                                    // 1: synchronously
 
    //*** I/O declarations ***//

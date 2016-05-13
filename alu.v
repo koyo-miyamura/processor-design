@@ -1,3 +1,4 @@
+`timescale              1 ns/1 ps
 module alu(alu_out,
 	   rs,rt,alu_control,shamt);
 	input [31:0]rs,rt;

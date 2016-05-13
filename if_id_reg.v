@@ -1,3 +1,4 @@
+`timescale              1 ns/1 ps
 module if_id_reg(ins_out,pc_4_out,pc_4_in,ins_in,if_flush,if_id_write,reset,clk);
 	input [31:0]pc_4_in,ins_in;
 	input if_flush,if_id_write,reset,clk;
@@ -21,12 +22,12 @@ module if_id_reg(ins_out,pc_4_out,pc_4_in,ins_in,if_flush,if_id_write,reset,clk)
 			//flush
 			3'b11z:
 			begin
-			ins_out<=32'b0;   pc_4_out<=pc_4_in;
+			ins_out<=32'b0;   pc_4_out<=0;
 			end
 			//reset
 			3'b0zz:
 			begin
-			ins_out<=32'b0;   pc_4_out<=pc_4_in;   
+			ins_out<=32'b0;   pc_4_out<=0;   
 			end
 		endcase
 	end

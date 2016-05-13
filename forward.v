@@ -1,3 +1,4 @@
+`timescale              1 ns/1 ps
 module forward(a,b,c,d,e,
 	if_id_rs, if_id_rt, id_ex_rs, id_ex_rt, ex_mem_dst, mem_wb_dst, ex_mem_regwrite, mem_wb_regwrite);
 

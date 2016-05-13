@@ -1,3 +1,4 @@
+`timescale              1 ns/1 ps
 module mux_2(out,a,b,sel);
 	output out;
 	input a,b,sel;

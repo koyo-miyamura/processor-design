@@ -1,3 +1,4 @@
+`timescale              1 ns/1 ps
 module mem_stage(pc_out,address_out,data_write_out,data_out,size,mem_write,mem_read,control_out,regdst_out,
 		 pc_in,address_in,data_write_in,data_mem,control_in,regdst_in,wb_data,forward_e);
 

@@ -1,3 +1,4 @@
+`timescale              1 ns/1 ps
 module mux_4(out,a,b,c,d,sel);
 	input [31:0]a,b,c,d;
 	input [1:0] sel;

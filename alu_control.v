@@ -1,3 +1,4 @@
+`timescale              1 ns/1 ps
 module alu_control(alu_control_out,shamt_out,
 	      func,shamt_in,alu_op);
 	input [5:0]func;
@@ -24,15 +25,15 @@ module alu_control(alu_control_out,shamt_out,
 
 	function [9:0] alu_control;
 		input [5:0]func;
-		input [4:0]shamt;
+		input [4:0]shamt_in;
 		input [3:0]alu_op;
 
 		case(alu_op)
 		func_op:begin
 			case(func)
-			   sll:alu_control={sll_alu,shamt};
-			   srl:alu_control={srl_alu,shamt};
-		           sra:alu_control={sra_alu,shamt};	  
+			   sll:alu_control={sll_alu,shamt_in};
+			   srl:alu_control={srl_alu,shamt_in};
+		           sra:alu_control={sra_alu,shamt_in};	  
 			   sllv:alu_control={sllv_alu,zero};			
 			   srlv:alu_control={srlv_alu,zero};
 			   srav:alu_control={srav_alu,zero};

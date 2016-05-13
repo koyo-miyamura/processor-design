@@ -1,3 +1,4 @@
+`timescale              1 ns/1 ps
 module wb_stage(reg_write,data_to_reg,regdst_out,
 		control_in,pc_4,data_mem,data_alu,regdst_in);
 
@@ -12,7 +13,8 @@ module wb_stage(reg_write,data_to_reg,regdst_out,
 	wire [1:0]mem_to_reg;
 
 	assign regdst_out=regdst_in;
-
+	
+	assign mem_to_reg=control_in[2:1];
 	assign reg_write=control_in[0];
 
 	assign data_to_reg=(mem_to_reg==2'b00)? pc_4:
