@@ -1,0 +1,49 @@
+# Makefile default for assemble program
+
+TOOLS_DIR = ${HOME}/verilog/test_pack/mips-cross/tools
+
+# awk program
+GETMEM = $(TOOLS_DIR)/getmem.awk
+OFFDB = $(TOOLS_DIR)/offdb.awk
+MOD_S = $(TOOLS_DIR)/mod_s.awk
+
+# supervisor memory
+SUPER_IMEM = $(TOOLS_DIR)/Imem_s.dat
+SUPER_DMEM = $(TOOLS_DIR)/Dmem_s.dat
+
+IMEM = Imem.dat
+DMEM = Dmem.dat
+USER_IMEM = Imem_u.dat
+USER_DMEM = Dmem_u.dat
+
+SRC_S = $(TARGET).s
+SRC_M_S = $(TARGET)_m.s
+SRC_DS = $(TARGET).ds
+SRC_NDB_DS = $(TARGET)_ndb.ds
+
+all: $(IMEM) $(DMEM)
+
+$(IMEM): $(SUPER_IMEM) $(USER_IMEM)
+	cat $(SUPER_IMEM) $(USER_IMEM) > $(IMEM)
+
+$(DMEM): $(SUPER_DMEM) $(USER_DMEM)
+	cat $(SUPER_DMEM) $(USER_DMEM) > $(DMEM)
+
+$(USER_IMEM) $(USER_DMEM): $(SRC_NDB_DS)
+	$(GETMEM) $(SRC_NDB_DS)
+
+$(SRC_NDB_DS): $(SRC_DS)
+	$(OFFDB) -v OUTPUT=$(SRC_NDB_DS) $(SRC_DS)
+
+$(SRC_DS): $(TARGET)
+	mipsisa32-elf-objdump -D -z $(TARGET) > $(SRC_DS)
+
+$(TARGET): $(SRC_M_S)
+	mipsisa32-elf-as $(SRC_M_S) -o $@
+
+$(SRC_M_S): $(SRC_S)
+	$(MOD_S) -v OUTPUT=$(SRC_M_S) $(SRC_S)
+
+.PHONY : clean
+clean:
+	rm -fv $(SRC_M_S) $(TARGET) $(SRC_DS) $(SRC_NDB_DS) $(USER_IMEM) $(USER_DMEM) $(IMEM) $(DMEM)

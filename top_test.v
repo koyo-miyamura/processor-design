@@ -113,14 +113,14 @@ module top_test;
         $finish;
 
      end // initial begin
-
-   //*** description for wave form ***//
+/*
+   //*** description for wave form 
    initial begin
       $monitor($stime," PC=%h", IAD);
       $shm_open("waves.shm");
       $shm_probe("AS");
    end
-
+*/
 
    //*** tasks ***//
 

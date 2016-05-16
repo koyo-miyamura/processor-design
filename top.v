@@ -76,7 +76,7 @@ module top(DAD,MREQ,WRITE,SIZE,IAD,
 		 .pc_4_in(pc_4_in_id), .ins(ins), .rd_add(rd_add), .data(data_to_reg), .reg_write(regwrite), .control_sel(control_sel), .forward_c(forward_c), .forward_d(forward_d), .ex_mem_data(ex_mem_data), .reset(rst), .clk(clk));
 
 	id_ex_reg id_ex_reg(.control_out(control_in_ex), .pc_4_out(pc_4_in_ex), .rs_out(data1_in), .rt_out(data2_in), .offset_out(offset_ex), .id_ex_rs(id_ex_rs), .id_ex_rt(id_ex_rt), .id_ex_rd(id_ex_rd),
-		 .control_in(control_id), .pc_4_in(pc_4_out_id), .rs_in(data1_out), .rt_in(data2_out), .offset_in(offset_id), .if_id_rs(rs_field_id), .if_id_rt(rt_field_id), .if_id_rd(rt_field_id),
+		 .control_in(control_id), .pc_4_in(pc_4_out_id), .rs_in(data1_out), .rt_in(data2_out), .offset_in(offset_id), .if_id_rs(rs_field_id), .if_id_rt(rt_field_id), .if_id_rd(rd_field_id),
 		.reset(rst), .clk(clk));
 
 	wire id_ex_memread,id_ex_regwrite;
@@ -87,7 +87,7 @@ module top(DAD,MREQ,WRITE,SIZE,IAD,
 		.control_in(control_in_ex), .pc_in(pc_4_in_ex), .data1(data1_in), .data2(data2_in), .offset(offset_ex), .rt_field(id_ex_rt), .rd_field(id_ex_rd), .wb_data(wb_data), .ex_mem_data(ex_mem_data), .forward_a(forward_a), .forward_b(forward_b));
 
 	ex_mem_reg ex_mem_reg(.control_out(control_in_mem), .pc_4_out(pc_4_in_mem), .alu_out(alu_in_mem), .sw_out(sw_in_mem), .regdst_out(regdst_in_mem),
-		.control_in(control_out_ex), .pc_4_in(pc_4_out_ex), .alu_in(alu_data_ex), .sw_in(sw_in_mem), .regdst_in(regdst_out_ex),
+		.control_in(control_out_ex), .pc_4_in(pc_4_out_ex), .alu_in(alu_data_ex), .sw_in(rt_out_ex), .regdst_in(regdst_out_ex),
 		.reset(rst), .clk(clk));
 
 	assign ex_mem_data=alu_in_mem;
@@ -117,6 +117,6 @@ module top(DAD,MREQ,WRITE,SIZE,IAD,
 	      .op(op), .func(func), .if_id_rs(rs_field_id), .if_id_rt(rt_field_id), .id_ex_dst(regdst_out_ex), .ex_mem_dst(regdst_out_mem), .id_ex_memread(id_ex_memread), .ex_mem_memread(ex_mem_memread), .id_ex_regwrite(id_ex_regwrite));
 
 	forward forward(.a(forward_a), .b(forward_b), .c(forward_c), .d(forward_d), .e(forward_e),
-	      .if_id_rs(rs_field_id), .if_id_rt(rt_field_id), .id_ex_rs(id_ex_rs), .id_ex_rt(id_ex_rt), .ex_mem_dst(regdst_out_mem), .mem_wb_dst(rd_add), .ex_mem_regwrite(ex_mem_regwrite), .mem_wb_regwrite(regwrite));
+	      .if_id_rs(rs_field_id), .if_id_rt(rt_field_id), .id_ex_rs(id_ex_rs), .id_ex_rt(id_ex_rt), .ex_mem_dst(regdst_in_mem), .mem_wb_dst(rd_add), .ex_mem_regwrite(ex_mem_regwrite), .mem_wb_regwrite(regwrite));
 
 endmodule

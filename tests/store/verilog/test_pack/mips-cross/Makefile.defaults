@@ -1,0 +1,68 @@
+# Makefile default
+
+TOOLS_DIR = ${HOME}/verilog/test_pack/mips-cross/tools
+
+# awk program
+GETMEM = $(TOOLS_DIR)/getmem.awk
+SETJT= $(TOOLS_DIR)/set_jal_target.awk
+OFFDB = $(TOOLS_DIR)/offdb.awk
+MOD_S = $(TOOLS_DIR)/mod_s.awk
+
+# supervisor memory
+SUPER_IMEM = $(TOOLS_DIR)/Imem_s.dat
+SUPER_DMEM = $(TOOLS_DIR)/Dmem_s.dat
+
+IMEM = Imem.dat
+DMEM = Dmem.dat
+USER_IMEM = Imem_u.dat
+USER_DMEM = Dmem_u.dat
+
+SRC = $(TARGET).c
+SRC_S = $(TARGET).s
+SRC_M_S = $(TARGET)_m.s
+SRC_DS = $(TARGET).ds
+SRC_M1_DS = $(TARGET)_m1.ds
+SRC_M2_DS = $(TARGET)_m2.ds
+
+JAL_LIST = jal_list
+
+# compile option for optimization
+OPT = -O3 -finline-limit-100000000000
+# option of gcc
+CFLAGS = $(OPT) -mips1 -Wall
+
+all: $(IMEM) $(DMEM)
+
+$(IMEM): $(SUPER_IMEM) $(USER_IMEM)
+	cat $(SUPER_IMEM) $(USER_IMEM) > $(IMEM)
+
+$(DMEM): $(SUPER_DMEM) $(USER_DMEM)
+	cat $(SUPER_DMEM) $(USER_DMEM) > $(DMEM)
+
+$(USER_IMEM) $(USER_DMEM): $(SRC_M2_DS)
+	$(GETMEM) $(SRC_M2_DS)
+
+$(SRC_M2_DS): $(SRC_M1_DS)
+	$(OFFDB)  -v OUTPUT=$(SRC_M2_DS) $(SRC_M1_DS)
+
+$(SRC_M1_DS): $(SRC_DS) $(JAL_LIST)
+	$(SETJT) -v INPUT=$(SRC_DS) -v OUTPUT=$(SRC_M1_DS) $(SRC_DS)
+
+$(JAL_LIST): $(TARGET)
+	mipsisa32-elf-objdump -D -z --all-headers $(TARGET) | grep R_MIPS_26 > $(JAL_LIST)
+
+$(SRC_DS): $(TARGET)
+	mipsisa32-elf-objdump -D -z $(TARGET) > $(SRC_DS)
+
+$(TARGET): $(SRC_M_S)
+	mipsisa32-elf-as $(SRC_M_S) -o $@
+
+$(SRC_M_S): $(SRC_S)
+	$(MOD_S)  -v OUTPUT=$(SRC_M_S) $(SRC_S)
+
+$(SRC_S): $(SRC)
+	mipsisa32-elf-gcc -Tidt32.ld -S $(SRC) $(CFLAGS)
+
+.PHONY : clean
+clean:
+	rm -fv $(SRC_S) $(SRC_M_S) $(TARGET) $(SRC_DS) $(SRC_M1_DS) $(SRC_M2_DS) $(JAL_LIST) $(USER_IMEM) $(USER_DMEM) $(IMEM) $(DMEM)
