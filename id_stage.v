@@ -20,7 +20,7 @@ module id_stage(data1_out,data2_out,pc_4_out,control,offset,rs_field,rt_field,rd
 	wire   [4:0]rs_in,rt_in;
 	wire   [5:0]op,func;
 
-	assign pc_4_out=pc_4_in;
+	assign pc_4_out=pc_4_in+32'h0000_0004;
 
 	assign offset28={2'b00,ins[25:0]}<<2;
 

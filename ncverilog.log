@@ -1,5 +1,5 @@
 ncverilog: 06.20-s004: (c) Copyright 1995-2008 Cadence Design Systems, Inc.
-TOOL:	ncverilog	06.20-s004: Started on May 16, 2016 at 19:14:52 JST
+TOOL:	ncverilog	06.20-s004: Started on May 16, 2016 at 22:38:50 JST
 ncverilog
 	-s
 	+gui
@@ -25,9 +25,9 @@ ncverilog
 	/home/koyo/verilog/top.v
 	/home/koyo/verilog/wb_stage.v
 	/home/koyo/verilog/top_test.v
-Recompiling... reason: file './top.v' is newer than expected.
-	expected: Mon May 16 18:51:13 2016
-	actual:   Mon May 16 19:11:35 2016
+Recompiling... reason: file './ex_stage.v' is newer than expected.
+	expected: Fri May 13 16:25:55 2016
+	actual:   Mon May 16 20:28:22 2016
 file: /home/koyo/verilog/alu_control.v
 file: /home/koyo/verilog/alu.v
 file: /home/koyo/verilog/branch.v
@@ -35,6 +35,8 @@ file: /home/koyo/verilog/control.v
 file: /home/koyo/verilog/DW_ram_2r_w_s_dff.v
 file: /home/koyo/verilog/ex_mem_reg.v
 file: /home/koyo/verilog/ex_stage.v
+	module worklib.ex_stage:v
+		errors: 0, warnings: 0
 file: /home/koyo/verilog/forward.v
 file: /home/koyo/verilog/hazard.v
 file: /home/koyo/verilog/id_ex_reg.v
@@ -47,8 +49,6 @@ file: /home/koyo/verilog/mux_4.v
 file: /home/koyo/verilog/pc.v
 file: /home/koyo/verilog/rf32x32.v
 file: /home/koyo/verilog/top.v
-	module worklib.top:v
-		errors: 0, warnings: 0
 file: /home/koyo/verilog/wb_stage.v
 file: /home/koyo/verilog/top_test.v
    //*** description for wave form 
@@ -58,8 +58,8 @@ ncvlog: *W,NOCMIC (/home/koyo/verilog/top_test.v,117|5): error-prone block comme
 	Elaborating the design hierarchy:
 	Building instance overlay tables: .................... Done
 	Generating native compiled code:
-		worklib.top:v <0x74960563>
-			streams:   8, words:  1294
+		worklib.ex_stage:v <0x74443b15>
+			streams:   9, words:  2546
 	Loading native compiled code:     .................... Done
 	Building instance specific data structures.
 	Design hierarchy summary:
@@ -91,13 +91,6 @@ ncsim> run
 Reach IN_TOTAL.
 Simulation complete via $finish(1) at time 10005 NS + 0
 ./top_test.v:113         $finish;
-ncsim> probe -create -shm top_test.u_top_1.forward.a top_test.u_top_1.forward.b top_test.u_top_1.forward.c top_test.u_top_1.forward.d top_test.u_top_1.forward.e top_test.u_top_1.forward.ex_mem_dst top_test.u_top_1.forward.ex_mem_regwrite top_test.u_top_1.forward.id_ex_rs top_test.u_top_1.forward.id_ex_rt top_test.u_top_1.forward.if_id_rs top_test.u_top_1.forward.if_id_rt top_test.u_top_1.forward.mem_wb_dst top_test.u_top_1.forward.mem_wb_regwrite
-Created probe 2
-ncsim> reset
-Loaded snapshot worklib.top_test:v
-ncsim> run
-
-Reach IN_TOTAL.
-Simulation complete via $finish(1) at time 10005 NS + 0
-./top_test.v:113         $finish;
-ncsim> 
+ncsim> ^C
+ncsim> exit
+TOOL:	ncverilog	06.20-s004: Exiting on May 16, 2016 at 23:30:24 JST  (total: 00:51:34)
