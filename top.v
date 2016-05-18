@@ -36,26 +36,26 @@ module top(DAD,MREQ,WRITE,SIZE,IAD,
 	wire [4:0]id_ex_rs,id_ex_rt,id_ex_rd;
 
 	//ex_stage
-	wire [31:0]pc_4_out_ex,rt_out_ex,alu_data_ex,wb_data;
-	wire [7:0]control_out_ex;
+	wire [31:0]rt_out_ex,alu_data_ex,wb_data;
+	wire [6:0]control_out_ex;
 	wire [4:0]regdst_out_ex;
 	wire [1:0]forward_a,forward_b;
 
 	//ex_mem_reg
-	wire [31:0]pc_4_in_mem,alu_in_mem,sw_in_mem;
-	wire [7:0]control_in_mem;
+	wire [31:0]alu_in_mem,sw_in_mem;
+	wire [6:0]control_in_mem;
 	wire [4:0]regdst_in_mem;
 
 	//mem_stage
-	wire [31:0]pc_4_out_mem,data_write_out_mem,data_out_mem,load_data,store_data;
+	wire [31:0]data_write_out_mem,data_out_mem,load_data,store_data;
 	wire [4:0]regdst_out_mem;
-	wire [2:0]control_out_mem;
+	wire [1:0]control_out_mem;
 	wire mem_read,forward_e;
 
 	//mem_wb_reg
-	wire [31:0] pc_4_in_wb,data_in_wb,alu_in_wb;
+	wire [31:0] data_in_wb,alu_in_wb;
 	wire [4:0] regdst_in_wb;
-	wire [2:0] control_in_wb;
+	wire [1:0] control_in_wb;
 
 //	assign {pc_write,if_id_write,control_sel}=3'b111;
 
@@ -83,11 +83,11 @@ module top(DAD,MREQ,WRITE,SIZE,IAD,
 	assign id_ex_memread=control_in_ex[3];
 	assign id_ex_regwrite=control_in_ex[0];
 	
-	ex_stage ex_stage(.regdst_out(regdst_out_ex), .rt_out(rt_out_ex), .alu_data(alu_data_ex), .pc_out(pc_4_out_ex), .control_out(control_out_ex),
+	ex_stage ex_stage(.regdst_out(regdst_out_ex), .rt_out(rt_out_ex), .alu_data(alu_data_ex), .control_out(control_out_ex),
 		.control_in(control_in_ex), .pc_in(pc_4_in_ex), .data1(data1_in), .data2(data2_in), .offset(offset_ex), .rt_field(id_ex_rt), .rd_field(id_ex_rd), .wb_data(wb_data), .ex_mem_data(ex_mem_data), .forward_a(forward_a), .forward_b(forward_b));
 
-	ex_mem_reg ex_mem_reg(.control_out(control_in_mem), .pc_4_out(pc_4_in_mem), .alu_out(alu_in_mem), .sw_out(sw_in_mem), .regdst_out(regdst_in_mem),
-		.control_in(control_out_ex), .pc_4_in(pc_4_out_ex), .alu_in(alu_data_ex), .sw_in(rt_out_ex), .regdst_in(regdst_out_ex),
+	ex_mem_reg ex_mem_reg(.control_out(control_in_mem), .alu_out(alu_in_mem), .sw_out(sw_in_mem), .regdst_out(regdst_in_mem),
+		.control_in(control_out_ex), .alu_in(alu_data_ex), .sw_in(rt_out_ex), .regdst_in(regdst_out_ex),
 		.reset(rst), .clk(clk));
 
 	assign ex_mem_data=alu_in_mem;
@@ -96,20 +96,20 @@ module top(DAD,MREQ,WRITE,SIZE,IAD,
 	assign ex_mem_memread=control_in_mem[3];
 	assign ex_mem_regwrite=control_in_mem[0];
 
-	mem_stage mem_stage(.pc_out(pc_4_out_mem), .address_out(DAD), .data_write_out(store_data), .data_out(data_out_mem), .size(SIZE), .mem_write(WRITE), .mem_read(mem_read), .control_out(control_out_mem), .regdst_out(regdst_out_mem),
-		 .pc_in(pc_4_in_mem), .address_in(alu_in_mem), .data_write_in(sw_in_mem), .data_mem(load_data), .control_in(control_in_mem), .regdst_in(regdst_in_mem), .wb_data(wb_data), .forward_e(forward_e));
+	mem_stage mem_stage(.address_out(DAD), .data_write_out(store_data), .data_out(data_out_mem), .size(SIZE), .mem_write(WRITE), .mem_read(mem_read), .control_out(control_out_mem), .regdst_out(regdst_out_mem),
+		  .address_in(alu_in_mem), .data_write_in(sw_in_mem), .data_mem(load_data), .control_in(control_in_mem), .regdst_in(regdst_in_mem), .wb_data(wb_data), .forward_e(forward_e));
 
 	assign MREQ=(WRITE|mem_read);
 	assign load_data=DDT;
 	assign DDT=(WRITE)? store_data:32'bz;
 
 
-	mem_wb_reg mem_wb_reg(.control_out(control_in_wb), .pc_4_out(pc_4_in_wb), .data_out(data_in_wb), .alu_out(alu_in_wb), .regdst_out(regdst_in_wb),
-		.control_in(control_out_mem), .pc_4_in(pc_4_out_mem), .data_in(data_out_mem), .alu_in(DAD), .regdst_in(regdst_out_mem),
+	mem_wb_reg mem_wb_reg(.control_out(control_in_wb), .data_out(data_in_wb), .alu_out(alu_in_wb), .regdst_out(regdst_in_wb),
+		.control_in(control_out_mem), .data_in(data_out_mem), .alu_in(DAD), .regdst_in(regdst_out_mem),
 		.reset(rst), .clk(clk));
 
 	wb_stage wb_stage(.reg_write(regwrite), .data_to_reg(data_to_reg), .regdst_out(rd_add),
-		.control_in(control_in_wb), .pc_4(pc_4_in_wb), .data_mem(data_in_wb), .data_alu(alu_in_wb), .regdst_in(regdst_in_wb));
+		.control_in(control_in_wb), .data_mem(data_in_wb), .data_alu(alu_in_wb), .regdst_in(regdst_in_wb));
 
 	assign wb_data=data_to_reg;
 

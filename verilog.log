@@ -22,8 +22,8 @@ Command arguments:
     /home/koyo/verilog/wb_stage.v
     /home/koyo/verilog/top_test.v
 
-Tool:	VERILOG-XL	06.20.001-s log file created May 17, 2016  11:51:00
-Tool:	VERILOG-XL	06.20.001-s   May 17, 2016  11:51:00
+Tool:	VERILOG-XL	06.20.001-s log file created May 18, 2016  10:17:18
+Tool:	VERILOG-XL	06.20.001-s   May 18, 2016  10:17:18
 
 Copyright (c) 1995-2004 Cadence Design Systems, Inc.  All Rights Reserved.
 Unpublished -- rights reserved under the copyright laws of the United States.
@@ -78,7 +78,7 @@ top_test
 
 
 Reach IN_TOTAL.
-L113 "/home/koyo/verilog/top_test.v": $finish at simulation time 10005000
+L113 "/home/koyo/verilog/top_test.v": $finish at simulation time 100005000
 0 simulation events (use +profile or +listcounts option to count)
-CPU time: 0.0 secs to compile + 0.0 secs to link + 0.1 secs in simulation
-End of Tool:	VERILOG-XL	06.20.001-s   May 17, 2016  11:51:01
+CPU time: 0.0 secs to compile + 0.1 secs to link + 0.3 secs in simulation
+End of Tool:	VERILOG-XL	06.20.001-s   May 18, 2016  10:17:19

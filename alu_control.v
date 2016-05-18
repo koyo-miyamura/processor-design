@@ -12,7 +12,7 @@ module alu_control(alu_control_out,shamt_out,
 		  Nor=6'b100111,slt=6'b101010,sltu=6'b101011;
 
 	//alu_op
-	parameter func_op=4'b0000,add_s=4'b0001,add_uns=4'b0010,slt_s=4'b0011,slt_uns=4'b0100,and_op=4'b0101,or_op=4'b0110,xor_op=4'b0111,lui_op=4'b1000,lb_lh_op=4'b1001;
+	parameter func_op=4'b0000,add_s=4'b0001,add_uns=4'b0010,slt_s=4'b0011,slt_uns=4'b0100,and_op=4'b0101,or_op=4'b0110,xor_op=4'b0111,lui_op=4'b1000;
 	
 	//alu_control_out
 	parameter sll_alu=5'b00000,srl_alu=5'b00001,sra_alu=5'b00010,sllv_alu=5'b00011,srlv_alu=5'b00100,srav_alu=5'b00101,add_alu=5'b00110,addu_alu=5'b00111,
@@ -55,7 +55,7 @@ module alu_control(alu_control_out,shamt_out,
 			endcase
 			end
 
-		add_s,lb_lh_op:   alu_control={add_alu,zero};
+		add_s:   alu_control={add_alu,zero};
 		add_uns: alu_control={addu_alu,zero};
 		slt_s:   alu_control={slt_alu,zero};
 		slt_uns: alu_control={sltu_alu,zero};

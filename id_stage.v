@@ -20,6 +20,8 @@ module id_stage(data1_out,data2_out,pc_4_out,control,offset,rs_field,rt_field,rd
 	wire   [4:0]rs_in,rt_in;
 	wire   [5:0]op,func;
 
+	parameter andi_op=6'b001100,ori_op=6'b001101,xori_op=6'b001110;
+
 	assign pc_4_out=pc_4_in+32'h0000_0004;
 
 	assign offset28={2'b00,ins[25:0]}<<2;
@@ -29,10 +31,10 @@ module id_stage(data1_out,data2_out,pc_4_out,control,offset,rs_field,rt_field,rd
 	assign rs_field=ins[25:21];
 
 	assign offset_16=ins[15:0];
-	assign offset={{16{offset_16[15]}},offset_16};
+	assign op=ins[31:26];
+	assign offset=( (op==andi_op)||(op==ori_op)||(op==xori_op) )? {16'b0,offset_16}:{{16{offset_16[15]}},offset_16};
 	assign branch=(offset<<2)+pc_4_in;
 
-	assign op=ins[31:26];
 	assign func=ins[5:0];
 
 	assign rs=(forward_c)? ex_mem_data:data1_out;

@@ -17,7 +17,7 @@ module control(control_out,
 	//rt_field
 	parameter bgez=5'b00001,bgezal=5'b10001,bltzal=5'b10000,bltz=5'b00000;
 
-	//[14bit]control=[4bit]ALUOP,[1bit]ALUSrc,[2bit]RegDst,[2bit]Size,[1bit]MemWrite,[1bit]MemRead,[2bit]MemtoReg,[1bit]RegWrite 
+	//[14bit]control=[4bit]ALUOP,[1bit]ALUSrc,[2bit]RegDst,[2bit]Size,[1bit]MemWrite,[1bit]MemRead,[1bit]lb_lh,[1bit]MemtoReg,[1bit]RegWrite 
 	function [13:0] control;
 		input [5:0]op,func;
 		input [4:0]rt_field;
@@ -26,51 +26,51 @@ module control(control_out,
 		
 		R:begin
 		  case(func)
-		  	sll,srl,sra,sllv,srlv,srav,add,addu,sub,subu,And,Or,Xor,Nor,slt,sltu: control=14'b0000_0_01_00_0_0_10_0;
-		  	jr:control=14'b0000_0_00_00_0_0_00_1;
-		  	jalr:control=14'b0000_0_10_00_0_0_00_0;
+		  	sll,srl,sra,sllv,srlv,srav,add,addu,sub,subu,And,Or,Xor,Nor,slt,sltu: control=14'b0000_0_01_00_0_0_0_0_0;
+		  	jr:control=  14'b0000_0_00_00_0_0_0_0_1;
+		  	jalr:control=14'b0000_0_10_00_0_0_0_0_0;
 
 		  	//the instruction isn't defined. maybe it is exception.
-		  	default:control=14'b0000_0_00_00_0_0_00_0;
+		  	default:control=14'b0000_0_00_00_0_0_0_0_0;
 		  endcase
 		  end
 
 		bal:begin
 		    case(rt_field)
-		    	bgez,bltz:     control=14'b0001_0_00_00_0_0_00_1;
-			bgezal,bltzal: control=14'b0001_0_10_00_0_0_00_0;
+		    	bgez,bltz:     control=14'b0001_0_00_00_0_0_0_0_1;
+			bgezal,bltzal: control=14'b0001_0_10_00_0_0_0_0_0;
 
 			//the instruction isn't defined. maybe it is exception.
-		  	default:control=14'b0000_0_00_00_0_0_00_0;
+		  	default:control=14'b0000_0_00_00_0_0_0_0_0;
 		    endcase
 		    end
 
-		j,beq,bne,blez,bgtz: control=14'b0001_0_00_00_0_0_00_1;
-		jal:   control=14'b0001_0_10_00_0_0_00_0;
+		j,beq,bne,blez,bgtz: control=14'b0001_0_00_00_0_0_0_0_1;
+		jal:   control=14'b0001_0_10_00_0_0_0_0_0;
 
-		addi:  control=14'b0001_1_00_00_0_0_10_0;
-		addiu: control=14'b0010_1_00_00_0_0_10_0;
-		slti:  control=14'b0011_1_00_00_0_0_10_0;
-		sltiu: control=14'b0100_1_00_00_0_0_10_0;
-		andi:  control=14'b0101_1_00_00_0_0_10_0;
-		ori:   control=14'b0110_1_00_00_0_0_10_0;
-		xori:  control=14'b0111_1_00_00_0_0_10_0;
-		lui:   control=14'b1000_1_00_00_0_0_10_0;
+		addi:  control=14'b0001_1_00_00_0_0_0_0_0;
+		addiu: control=14'b0010_1_00_00_0_0_0_0_0;
+		slti:  control=14'b0011_1_00_00_0_0_0_0_0;
+		sltiu: control=14'b0100_1_00_00_0_0_0_0_0;
+		andi:  control=14'b0101_1_00_00_0_0_0_0_0;
+		ori:   control=14'b0110_1_00_00_0_0_0_0_0;
+		xori:  control=14'b0111_1_00_00_0_0_0_0_0;
+		lui:   control=14'b1000_1_00_00_0_0_0_0_0;
 
-		lb:    control=14'b1001_1_00_10_0_1_01_0;
-		lbu:   control=14'b0001_1_00_10_0_1_01_0;
+		lb:    control=14'b0001_1_00_10_0_1_1_1_0;
+		lbu:   control=14'b0001_1_00_10_0_1_0_1_0;
 
-		lh:    control=14'b1001_1_00_01_0_1_01_0;
-		lhu:   control=14'b0001_1_00_01_0_1_01_0;
+		lh:    control=14'b0001_1_00_01_0_1_1_1_0;
+		lhu:   control=14'b0001_1_00_01_0_1_0_1_0;
 
-		lw:    control=14'b0001_1_00_00_0_1_01_0;
+		lw:    control=14'b0001_1_00_00_0_1_0_1_0;
 
-		sb:    control=14'b0001_1_00_10_1_0_00_1;
-		sh:    control=14'b0001_1_00_01_1_0_00_1;
-		sw:    control=14'b0001_1_00_00_1_0_00_1;
+		sb:    control=14'b0001_1_00_10_1_0_0_0_1;
+		sh:    control=14'b0001_1_00_01_1_0_0_0_1;
+		sw:    control=14'b0001_1_00_00_1_0_0_0_1;
 
 		//the instruction isn't defined. maybe it is exception.
-		default:control=14'b0000_0_00_00_0_0_00_0;
+		default:control=14'b0000_0_00_00_0_0_0_0_0;
 
 		endcase
 	endfunction
