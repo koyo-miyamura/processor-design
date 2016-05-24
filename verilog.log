@@ -22,8 +22,8 @@ Command arguments:
     /home/koyo/verilog/wb_stage.v
     /home/koyo/verilog/top_test.v
 
-Tool:	VERILOG-XL	06.20.001-s log file created May 18, 2016  10:17:18
-Tool:	VERILOG-XL	06.20.001-s   May 18, 2016  10:17:18
+Tool:	VERILOG-XL	06.20.001-s log file created May 19, 2016  04:08:56
+Tool:	VERILOG-XL	06.20.001-s   May 19, 2016  04:08:56
 
 Copyright (c) 1995-2004 Cadence Design Systems, Inc.  All Rights Reserved.
 Unpublished -- rights reserved under the copyright laws of the United States.
@@ -76,9 +76,24 @@ Compiling source file "/home/koyo/verilog/top_test.v"
 Highest level modules:
 top_test
 
+Bit counter algorithm benchmark
+1: Optimized 1 bit/loop counter
+CHECK PASSED !!
+2: Ratko's mystery algorithm
+CHECK PASSED !!
+3: Recursive bit count by nybbles
+CHECK PASSED !!
+4: Non-recursive bit count by nybbles
+CHECK PASSED !!
+5: Non-recursive bit count by bytes (BW)
+CHECK PASSED !!
+6: Non-recursive bit count by bytes (AR)
+CHECK PASSED !!
+7: Shift and count bits
+CHECK PASSED !!
 
-Reach IN_TOTAL.
-L113 "/home/koyo/verilog/top_test.v": $finish at simulation time 100005000
+Exited by program.
+L193 "/home/koyo/verilog/top_test.v": $finish at simulation time 7509460475000
 0 simulation events (use +profile or +listcounts option to count)
-CPU time: 0.0 secs to compile + 0.1 secs to link + 0.3 secs in simulation
-End of Tool:	VERILOG-XL	06.20.001-s   May 18, 2016  10:17:19
+CPU time: 0.0 secs to compile + 0.0 secs to link + 32358.1 secs in simulation
+End of Tool:	VERILOG-XL	06.20.001-s   May 19, 2016  13:08:25
