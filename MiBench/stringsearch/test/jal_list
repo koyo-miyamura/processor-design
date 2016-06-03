@@ -1,0 +1,4 @@
+			10108: R_MIPS_26	init_search
+			10114: R_MIPS_26	strsearch
+			10128: R_MIPS_26	myputs
+			10158: R_MIPS_26	myputs
