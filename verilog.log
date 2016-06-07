@@ -1,9 +1,9 @@
 Host command: /opt/cadence/CDROM/IUS06.20.004/tools/verilog/bin/verilog.exe
 Command arguments:
-    mem_wb_reg.v
+    control.v
 
-Tool:	VERILOG-XL	06.20.001-s log file created Jun  6, 2016  18:18:34
-Tool:	VERILOG-XL	06.20.001-s   Jun  6, 2016  18:18:34
+Tool:	VERILOG-XL	06.20.001-s log file created Jun  7, 2016  17:08:30
+Tool:	VERILOG-XL	06.20.001-s   Jun  7, 2016  17:08:30
 
 Copyright (c) 1995-2004 Cadence Design Systems, Inc.  All Rights Reserved.
 Unpublished -- rights reserved under the copyright laws of the United States.
@@ -32,10 +32,10 @@ For technical assistance please contact the Cadence Response Center at
 For more information on Cadence's Verilog-XL product line send email to
 talkv@cadence.com
 
-Compiling source file "mem_wb_reg.v"
+Compiling source file "control.v"
 Highest level modules:
-mem_wb_reg
+control
 
 0 simulation events (use +profile or +listcounts option to count)
 CPU time: 0.0 secs to compile + 0.0 secs to link + 0.0 secs in simulation
-End of Tool:	VERILOG-XL	06.20.001-s   Jun  6, 2016  18:18:35
+End of Tool:	VERILOG-XL	06.20.001-s   Jun  7, 2016  17:08:31
