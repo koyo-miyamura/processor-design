@@ -13,7 +13,7 @@ module pc(out,
 		case({reset,pc_write})
 			2'b11: out<=in;
 			2'b10: out<=out;
-			default out<=32'h0001_0000;
+			default out<=32'h0000_0000;
 		endcase
 	end
 endmodule

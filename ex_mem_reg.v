@@ -1,11 +1,11 @@
 `timescale              1 ns/1 ps
 module ex_mem_reg(control_out,alu_out,sw_out,regdst_out,
 		control_in,alu_in,sw_in,regdst_in,
-		reset,clk);
+		ex_flush,reset,clk);
 	input [31:0]alu_in,sw_in;
 	input [6:0]control_in;
 	input [4:0]regdst_in;
-	input reset,clk;
+	input ex_flush,reset,clk;
 	
 	output alu_out,sw_out;
 	output [6:0]control_out;
@@ -17,9 +17,9 @@ module ex_mem_reg(control_out,alu_out,sw_out,regdst_out,
 
 	always @ (posedge clk or negedge reset)
 	begin
-		case(reset) //reset is active low
+		case({reset,ex_flush}) //reset is active low
 			//normal
-			1'b1:
+			2'b10:
 			begin
 			alu_out<=alu_in;
 			sw_out<=sw_in; 
@@ -28,7 +28,7 @@ module ex_mem_reg(control_out,alu_out,sw_out,regdst_out,
 			end
 			
 			//reset
-			1'b0:
+			2'b0z,2'b11:
 			begin
 			alu_out<=0;
 			sw_out<=0; 

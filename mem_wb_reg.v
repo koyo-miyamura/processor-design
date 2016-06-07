@@ -1,11 +1,11 @@
 `timescale              1 ns/1 ps
 module mem_wb_reg(control_out,data_out,alu_out,regdst_out,
 		control_in,data_in,alu_in,regdst_in,
-		reset,clk);
+		mem_flush,reset,clk);
 	input [31:0]data_in,alu_in;
 	input [1:0]control_in;
 	input [4:0]regdst_in;
-	input reset,clk;
+	input mem_flush,reset,clk;
 	
 	output [31:0]data_out,alu_out;
 	output [1:0]control_out;
@@ -17,9 +17,9 @@ module mem_wb_reg(control_out,data_out,alu_out,regdst_out,
 
 	always @ (posedge clk or negedge reset)
 	begin
-		case(reset) //reset is active low
+		case({reset,mem_flush}) //reset is active low
 			//normal
-			1'b1:
+			2'b10:
 			begin
 			data_out<=data_in;
 			alu_out<=alu_in;
@@ -28,7 +28,7 @@ module mem_wb_reg(control_out,data_out,alu_out,regdst_out,
 			end
 			
 			//reset
-			1'b0:
+			2'b0z,2'b11:
 			begin
 			data_out<=0;
 			alu_out<=0;

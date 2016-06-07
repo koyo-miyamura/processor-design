@@ -1,11 +1,11 @@
 `timescale              1 ns/1 ps
 module id_ex_reg(control_out,pc_4_out,rs_out,rt_out,offset_out,id_ex_rs,id_ex_rt,id_ex_rd,
 		control_in,pc_4_in,rs_in,rt_in,offset_in,if_id_rs,if_id_rt,if_id_rd,
-		reset,clk);
+		id_flush,reset,clk);
 	input [31:0]pc_4_in,rs_in,rt_in,offset_in;
 	input [13:0]control_in;
 	input [4:0]if_id_rs,if_id_rt,if_id_rd;
-	input reset,clk;
+	input id_flush,reset,clk;
 	
 	output [31:0]pc_4_out,rs_out,rt_out,offset_out;
 	output [13:0]control_out;
@@ -17,9 +17,9 @@ module id_ex_reg(control_out,pc_4_out,rs_out,rt_out,offset_out,id_ex_rs,id_ex_rt
 
 	always @ (posedge clk or negedge reset)
 	begin
-		case(reset) //reset is active low
+		casez({reset,id_flush}) //reset is active low
 			//normal
-			1'b1:
+			2'b10:
 			begin
 			pc_4_out<=pc_4_in;
 			rs_out<=rs_in;
@@ -32,7 +32,7 @@ module id_ex_reg(control_out,pc_4_out,rs_out,rt_out,offset_out,id_ex_rs,id_ex_rt
 			end
 			
 			//reset
-			1'b0:
+			2'b0z,2'b11:
 			begin
 			pc_4_out<=0;
 			rs_out<=0;
