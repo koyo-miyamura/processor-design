@@ -1,10 +1,11 @@
 `timescale              1 ns/1 ps
-module alu(alu_out,
+module alu(alu_out,overflow,
 	   rs,rt,alu_control,shamt);
 	input [31:0]rs,rt;
 	input [4:0]alu_control,shamt;
 	output[31:0]alu_out; 
-	
+	output overflow;
+
 	//alu_control
 	parameter sll_alu=5'b00000,srl_alu=5'b00001,sra_alu=5'b00010,sllv_alu=5'b00011,srlv_alu=5'b00100,srav_alu=5'b00101,add_alu=5'b00110,addu_alu=5'b00111,
 		  sub_alu=5'b01000,subu_alu=5'b01001,and_alu=5'b01010,or_alu=5'b01011,xor_alu=5'b01100,nor_alu=5'b01101,slt_alu=5'b01110,sltu_alu=5'b01111,
@@ -33,7 +34,7 @@ module alu(alu_out,
 
 		addu_alu: alu_exe=rs+rt;
 
-		//underflow is to be supported
+		//overflow is to be supported
 		sub_alu:  alu_exe=rs-rt;
 
 		subu_alu: alu_exe=rs-rt;
@@ -52,11 +53,17 @@ module alu(alu_out,
 
 		lui_alu:  alu_exe={rt[15:0],16'h0000};
 
-		//the instruction isn't defined. maybe it is exception.
+		//the instruction isn't defined.
 		default:  alu_exe=0;
 
 		endcase
 	endfunction
 
 	assign alu_out=alu_exe(rs,rt,alu_control,shamt);
+
+	assign overflow=( ({rs[31],rt[31],alu_control,alu_out[31]}=={2'b00,add_alu,1'b1})||
+			  ({rs[31],rt[31],alu_control,alu_out[31]}=={2'b11,add_alu,1'b0})||
+			  ({rs[31],rt[31],alu_control,alu_out[31]}=={2'b01,sub_alu,1'b1})||
+			  ({rs[31],rt[31],alu_control,alu_out[31]}=={2'b10,sub_alu,1'b0}) )? 1:0;
+
 endmodule
