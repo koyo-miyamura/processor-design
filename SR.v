@@ -41,4 +41,7 @@ module SR(IE_c,s_u_c,
 			end
 		endcase
 	end
+	
+	assign IE_c=sr_reg[1];
+	assign s_u_c=sr_reg[0];
 endmodule

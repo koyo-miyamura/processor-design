@@ -24,7 +24,7 @@ module id_stage(data1_out,data2_out,pc_4_out,control,offset,rs_field,rt_field,rd
 
 	parameter andi_op=6'b001100,ori_op=6'b001101,xori_op=6'b001110,trap_op=6'b010001;
 
-	assign pc_4_out=pc_4_in+32'h0000_0004;
+	assign pc_4_out=pc_4_in+32'h0000_0004; //PC+8
 
 	assign offset28={2'b00,ins[25:0]}<<2;
 

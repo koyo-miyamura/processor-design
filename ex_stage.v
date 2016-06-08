@@ -1,28 +1,29 @@
 `timescale              1 ns/1 ps
-module ex_stage(regdst_out,rt_out,alu_data,control_out,
-		control_in,pc_in,data1,data2,offset,rt_field,rd_field,wb_data,ex_mem_data,forward_a,forward_b);
+module ex_stage(regdst_out,rt_out,alu_data,control_out,vector_ex,pc_out,
+		control_in,pc_in,data1,data2,offset,rt_field,rd_field,wb_data,ex_mem_data,forward_a,forward_b,vector_id);
 
 	input [31:0]pc_in,data1,data2,offset,wb_data,ex_mem_data;
-	input [13:0]control_in;
-	input [4:0]rt_field,rd_field;
+	input [14:0]control_in;
+	input [4:0]rt_field,rd_field,vector_id;
 	input [1:0] forward_a,forward_b;
 
-	output [31:0]alu_data,rt_out;
-	output [6:0]control_out;
-	output [4:0]regdst_out;
+	output [31:0]alu_data,rt_out,pc_out;
+	output [7:0]control_out;
+	output [4:0]regdst_out,vector_ex;
 
 	wire  [31:0]data1_in,data2_in,alu_result;
 	wire  [5:0]func;
 	wire  [4:0]shamt_in,shamt_out,alu_control_out;
 	wire  [3:0]alu_op;
 	wire  [1:0]regdst;
-	wire  alu_src;
+	wire  alu_src,overflow;
 
-	assign regdst=control_in[8:7];
-	assign alu_src=control_in[9];
-	assign alu_op=control_in[13:10];
+	assign pc_out=pc_in;
+	assign regdst=control_in[9:8];
+	assign alu_src=control_in[10];
+	assign alu_op=control_in[14:11];
 	assign alu_data=(regdst[1])? pc_in:alu_result;
-	assign control_out=control_in[6:0];
+	assign control_out=control_in[7:0];
 
 	assign regdst_out=(regdst==2'b00)? rt_field:
 			  (regdst==2'b01)? rd_field:
@@ -44,13 +45,13 @@ module ex_stage(regdst_out,rt_out,alu_data,control_out,
 		        (forward_a==2'b10)? ex_mem_data:
 		        32'bzzzzz;
 
-
-
 	alu_control alu_control(.alu_control_out(alu_control_out), .shamt_out(shamt_out),
  			  .func(func), .shamt_in(shamt_in), .alu_op(alu_op));
 
-	alu alu(.alu_out(alu_result),
+	alu alu(.alu_out(alu_result), .overflow(overflow),
 	         .rs(data1_in), .rt(data2_in), .alu_control(alu_control_out), .shamt(shamt_out));
 
-	
+	Iv_ex Iv_ex(.vector_ex(vector_ex),
+		.overflow(overflow), .vector_id(vector_id));
+
 endmodule

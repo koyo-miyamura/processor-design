@@ -13,7 +13,7 @@ module IAR(pc_out,
 	always @ (negedge s_u or posedge exception or negedge reset)
 	begin
 		casez({reset,s_u,exception,trap_store})
-		        //ユーザーモード
+		        //user
 			4'b11zz: pc_out<=pc_out;
 			//exception
 			4'b1011: pc_out<=pc_8_in-32'h0000_0004;
