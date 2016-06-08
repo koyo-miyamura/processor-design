@@ -1,9 +1,14 @@
 Host command: /opt/cadence/CDROM/IUS06.20.004/tools/verilog/bin/verilog.exe
 Command arguments:
-    alu.v
+    id_stage.v
+    rf32x32.v
+    branch.v
+    control.v
+    Iv_id.v
+    DW_ram_2r_w_s_dff.v
 
-Tool:	VERILOG-XL	06.20.001-s log file created Jun  7, 2016  18:10:47
-Tool:	VERILOG-XL	06.20.001-s   Jun  7, 2016  18:10:47
+Tool:	VERILOG-XL	06.20.001-s log file created Jun  8, 2016  13:45:50
+Tool:	VERILOG-XL	06.20.001-s   Jun  8, 2016  13:45:50
 
 Copyright (c) 1995-2004 Cadence Design Systems, Inc.  All Rights Reserved.
 Unpublished -- rights reserved under the copyright laws of the United States.
@@ -32,10 +37,15 @@ For technical assistance please contact the Cadence Response Center at
 For more information on Cadence's Verilog-XL product line send email to
 talkv@cadence.com
 
-Compiling source file "alu.v"
+Compiling source file "id_stage.v"
+Compiling source file "rf32x32.v"
+Compiling source file "branch.v"
+Compiling source file "control.v"
+Compiling source file "Iv_id.v"
+Compiling source file "DW_ram_2r_w_s_dff.v"
 Highest level modules:
-alu
+id_stage
 
 0 simulation events (use +profile or +listcounts option to count)
 CPU time: 0.0 secs to compile + 0.0 secs to link + 0.0 secs in simulation
-End of Tool:	VERILOG-XL	06.20.001-s   Jun  7, 2016  18:10:47
+End of Tool:	VERILOG-XL	06.20.001-s   Jun  8, 2016  13:45:50

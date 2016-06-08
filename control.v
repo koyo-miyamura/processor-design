@@ -1,10 +1,10 @@
 `timescale              1 ns/1 ps
-module control(control_out,no_define,trap_sign,
+module control(control_out,no_define,
 	      op,func,rt_field);
 	input [5:0]op,func;
 	input [4:0]rt_field;
 	output [14:0]control_out;
-	output no_define,trap_sign;
+	output no_define;
 
 	//op_field
 	parameter R=6'b000000,bal=6'b000001,j=6'b000010,jal=6'b000011,beq=6'b000100,bne=6'b000101,blez=6'b000110,bgtz=6'b000111,
@@ -82,5 +82,4 @@ module control(control_out,no_define,trap_sign,
 	assign control_out=control(op,func,rt_field);
 
 	assign no_define=(control_out==0)? 1:0;
-	assign trap_sign=(control_out==15'b0001_0_00_0_00_0_0_0_0_0)? 1:0;
 endmodule
