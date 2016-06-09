@@ -17,7 +17,6 @@ module id_stage(data1_out,data2_out,pc_4_out,control,offset,rs_field,rt_field,rd
 	wire   [31:0]rt,data1_out_user,data2_out_user,data1_out_super,data2_out_super;
 	wire   [15:0]offset_16;
 	wire   [14:0]control_out;
-	wire   [4:0]rs_in,rt_in;
 	wire   [5:0]op,func;
 	wire   [2:0]trap_vector;
 	wire   trap_sign,no_define,rfe,reg_write_user,reg_write_super;
@@ -44,7 +43,7 @@ module id_stage(data1_out,data2_out,pc_4_out,control,offset,rs_field,rt_field,rd
 
 	//regwrite is active low
 	assign reg_write_user=((s_u==1)&&(reg_write==0))? 0:1;
-	assign reg_write_user=((s_u==0)&&(reg_write==0))? 0:1;
+	assign reg_write_super=((s_u==0)&&(reg_write==0))? 0:1;
 
 	assign rs=(forward_c)? ex_mem_data:data1_out;
 	assign rt=(forward_d)? ex_mem_data:data2_out;

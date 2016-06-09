@@ -78,7 +78,7 @@ module top(DAD,MREQ,WRITE,SIZE,IAD,
 		.reset(rst), .clk(clk));
 
 	assign pc_4_id=pc_4_in_id[31:28];
-	assign id_flush=(exception||rfe);
+	assign if_flush=(exception||rfe);
 
 	if_id_reg if_id_reg(.ins_out(ins), .pc_4_out(pc_4_in_id), .vector_if_out(vector_id_in),
 		  .pc_4_in(pc_4_out_if), .ins_in(IDT), .if_flush(if_flush), .if_id_write(if_id_write), .vector_if_in(vector_if_out),
@@ -141,10 +141,10 @@ module top(DAD,MREQ,WRITE,SIZE,IAD,
 	      .if_id_rs(rs_field_id), .if_id_rt(rt_field_id), .id_ex_rs(id_ex_rs), .id_ex_rt(id_ex_rt), .ex_mem_dst(regdst_in_mem), .mem_wb_dst(rd_add), .ex_mem_regwrite(ex_mem_regwrite), .mem_wb_regwrite(regwrite));
 
 	IAR IAR(.pc_out(IAR_pc),
-	        .memwrite(WRITE), .oint_ex(oint_ex), .exception(exception), .pc_8_in(pc_in_mem), .s_u(s_u_c), .reset(rst), .trap(trap));
+	        .memwrite(WRITE), .oint_ex(oint_ex), .exception(exception), .pc_8_in(pc_in_mem), .s_u(s_u_c), .reset(rst), .trap(trap), .clk(clk));
 
 	SR  SR(.IE_c(IE_c), .s_u_c(s_u_c),
-	       .exception(exception), .rfe(rfe), .rst(rst));
+	       .exception(exception), .rfe(rfe), .rst(rst), .clk(clk));
 
 	assign oint_ex=~IACK_n;
 	assign trap=((vector<=5'b10111)&&(vector>=5'b10000))? 1:0;

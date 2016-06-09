@@ -1,12 +1,12 @@
 `timescale              1 ns/1 ps
 module SR(IE_c,s_u_c,
-	 exception,rfe,rst);
-	input exception,rfe,rst;
+	 exception,rfe,rst,clk);
+	input exception,rfe,rst,clk;
 	output IE_c,s_u_c;
 	
 	reg [31:0]sr_reg;
 	
-	always @ (posedge exception or posedge rfe or negedge rst)
+	always @ (posedge clk or rst)
 	begin
 		casez({rst,exception,rfe}) //reset is active low
 			//suspend

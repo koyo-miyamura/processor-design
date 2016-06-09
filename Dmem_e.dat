@@ -8202,7 +8202,7 @@
 00008024 :xx xx xx xx
 00008028 :xx xx xx xx
 0000802c :xx xx xx xx
-00008030 :xx xx xx xx
+00008030 :00 00 00 0c
 00008034 :xx xx xx xx
 00008038 :xx xx xx xx
 0000803c :xx xx xx xx
@@ -16382,4 +16382,4 @@
 0000fff4 :xx xx xx xx
 0000fff8 :xx xx xx xx
 0000fffc :xx xx xx xx
-00010000 :01 02 81 82
+00010000 :00 00 00 00

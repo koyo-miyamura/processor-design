@@ -16,7 +16,7 @@ module Iv_mem(vector_mem,
 	
 	assign vector_mem=(vector_ex>data_missaline)?          vector_ex: 
 	                  (word_missaline||half_missaline)?    data_missaline:
-			  ((data_address<32'h000_10000)&&s_u)? data_memory:
+			  ((data_address<32'h000_10000)&&s_u&&(memwrite||memread))? data_memory:
 			 		                       5'b00000;
 
 endmodule

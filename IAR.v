@@ -1,16 +1,16 @@
 `timescale              1 ns/1 ps
 module IAR(pc_out,
-	   memwrite,oint_ex,exception,pc_8_in,s_u,reset,trap);
+	   memwrite,oint_ex,exception,pc_8_in,s_u,reset,trap,clk);
 
 	input [31:0]pc_8_in;
-	input memwrite,oint_ex,exception,s_u,reset,trap;
+	input memwrite,oint_ex,exception,s_u,reset,trap,clk;
 	output [31:0]pc_out;
 	
 	reg [31:0]pc_out;
 
 	wire trap_store=((memwrite&&oint_ex)||(trap));
 	
-	always @ (negedge s_u or posedge exception or negedge reset)
+	always @ (posedge clk or negedge reset)
 	begin
 		casez({reset,s_u,exception,trap_store})
 		        //user
