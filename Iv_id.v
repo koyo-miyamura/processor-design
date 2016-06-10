@@ -12,6 +12,6 @@ module Iv_id(vector_id,
 	assign vector_id=(vector_if>nodef)?     vector_if:
 			 (no_define)?               nodef:
 			 ((rfe)&&s_u)?          privilege:
-			 (trap_sign)? {2'b11,trap_vector}:
+			 (trap_sign)? {2'b10,trap_vector}:
 			                         5'b00000;
 endmodule

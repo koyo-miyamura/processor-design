@@ -6,6 +6,8 @@ module alu(alu_out,overflow,
 	output[31:0]alu_out; 
 	output overflow;
 
+//	wire [95:0] srav_shift={{64{rt[31]}},rt}>>rs;
+	
 	//alu_control
 	parameter sll_alu=5'b00000,srl_alu=5'b00001,sra_alu=5'b00010,sllv_alu=5'b00011,srlv_alu=5'b00100,srav_alu=5'b00101,add_alu=5'b00110,addu_alu=5'b00111,
 		  sub_alu=5'b01000,subu_alu=5'b01001,and_alu=5'b01010,or_alu=5'b01011,xor_alu=5'b01100,nor_alu=5'b01101,slt_alu=5'b01110,sltu_alu=5'b01111,
@@ -23,11 +25,12 @@ module alu(alu_out,overflow,
 
 		sra_alu:  alu_exe=($signed(rt))>>>shamt;
 
-		sllv_alu: alu_exe=rt<<rs;
+		sllv_alu: alu_exe=rt<<rs[4:0];
 
-		srlv_alu: alu_exe=rt>>rs;
+		srlv_alu: alu_exe=rt>>rs[4:0];
 
-		srav_alu: alu_exe=($signed(rt))>>>rs;
+		srav_alu: alu_exe=($signed(rt))>>>rs[4:0]; 
+		          //alu_exe=srav_shift[31:0];
 		
 		//overflow is to be supported
 		add_alu:  alu_exe=rs+rt;

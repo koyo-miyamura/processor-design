@@ -38,12 +38,21 @@ module id_stage(data1_out,data2_out,pc_4_out,control,offset,rs_field,rt_field,rd
 
 	assign func=ins[5:0];
 
-	assign data1_out=(s_u)? data1_out_user:data1_out_super;
-	assign data2_out=(s_u)? data2_out_user:data2_out_super;
+	//Register change
+//	assign data1_out=(s_u)? data1_out_user:data1_out_super;
+//	assign data2_out=(s_u)? data2_out_user:data2_out_super;
 
-	//regwrite is active low
-	assign reg_write_user=((s_u==1)&&(reg_write==0))? 0:1;
-	assign reg_write_super=((s_u==0)&&(reg_write==0))? 0:1;
+	//Register not change
+	assign data1_out=data1_out_user;
+	assign data2_out=data2_out_user;
+
+	//regwrite is active low     Register change
+//	assign reg_write_user=((s_u==1)&&(reg_write==0))? 0:1;
+//	assign reg_write_super=((s_u==0)&&(reg_write==0))? 0:1;
+
+	//Register not change
+	assign reg_write_user=reg_write;
+
 
 	assign rs=(forward_c)? ex_mem_data:data1_out;
 	assign rt=(forward_d)? ex_mem_data:data2_out;
@@ -58,8 +67,8 @@ module id_stage(data1_out,data2_out,pc_4_out,control,offset,rs_field,rt_field,rd
 		     .clk(clk), .wr_n(reg_write_user), .rst_n(reset), .rd1_addr(rs_field), .rd2_addr(rt_field), .wr_addr(rd_add), .data_in(data));
 	
 	//superviser
-	rf32x32 rf32x32_super(.data1_out(data1_out_super), .data2_out(data2_out_super),
-		     .clk(clk), .wr_n(reg_write_super), .rst_n(reset), .rd1_addr(rs_field), .rd2_addr(rt_field), .wr_addr(rd_add), .data_in(data));
+//	rf32x32 rf32x32_super(.data1_out(data1_out_super), .data2_out(data2_out_super),
+//		     .clk(clk), .wr_n(reg_write_super), .rst_n(reset), .rd1_addr(rs_field), .rd2_addr(rt_field), .wr_addr(rd_add), .data_in(data));
 
 	branch  branch_unit(.pc_src(pc_src),
 		     .op(op), .func(func), .rt_field(rt_field), .rs(rs), .rt(rt));

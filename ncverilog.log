@@ -1,5 +1,5 @@
 ncverilog: 06.20-s004: (c) Copyright 1995-2008 Cadence Design Systems, Inc.
-TOOL:	ncverilog	06.20-s004: Started on Jun 09, 2016 at 13:52:48 JST
+TOOL:	ncverilog	06.20-s004: Started on Jun 11, 2016 at 00:48:31 JST
 ncverilog
 	-s
 	+gui
@@ -32,29 +32,64 @@ ncverilog
 	/home/koyo/verilog/top.v
 	/home/koyo/verilog/wb_stage.v
 	/home/koyo/verilog/top_test.v
-
--------------------------------------
-Relinquished control to SimVision...
-ncsim> 
-ncsim> source /opt/cadence/CDROM/IUS06.20.004/tools/inca/files/ncsimrc
-ncsim> database -open waves -into waves.shm -default
-Created default SHM database waves
-ncsim> probe -create -shm top_test.u_top_1.ACKD_n top_test.u_top_1.ACKI_n top_test.u_top_1.DAD top_test.u_top_1.DDT top_test.u_top_1.IACK_n top_test.u_top_1.IAD top_test.u_top_1.IAR_pc top_test.u_top_1.IDT top_test.u_top_1.IE_c top_test.u_top_1.MREQ top_test.u_top_1.OINT_n top_test.u_top_1.SIZE top_test.u_top_1.WRITE top_test.u_top_1.alu_data_ex top_test.u_top_1.alu_in_mem top_test.u_top_1.alu_in_wb top_test.u_top_1.beq top_test.u_top_1.clk top_test.u_top_1.control_id top_test.u_top_1.control_in_ex top_test.u_top_1.control_in_mem top_test.u_top_1.control_in_wb top_test.u_top_1.control_out_ex top_test.u_top_1.control_out_mem top_test.u_top_1.control_sel top_test.u_top_1.data1_in top_test.u_top_1.data1_out top_test.u_top_1.data2_in top_test.u_top_1.data2_out top_test.u_top_1.data_in_wb top_test.u_top_1.data_out_mem top_test.u_top_1.data_to_reg top_test.u_top_1.data_write_out_mem top_test.u_top_1.ex_flush top_test.u_top_1.ex_mem_data top_test.u_top_1.ex_mem_memread top_test.u_top_1.ex_mem_regwrite top_test.u_top_1.exception top_test.u_top_1.forward_a top_test.u_top_1.forward_b top_test.u_top_1.forward_c top_test.u_top_1.forward_d top_test.u_top_1.forward_e top_test.u_top_1.func top_test.u_top_1.id_ex_memread top_test.u_top_1.id_ex_rd top_test.u_top_1.id_ex_regwrite top_test.u_top_1.id_ex_rs top_test.u_top_1.id_ex_rt top_test.u_top_1.id_flush top_test.u_top_1.if_flush top_test.u_top_1.if_id_write top_test.u_top_1.ins top_test.u_top_1.jr top_test.u_top_1.load_data top_test.u_top_1.mem_read top_test.u_top_1.offset28 top_test.u_top_1.offset_ex top_test.u_top_1.offset_id top_test.u_top_1.oint_ex top_test.u_top_1.op top_test.u_top_1.pc_4_id top_test.u_top_1.pc_4_in_ex top_test.u_top_1.pc_4_in_id top_test.u_top_1.pc_4_out_id top_test.u_top_1.pc_4_out_if top_test.u_top_1.pc_in_mem top_test.u_top_1.pc_out_ex top_test.u_top_1.pc_src top_test.u_top_1.pc_write top_test.u_top_1.rd_add top_test.u_top_1.rd_field_id top_test.u_top_1.regdst_in_mem top_test.u_top_1.regdst_in_wb top_test.u_top_1.regdst_out_ex top_test.u_top_1.regdst_out_mem top_test.u_top_1.regwrite top_test.u_top_1.rfe top_test.u_top_1.rs_field_id top_test.u_top_1.rst top_test.u_top_1.rt_field_id top_test.u_top_1.rt_out_ex top_test.u_top_1.s_u_c top_test.u_top_1.store_data top_test.u_top_1.sw_in_mem top_test.u_top_1.trap top_test.u_top_1.vector top_test.u_top_1.vector_ex_in top_test.u_top_1.vector_ex_out top_test.u_top_1.vector_id_in top_test.u_top_1.vector_id_out top_test.u_top_1.vector_if_out top_test.u_top_1.vector_mem_in top_test.u_top_1.vector_mem_out top_test.u_top_1.wb_data
-Created probe 1
-ncsim> reset
-Loaded snapshot worklib.top_test:v
-ncsim> run
-
-Reach IN_TOTAL.
-Simulation complete via $finish(1) at time 100005 NS + 0
-./top_test.v:113         $finish;
-ncsim> probe -create -shm top_test.u_top_1.IAR.clk top_test.u_top_1.IAR.exception top_test.u_top_1.IAR.memwrite top_test.u_top_1.IAR.oint_ex top_test.u_top_1.IAR.pc_8_in top_test.u_top_1.IAR.pc_out top_test.u_top_1.IAR.reset top_test.u_top_1.IAR.s_u top_test.u_top_1.IAR.trap top_test.u_top_1.IAR.trap_store top_test.u_top_1.if_stage.IAR_pc top_test.u_top_1.if_stage.beq top_test.u_top_1.if_stage.clk top_test.u_top_1.if_stage.exception top_test.u_top_1.if_stage.jr top_test.u_top_1.if_stage.offset28 top_test.u_top_1.if_stage.pc_4_id top_test.u_top_1.if_stage.pc_4_out top_test.u_top_1.if_stage.pc_in top_test.u_top_1.if_stage.pc_mux4 top_test.u_top_1.if_stage.pc_out top_test.u_top_1.if_stage.pc_rfe top_test.u_top_1.if_stage.pc_src top_test.u_top_1.if_stage.pc_write top_test.u_top_1.if_stage.reset top_test.u_top_1.if_stage.rfe top_test.u_top_1.if_stage.s_u top_test.u_top_1.if_stage.vector_3 top_test.u_top_1.if_stage.vector_if top_test.u_top_1.if_stage.vector_no_3
-Created probe 2
-ncsim> reset
-Loaded snapshot worklib.top_test:v
-ncsim> run
-
-Reach IN_TOTAL.
-Simulation complete via $finish(1) at time 100005 NS + 0
-./top_test.v:113         $finish;
-ncsim> 
+Recompiling... reason: file './IAR.v' is newer than expected.
+	expected: Fri Jun 10 18:51:59 2016
+	actual:   Fri Jun 10 20:09:38 2016
+file: /home/koyo/verilog/alu_control.v
+file: /home/koyo/verilog/alu.v
+file: /home/koyo/verilog/branch.v
+file: /home/koyo/verilog/control.v
+file: /home/koyo/verilog/DW_ram_2r_w_s_dff.v
+file: /home/koyo/verilog/Exception.v
+file: /home/koyo/verilog/ex_mem_reg.v
+file: /home/koyo/verilog/ex_stage.v
+file: /home/koyo/verilog/forward.v
+file: /home/koyo/verilog/hazard.v
+file: /home/koyo/verilog/IAR.v
+file: /home/koyo/verilog/id_ex_reg.v
+file: /home/koyo/verilog/id_stage.v
+file: /home/koyo/verilog/if_id_reg.v
+file: /home/koyo/verilog/if_stage.v
+file: /home/koyo/verilog/Iv_ex.v
+file: /home/koyo/verilog/Iv_id.v
+	module worklib.Iv_id:v
+		errors: 0, warnings: 0
+file: /home/koyo/verilog/Iv_if.v
+file: /home/koyo/verilog/Iv_mem.v
+file: /home/koyo/verilog/mem_stage.v
+file: /home/koyo/verilog/mem_wb_reg.v
+file: /home/koyo/verilog/mux_4.v
+file: /home/koyo/verilog/pc.v
+file: /home/koyo/verilog/rf32x32.v
+file: /home/koyo/verilog/SR.v
+file: /home/koyo/verilog/top.v
+file: /home/koyo/verilog/wb_stage.v
+file: /home/koyo/verilog/top_test.v
+   //*** description for wave form 
+     |
+ncvlog: *W,NOCMIC (/home/koyo/verilog/top_test.v,117|5): error-prone block comment nested within block comment [2.3(IEEE)].
+		Caching library 'worklib' ....... Done
+	Elaborating the design hierarchy:
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.Iv_id:v <0x421c5b05>
+			streams:   1, words:   576
+	Loading native compiled code:     .................... Done
+	Building instance specific data structures.
+	Design hierarchy summary:
+		                 Instances  Unique
+		Modules:                28      28
+		Registers:             102     102
+		Scalar wires:           47       -
+		Expanded wires:         32       1
+		Vectored wires:         95       -
+		Always blocks:          11      11
+		Initial blocks:          3       3
+		Cont. assignments:      71     100
+		Pseudo assignments:      1       1
+		Simulation timescale:  1ps
+	Writing initial simulation snapshot: worklib.top_test:v
+ncsim: *E,STRPIN: Could not initialize SimVision connection: SimVision process terminated before a connection was established..
+TOOL:	ncverilog	06.20-s004: Exiting on Jun 11, 2016 at 00:48:39 JST  (total: 00:00:08)
+ncverilog: *E,SIMERR: Error during Simulation (status 2), exiting.
+TOOL:	ncverilog	06.20-s004: Exiting on Jun 11, 2016 at 00:48:39 JST  (total: 00:00:08)

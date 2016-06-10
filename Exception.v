@@ -6,7 +6,7 @@ module Exception(exception,vector,IACK,
 	input[2:0] OINT;
 	input rst,IE_c;
 
-	wire OINT_n=~OINT;
+	wire[2:0] OINT_n=~OINT;
 
 	output[4:0] vector;
 	output exception,IACK; //IACK is active low

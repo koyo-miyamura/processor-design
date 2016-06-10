@@ -117,13 +117,18 @@ module top(DAD,MREQ,WRITE,SIZE,IAD,
 	assign ex_mem_memread=control_in_mem[3];
 	assign ex_mem_regwrite=control_in_mem[0];
 
-	mem_stage mem_stage(.address_out(DAD), .data_write_out(store_data), .data_out(data_out_mem), .size(SIZE), .mem_write(WRITE), .mem_read(mem_read), .control_out(control_out_mem), .regdst_out(regdst_out_mem), .rfe(rfe), .vector_mem(vector_mem_out),
-		  .address_in(alu_in_mem), .data_write_in(sw_in_mem), .data_mem(load_data), .control_in(control_in_mem), .regdst_in(regdst_in_mem), .wb_data(wb_data), .forward_e(forward_e), .vector_ex(vector_mem_in), .s_u(s_u_c) );
+	//for Interrupt load store test
+	wire mem_write;
 
-	assign MREQ=(WRITE|mem_read);
+	mem_stage mem_stage(.address_out(DAD), .data_write_out(store_data), .data_out(data_out_mem), .size(SIZE), .mem_write(mem_write), .mem_read(mem_read), .control_out(control_out_mem), .regdst_out(regdst_out_mem), .rfe(rfe), .vector_mem(vector_mem_out),
+		  .address_in(alu_in_mem), .data_write_in(sw_in_mem), .data_mem(load_data), .control_in(control_in_mem), .regdst_in(regdst_in_mem), .wb_data(wb_data), .forward_e(forward_e), .vector_ex(vector_mem_in), .s_u(s_u_c) );
+	//for Interrupt load store test		
+	assign WRITE=((vector==5'b01011)||(vector==5'b01001))? 0:mem_write;
+	assign MREQ=((vector==5'b01011)||(vector==5'b01001))? 0:(WRITE|mem_read);
+
+
 	assign load_data=DDT;
 	assign DDT=(WRITE)? store_data:32'bz;
-
 
 	mem_wb_reg mem_wb_reg(.control_out(control_in_wb), .data_out(data_in_wb), .alu_out(alu_in_wb), .regdst_out(regdst_in_wb),
 		.control_in(control_out_mem), .data_in(data_out_mem), .alu_in(DAD), .regdst_in(regdst_out_mem),
@@ -140,8 +145,12 @@ module top(DAD,MREQ,WRITE,SIZE,IAD,
 	forward forward(.a(forward_a), .b(forward_b), .c(forward_c), .d(forward_d), .e(forward_e),
 	      .if_id_rs(rs_field_id), .if_id_rt(rt_field_id), .id_ex_rs(id_ex_rs), .id_ex_rt(id_ex_rt), .ex_mem_dst(regdst_in_mem), .mem_wb_dst(rd_add), .ex_mem_regwrite(ex_mem_regwrite), .mem_wb_regwrite(regwrite));
 
+	wire overflow;
+	assign overflow=(vector==5'b01100)? 1:0;
+
 	IAR IAR(.pc_out(IAR_pc),
-	        .memwrite(WRITE), .oint_ex(oint_ex), .exception(exception), .pc_8_in(pc_in_mem), .s_u(s_u_c), .reset(rst), .trap(trap), .clk(clk));
+	        .memwrite(WRITE), .oint_ex(oint_ex), .exception(exception), .pc_8_in(pc_in_mem), .reset(rst), .trap(trap), .overflow(overflow), 
+		.clk(clk));
 
 	SR  SR(.IE_c(IE_c), .s_u_c(s_u_c),
 	       .exception(exception), .rfe(rfe), .rst(rst), .clk(clk));
