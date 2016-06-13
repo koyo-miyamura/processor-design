@@ -1,0 +1,895 @@
+
+                      Design Compiler Graphical
+                            DC Ultra (TM)
+                             DFTMAX (TM)
+                         Power Compiler (TM)
+                           DesignWare (R)
+                           DC Expert (TM)
+                         Design Vision (TM)
+                          HDL Compiler (TM)
+                         VHDL Compiler (TM)
+                            DFT Compiler
+                        Library Compiler (TM)
+                         Design Compiler(R)
+
+          Version H-2013.03-SP4 for RHEL32 -- Sep 01, 2013
+               Copyright (c) 1988-2013 Synopsys, Inc.
+
+This software and the associated documentation are confidential and 
+proprietary to Synopsys, Inc. Your use or disclosure of this software 
+is subject to the terms and conditions of a written license agreement 
+between you, or your company, and Synopsys, Inc.
+
+Information: Invoking dc_shell using the 32-bit executable is not
+             recommended. It will be obsolete in a future release.
+             Please invoke dc_shell using the -64bit option.
+
+Initializing...
+# command : dc_shell-t -f runscript.tcl
+set search_path [concat "/home/abe/hit18-lib/kyoto_lib/synopsys/" $search_path]
+/home/abe/hit18-lib/kyoto_lib/synopsys/ . /opt/syopsys/syn_vH-2013.03-SP4/libraries/syn /opt/syopsys/syn_vH-2013.03-SP4/minpower/syn /opt/syopsys/syn_vH-2013.03-SP4/dw/syn_ver /opt/syopsys/syn_vH-2013.03-SP4/dw/sim_ver
+set LIB_MAX_FILE {HIT018.db}
+HIT018.db
+set link_library $LIB_MAX_FILE
+HIT018.db
+set target_library $LIB_MAX_FILE
+HIT018.db
+##read_verilog module
+read_verilog "/home/koyo/verilog/top.v"
+Loading db file '/home/abe/hit18-lib/kyoto_lib/synopsys/HIT018.db'
+Loading db file '/opt/syopsys/syn_vH-2013.03-SP4/libraries/syn/gtech.db'
+Loading db file '/opt/syopsys/syn_vH-2013.03-SP4/libraries/syn/standard.sldb'
+  Loading link library 'HIT018'
+  Loading link library 'gtech'
+Loading verilog file '/home/koyo/verilog/top.v'
+Detecting input file type automatically (-rtl or -netlist).
+Reading with Presto HDL Compiler (equivalent to -rtl option).
+Running PRESTO HDLC
+Compiling source file /home/koyo/verilog/top.v
+Warning:  /home/koyo/verilog/top.v:149: signed to unsigned assignment occurs. (VER-318)
+Warning:  /home/koyo/verilog/top.v:159: signed to unsigned assignment occurs. (VER-318)
+
+Inferred tri-state devices in process
+	in routine top line 131 in file
+		'/home/koyo/verilog/top.v'.
+=================================================
+| Register Name |       Type       | Width | MB |
+=================================================
+|    DDT_tri    | Tri-State Buffer |  32   | N  |
+=================================================
+Presto compilation completed successfully.
+Current design is now '/home/koyo/verilog/top.db:top'
+Loaded 1 design.
+Current design is 'top'.
+top
+read_verilog "/home/koyo/verilog/alu_control.v"
+Loading verilog file '/home/koyo/verilog/alu_control.v'
+Detecting input file type automatically (-rtl or -netlist).
+Reading with Presto HDL Compiler (equivalent to -rtl option).
+Running PRESTO HDLC
+Compiling source file /home/koyo/verilog/alu_control.v
+
+Statistics for case statements in always block at line 73 in file
+	'/home/koyo/verilog/alu_control.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            31            |    auto/auto     |
+|            33            |    auto/auto     |
+===============================================
+Presto compilation completed successfully.
+Current design is now '/home/koyo/verilog/alu_control.db:alu_control'
+Loaded 1 design.
+Current design is 'alu_control'.
+alu_control
+read_verilog "/home/koyo/verilog/alu.v"
+Loading verilog file '/home/koyo/verilog/alu.v'
+Detecting input file type automatically (-rtl or -netlist).
+Reading with Presto HDL Compiler (equivalent to -rtl option).
+Running PRESTO HDLC
+Compiling source file /home/koyo/verilog/alu.v
+Warning:  /home/koyo/verilog/alu.v:26: signed to unsigned assignment occurs. (VER-318)
+Warning:  /home/koyo/verilog/alu.v:32: signed to unsigned assignment occurs. (VER-318)
+Warning:  /home/koyo/verilog/alu.v:67: signed to unsigned assignment occurs. (VER-318)
+
+Statistics for case statements in always block at line 65 in file
+	'/home/koyo/verilog/alu.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            21            |    auto/auto     |
+===============================================
+Presto compilation completed successfully.
+Current design is now '/home/koyo/verilog/alu.db:alu'
+Loaded 1 design.
+Current design is 'alu'.
+alu
+read_verilog "/home/koyo/verilog/branch.v"
+Loading verilog file '/home/koyo/verilog/branch.v'
+Detecting input file type automatically (-rtl or -netlist).
+Reading with Presto HDL Compiler (equivalent to -rtl option).
+Running PRESTO HDLC
+Compiling source file /home/koyo/verilog/branch.v
+
+Statistics for case statements in always block at line 54 in file
+	'/home/koyo/verilog/branch.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            22            |    auto/auto     |
+===============================================
+Warning:  /home/koyo/verilog/branch.v:14: X and/or Z bits occur in an actual parameter to the 'branch' design template. (ELAB-388)
+Presto compilation completed successfully.
+Current design is now '/home/koyo/verilog/branch.db:branch'
+Loaded 1 design.
+Current design is 'branch'.
+branch
+read_verilog "/home/koyo/verilog/control.v"
+Loading verilog file '/home/koyo/verilog/control.v'
+Detecting input file type automatically (-rtl or -netlist).
+Reading with Presto HDL Compiler (equivalent to -rtl option).
+Running PRESTO HDLC
+Compiling source file /home/koyo/verilog/control.v
+Warning:  /home/koyo/verilog/control.v:84: signed to unsigned assignment occurs. (VER-318)
+
+Statistics for case statements in always block at line 82 in file
+	'/home/koyo/verilog/control.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            26            |    auto/auto     |
+|            29            |    auto/auto     |
+|            40            |    auto/auto     |
+===============================================
+Presto compilation completed successfully.
+Current design is now '/home/koyo/verilog/control.db:control'
+Loaded 1 design.
+Current design is 'control'.
+control
+read_verilog "/home/koyo/verilog/DW_ram_2r_w_s_dff.v"
+Loading verilog file '/home/koyo/verilog/DW_ram_2r_w_s_dff.v'
+Detecting input file type automatically (-rtl or -netlist).
+Reading with Presto HDL Compiler (equivalent to -rtl option).
+Running PRESTO HDLC
+Compiling source file /home/koyo/verilog/DW_ram_2r_w_s_dff.v
+Presto compilation completed successfully.
+Current design is now '/home/koyo/verilog/DW_ram_2r_w_s_dff.db:DW_ram_2r_w_s_dff'
+Loaded 1 design.
+Current design is 'DW_ram_2r_w_s_dff'.
+DW_ram_2r_w_s_dff
+read_verilog "/home/koyo/verilog/Exception.v"
+Loading verilog file '/home/koyo/verilog/Exception.v'
+Detecting input file type automatically (-rtl or -netlist).
+Reading with Presto HDL Compiler (equivalent to -rtl option).
+Running PRESTO HDLC
+Compiling source file /home/koyo/verilog/Exception.v
+Presto compilation completed successfully.
+Current design is now '/home/koyo/verilog/Exception.db:Exception'
+Loaded 1 design.
+Current design is 'Exception'.
+Exception
+read_verilog "/home/koyo/verilog/ex_mem_reg.v"
+Loading verilog file '/home/koyo/verilog/ex_mem_reg.v'
+Detecting input file type automatically (-rtl or -netlist).
+Reading with Presto HDL Compiler (equivalent to -rtl option).
+Running PRESTO HDLC
+Compiling source file /home/koyo/verilog/ex_mem_reg.v
+Warning:  /home/koyo/verilog/ex_mem_reg.v:14: Port alu_out is implicitly typed  (VER-987)
+Warning:  /home/koyo/verilog/ex_mem_reg.v:14: Port sw_out is implicitly typed  (VER-987)
+Warning:  /home/koyo/verilog/ex_mem_reg.v:14: Port pc_out is implicitly typed  (VER-987)
+Error:  /home/koyo/verilog/ex_mem_reg.v:18: The statements in this 'always' block are outside the scope of the synthesis policy. Only an 'if' statement is allowed at the top level in this always block. (ELAB-302)
+*** Presto compilation terminated with 1 errors. ***
+Error: Can't read 'verilog' file '/home/koyo/verilog/ex_mem_reg.v'. (UID-59)
+No designs were read
+read_verilog "/home/koyo/verilog/ex_stage.v"
+Loading verilog file '/home/koyo/verilog/ex_stage.v'
+Detecting input file type automatically (-rtl or -netlist).
+Reading with Presto HDL Compiler (equivalent to -rtl option).
+Running PRESTO HDLC
+Compiling source file /home/koyo/verilog/ex_stage.v
+
+Inferred tri-state devices in process
+	in routine ex_stage line 28 in file
+		'/home/koyo/verilog/ex_stage.v'.
+==================================================
+| Register Name  |       Type       | Width | MB |
+==================================================
+| regdst_out_tri | Tri-State Buffer |   5   | N  |
+==================================================
+
+Inferred tri-state devices in process
+	in routine ex_stage line 36 in file
+		'/home/koyo/verilog/ex_stage.v'.
+=================================================
+| Register Name |       Type       | Width | MB |
+=================================================
+|  rt_out_tri   | Tri-State Buffer |   5   | N  |
+=================================================
+
+Inferred tri-state devices in process
+	in routine ex_stage line 43 in file
+		'/home/koyo/verilog/ex_stage.v'.
+=================================================
+| Register Name |       Type       | Width | MB |
+=================================================
+| data1_in_tri  | Tri-State Buffer |  32   | N  |
+=================================================
+Presto compilation completed successfully.
+Current design is now '/home/koyo/verilog/ex_stage.db:ex_stage'
+Loaded 1 design.
+Current design is 'ex_stage'.
+ex_stage
+read_verilog "/home/koyo/verilog/forward.v"
+Loading verilog file '/home/koyo/verilog/forward.v'
+Detecting input file type automatically (-rtl or -netlist).
+Reading with Presto HDL Compiler (equivalent to -rtl option).
+Running PRESTO HDLC
+Compiling source file /home/koyo/verilog/forward.v
+Presto compilation completed successfully.
+Current design is now '/home/koyo/verilog/forward.db:forward'
+Loaded 1 design.
+Current design is 'forward'.
+forward
+read_verilog "/home/koyo/verilog/hazard.v"
+Loading verilog file '/home/koyo/verilog/hazard.v'
+Detecting input file type automatically (-rtl or -netlist).
+Reading with Presto HDL Compiler (equivalent to -rtl option).
+Running PRESTO HDLC
+Compiling source file /home/koyo/verilog/hazard.v
+Presto compilation completed successfully.
+Current design is now '/home/koyo/verilog/hazard.db:hazard'
+Loaded 1 design.
+Current design is 'hazard'.
+hazard
+read_verilog "/home/koyo/verilog/IAR.v"
+Loading verilog file '/home/koyo/verilog/IAR.v'
+Detecting input file type automatically (-rtl or -netlist).
+Reading with Presto HDL Compiler (equivalent to -rtl option).
+Running PRESTO HDLC
+Compiling source file /home/koyo/verilog/IAR.v
+Error:  /home/koyo/verilog/IAR.v:19: The statements in this 'always' block are outside the scope of the synthesis policy. Only an 'if' statement is allowed at the top level in this always block. (ELAB-302)
+*** Presto compilation terminated with 1 errors. ***
+Error: Can't read 'verilog' file '/home/koyo/verilog/IAR.v'. (UID-59)
+No designs were read
+read_verilog "/home/koyo/verilog/id_ex_reg.v"
+Loading verilog file '/home/koyo/verilog/id_ex_reg.v'
+Detecting input file type automatically (-rtl or -netlist).
+Reading with Presto HDL Compiler (equivalent to -rtl option).
+Running PRESTO HDLC
+Compiling source file /home/koyo/verilog/id_ex_reg.v
+Error:  /home/koyo/verilog/id_ex_reg.v:18: The statements in this 'always' block are outside the scope of the synthesis policy. Only an 'if' statement is allowed at the top level in this always block. (ELAB-302)
+*** Presto compilation terminated with 1 errors. ***
+Error: Can't read 'verilog' file '/home/koyo/verilog/id_ex_reg.v'. (UID-59)
+No designs were read
+read_verilog "/home/koyo/verilog/id_stage.v"
+Loading verilog file '/home/koyo/verilog/id_stage.v'
+Detecting input file type automatically (-rtl or -netlist).
+Reading with Presto HDL Compiler (equivalent to -rtl option).
+Running PRESTO HDLC
+Compiling source file /home/koyo/verilog/id_stage.v
+Warning:  /home/koyo/verilog/id_stage.v:62: signed to unsigned assignment occurs. (VER-318)
+Presto compilation completed successfully.
+Current design is now '/home/koyo/verilog/id_stage.db:id_stage'
+Loaded 1 design.
+Current design is 'id_stage'.
+id_stage
+read_verilog "/home/koyo/verilog/if_id_reg.v"
+Loading verilog file '/home/koyo/verilog/if_id_reg.v'
+Detecting input file type automatically (-rtl or -netlist).
+Reading with Presto HDL Compiler (equivalent to -rtl option).
+Running PRESTO HDLC
+Compiling source file /home/koyo/verilog/if_id_reg.v
+Error:  /home/koyo/verilog/if_id_reg.v:15: The statements in this 'always' block are outside the scope of the synthesis policy. Only an 'if' statement is allowed at the top level in this always block. (ELAB-302)
+*** Presto compilation terminated with 1 errors. ***
+Error: Can't read 'verilog' file '/home/koyo/verilog/if_id_reg.v'. (UID-59)
+No designs were read
+read_verilog "/home/koyo/verilog/if_stage.v"
+Loading verilog file '/home/koyo/verilog/if_stage.v'
+Detecting input file type automatically (-rtl or -netlist).
+Reading with Presto HDL Compiler (equivalent to -rtl option).
+Running PRESTO HDLC
+Compiling source file /home/koyo/verilog/if_stage.v
+Presto compilation completed successfully.
+Current design is now '/home/koyo/verilog/if_stage.db:if_stage'
+Loaded 1 design.
+Current design is 'if_stage'.
+if_stage
+read_verilog "/home/koyo/verilog/Iv_ex.v"
+Loading verilog file '/home/koyo/verilog/Iv_ex.v'
+Detecting input file type automatically (-rtl or -netlist).
+Reading with Presto HDL Compiler (equivalent to -rtl option).
+Running PRESTO HDLC
+Compiling source file /home/koyo/verilog/Iv_ex.v
+Presto compilation completed successfully.
+Current design is now '/home/koyo/verilog/Iv_ex.db:Iv_ex'
+Loaded 1 design.
+Current design is 'Iv_ex'.
+Iv_ex
+read_verilog "/home/koyo/verilog/Iv_id.v"
+Loading verilog file '/home/koyo/verilog/Iv_id.v'
+Detecting input file type automatically (-rtl or -netlist).
+Reading with Presto HDL Compiler (equivalent to -rtl option).
+Running PRESTO HDLC
+Compiling source file /home/koyo/verilog/Iv_id.v
+Presto compilation completed successfully.
+Current design is now '/home/koyo/verilog/Iv_id.db:Iv_id'
+Loaded 1 design.
+Current design is 'Iv_id'.
+Iv_id
+read_verilog "/home/koyo/verilog/Iv_if.v"
+Loading verilog file '/home/koyo/verilog/Iv_if.v'
+Detecting input file type automatically (-rtl or -netlist).
+Reading with Presto HDL Compiler (equivalent to -rtl option).
+Running PRESTO HDLC
+Compiling source file /home/koyo/verilog/Iv_if.v
+Presto compilation completed successfully.
+Current design is now '/home/koyo/verilog/Iv_if.db:Iv_if'
+Loaded 1 design.
+Current design is 'Iv_if'.
+Iv_if
+read_verilog "/home/koyo/verilog/Iv_mem.v"
+Loading verilog file '/home/koyo/verilog/Iv_mem.v'
+Detecting input file type automatically (-rtl or -netlist).
+Reading with Presto HDL Compiler (equivalent to -rtl option).
+Running PRESTO HDLC
+Compiling source file /home/koyo/verilog/Iv_mem.v
+Presto compilation completed successfully.
+Current design is now '/home/koyo/verilog/Iv_mem.db:Iv_mem'
+Loaded 1 design.
+Current design is 'Iv_mem'.
+Iv_mem
+read_verilog "/home/koyo/verilog/mem_stage.v"
+Loading verilog file '/home/koyo/verilog/mem_stage.v'
+Detecting input file type automatically (-rtl or -netlist).
+Reading with Presto HDL Compiler (equivalent to -rtl option).
+Running PRESTO HDLC
+Compiling source file /home/koyo/verilog/mem_stage.v
+Presto compilation completed successfully.
+Current design is now '/home/koyo/verilog/mem_stage.db:mem_stage'
+Loaded 1 design.
+Current design is 'mem_stage'.
+mem_stage
+read_verilog "/home/koyo/verilog/mem_wb_reg.v"
+Loading verilog file '/home/koyo/verilog/mem_wb_reg.v'
+Detecting input file type automatically (-rtl or -netlist).
+Reading with Presto HDL Compiler (equivalent to -rtl option).
+Running PRESTO HDLC
+Compiling source file /home/koyo/verilog/mem_wb_reg.v
+Error:  /home/koyo/verilog/mem_wb_reg.v:18: The statements in this 'always' block are outside the scope of the synthesis policy. Only an 'if' statement is allowed at the top level in this always block. (ELAB-302)
+*** Presto compilation terminated with 1 errors. ***
+Error: Can't read 'verilog' file '/home/koyo/verilog/mem_wb_reg.v'. (UID-59)
+No designs were read
+read_verilog "/home/koyo/verilog/mux_4.v"
+Loading verilog file '/home/koyo/verilog/mux_4.v'
+Detecting input file type automatically (-rtl or -netlist).
+Reading with Presto HDL Compiler (equivalent to -rtl option).
+Running PRESTO HDLC
+Compiling source file /home/koyo/verilog/mux_4.v
+
+Statistics for case statements in always block at line 7 in file
+	'/home/koyo/verilog/mux_4.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            9             |    auto/auto     |
+===============================================
+Presto compilation completed successfully.
+Current design is now '/home/koyo/verilog/mux_4.db:mux_4'
+Loaded 1 design.
+Current design is 'mux_4'.
+mux_4
+read_verilog "/home/koyo/verilog/pc.v"
+Loading verilog file '/home/koyo/verilog/pc.v'
+Detecting input file type automatically (-rtl or -netlist).
+Reading with Presto HDL Compiler (equivalent to -rtl option).
+Running PRESTO HDLC
+Compiling source file /home/koyo/verilog/pc.v
+Error:  /home/koyo/verilog/pc.v:11: The statements in this 'always' block are outside the scope of the synthesis policy. Only an 'if' statement is allowed at the top level in this always block. (ELAB-302)
+*** Presto compilation terminated with 1 errors. ***
+Error: Can't read 'verilog' file '/home/koyo/verilog/pc.v'. (UID-59)
+No designs were read
+read_verilog "/home/koyo/verilog/rf32x32.v"
+Loading verilog file '/home/koyo/verilog/rf32x32.v'
+Detecting input file type automatically (-rtl or -netlist).
+Reading with Presto HDL Compiler (equivalent to -rtl option).
+Running PRESTO HDLC
+Compiling source file /home/koyo/verilog/rf32x32.v
+Presto compilation completed successfully.
+Current design is now '/home/koyo/verilog/rf32x32.db:rf32x32'
+Loaded 1 design.
+Current design is 'rf32x32'.
+rf32x32
+read_verilog "/home/koyo/verilog/SR.v"
+Loading verilog file '/home/koyo/verilog/SR.v'
+Detecting input file type automatically (-rtl or -netlist).
+Reading with Presto HDL Compiler (equivalent to -rtl option).
+Running PRESTO HDLC
+Compiling source file /home/koyo/verilog/SR.v
+Error:  /home/koyo/verilog/SR.v:9: Events that depend on two edges of the same variable are not supported by synthesis. (ELAB-93)
+*** Presto compilation terminated with 1 errors. ***
+Error: Can't read 'verilog' file '/home/koyo/verilog/SR.v'. (UID-59)
+No designs were read
+read_verilog "/home/koyo/verilog/top.v"
+Loading verilog file '/home/koyo/verilog/top.v'
+Detecting input file type automatically (-rtl or -netlist).
+Warning: Overwriting design file '/home/koyo/verilog/top'. (DDB-24)
+Reading with Presto HDL Compiler (equivalent to -rtl option).
+Running PRESTO HDLC
+Compiling source file /home/koyo/verilog/top.v
+Warning:  /home/koyo/verilog/top.v:149: signed to unsigned assignment occurs. (VER-318)
+Warning:  /home/koyo/verilog/top.v:159: signed to unsigned assignment occurs. (VER-318)
+
+Inferred tri-state devices in process
+	in routine top line 131 in file
+		'/home/koyo/verilog/top.v'.
+=================================================
+| Register Name |       Type       | Width | MB |
+=================================================
+|    DDT_tri    | Tri-State Buffer |  32   | N  |
+=================================================
+Presto compilation completed successfully.
+Current design is now '/home/koyo/verilog/top.db:top'
+Loaded 1 design.
+Current design is 'top'.
+top
+read_verilog "/home/koyo/verilog/wb_stage.v"
+Loading verilog file '/home/koyo/verilog/wb_stage.v'
+Detecting input file type automatically (-rtl or -netlist).
+Reading with Presto HDL Compiler (equivalent to -rtl option).
+Running PRESTO HDLC
+Compiling source file /home/koyo/verilog/wb_stage.v
+Presto compilation completed successfully.
+Current design is now '/home/koyo/verilog/wb_stage.db:wb_stage'
+Loaded 1 design.
+Current design is 'wb_stage'.
+wb_stage
+current_design "top"
+Current design is 'top'.
+{top}
+#read_verilog topmodule
+##current_design "TOP_MODULE_NAME"
+set_max_area 0
+1
+set_max_fanout 64 [current_design]
+Current design is 'top'.
+Information: Building the design 'if_id_reg'. (HDL-193)
+Warning: Cannot find the design 'if_id_reg' in the library 'WORK'. (LBR-1)
+Information: Building the design 'id_ex_reg'. (HDL-193)
+Warning: Cannot find the design 'id_ex_reg' in the library 'WORK'. (LBR-1)
+Information: Building the design 'ex_mem_reg'. (HDL-193)
+Warning: Cannot find the design 'ex_mem_reg' in the library 'WORK'. (LBR-1)
+Information: Building the design 'mem_wb_reg'. (HDL-193)
+Warning: Cannot find the design 'mem_wb_reg' in the library 'WORK'. (LBR-1)
+Information: Building the design 'IAR'. (HDL-193)
+Warning: Cannot find the design 'IAR' in the library 'WORK'. (LBR-1)
+Information: Building the design 'SR'. (HDL-193)
+Warning: Cannot find the design 'SR' in the library 'WORK'. (LBR-1)
+Information: Building the design 'pc'. (HDL-193)
+Warning: Cannot find the design 'pc' in the library 'WORK'. (LBR-1)
+Information: Building the design 'DW_ram_2r_w_s_dff' instantiated from design 'rf32x32' with
+	the parameters "32,32,0". (HDL-193)
+Warning: Cannot find the design 'DW_ram_2r_w_s_dff' in the library 'WORK'. (LBR-1)
+Warning: Unable to resolve reference 'if_id_reg' in 'top'. (LINK-5)
+Warning: Unable to resolve reference 'id_ex_reg' in 'top'. (LINK-5)
+Warning: Unable to resolve reference 'ex_mem_reg' in 'top'. (LINK-5)
+Warning: Unable to resolve reference 'mem_wb_reg' in 'top'. (LINK-5)
+Warning: Unable to resolve reference 'IAR' in 'top'. (LINK-5)
+Warning: Unable to resolve reference 'SR' in 'top'. (LINK-5)
+Warning: Unable to resolve reference 'pc' in 'if_stage'. (LINK-5)
+Warning: Unable to resolve reference 'DW_ram_2r_w_s_dff' in 'rf32x32'. (LINK-5)
+1
+create_clock -period 5.71 clk
+Warning: Design 'top' has '8' unresolved references. For more detailed information, use the "link" command. (UID-341)
+1
+set_clock_uncertainty -setup 0.0 [get_clock clk]
+Warning: Design 'top' has '8' unresolved references. For more detailed information, use the "link" command. (UID-341)
+Warning: Design 'top' has '8' unresolved references. For more detailed information, use the "link" command. (UID-341)
+1
+set_clock_uncertainty -hold 0.0 [get_clock clk]
+Warning: Design 'top' has '8' unresolved references. For more detailed information, use the "link" command. (UID-341)
+Warning: Design 'top' has '8' unresolved references. For more detailed information, use the "link" command. (UID-341)
+1
+set_input_delay  0.0 -clock clk [remove_from_collection [all_inputs] clk]
+Warning: Design 'top' has '8' unresolved references. For more detailed information, use the "link" command. (UID-341)
+1
+set_output_delay 0.0 -clock clk [remove_from_collection [all_outputs] clk]
+Warning: Design 'top' has '8' unresolved references. For more detailed information, use the "link" command. (UID-341)
+1
+# added ungroup
+ungroup -all -flatten
+Warning: Design 'top' has '8' unresolved references. For more detailed information, use the "link" command. (UID-341)
+Information: Updating graph... (UID-83)
+1
+compile -inc -map_ef high
+Warning: Design 'top' has '8' unresolved references. For more detailed information, use the "link" command. (UID-341)
+Warning: The cache_read directory ~ is not readable.  (SYNOPT-10)
+Warning: The cache_write directory ~ is not writable. So no cache elements can be written.   (SYNOPT-11)
+Information: Evaluating DesignWare library utilization. (UISN-27)
+
+============================================================================
+| DesignWare Building Block Library  |         Version         | Available |
+============================================================================
+| Basic DW Building Blocks           | H-2013.03-DWBB_201303.4 |     *     |
+| Licensed DW Building Blocks        |                         |           |
+============================================================================
+
+
+Information: There are 454 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
+
+
+
+  Beginning Pass 1 Mapping  (Incremental)
+  ------------------------
+  Processing 'top'
+Warning: Cell 'U44/U1' (*GEN*313) cannot be exactly translated 1 for 1 into target library.  Ignoring set_compile_directives. (TRANS-9)
+Warning: Cell 'U48/U1' (*GEN*309) cannot be exactly translated 1 for 1 into target library.  Ignoring set_compile_directives. (TRANS-9)
+Warning: Cell 'U49/U1' (*GEN*308) cannot be exactly translated 1 for 1 into target library.  Ignoring set_compile_directives. (TRANS-9)
+Warning: Cell 'U51/U1' (*GEN*306) cannot be exactly translated 1 for 1 into target library.  Ignoring set_compile_directives. (TRANS-9)
+Warning: Cell 'U52/U1' (*GEN*305) cannot be exactly translated 1 for 1 into target library.  Ignoring set_compile_directives. (TRANS-9)
+Warning: Cell 'U61/U1' (*GEN*296) cannot be exactly translated 1 for 1 into target library.  Ignoring set_compile_directives. (TRANS-9)
+Warning: Cell 'U62/U1' (*GEN*295) cannot be exactly translated 1 for 1 into target library.  Ignoring set_compile_directives. (TRANS-9)
+Warning: Cell 'U63/U1' (*GEN*294) cannot be exactly translated 1 for 1 into target library.  Ignoring set_compile_directives. (TRANS-9)
+Warning: Cell 'U64/U1' (*GEN*293) cannot be exactly translated 1 for 1 into target library.  Ignoring set_compile_directives. (TRANS-9)
+Warning: Cell 'U65/U1' (*GEN*292) cannot be exactly translated 1 for 1 into target library.  Ignoring set_compile_directives. (TRANS-9)
+Warning: Cell 'U66/U1' (*GEN*291) cannot be exactly translated 1 for 1 into target library.  Ignoring set_compile_directives. (TRANS-9)
+Warning: Cell 'U75/U1' (*GEN*282) cannot be exactly translated 1 for 1 into target library.  Ignoring set_compile_directives. (TRANS-9)
+Warning: Cell 'U76/U1' (*GEN*281) cannot be exactly translated 1 for 1 into target library.  Ignoring set_compile_directives. (TRANS-9)
+Warning: Cell 'U77/U1' (*GEN*280) cannot be exactly translated 1 for 1 into target library.  Ignoring set_compile_directives. (TRANS-9)
+Warning: Cell 'U80/U1' (*GEN*277) cannot be exactly translated 1 for 1 into target library.  Ignoring set_compile_directives. (TRANS-9)
+Warning: Cell 'U81/U1' (*GEN*276) cannot be exactly translated 1 for 1 into target library.  Ignoring set_compile_directives. (TRANS-9)
+Warning: Cell 'U84/U1' (*GEN*273) cannot be exactly translated 1 for 1 into target library.  Ignoring set_compile_directives. (TRANS-9)
+Warning: Cell 'U3/U246' (*GEN*241) cannot be exactly translated 1 for 1 into target library.  Ignoring set_compile_directives. (TRANS-9)
+Warning: Cell 'U3/U272' (*GEN*267) cannot be exactly translated 1 for 1 into target library.  Ignoring set_compile_directives. (TRANS-9)
+Information: Building the design 'if_id_reg'. (HDL-193)
+Warning: Cannot find the design 'if_id_reg' in the library 'WORK'. (LBR-1)
+Information: Building the design 'id_ex_reg'. (HDL-193)
+Warning: Cannot find the design 'id_ex_reg' in the library 'WORK'. (LBR-1)
+Information: Building the design 'ex_mem_reg'. (HDL-193)
+Warning: Cannot find the design 'ex_mem_reg' in the library 'WORK'. (LBR-1)
+Information: Building the design 'mem_wb_reg'. (HDL-193)
+Warning: Cannot find the design 'mem_wb_reg' in the library 'WORK'. (LBR-1)
+Information: Building the design 'IAR'. (HDL-193)
+Warning: Cannot find the design 'IAR' in the library 'WORK'. (LBR-1)
+Information: Building the design 'SR'. (HDL-193)
+Warning: Cannot find the design 'SR' in the library 'WORK'. (LBR-1)
+Information: Building the design 'pc'. (HDL-193)
+Warning: Cannot find the design 'pc' in the library 'WORK'. (LBR-1)
+Information: Building the design 'DW_ram_2r_w_s_dff' instantiated from design 'top' with
+	the parameters "32,32,0". (HDL-193)
+Warning: Cannot find the design 'DW_ram_2r_w_s_dff' in the library 'WORK'. (LBR-1)
+Warning: Unable to resolve reference 'if_id_reg' in 'top'. (LINK-5)
+Warning: Unable to resolve reference 'id_ex_reg' in 'top'. (LINK-5)
+Warning: Unable to resolve reference 'ex_mem_reg' in 'top'. (LINK-5)
+Warning: Unable to resolve reference 'mem_wb_reg' in 'top'. (LINK-5)
+Warning: Unable to resolve reference 'IAR' in 'top'. (LINK-5)
+Warning: Unable to resolve reference 'SR' in 'top'. (LINK-5)
+Warning: Unable to resolve reference 'pc' in 'top'. (LINK-5)
+Warning: Unable to resolve reference 'DW_ram_2r_w_s_dff' in 'top'. (LINK-5)
+
+  Updating timing information
+Information: Updating design information... (UID-85)
+  Processing 'top_DW01_cmp2_0'
+  Processing 'top_DW01_cmp6_0'
+  Processing 'top_DW01_cmp6_1'
+  Processing 'top_DW01_cmp6_2'
+  Processing 'top_DW01_cmp6_3'
+  Processing 'top_DW01_cmp6_4'
+  Processing 'top_DW01_cmp6_5'
+  Processing 'top_DW01_cmp6_6'
+  Processing 'top_DW01_cmp2_1'
+  Processing 'top_DW01_cmp2_2'
+  Processing 'top_DW01_cmp2_3'
+  Processing 'top_DW01_cmp2_4'
+  Processing 'top_DW_rash_0'
+  Processing 'top_DW_rash_1'
+  Processing 'top_DW01_ash_0'
+  Processing 'top_DW_rash_2'
+  Processing 'top_DW_rash_3'
+  Processing 'top_DW01_ash_1'
+  Processing 'top_DW01_cmp2_5'
+  Processing 'top_DW01_add_0'
+  Processing 'top_DW01_add_1'
+  Processing 'top_DW01_add_2'
+  Processing 'top_DW01_cmp2_6'
+  Processing 'top_DW01_cmp6_7'
+  Processing 'top_DW01_cmp6_8'
+  Processing 'top_DW01_sub_0'
+  Processing 'top_DW01_add_3'
+  Processing 'top_DW01_cmp6_9'
+  Processing 'top_DW01_cmp6_10'
+
+  Beginning Mapping Optimizations  (High effort)  (Incremental)
+  -------------------------------
+
+  Beginning Incremental Implementation Selection
+  ----------------------------------------------
+  Selecting implementations
+  Building model 'DW01_NAND2'
+  Building model 'DW01_add_width32' (rpl)
+  Building model 'DW01_sub_width32' (rpl)
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:09  163791.4      1.85      58.8     169.1                          
+    0:00:09  163791.4      1.85      58.8     169.1                          
+    0:00:09  163791.4      1.85      58.8     169.1                          
+    0:00:09  163791.4      1.85      58.8     169.1                          
+    0:00:09  163791.4      1.85      58.8     169.1                          
+    0:00:09  162470.4      0.40      10.5     166.6                          
+    0:00:09  162470.4      0.40      10.5     166.6                          
+    0:00:09  162470.4      0.40      10.5     166.6                          
+    0:00:09  162470.4      0.40      10.5     166.6                          
+    0:00:09  162470.4      0.40      10.5     166.6                          
+    0:00:10  164221.4      0.00       0.0     113.7                          
+    0:00:10  166072.3      0.00       0.0      73.1                          
+    0:00:10  166425.6      0.00       0.0      61.4                          
+    0:00:10  166901.8      0.00       0.0      58.0                          
+    0:00:11  166909.4      0.00       0.0      57.5                          
+    0:00:11  166993.9      0.00       0.0      57.1                          
+    0:00:11  167032.3      0.00       0.0      57.0                          
+    0:00:11  167032.3      0.00       0.0      56.9                          
+    0:00:11  167032.3      0.00       0.0      56.9                          
+    0:00:11  167032.3      0.00       0.0      56.9                          
+
+
+
+  Beginning Delay Optimization Phase
+  ----------------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:11  167032.3      0.00       0.0      56.9                          
+    0:00:11  167032.3      0.00       0.0      56.9                          
+    0:00:11  167032.3      0.00       0.0      56.9                          
+
+
+  Beginning Design Rule Fixing  (max_fanout)  (max_capacitance)
+  ----------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:11  167032.3      0.00       0.0      56.9                          
+    0:00:11  167831.0      0.00       0.0      50.5 ex_stage/alu/srl_24_C65/net11832
+    0:00:12  171886.1      0.00       0.0      15.1 ex_stage/data2_in[12]    
+    0:00:12  172101.1      0.00       0.0       3.6 ex_stage/data2_in[0]     
+    0:00:12  172462.1      0.00       0.0       0.0                          
+
+
+  Beginning Area-Recovery Phase  (max_area 0)
+  -----------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:12  172462.1      0.00       0.0       0.0                          
+    0:00:12  172462.1      0.00       0.0       0.0                          
+    0:00:13  172300.8      0.00       0.0       0.0                          
+    0:00:13  172254.7      0.00       0.0       0.0                          
+    0:00:13  172254.7      0.00       0.0       0.0                          
+    0:00:13  172254.7      0.00       0.0       0.0                          
+    0:00:13  172254.7      0.00       0.0       0.0                          
+    0:00:13  172254.7      0.00       0.0       0.0                          
+    0:00:13  167424.0      0.00       0.0       0.0                          
+    0:00:13  167424.0      0.00       0.0       0.0                          
+    0:00:13  167424.0      0.00       0.0       0.0                          
+    0:00:13  167424.0      0.00       0.0       0.0                          
+    0:00:13  167424.0      0.00       0.0       0.0                          
+    0:00:13  167424.0      0.00       0.0       0.0                          
+    0:00:13  167424.0      0.00       0.0       0.0                          
+    0:00:13  167424.0      0.00       0.0       0.0                          
+    0:00:13  167424.0      0.00       0.0       0.0                          
+    0:00:13  167424.0      0.00       0.0       0.0                          
+    0:00:13  167424.0      0.00       0.0       0.0                          
+    0:00:13  167424.0      0.00       0.0       0.0                          
+    0:00:13  167424.0      0.00       0.0       0.0                          
+    0:00:15  167301.1      0.00       0.0       0.0                          
+    0:00:15  167293.4      0.00       0.0       0.0                          
+    0:00:15  167293.4      0.00       0.0       0.0                          
+    0:00:15  167293.4      0.00       0.0       0.0                          
+    0:00:15  167293.4      0.00       0.0       0.0                          
+    0:00:15  167293.4      0.00       0.0       0.0                          
+    0:00:15  167293.4      0.00       0.0       0.0                          
+    0:00:15  167293.4      0.00       0.0       0.0                          
+    0:00:15  167293.4      0.00       0.0       0.0                          
+    0:00:15  167293.4      0.00       0.0       0.0                          
+    0:00:15  167293.4      0.00       0.0       0.0                          
+    0:00:15  167293.4      0.00       0.0       0.0                          
+Loading db file '/home/abe/hit18-lib/kyoto_lib/synopsys/HIT018.db'
+
+  Optimization Complete
+  ---------------------
+1
+# compile -map_effort medium -area_effort high -incremental_mapping
+report_timing -max_paths 1
+Information: Building the design 'if_id_reg'. (HDL-193)
+Warning: Cannot find the design 'if_id_reg' in the library 'WORK'. (LBR-1)
+Information: Building the design 'id_ex_reg'. (HDL-193)
+Warning: Cannot find the design 'id_ex_reg' in the library 'WORK'. (LBR-1)
+Information: Building the design 'ex_mem_reg'. (HDL-193)
+Warning: Cannot find the design 'ex_mem_reg' in the library 'WORK'. (LBR-1)
+Information: Building the design 'mem_wb_reg'. (HDL-193)
+Warning: Cannot find the design 'mem_wb_reg' in the library 'WORK'. (LBR-1)
+Information: Building the design 'IAR'. (HDL-193)
+Warning: Cannot find the design 'IAR' in the library 'WORK'. (LBR-1)
+Information: Building the design 'SR'. (HDL-193)
+Warning: Cannot find the design 'SR' in the library 'WORK'. (LBR-1)
+Information: Building the design 'pc'. (HDL-193)
+Warning: Cannot find the design 'pc' in the library 'WORK'. (LBR-1)
+Information: Building the design 'DW_ram_2r_w_s_dff' instantiated from design 'top' with
+	the parameters "32,32,0". (HDL-193)
+Warning: Cannot find the design 'DW_ram_2r_w_s_dff' in the library 'WORK'. (LBR-1)
+Warning: Unable to resolve reference 'if_id_reg' in 'top'. (LINK-5)
+Warning: Unable to resolve reference 'id_ex_reg' in 'top'. (LINK-5)
+Warning: Unable to resolve reference 'ex_mem_reg' in 'top'. (LINK-5)
+Warning: Unable to resolve reference 'mem_wb_reg' in 'top'. (LINK-5)
+Warning: Unable to resolve reference 'IAR' in 'top'. (LINK-5)
+Warning: Unable to resolve reference 'SR' in 'top'. (LINK-5)
+Warning: Unable to resolve reference 'pc' in 'top'. (LINK-5)
+Warning: Unable to resolve reference 'DW_ram_2r_w_s_dff' in 'top'. (LINK-5)
+Warning: Design 'top' has '8' unresolved references. For more detailed information, use the "link" command. (UID-341)
+Information: Updating design information... (UID-85)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : top
+Version: H-2013.03-SP4
+Date   : Mon Jun 13 13:27:23 2016
+****************************************
+
+Operating Conditions: TYPICAL   Library: HIT018
+Wire Load Model Mode: top
+
+  Startpoint: rst (input port clocked by clk)
+  Endpoint: DDT[7] (output port clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  top                4k                    HIT018
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  input external delay                     0.00       0.00 f
+  rst (in)                                 0.00       0.00 f
+  U3624/Y (HIT18INVP005)                   0.16       0.16 r
+  U3623/Y (HIT18NAND2P005)                 0.33       0.49 f
+  U3622/Y (HIT18INVP005)                   0.39       0.88 r
+  U2210/Y (HIT18AOI21P010)                 0.14       1.03 f
+  U3586/Y (HIT18INVP005)                   0.28       1.31 r
+  U2099/Y (HIT18NOR4P020)                  0.12       1.43 f
+  U2262/Y (HIT18NOR2P030)                  0.51       1.94 r
+  DDT_tri[7]/Y (HIT18TBUFP010)             0.27       2.21 r
+  DDT[7] (inout)                           0.00       2.21 r
+  data arrival time                                   2.21
+
+  clock clk (rise edge)                    5.71       5.71
+  clock network delay (ideal)              0.00       5.71
+  output external delay                    0.00       5.71
+  data required time                                  5.71
+  -----------------------------------------------------------
+  data required time                                  5.71
+  data arrival time                                  -2.21
+  -----------------------------------------------------------
+  slack (MET)                                         3.50
+
+
+1
+report_area
+Warning: Design 'top' has '8' unresolved references. For more detailed information, use the "link" command. (UID-341)
+ 
+****************************************
+Report : area
+Design : top
+Version: H-2013.03-SP4
+Date   : Mon Jun 13 13:27:23 2016
+****************************************
+
+Library(s) Used:
+
+    HIT018 (File: /home/abe/hit18-lib/kyoto_lib/synopsys/HIT018.db)
+
+Number of ports:                          140
+Number of nets:                          2812
+Number of cells:                         1869
+Number of combinational cells:           1805
+Number of sequential cells:                50
+Number of macros/black boxes:               0
+Number of buf/inv:                        425
+Number of references:                      88
+
+Combinational area:             165035.521944
+Buf/Inv area:                    18324.480698
+Noncombinational area:            2257.919930
+Macro/Black Box area:                0.000000
+Net Interconnect area:      undefined  (Wire load has zero net area)
+
+Total cell area:                167293.441874
+Total area:                 undefined
+
+Information: This design contains black box (unknown) components. (RPT-8)
+1
+report_power
+Loading db file '/home/abe/hit18-lib/kyoto_lib/synopsys/HIT018.db'
+Warning: Main library 'HIT018' does not specify the following unit required for power: 'Leakage Power'. (PWR-424)
+Information: Propagating switching activity (low effort zero delay simulation). (PWR-6)
+Warning: Design has unannotated primary inputs. (PWR-414)
+Warning: Design has unannotated black box outputs. (PWR-428)
+ 
+****************************************
+Report : power
+        -analysis_effort low
+Design : top
+Version: H-2013.03-SP4
+Date   : Mon Jun 13 13:27:24 2016
+****************************************
+
+
+Library(s) Used:
+
+    HIT018 (File: /home/abe/hit18-lib/kyoto_lib/synopsys/HIT018.db)
+
+
+Operating Conditions: TYPICAL   Library: HIT018
+Wire Load Model Mode: top
+
+Design        Wire Load Model            Library
+------------------------------------------------
+top                    4k                HIT018
+
+
+Global Operating Voltage = 1.8  
+Power-specific unit information :
+    Voltage Units = 1V
+    Capacitance Units = 1.000000pf
+    Time Units = 1ns
+    Dynamic Power Units = 1mW    (derived from V,C,T units)
+    Leakage Power Units = Unitless
+
+
+  Cell Internal Power  =   3.2349 mW   (32%)
+  Net Switching Power  =   6.8718 mW   (68%)
+                         ---------
+Total Dynamic Power    =  10.1067 mW  (100%)
+
+Cell Leakage Power     =   0.0000 
+
+Error: Either dynamic power or leakage power, in the library, is unitless. Unable to display complete power group summary. (PWR-799)
+
+                 Internal         Switching           Leakage            Total
+Power Group      Power            Power               Power              Power   (   %    )  Attrs
+--------------------------------------------------------------------------------------------------
+io_pad             0.0000            0.0000            0.0000               NA   (     N/A)
+memory             0.0000            0.0000            0.0000               NA   (     N/A)
+black_box          0.0000            0.0000            0.0000               NA   (     N/A)
+clock_network      3.2347            6.8546            0.0000               NA   (     N/A)
+register           0.0000            0.0000            0.0000               NA   (     N/A)
+sequential         0.0000            0.0000            0.0000               NA   (     N/A)
+combinational  1.9954e-04        9.2987e-04            0.0000               NA   (     N/A)
+--------------------------------------------------------------------------------------------------
+Total              3.2349 mW         6.8556 mW         0.0000               NA        
+1
+write -hier -format verilog -output HOGEHOGE_PROC.vnet
+Warning: Design 'top' has '8' unresolved references. For more detailed information, use the "link" command. (UID-341)
+Writing verilog file '/home/koyo/verilog/HOGEHOGE_PROC.vnet'.
+Warning: Verilog 'assign' or 'tran' statements are written out. (VO-4)
+1
+write -hier -output HOGEHOGE_PROC.db
+Warning: Design 'top' has '8' unresolved references. For more detailed information, use the "link" command. (UID-341)
+Writing ddc file 'HOGEHOGE_PROC.db'.
+1
+quit
+
+Thank you...

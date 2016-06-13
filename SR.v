@@ -8,7 +8,7 @@ module SR(IE_c,s_u_c,
 	
 	always @ (posedge clk or rst)
 	begin
-		casez({rst,exception,rfe}) //reset is active low
+		case({rst,exception,rfe}) //reset is active low
 			//suspend
 			3'b100:
 			begin
@@ -25,7 +25,7 @@ module SR(IE_c,s_u_c,
 			end
 
 			//exception
-			3'b11z:
+			3'b110,3'b111:
 			begin	
 			sr_reg[30:28]<=sr_reg[26:24];
 			sr_reg[26:24]<=sr_reg[26:24];
@@ -35,7 +35,7 @@ module SR(IE_c,s_u_c,
 			end
 
 			//reset
-			3'b0zz:
+			3'b000,3'b001,3'b010,3'b011:
 			begin
 			sr_reg<=32'b0000_0000_0000_0000_0000_0000_0000_0011;   
 			end

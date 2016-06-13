@@ -14,7 +14,7 @@ module IAR(pc_out,
 	
 	//PC back to at overflow
 	wire trap_store=((memwrite&&oint_ex)||(trap));
-	wire valid=(pc_8_in<=32'h00010008);
+	wire valid=(pc_8_in<32'h00010008);
 
 	always @ (posedge clk or negedge reset)
 	begin
