@@ -1,5 +1,5 @@
 ncverilog: 06.20-s004: (c) Copyright 1995-2008 Cadence Design Systems, Inc.
-TOOL:	ncverilog	06.20-s004: Started on Jun 12, 2016 at 22:00:02 JST
+TOOL:	ncverilog	06.20-s004: Started on Jun 13, 2016 at 14:03:51 JST
 ncverilog
 	-s
 	+gui
@@ -32,9 +32,9 @@ ncverilog
 	/home/koyo/verilog/top.v
 	/home/koyo/verilog/wb_stage.v
 	/home/koyo/verilog/top_test.v
-Recompiling... reason: file './top_test.v' is newer than expected.
-	expected: Sun Jun 12 21:40:57 2016
-	actual:   Sun Jun 12 22:00:00 2016
+Recompiling... reason: file './SR.v' is newer than expected.
+	expected: Mon Jun 13 13:50:25 2016
+	actual:   Mon Jun 13 14:03:45 2016
 file: /home/koyo/verilog/alu_control.v
 file: /home/koyo/verilog/alu.v
 file: /home/koyo/verilog/branch.v
@@ -60,20 +60,20 @@ file: /home/koyo/verilog/mux_4.v
 file: /home/koyo/verilog/pc.v
 file: /home/koyo/verilog/rf32x32.v
 file: /home/koyo/verilog/SR.v
+	module worklib.SR:v
+		errors: 0, warnings: 0
 file: /home/koyo/verilog/top.v
 file: /home/koyo/verilog/wb_stage.v
 file: /home/koyo/verilog/top_test.v
    //*** description for wave form 
      |
 ncvlog: *W,NOCMIC (/home/koyo/verilog/top_test.v,117|5): error-prone block comment nested within block comment [2.3(IEEE)].
-	module worklib.top_test:v
-		errors: 0, warnings: 1
 		Caching library 'worklib' ....... Done
 	Elaborating the design hierarchy:
 	Building instance overlay tables: .................... Done
 	Generating native compiled code:
-		worklib.top_test:v <0x1fb8c4b5>
-			streams:  10, words: 16563
+		worklib.SR:v <0x32f078f5>
+			streams:  14, words:  4497
 	Loading native compiled code:     .................... Done
 	Building instance specific data structures.
 	Design hierarchy summary:
@@ -103,8 +103,24 @@ Loaded snapshot worklib.top_test:v
 ncsim> run
 
 Reach IN_TOTAL.
-Simulation complete via $finish(1) at time 1000005 NS + 0
+Simulation complete via $finish(1) at time 100005 NS + 0
+./top_test.v:113         $finish;
+ncsim> reset
+Loaded snapshot worklib.top_test:v
+ncsim> run
+
+Reach IN_TOTAL.
+Simulation complete via $finish(1) at time 100005 NS + 0
+./top_test.v:113         $finish;
+ncsim> probe -create -shm top_test.u_top_1.SR.IE_c top_test.u_top_1.SR.clk top_test.u_top_1.SR.exception top_test.u_top_1.SR.rfe top_test.u_top_1.SR.rst top_test.u_top_1.SR.s_u_c top_test.u_top_1.SR.sr_reg
+Created probe 2
+ncsim> reset
+Loaded snapshot worklib.top_test:v
+ncsim> run
+
+Reach IN_TOTAL.
+Simulation complete via $finish(1) at time 100005 NS + 0
 ./top_test.v:113         $finish;
 ncsim> ^C
 ncsim> exit
-TOOL:	ncverilog	06.20-s004: Exiting on Jun 12, 2016 at 22:08:35 JST  (total: 00:08:33)
+TOOL:	ncverilog	06.20-s004: Exiting on Jun 13, 2016 at 14:13:16 JST  (total: 00:09:25)

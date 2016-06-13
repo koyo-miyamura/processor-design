@@ -405,7 +405,8 @@ Detecting input file type automatically (-rtl or -netlist).
 Reading with Presto HDL Compiler (equivalent to -rtl option).
 Running PRESTO HDLC
 Compiling source file /home/koyo/verilog/SR.v
-Error:  /home/koyo/verilog/SR.v:9: Events that depend on two edges of the same variable are not supported by synthesis. (ELAB-93)
+Error:  /home/koyo/verilog/SR.v:9: The statements in this 'always' block are outside the scope of the synthesis policy. Only an 'if' statement is allowed at the top level in this always block. (ELAB-302)
+Warning:  /home/koyo/verilog/SR.v:11: DEFAULT branch of CASE statement cannot be reached. (ELAB-311)
 *** Presto compilation terminated with 1 errors. ***
 Error: Can't read 'verilog' file '/home/koyo/verilog/SR.v'. (UID-59)
 No designs were read
@@ -743,7 +744,7 @@ Report : timing
         -max_paths 1
 Design : top
 Version: H-2013.03-SP4
-Date   : Mon Jun 13 13:27:23 2016
+Date   : Mon Jun 13 14:18:30 2016
 ****************************************
 
 Operating Conditions: TYPICAL   Library: HIT018
@@ -794,7 +795,7 @@ Warning: Design 'top' has '8' unresolved references. For more detailed informati
 Report : area
 Design : top
 Version: H-2013.03-SP4
-Date   : Mon Jun 13 13:27:23 2016
+Date   : Mon Jun 13 14:18:30 2016
 ****************************************
 
 Library(s) Used:
@@ -833,7 +834,7 @@ Report : power
         -analysis_effort low
 Design : top
 Version: H-2013.03-SP4
-Date   : Mon Jun 13 13:27:24 2016
+Date   : Mon Jun 13 14:18:31 2016
 ****************************************
 
 
