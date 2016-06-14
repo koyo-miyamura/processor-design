@@ -46,9 +46,13 @@
 module DW_ram_2r_w_s_dff (clk, rst_n, cs_n, wr_n, rd1_addr, rd2_addr, 
 			  wr_addr, data_in, data_rd1_out, data_rd2_out);
 
-   parameter data_width = 4;
-   parameter depth = 8;
-   parameter rst_mode = 1;
+//   parameter data_width = 4;
+//   parameter depth = 8;
+//   parameter rst_mode = 1;
+
+   parameter data_width = 32;
+   parameter depth = 32;
+   parameter rst_mode = 0;
 
 `define DW_addr_width ((depth>256)?((depth>4096)?((depth>16384)?((depth>32768)?16:15):((depth>8192)?14:13)):((depth>1024)?((depth>2048)?12:11):((depth>512)?10:9))):((depth>16)?((depth>64)?((depth>128)?8:7):((depth>32)?6:5)):((depth>4)?((depth>8)?4:3):((depth>2)?2:1))))
 

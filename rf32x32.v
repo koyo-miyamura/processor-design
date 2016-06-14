@@ -47,7 +47,7 @@ module rf32x32(
    assign  data2_out = (|rd2_addr) ? ram_data2_out : {data_width{`ZERO}};
 
    // Instance of DW_ram_2r_w_s_lat
-   DW_ram_2r_w_s_dff #(data_width, depth, rst_mode)
+   DW_ram_2r_w_s_dff // #(data_width, depth, rst_mode)
       u_DW_ram_2r_w_s_dff(
              .clk(clk_inv), .rst_n(rst_n),
              .cs_n(`LOW), .wr_n(wr_n),

@@ -7,7 +7,7 @@ module ex_mem_reg(control_out,alu_out,sw_out,regdst_out,vector_ex_out,pc_out,
 	input [4:0]regdst_in,vector_ex_in;
 	input ex_flush,reset,clk;
 	
-	output alu_out,sw_out,pc_out;
+	output [31:0]alu_out,sw_out,pc_out;
 	output [7:0]control_out;
 	output [4:0]regdst_out,vector_ex_out;
 
