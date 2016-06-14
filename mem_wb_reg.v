@@ -17,6 +17,7 @@ module mem_wb_reg(control_out,data_out,alu_out,regdst_out,
 
 	always @ (posedge clk or negedge reset)
 	begin
+/*
 		casez({reset,mem_flush}) //reset is active low
 			//normal
 			2'b10:
@@ -36,5 +37,27 @@ module mem_wb_reg(control_out,data_out,alu_out,regdst_out,
 			regdst_out<=0; 
 			end
 		endcase
+*/
+		if(reset==0)
+			begin
+			data_out<=0;
+			alu_out<=0;
+			control_out<=1;
+			regdst_out<=0; 
+			end
+		else if(mem_flush==1)
+			begin
+			data_out<=0;
+			alu_out<=0;
+			control_out<=1;
+			regdst_out<=0; 
+			end
+		else
+			begin
+			data_out<=data_in;
+			alu_out<=alu_in;
+			control_out<=control_in;
+			regdst_out<=regdst_in;
+			end
 	end
 endmodule

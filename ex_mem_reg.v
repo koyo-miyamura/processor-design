@@ -17,6 +17,7 @@ module ex_mem_reg(control_out,alu_out,sw_out,regdst_out,vector_ex_out,pc_out,
 
 	always @ (posedge clk or negedge reset)
 	begin
+/*
 		casez({reset,ex_flush}) //reset is active low
 			//normal
 			2'b10:
@@ -40,5 +41,33 @@ module ex_mem_reg(control_out,alu_out,sw_out,regdst_out,vector_ex_out,pc_out,
 			pc_out<=0;
 			end
 		endcase
+*/
+		if(reset==0)
+			begin
+			alu_out<=0;
+			sw_out<=0; 
+			control_out<=1;
+			regdst_out<=0; 
+			vector_ex_out<=0;
+			pc_out<=0;
+			end
+		else if(ex_flush==1)
+			begin
+			alu_out<=0;
+			sw_out<=0; 
+			control_out<=1;
+			regdst_out<=0; 
+			vector_ex_out<=0;
+			pc_out<=0;
+			end
+		else
+			begin
+			alu_out<=alu_in;
+			sw_out<=sw_in; 
+			control_out<=control_in;
+			regdst_out<=regdst_in;
+			vector_ex_out<=vector_ex_in;
+			pc_out<=pc_in;
+			end
 	end
 endmodule

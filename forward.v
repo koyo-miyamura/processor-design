@@ -6,7 +6,7 @@ module forward(a,b,c,d,e,
 	input ex_mem_regwrite, mem_wb_regwrite;
 	output [1:0]a,b;
 	output c,d,e;
-
+/*
 	function [1:0] forward_a;
 		input [4:0]id_ex_rs, ex_mem_dst, mem_wb_dst;
 		input ex_mem_regwrite, mem_wb_regwrite;
@@ -97,4 +97,17 @@ module forward(a,b,c,d,e,
 	assign c=forward_c(if_id_rs, ex_mem_dst, ex_mem_regwrite);
 	assign d=forward_d(if_id_rt, ex_mem_dst, ex_mem_regwrite);
 	assign e=forward_e(ex_mem_dst, mem_wb_dst, mem_wb_regwrite);
+*/
+	assign a=( (ex_mem_regwrite==0)&&(ex_mem_dst!=0)&&(ex_mem_dst==id_ex_rs) )? 2'b10:
+		 ( (mem_wb_regwrite==0)&&(mem_wb_dst!=0)&&(mem_wb_dst==id_ex_rs) )? 2'b01:
+		 								    2'b00;
+
+	assign b=( (ex_mem_regwrite==0)&&(ex_mem_dst!=0)&&(ex_mem_dst==id_ex_rt) )? 2'b10:
+		 ( (mem_wb_regwrite==0)&&(mem_wb_dst!=0)&&(mem_wb_dst==id_ex_rt) )? 2'b01:
+		 								    2'b00;
+
+	assign c=( (ex_mem_regwrite==0)&&(ex_mem_dst!=0)&&(ex_mem_dst==if_id_rs) )?   1:0;
+	assign d=( (ex_mem_regwrite==0)&&(ex_mem_dst!=0)&&(ex_mem_dst==if_id_rt) )?   1:0;
+	assign e=( (mem_wb_regwrite==0)&&(mem_wb_dst!=0)&&(mem_wb_dst==ex_mem_dst) )? 1:0;
+
 endmodule

@@ -75,7 +75,7 @@ module top(DAD,MREQ,WRITE,SIZE,IAD,
 
 	if_stage if_stage(.pc_4_out(pc_4_out_if), .pc_out(IAD), .vector_if(vector_if_out),
 		.beq(beq), .jr(jr), .pc_4_id(pc_4_id), .offset28(offset28), .pc_write(pc_write), .pc_src(pc_src), .rfe(rfe), .exception(exception), .vector_no_3(vector), .IAR_pc(IAR_pc), .s_u(s_u_c),
-		.reset(rst), .clk(clk));
+		.clk(clk));
 
 	assign pc_4_id=pc_4_in_id[31:28];
 	assign if_flush=(exception||rfe);

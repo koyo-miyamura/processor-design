@@ -17,6 +17,7 @@ module id_ex_reg(control_out,pc_4_out,rs_out,rt_out,offset_out,id_ex_rs,id_ex_rt
 
 	always @ (posedge clk or negedge reset)
 	begin
+/*
 		casez({reset,id_flush}) //reset is active low
 			//normal
 			2'b10:
@@ -46,5 +47,42 @@ module id_ex_reg(control_out,pc_4_out,rs_out,rt_out,offset_out,id_ex_rs,id_ex_rt
 			vector_id_out<=0;
 			end
 		endcase
+*/
+		if(reset==0)
+			begin
+			pc_4_out<=0;
+			rs_out<=0;
+			rt_out<=0; 
+			offset_out<=0;
+			control_out<=1;
+			id_ex_rs<=0;
+			id_ex_rt<=0; 
+			id_ex_rd<=0;
+			vector_id_out<=0;
+			end
+		else if(id_flush==1)
+			begin
+			pc_4_out<=0;
+			rs_out<=0;
+			rt_out<=0; 
+			offset_out<=0;
+			control_out<=1;
+			id_ex_rs<=0;
+			id_ex_rt<=0; 
+			id_ex_rd<=0;
+			vector_id_out<=0;
+			end
+		else
+			begin
+			pc_4_out<=pc_4_in;
+			rs_out<=rs_in;
+			rt_out<=rt_in; 
+			offset_out<=offset_in;
+			control_out<=control_in;
+			id_ex_rs<=if_id_rs;
+			id_ex_rt<=if_id_rt; 
+			id_ex_rd<=if_id_rd;
+			vector_id_out<=vector_id_in;
+			end
 	end
 endmodule

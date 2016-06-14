@@ -18,7 +18,7 @@ module IAR(pc_out,
 
 	always @ (posedge clk or negedge reset)
 	begin
-		casez({reset,valid,exception,trap_store})
+/*		casez({reset,valid,exception,trap_store})
 			//exception
 			4'b1011: pc_out<=pc_8_in-32'h0000_0004;
 			4'b1010: pc_out<=pc_8_in-32'h0000_0008;
@@ -27,5 +27,14 @@ module IAR(pc_out,
 			4'b0zzz: pc_out<=32'h000_10000;
 			default pc_out<=pc_out;
 		endcase
+*/
+		if(reset==0)
+			pc_out<=32'h000_10000;
+		else if(valid==0&&exception==1&&trap_store==1)
+			pc_out<=pc_8_in-32'h0000_0004;
+		else if(valid==0&&exception==1&&trap_store==0)
+			pc_out<=pc_8_in-32'h0000_0008;
+		else
+			pc_out<=pc_out;
 	end
 endmodule

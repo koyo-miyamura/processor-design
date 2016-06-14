@@ -14,6 +14,7 @@ module if_id_reg(ins_out,pc_4_out,vector_if_out,
 	
 	always @ (posedge clk or negedge reset)
 	begin
+/*
 		casez({reset,if_flush,if_id_write}) //reset is active low
 			//not write
 			3'b100:
@@ -36,5 +37,30 @@ module if_id_reg(ins_out,pc_4_out,vector_if_out,
 			ins_out<=32'b0;   pc_4_out<=0; vector_if_out<=0;
 			end
 		endcase
+*/
+		if(reset==0)
+		begin
+			ins_out<=32'b0;   
+			pc_4_out<=0; 
+			vector_if_out<=0;
+		end
+		else if(if_flush==1)
+		begin
+			ins_out<=32'b0;   
+			pc_4_out<=0; 
+			vector_if_out<=0;
+		end
+		else if(if_id_write==0)
+		begin
+			ins_out<=ins_out; 
+			pc_4_out<=pc_4_out; 
+			vector_if_out<=vector_if_out;
+		end
+		else
+		begin
+			ins_out<=ins_in;  
+			pc_4_out<=pc_4_in; 
+			vector_if_out<=vector_if_in;
+		end
 	end
 endmodule
