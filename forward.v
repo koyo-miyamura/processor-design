@@ -98,6 +98,24 @@ module forward(a,b,c,d,e,
 	assign d=forward_d(if_id_rt, ex_mem_dst, ex_mem_regwrite);
 	assign e=forward_e(ex_mem_dst, mem_wb_dst, mem_wb_regwrite);
 */
+
+/*
+	wire emreg_emdst=(ex_mem_regwrite==0)&&(ex_mem_dst!=0);
+	wire mewbreg_mewbdst=(mem_wb_regwrite==0)&&(mem_wb_dst!=0);
+
+	assign a=( emreg_emdst&&(ex_mem_dst==id_ex_rs) )? 2'b10:
+		 ( mewbreg_mewbdst&&(mem_wb_dst==id_ex_rs) )? 2'b01:
+							      2'b00;
+
+	assign b=( emreg_emdst&&(ex_mem_dst==id_ex_rt) )? 2'b10:
+		 ( mewbreg_mewbdst&&(mem_wb_dst==id_ex_rt) )? 2'b01:
+		 					      2'b00;
+
+	assign c=( emreg_emdst&&(ex_mem_dst==if_id_rs) )?   1:0;
+	assign d=( emreg_emdst&&(ex_mem_dst==if_id_rt) )?   1:0;
+	assign e=( mewbreg_mewbdst&&(mem_wb_dst==ex_mem_dst) )? 1:0;
+*/
+
 	assign a=( (ex_mem_regwrite==0)&&(ex_mem_dst!=0)&&(ex_mem_dst==id_ex_rs) )? 2'b10:
 		 ( (mem_wb_regwrite==0)&&(mem_wb_dst!=0)&&(mem_wb_dst==id_ex_rs) )? 2'b01:
 		 								    2'b00;
@@ -109,5 +127,4 @@ module forward(a,b,c,d,e,
 	assign c=( (ex_mem_regwrite==0)&&(ex_mem_dst!=0)&&(ex_mem_dst==if_id_rs) )?   1:0;
 	assign d=( (ex_mem_regwrite==0)&&(ex_mem_dst!=0)&&(ex_mem_dst==if_id_rt) )?   1:0;
 	assign e=( (mem_wb_regwrite==0)&&(mem_wb_dst!=0)&&(mem_wb_dst==ex_mem_dst) )? 1:0;
-
 endmodule

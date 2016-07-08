@@ -1,6 +1,6 @@
 #@ # 
 #@ # Running dc_shell Version H-2013.03-SP4 for linux -- Sep 01, 2013
-#@ # Date:   Tue Jun 14 15:31:30 2016
+#@ # Date:   Sat Jul  2 00:12:36 2016
 #@ # Run by: @horn.cpc.ait.kyushu-u.ac.jp
 #@ 
 
@@ -4801,8 +4801,8 @@ source /opt/syopsys/syn_vH-2013.03-SP4/admin/setup/.synopsys_dc.setup
 #@ 
 #@ # -- End source /opt/syopsys/syn_vH-2013.03-SP4/admin/setup/.synopsys_dc.setup
 
-source -echo -verbose /home/koyo/verilog/runscript_bykoki.tcl
-#@ # -- Starting source /home/koyo/verilog/runscript_bykoki.tcl
+source -echo -verbose /home/koyo/verilog/runscript_improved.tcl
+#@ # -- Starting source /home/koyo/verilog/runscript_improved.tcl
 
 #@ set search_path [concat "/home/abe/hit18-lib/kyoto_lib/synopsys/" $search_path]
 #@ set LIB_MAX_FILE {HIT018.db}
@@ -4845,10 +4845,13 @@ source -echo -verbose /home/koyo/verilog/runscript_bykoki.tcl
 #@ #read_verilog topmodule
 #@ ##current_design "TOP_MODULE_NAME"
 #@ 
-#@ set_max_area 0
+#@ group_path -to find(cell,"ex_mem_reg/regdst_out_reg*/D") -name clk -weight 10 
+#@ #group_path -to find(cell,"id_ex_reg/id_ex_rt_reg[1]/Q")  -name clk -weight 10
+#@ 
+#@ set_max_area 0 -ignore_tns
 #@ set_max_fanout 64 [current_design]
 #@ 
-#@ create_clock -period 3.90 clk
+#@ create_clock -period 3.60 -w {0 1.8} clk
 #@ set_clock_uncertainty -setup 0.0 [get_clock clk]
 #@ set_clock_uncertainty -hold 0.0 [get_clock clk]
 #@ set_input_delay  0.0 -clock clk [remove_from_collection [all_inputs] clk]
@@ -4857,9 +4860,14 @@ source -echo -verbose /home/koyo/verilog/runscript_bykoki.tcl
 #@ set_structure -boolean true
 #@ 
 #@ ##compile -map_effort medium -area_effort high -incremental_mapping
+#@ #ungroup forward -flatten
+#@ #ungroup ex_stage -flatten
 #@ compile
+#@ ungroup -all -flatten
 #@ compile -inc -map_ef high
 #@ 
+#@ #report_timing -net -input_pins -max_paths 1
+#@ #report_timing -path end delay max -max_path 80 -nworsr 1
 #@ report_timing -max_paths 1
 #@ report_area
 #@ report_power

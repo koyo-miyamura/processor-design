@@ -1,5 +1,5 @@
 ncverilog: 06.20-s004: (c) Copyright 1995-2008 Cadence Design Systems, Inc.
-TOOL:	ncverilog	06.20-s004: Started on Jun 13, 2016 at 14:03:51 JST
+TOOL:	ncverilog	06.20-s004: Started on Jul 01, 2016 at 14:41:02 JST
 ncverilog
 	-s
 	+gui
@@ -31,10 +31,10 @@ ncverilog
 	/home/koyo/verilog/SR.v
 	/home/koyo/verilog/top.v
 	/home/koyo/verilog/wb_stage.v
-	/home/koyo/verilog/top_test.v
-Recompiling... reason: file './SR.v' is newer than expected.
-	expected: Mon Jun 13 13:50:25 2016
-	actual:   Mon Jun 13 14:03:45 2016
+	/home/koyo/verilog/top_oint_test.v
+Recompiling... reason: file './Exception.v' is newer than expected.
+	expected: Fri Jun 10 19:00:11 2016
+	actual:   Fri Jul  1 14:37:43 2016
 file: /home/koyo/verilog/alu_control.v
 file: /home/koyo/verilog/alu.v
 file: /home/koyo/verilog/branch.v
@@ -60,33 +60,25 @@ file: /home/koyo/verilog/mux_4.v
 file: /home/koyo/verilog/pc.v
 file: /home/koyo/verilog/rf32x32.v
 file: /home/koyo/verilog/SR.v
-	module worklib.SR:v
-		errors: 0, warnings: 0
 file: /home/koyo/verilog/top.v
 file: /home/koyo/verilog/wb_stage.v
-file: /home/koyo/verilog/top_test.v
-   //*** description for wave form 
-     |
-ncvlog: *W,NOCMIC (/home/koyo/verilog/top_test.v,117|5): error-prone block comment nested within block comment [2.3(IEEE)].
+file: /home/koyo/verilog/top_oint_test.v
 		Caching library 'worklib' ....... Done
 	Elaborating the design hierarchy:
 	Building instance overlay tables: .................... Done
-	Generating native compiled code:
-		worklib.SR:v <0x32f078f5>
-			streams:  14, words:  4497
 	Loading native compiled code:     .................... Done
 	Building instance specific data structures.
 	Design hierarchy summary:
 		                 Instances  Unique
 		Modules:                28      28
-		Registers:             102     102
+		Registers:              79      79
 		Scalar wires:           47       -
 		Expanded wires:         32       1
 		Vectored wires:         95       -
-		Always blocks:          11      11
-		Initial blocks:          3       3
-		Cont. assignments:      71     100
-		Pseudo assignments:      1       1
+		Always blocks:          12      12
+		Initial blocks:          4       4
+		Cont. assignments:      72     100
+		Pseudo assignments:      3       3
 		Simulation timescale:  1ps
 	Writing initial simulation snapshot: worklib.top_test:v
 
@@ -102,25 +94,40 @@ ncsim> reset
 Loaded snapshot worklib.top_test:v
 ncsim> run
 
+Warning!  $shm_open - file waves.shm already in use (SHM database)
+            File: ./top_oint_test.v, line = 129, pos = 14
+           Scope: top_test
+            Time: 0 FS + 0
+
+
+Warning!  $shm_probe - SHM file not opened with $shm_open
+            File: ./top_oint_test.v, line = 130, pos = 15
+           Scope: top_test
+            Time: 0 FS + 0
+
+
 Reach IN_TOTAL.
-Simulation complete via $finish(1) at time 100005 NS + 0
-./top_test.v:113         $finish;
+Simulation complete via $finish(1) at time 655365 NS + 0
+./top_oint_test.v:122         $finish;
 ncsim> reset
 Loaded snapshot worklib.top_test:v
 ncsim> run
 
-Reach IN_TOTAL.
-Simulation complete via $finish(1) at time 100005 NS + 0
-./top_test.v:113         $finish;
-ncsim> probe -create -shm top_test.u_top_1.SR.IE_c top_test.u_top_1.SR.clk top_test.u_top_1.SR.exception top_test.u_top_1.SR.rfe top_test.u_top_1.SR.rst top_test.u_top_1.SR.s_u_c top_test.u_top_1.SR.sr_reg
-Created probe 2
-ncsim> reset
-Loaded snapshot worklib.top_test:v
-ncsim> run
+Warning!  $shm_open - file waves.shm already in use (SHM database)
+            File: ./top_oint_test.v, line = 129, pos = 14
+           Scope: top_test
+            Time: 0 FS + 0
+
+
+Warning!  $shm_probe - SHM file not opened with $shm_open
+            File: ./top_oint_test.v, line = 130, pos = 15
+           Scope: top_test
+            Time: 0 FS + 0
+
 
 Reach IN_TOTAL.
-Simulation complete via $finish(1) at time 100005 NS + 0
-./top_test.v:113         $finish;
+Simulation complete via $finish(1) at time 655365 NS + 0
+./top_oint_test.v:122         $finish;
 ncsim> ^C
 ncsim> exit
-TOOL:	ncverilog	06.20-s004: Exiting on Jun 13, 2016 at 14:13:16 JST  (total: 00:09:25)
+TOOL:	ncverilog	06.20-s004: Exiting on Jul 01, 2016 at 15:23:57 JST  (total: 00:42:55)

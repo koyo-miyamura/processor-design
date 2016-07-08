@@ -25,5 +25,5 @@
 /home/koyo/verilog/SR.v
 /home/koyo/verilog/top.v
 /home/koyo/verilog/wb_stage.v
-/home/koyo/verilog/top_test.v
+/home/koyo/verilog/top_oint_test.v
 -ACCESS +r
