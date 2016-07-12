@@ -1,0 +1,2482 @@
+
+                      Design Compiler Graphical
+                            DC Ultra (TM)
+                             DFTMAX (TM)
+                         Power Compiler (TM)
+                           DesignWare (R)
+                           DC Expert (TM)
+                         Design Vision (TM)
+                          HDL Compiler (TM)
+                         VHDL Compiler (TM)
+                            DFT Compiler
+                        Library Compiler (TM)
+                         Design Compiler(R)
+
+          Version H-2013.03-SP4 for RHEL32 -- Sep 01, 2013
+               Copyright (c) 1988-2013 Synopsys, Inc.
+
+This software and the associated documentation are confidential and 
+proprietary to Synopsys, Inc. Your use or disclosure of this software 
+is subject to the terms and conditions of a written license agreement 
+between you, or your company, and Synopsys, Inc.
+
+Information: Invoking dc_shell using the 32-bit executable is not
+             recommended. It will be obsolete in a future release.
+             Please invoke dc_shell using the -64bit option.
+
+Initializing...
+set search_path [concat "/home/abe/hit18-lib/kyoto_lib/synopsys/" $search_path]
+/home/abe/hit18-lib/kyoto_lib/synopsys/ . /opt/syopsys/syn_vH-2013.03-SP4/libraries/syn /opt/syopsys/syn_vH-2013.03-SP4/minpower/syn /opt/syopsys/syn_vH-2013.03-SP4/dw/syn_ver /opt/syopsys/syn_vH-2013.03-SP4/dw/sim_ver
+set LIB_MAX_FILE {HIT018.db}
+HIT018.db
+set link_library $LIB_MAX_FILE
+HIT018.db
+set target_library $LIB_MAX_FILE
+HIT018.db
+##read_verilog module
+read_verilog "/home/koyo/verilog/top.v"
+Loading db file '/home/abe/hit18-lib/kyoto_lib/synopsys/HIT018.db'
+Loading db file '/opt/syopsys/syn_vH-2013.03-SP4/libraries/syn/gtech.db'
+Loading db file '/opt/syopsys/syn_vH-2013.03-SP4/libraries/syn/standard.sldb'
+  Loading link library 'HIT018'
+  Loading link library 'gtech'
+Loading verilog file '/home/koyo/verilog/top.v'
+Detecting input file type automatically (-rtl or -netlist).
+Reading with Presto HDL Compiler (equivalent to -rtl option).
+Running PRESTO HDLC
+Compiling source file /home/koyo/verilog/top.v
+Warning:  /home/koyo/verilog/top.v:149: signed to unsigned assignment occurs. (VER-318)
+Warning:  /home/koyo/verilog/top.v:159: signed to unsigned assignment occurs. (VER-318)
+
+Inferred tri-state devices in process
+	in routine top line 131 in file
+		'/home/koyo/verilog/top.v'.
+=================================================
+| Register Name |       Type       | Width | MB |
+=================================================
+|    DDT_tri    | Tri-State Buffer |  32   | N  |
+=================================================
+Presto compilation completed successfully.
+Current design is now '/home/koyo/verilog/top.db:top'
+Loaded 1 design.
+Current design is 'top'.
+top
+read_verilog "/home/koyo/verilog/alu_control.v"
+Loading verilog file '/home/koyo/verilog/alu_control.v'
+Detecting input file type automatically (-rtl or -netlist).
+Reading with Presto HDL Compiler (equivalent to -rtl option).
+Running PRESTO HDLC
+Compiling source file /home/koyo/verilog/alu_control.v
+
+Statistics for case statements in always block at line 73 in file
+	'/home/koyo/verilog/alu_control.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            31            |    auto/auto     |
+|            33            |    auto/auto     |
+===============================================
+Presto compilation completed successfully.
+Current design is now '/home/koyo/verilog/alu_control.db:alu_control'
+Loaded 1 design.
+Current design is 'alu_control'.
+alu_control
+read_verilog "/home/koyo/verilog/alu.v"
+Loading verilog file '/home/koyo/verilog/alu.v'
+Detecting input file type automatically (-rtl or -netlist).
+Reading with Presto HDL Compiler (equivalent to -rtl option).
+Running PRESTO HDLC
+Compiling source file /home/koyo/verilog/alu.v
+Warning:  /home/koyo/verilog/alu.v:26: signed to unsigned assignment occurs. (VER-318)
+Warning:  /home/koyo/verilog/alu.v:32: signed to unsigned assignment occurs. (VER-318)
+Warning:  /home/koyo/verilog/alu.v:67: signed to unsigned assignment occurs. (VER-318)
+
+Statistics for case statements in always block at line 65 in file
+	'/home/koyo/verilog/alu.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            21            |    auto/auto     |
+===============================================
+Presto compilation completed successfully.
+Current design is now '/home/koyo/verilog/alu.db:alu'
+Loaded 1 design.
+Current design is 'alu'.
+alu
+read_verilog "/home/koyo/verilog/branch.v"
+Loading verilog file '/home/koyo/verilog/branch.v'
+Detecting input file type automatically (-rtl or -netlist).
+Reading with Presto HDL Compiler (equivalent to -rtl option).
+Running PRESTO HDLC
+Compiling source file /home/koyo/verilog/branch.v
+
+Statistics for case statements in always block at line 54 in file
+	'/home/koyo/verilog/branch.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            22            |    auto/auto     |
+===============================================
+Warning:  /home/koyo/verilog/branch.v:14: X and/or Z bits occur in an actual parameter to the 'branch' design template. (ELAB-388)
+Presto compilation completed successfully.
+Current design is now '/home/koyo/verilog/branch.db:branch'
+Loaded 1 design.
+Current design is 'branch'.
+branch
+read_verilog "/home/koyo/verilog/control.v"
+Loading verilog file '/home/koyo/verilog/control.v'
+Detecting input file type automatically (-rtl or -netlist).
+Reading with Presto HDL Compiler (equivalent to -rtl option).
+Running PRESTO HDLC
+Compiling source file /home/koyo/verilog/control.v
+Warning:  /home/koyo/verilog/control.v:84: signed to unsigned assignment occurs. (VER-318)
+
+Statistics for case statements in always block at line 82 in file
+	'/home/koyo/verilog/control.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            26            |    auto/auto     |
+|            29            |    auto/auto     |
+|            40            |    auto/auto     |
+===============================================
+Presto compilation completed successfully.
+Current design is now '/home/koyo/verilog/control.db:control'
+Loaded 1 design.
+Current design is 'control'.
+control
+read_verilog "/home/koyo/verilog/DW_ram_2r_w_s_dff.v"
+Loading verilog file '/home/koyo/verilog/DW_ram_2r_w_s_dff.v'
+Detecting input file type automatically (-rtl or -netlist).
+Reading with Presto HDL Compiler (equivalent to -rtl option).
+Running PRESTO HDLC
+Compiling source file /home/koyo/verilog/DW_ram_2r_w_s_dff.v
+Presto compilation completed successfully.
+Current design is now '/home/koyo/verilog/DW_ram_2r_w_s_dff.db:DW_ram_2r_w_s_dff'
+Loaded 1 design.
+Current design is 'DW_ram_2r_w_s_dff'.
+DW_ram_2r_w_s_dff
+read_verilog "/home/koyo/verilog/Exception.v"
+Loading verilog file '/home/koyo/verilog/Exception.v'
+Detecting input file type automatically (-rtl or -netlist).
+Reading with Presto HDL Compiler (equivalent to -rtl option).
+Running PRESTO HDLC
+Compiling source file /home/koyo/verilog/Exception.v
+Presto compilation completed successfully.
+Current design is now '/home/koyo/verilog/Exception.db:Exception'
+Loaded 1 design.
+Current design is 'Exception'.
+Exception
+read_verilog "/home/koyo/verilog/ex_mem_reg.v"
+Loading verilog file '/home/koyo/verilog/ex_mem_reg.v'
+Detecting input file type automatically (-rtl or -netlist).
+Reading with Presto HDL Compiler (equivalent to -rtl option).
+Running PRESTO HDLC
+Compiling source file /home/koyo/verilog/ex_mem_reg.v
+
+Inferred memory devices in process
+	in routine ex_mem_reg line 18 in file
+		'/home/koyo/verilog/ex_mem_reg.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|   regdst_out_reg    | Flip-flop |   5   |  Y  | N  | Y  | N  | N  | N  | N  |
+|  vector_ex_out_reg  | Flip-flop |   5   |  Y  | N  | Y  | N  | N  | N  | N  |
+|     pc_out_reg      | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+|     alu_out_reg     | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+|     sw_out_reg      | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+|   control_out_reg   | Flip-flop |   7   |  Y  | N  | Y  | N  | N  | N  | N  |
+|   control_out_reg   | Flip-flop |   1   |  N  | N  | N  | Y  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Current design is now '/home/koyo/verilog/ex_mem_reg.db:ex_mem_reg'
+Loaded 1 design.
+Current design is 'ex_mem_reg'.
+ex_mem_reg
+read_verilog "/home/koyo/verilog/ex_stage.v"
+Loading verilog file '/home/koyo/verilog/ex_stage.v'
+Detecting input file type automatically (-rtl or -netlist).
+Reading with Presto HDL Compiler (equivalent to -rtl option).
+Running PRESTO HDLC
+Compiling source file /home/koyo/verilog/ex_stage.v
+
+Inferred tri-state devices in process
+	in routine ex_stage line 28 in file
+		'/home/koyo/verilog/ex_stage.v'.
+==================================================
+| Register Name  |       Type       | Width | MB |
+==================================================
+| regdst_out_tri | Tri-State Buffer |   5   | N  |
+==================================================
+
+Inferred tri-state devices in process
+	in routine ex_stage line 36 in file
+		'/home/koyo/verilog/ex_stage.v'.
+=================================================
+| Register Name |       Type       | Width | MB |
+=================================================
+|  rt_out_tri   | Tri-State Buffer |   5   | N  |
+=================================================
+
+Inferred tri-state devices in process
+	in routine ex_stage line 43 in file
+		'/home/koyo/verilog/ex_stage.v'.
+=================================================
+| Register Name |       Type       | Width | MB |
+=================================================
+| data1_in_tri  | Tri-State Buffer |  32   | N  |
+=================================================
+Presto compilation completed successfully.
+Current design is now '/home/koyo/verilog/ex_stage.db:ex_stage'
+Loaded 1 design.
+Current design is 'ex_stage'.
+ex_stage
+read_verilog "/home/koyo/verilog/forward.v"
+Loading verilog file '/home/koyo/verilog/forward.v'
+Detecting input file type automatically (-rtl or -netlist).
+Reading with Presto HDL Compiler (equivalent to -rtl option).
+Running PRESTO HDLC
+Compiling source file /home/koyo/verilog/forward.v
+Warning:  /home/koyo/verilog/forward.v:127: signed to unsigned assignment occurs. (VER-318)
+Warning:  /home/koyo/verilog/forward.v:128: signed to unsigned assignment occurs. (VER-318)
+Warning:  /home/koyo/verilog/forward.v:129: signed to unsigned assignment occurs. (VER-318)
+Presto compilation completed successfully.
+Current design is now '/home/koyo/verilog/forward.db:forward'
+Loaded 1 design.
+Current design is 'forward'.
+forward
+read_verilog "/home/koyo/verilog/hazard.v"
+Loading verilog file '/home/koyo/verilog/hazard.v'
+Detecting input file type automatically (-rtl or -netlist).
+Reading with Presto HDL Compiler (equivalent to -rtl option).
+Running PRESTO HDLC
+Compiling source file /home/koyo/verilog/hazard.v
+Presto compilation completed successfully.
+Current design is now '/home/koyo/verilog/hazard.db:hazard'
+Loaded 1 design.
+Current design is 'hazard'.
+hazard
+read_verilog "/home/koyo/verilog/IAR.v"
+Loading verilog file '/home/koyo/verilog/IAR.v'
+Detecting input file type automatically (-rtl or -netlist).
+Reading with Presto HDL Compiler (equivalent to -rtl option).
+Running PRESTO HDLC
+Compiling source file /home/koyo/verilog/IAR.v
+
+Inferred memory devices in process
+	in routine IAR line 19 in file
+		'/home/koyo/verilog/IAR.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     pc_out_reg      | Flip-flop |  31   |  Y  | N  | Y  | N  | N  | N  | N  |
+|     pc_out_reg      | Flip-flop |   1   |  N  | N  | N  | Y  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Current design is now '/home/koyo/verilog/IAR.db:IAR'
+Loaded 1 design.
+Current design is 'IAR'.
+IAR
+read_verilog "/home/koyo/verilog/id_ex_reg.v"
+Loading verilog file '/home/koyo/verilog/id_ex_reg.v'
+Detecting input file type automatically (-rtl or -netlist).
+Reading with Presto HDL Compiler (equivalent to -rtl option).
+Running PRESTO HDLC
+Compiling source file /home/koyo/verilog/id_ex_reg.v
+
+Inferred memory devices in process
+	in routine id_ex_reg line 18 in file
+		'/home/koyo/verilog/id_ex_reg.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    id_ex_rt_reg     | Flip-flop |   5   |  Y  | N  | Y  | N  | N  | N  | N  |
+|    id_ex_rd_reg     | Flip-flop |   5   |  Y  | N  | Y  | N  | N  | N  | N  |
+|  vector_id_out_reg  | Flip-flop |   5   |  Y  | N  | Y  | N  | N  | N  | N  |
+|    pc_4_out_reg     | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+|     rs_out_reg      | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+|     rt_out_reg      | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+|   offset_out_reg    | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+|   control_out_reg   | Flip-flop |  14   |  Y  | N  | Y  | N  | N  | N  | N  |
+|   control_out_reg   | Flip-flop |   1   |  N  | N  | N  | Y  | N  | N  | N  |
+|    id_ex_rs_reg     | Flip-flop |   5   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Current design is now '/home/koyo/verilog/id_ex_reg.db:id_ex_reg'
+Loaded 1 design.
+Current design is 'id_ex_reg'.
+id_ex_reg
+read_verilog "/home/koyo/verilog/id_stage.v"
+Loading verilog file '/home/koyo/verilog/id_stage.v'
+Detecting input file type automatically (-rtl or -netlist).
+Reading with Presto HDL Compiler (equivalent to -rtl option).
+Running PRESTO HDLC
+Compiling source file /home/koyo/verilog/id_stage.v
+Warning:  /home/koyo/verilog/id_stage.v:62: signed to unsigned assignment occurs. (VER-318)
+Presto compilation completed successfully.
+Current design is now '/home/koyo/verilog/id_stage.db:id_stage'
+Loaded 1 design.
+Current design is 'id_stage'.
+id_stage
+read_verilog "/home/koyo/verilog/if_id_reg.v"
+Loading verilog file '/home/koyo/verilog/if_id_reg.v'
+Detecting input file type automatically (-rtl or -netlist).
+Reading with Presto HDL Compiler (equivalent to -rtl option).
+Running PRESTO HDLC
+Compiling source file /home/koyo/verilog/if_id_reg.v
+
+Inferred memory devices in process
+	in routine if_id_reg line 15 in file
+		'/home/koyo/verilog/if_id_reg.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    pc_4_out_reg     | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+|  vector_if_out_reg  | Flip-flop |   5   |  Y  | N  | Y  | N  | N  | N  | N  |
+|     ins_out_reg     | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Current design is now '/home/koyo/verilog/if_id_reg.db:if_id_reg'
+Loaded 1 design.
+Current design is 'if_id_reg'.
+if_id_reg
+read_verilog "/home/koyo/verilog/if_stage.v"
+Loading verilog file '/home/koyo/verilog/if_stage.v'
+Detecting input file type automatically (-rtl or -netlist).
+Reading with Presto HDL Compiler (equivalent to -rtl option).
+Running PRESTO HDLC
+Compiling source file /home/koyo/verilog/if_stage.v
+Presto compilation completed successfully.
+Current design is now '/home/koyo/verilog/if_stage.db:if_stage'
+Loaded 1 design.
+Current design is 'if_stage'.
+if_stage
+read_verilog "/home/koyo/verilog/Iv_ex.v"
+Loading verilog file '/home/koyo/verilog/Iv_ex.v'
+Detecting input file type automatically (-rtl or -netlist).
+Reading with Presto HDL Compiler (equivalent to -rtl option).
+Running PRESTO HDLC
+Compiling source file /home/koyo/verilog/Iv_ex.v
+Presto compilation completed successfully.
+Current design is now '/home/koyo/verilog/Iv_ex.db:Iv_ex'
+Loaded 1 design.
+Current design is 'Iv_ex'.
+Iv_ex
+read_verilog "/home/koyo/verilog/Iv_id.v"
+Loading verilog file '/home/koyo/verilog/Iv_id.v'
+Detecting input file type automatically (-rtl or -netlist).
+Reading with Presto HDL Compiler (equivalent to -rtl option).
+Running PRESTO HDLC
+Compiling source file /home/koyo/verilog/Iv_id.v
+Presto compilation completed successfully.
+Current design is now '/home/koyo/verilog/Iv_id.db:Iv_id'
+Loaded 1 design.
+Current design is 'Iv_id'.
+Iv_id
+read_verilog "/home/koyo/verilog/Iv_if.v"
+Loading verilog file '/home/koyo/verilog/Iv_if.v'
+Detecting input file type automatically (-rtl or -netlist).
+Reading with Presto HDL Compiler (equivalent to -rtl option).
+Running PRESTO HDLC
+Compiling source file /home/koyo/verilog/Iv_if.v
+Presto compilation completed successfully.
+Current design is now '/home/koyo/verilog/Iv_if.db:Iv_if'
+Loaded 1 design.
+Current design is 'Iv_if'.
+Iv_if
+read_verilog "/home/koyo/verilog/Iv_mem.v"
+Loading verilog file '/home/koyo/verilog/Iv_mem.v'
+Detecting input file type automatically (-rtl or -netlist).
+Reading with Presto HDL Compiler (equivalent to -rtl option).
+Running PRESTO HDLC
+Compiling source file /home/koyo/verilog/Iv_mem.v
+Presto compilation completed successfully.
+Current design is now '/home/koyo/verilog/Iv_mem.db:Iv_mem'
+Loaded 1 design.
+Current design is 'Iv_mem'.
+Iv_mem
+read_verilog "/home/koyo/verilog/mem_stage.v"
+Loading verilog file '/home/koyo/verilog/mem_stage.v'
+Detecting input file type automatically (-rtl or -netlist).
+Reading with Presto HDL Compiler (equivalent to -rtl option).
+Running PRESTO HDLC
+Compiling source file /home/koyo/verilog/mem_stage.v
+Presto compilation completed successfully.
+Current design is now '/home/koyo/verilog/mem_stage.db:mem_stage'
+Loaded 1 design.
+Current design is 'mem_stage'.
+mem_stage
+read_verilog "/home/koyo/verilog/mem_wb_reg.v"
+Loading verilog file '/home/koyo/verilog/mem_wb_reg.v'
+Detecting input file type automatically (-rtl or -netlist).
+Reading with Presto HDL Compiler (equivalent to -rtl option).
+Running PRESTO HDLC
+Compiling source file /home/koyo/verilog/mem_wb_reg.v
+
+Inferred memory devices in process
+	in routine mem_wb_reg line 18 in file
+		'/home/koyo/verilog/mem_wb_reg.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     alu_out_reg     | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+|   control_out_reg   | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|   control_out_reg   | Flip-flop |   1   |  N  | N  | N  | Y  | N  | N  | N  |
+|   regdst_out_reg    | Flip-flop |   5   |  Y  | N  | Y  | N  | N  | N  | N  |
+|    data_out_reg     | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Current design is now '/home/koyo/verilog/mem_wb_reg.db:mem_wb_reg'
+Loaded 1 design.
+Current design is 'mem_wb_reg'.
+mem_wb_reg
+read_verilog "/home/koyo/verilog/mux_4.v"
+Loading verilog file '/home/koyo/verilog/mux_4.v'
+Detecting input file type automatically (-rtl or -netlist).
+Reading with Presto HDL Compiler (equivalent to -rtl option).
+Running PRESTO HDLC
+Compiling source file /home/koyo/verilog/mux_4.v
+
+Statistics for case statements in always block at line 7 in file
+	'/home/koyo/verilog/mux_4.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            9             |    auto/auto     |
+===============================================
+Presto compilation completed successfully.
+Current design is now '/home/koyo/verilog/mux_4.db:mux_4'
+Loaded 1 design.
+Current design is 'mux_4'.
+mux_4
+read_verilog "/home/koyo/verilog/pc.v"
+Loading verilog file '/home/koyo/verilog/pc.v'
+Detecting input file type automatically (-rtl or -netlist).
+Reading with Presto HDL Compiler (equivalent to -rtl option).
+Running PRESTO HDLC
+Compiling source file /home/koyo/verilog/pc.v
+
+Inferred memory devices in process
+	in routine pc line 11 in file
+		'/home/koyo/verilog/pc.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|       out_reg       | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Current design is now '/home/koyo/verilog/pc.db:pc'
+Loaded 1 design.
+Current design is 'pc'.
+pc
+read_verilog "/home/koyo/verilog/rf32x32.v"
+Loading verilog file '/home/koyo/verilog/rf32x32.v'
+Detecting input file type automatically (-rtl or -netlist).
+Reading with Presto HDL Compiler (equivalent to -rtl option).
+Running PRESTO HDLC
+Compiling source file /home/koyo/verilog/rf32x32.v
+Presto compilation completed successfully.
+Current design is now '/home/koyo/verilog/rf32x32.db:rf32x32'
+Loaded 1 design.
+Current design is 'rf32x32'.
+rf32x32
+read_verilog "/home/koyo/verilog/SR.v"
+Loading verilog file '/home/koyo/verilog/SR.v'
+Detecting input file type automatically (-rtl or -netlist).
+Reading with Presto HDL Compiler (equivalent to -rtl option).
+Running PRESTO HDLC
+Compiling source file /home/koyo/verilog/SR.v
+
+Inferred memory devices in process
+	in routine SR line 9 in file
+		'/home/koyo/verilog/SR.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     sr_reg_reg      | Flip-flop |   2   |  Y  | N  | N  | Y  | N  | N  | N  |
+|     sr_reg_reg      | Flip-flop |   2   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Current design is now '/home/koyo/verilog/SR.db:SR'
+Loaded 1 design.
+Current design is 'SR'.
+SR
+read_verilog "/home/koyo/verilog/top.v"
+Loading verilog file '/home/koyo/verilog/top.v'
+Detecting input file type automatically (-rtl or -netlist).
+Warning: Overwriting design file '/home/koyo/verilog/top'. (DDB-24)
+Reading with Presto HDL Compiler (equivalent to -rtl option).
+Running PRESTO HDLC
+Compiling source file /home/koyo/verilog/top.v
+Warning:  /home/koyo/verilog/top.v:149: signed to unsigned assignment occurs. (VER-318)
+Warning:  /home/koyo/verilog/top.v:159: signed to unsigned assignment occurs. (VER-318)
+
+Inferred tri-state devices in process
+	in routine top line 131 in file
+		'/home/koyo/verilog/top.v'.
+=================================================
+| Register Name |       Type       | Width | MB |
+=================================================
+|    DDT_tri    | Tri-State Buffer |  32   | N  |
+=================================================
+Presto compilation completed successfully.
+Current design is now '/home/koyo/verilog/top.db:top'
+Loaded 1 design.
+Current design is 'top'.
+top
+read_verilog "/home/koyo/verilog/wb_stage.v"
+Loading verilog file '/home/koyo/verilog/wb_stage.v'
+Detecting input file type automatically (-rtl or -netlist).
+Reading with Presto HDL Compiler (equivalent to -rtl option).
+Running PRESTO HDLC
+Compiling source file /home/koyo/verilog/wb_stage.v
+Presto compilation completed successfully.
+Current design is now '/home/koyo/verilog/wb_stage.db:wb_stage'
+Loaded 1 design.
+Current design is 'wb_stage'.
+wb_stage
+current_design "top"
+Current design is 'top'.
+{top}
+#read_verilog topmodule
+##current_design "TOP_MODULE_NAME"
+#hlo_transform_constant_multiplication =true
+ungroup -all -flatten
+Information: Updating graph... (UID-83)
+Warning: Design 'top' contains 1 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+1
+compile
+Warning: The cache_read directory ~ is not readable.  (SYNOPT-10)
+Warning: The cache_write directory ~ is not writable. So no cache elements can be written.   (SYNOPT-11)
+Information: Evaluating DesignWare library utilization. (UISN-27)
+
+============================================================================
+| DesignWare Building Block Library  |         Version         | Available |
+============================================================================
+| Basic DW Building Blocks           | H-2013.03-DWBB_201303.4 |     *     |
+| Licensed DW Building Blocks        |                         |           |
+============================================================================
+
+
+Information: There are 97 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
+
+
+
+  Beginning Pass 1 Mapping
+  ------------------------
+  Processing 'top'
+Information: The register 'if_id_reg/vector_if_out_reg[0]' is a constant and will be removed. (OPT-1206)
+
+  Updating timing information
+Information: Updating design information... (UID-85)
+Information: Design 'top' has no optimization constraints set. (OPT-108)
+
+  Beginning Implementation Selection
+  ----------------------------------
+  Processing 'top_DW01_sub_0'
+  Processing 'top_DW01_cmp2_0'
+  Processing 'top_DW01_cmp6_0'
+  Processing 'top_DW01_cmp6_1'
+  Processing 'top_DW01_cmp2_1'
+  Processing 'top_DW_rash_0'
+  Processing 'top_DW_rash_1'
+  Processing 'top_DW01_ash_0'
+  Processing 'top_DW_rash_2'
+  Processing 'top_DW01_cmp2_2'
+  Processing 'top_DW01_add_0'
+  Processing 'top_DW01_add_1'
+  Processing 'top_DW01_cmp2_3'
+  Processing 'top_DW01_cmp2_4'
+  Processing 'top_DW01_cmp2_5'
+  Processing 'top_DW01_sub_1'
+  Processing 'top_DW01_add_2'
+  Processing 'top_DW01_cmp6_2'
+  Processing 'top_DW01_cmp6_3'
+  Processing 'top_DW01_cmp6_4'
+  Processing 'top_DW01_cmp6_5'
+  Processing 'top_DW01_cmp6_6'
+  Processing 'top_DW01_cmp6_7'
+  Processing 'top_DW_rash_3'
+  Processing 'top_DW01_ash_1'
+  Processing 'top_DW01_cmp6_8'
+  Processing 'top_DW01_cmp6_9'
+  Processing 'top_DW01_add_3'
+  Processing 'top_DW01_cmp2_6'
+  Processing 'top_DW01_cmp6_10'
+
+  Beginning Mapping Optimizations  (Medium effort)
+  -------------------------------
+  Structuring 'top'
+  Mapping 'top'
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:13  255321.6      0.00       0.0     258.8                          
+    0:00:13  255321.6      0.00       0.0     258.8                          
+    0:00:13  255321.6      0.00       0.0     258.8                          
+    0:00:13  255321.6      0.00       0.0     258.8                          
+    0:00:14  255321.6      0.00       0.0     258.8                          
+    0:00:14  239416.3      0.00       0.0     202.3                          
+    0:00:14  239416.3      0.00       0.0     202.3                          
+    0:00:14  239416.3      0.00       0.0     202.3                          
+    0:00:14  239416.3      0.00       0.0     202.3                          
+    0:00:14  239416.3      0.00       0.0     202.3                          
+    0:00:15  241482.2      0.00       0.0     130.7                          
+    0:00:15  243056.6      0.00       0.0     109.3                          
+    0:00:16  243755.5      0.00       0.0      96.1                          
+    0:00:16  243932.2      0.00       0.0      93.0                          
+    0:00:17  243824.6      0.00       0.0      90.9                          
+    0:00:17  243932.2      0.00       0.0      90.6                          
+    0:00:17  243932.2      0.00       0.0      90.4                          
+    0:00:17  243932.2      0.00       0.0      90.4                          
+    0:00:17  243932.2      0.00       0.0      90.4                          
+    0:00:17  243932.2      0.00       0.0      90.4                          
+
+
+
+  Beginning Delay Optimization Phase
+  ----------------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:17  243932.2      0.00       0.0      90.4                          
+    0:00:17  243932.2      0.00       0.0      90.4                          
+    0:00:17  243932.2      0.00       0.0      90.4                          
+
+
+  Beginning Design Rule Fixing  (max_fanout)  (max_capacitance)
+  ----------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:17  243932.2      0.00       0.0      90.4                          
+    0:00:17  244492.8      0.00       0.0      71.9 ex_stage/alu/srl_30_C65/net13353
+    0:00:18  247365.1      0.00       0.0      30.2 net15969                 
+    0:00:18  248716.8      0.00       0.0       6.5 ex_stage/data1_in[25]    
+    0:00:18  248939.5      0.00       0.0       0.0 net21994                 
+    0:00:19  248785.9      0.00       0.0       0.0                          
+
+
+  Beginning Area-Recovery Phase  (cleanup)
+  -----------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:19  248785.9      0.00       0.0       0.0                          
+    0:00:19  248785.9      0.00       0.0       0.0                          
+    0:00:19  248256.0      0.00       0.0       0.0                          
+    0:00:19  248217.6      0.00       0.0       0.0                          
+    0:00:19  248217.6      0.00       0.0       0.0                          
+    0:00:19  248217.6      0.00       0.0       0.0                          
+    0:00:19  248217.6      0.00       0.0       0.0                          
+    0:00:19  245107.2      0.00       0.0       0.0                          
+    0:00:19  245107.2      0.00       0.0       0.0                          
+    0:00:19  245107.2      0.00       0.0       0.0                          
+    0:00:19  245107.2      0.00       0.0       0.0                          
+    0:00:19  245107.2      0.00       0.0       0.0                          
+    0:00:19  245107.2      0.00       0.0       0.0                          
+Loading db file '/home/abe/hit18-lib/kyoto_lib/synopsys/HIT018.db'
+
+  Optimization Complete
+  ---------------------
+1
+#compile
+#これ要る
+group_path -to find(cell,"ex_mem_reg/regdst_out_reg*/D") -name clk -weight 10 
+Warning: Can't find objects matching 'find(cell,"ex_mem_reg/regdst_out_reg*/D")' in design 'top'. (UID-95)
+Error: Value for list '-to' must have 1 elements. (CMD-036)
+0
+#group_path -to find(cell,"id_ex_reg/id_ex_rt_reg[1]/Q")  -name clk -weight 10
+#group_path -name clk -critical_range 1
+set_max_area 0 -ignore_tns
+1
+set_max_fanout 64 [current_design]
+Current design is 'top'.
+1
+create_clock -period 3.24 -w {0 1.62} clk
+1
+set_clock_uncertainty -setup 0.0 [get_clock clk]
+1
+set_clock_uncertainty -hold 0.0 [get_clock clk]
+1
+set_input_delay  0.0 -clock clk [remove_from_collection [all_inputs] clk]
+1
+set_output_delay 0.0 -clock clk [remove_from_collection [all_outputs] clk]
+1
+set_flatten true -ph true -effort high
+1
+set_structure -boolean true
+1
+##compile -map_effort medium -area_effort high -incremental_mapping
+#ungroup forward -flatten
+#ungroup ex_stage -flatten
+#set_ideal_net find(net,all_connected(find(port,"RST_X")))
+#set_load load_of(asc018_MAX/NI1l/!)*3 all_outputs()
+#ここをincにするとよくない
+compile  
+Warning: The cache_read directory ~ is not readable.  (SYNOPT-10)
+Warning: The cache_write directory ~ is not writable. So no cache elements can be written.   (SYNOPT-11)
+
+Information: There are 305 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
+
+
+
+  Beginning Pass 1 Mapping
+  ------------------------
+  Processing 'top_DW01_add_3'
+  Processing 'top_DW01_ash_1'
+  Processing 'top_DW_rash_3'
+  Processing 'top_DW01_cmp6_4'
+  Processing 'top_DW01_add_2'
+  Processing 'top_DW01_sub_1'
+  Processing 'top_DW01_add_1'
+  Processing 'top_DW01_add_0'
+  Processing 'top_DW_rash_2'
+  Processing 'top_DW01_ash_0'
+  Processing 'top_DW_rash_1'
+  Processing 'top_DW_rash_0'
+  Processing 'top_DW01_cmp2_1'
+  Processing 'top_DW01_sub_0'
+  Processing 'top'
+
+  Updating timing information
+Information: Updating design information... (UID-85)
+
+  Beginning Implementation Selection
+  ----------------------------------
+
+  Beginning Mapping Optimizations  (Medium effort)
+  -------------------------------
+  Mapping Optimization (Phase 1)
+  Mapping Optimization (Phase 2)
+  Mapping Optimization (Phase 3)
+  Mapping Optimization (Phase 4)
+  Mapping Optimization (Phase 5)
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:01:53  656186.9      5.05    1359.4     240.8                          
+    0:01:53  656186.9      5.05    1359.4     240.8                          
+    0:02:08  667177.0      1.17     139.4       1.5                          
+    0:02:08  667177.0      1.17     139.4       1.5                          
+    0:02:08  667177.0      1.17     139.4       1.5                          
+    0:02:08  667261.4      1.17     139.4       1.5                          
+    0:02:08  667261.4      1.17     139.4       1.5                          
+    0:02:12  401072.6      2.33     312.2       0.1                          
+    0:02:14  397716.5      2.39     276.4       0.1                          
+    0:02:15  397609.0      2.16     235.8       0.1                          
+    0:02:15  397278.7      2.12     229.4       0.1                          
+    0:02:16  397655.0      2.45     226.4       0.1                          
+    0:02:16  397716.5      2.31     229.2       0.1                          
+    0:02:16  397923.8      2.48     226.0       0.1                          
+    0:02:16  397647.4      2.23     228.5       0.1                          
+    0:02:17  397785.6      2.57     226.8       0.1                          
+    0:02:17  397701.1      2.36     228.5       0.1                          
+    0:02:17  397969.9      2.22     227.9       0.1                          
+    0:02:17  398361.6      2.08     227.7       0.1                          
+    0:02:17  398622.7      2.07     227.1       0.1                          
+    0:02:18  399590.4      1.96     225.8       0.1                          
+    0:02:18  400243.2      1.92     224.8       0.1                          
+    0:02:18  400873.0      1.90     224.4       0.1                          
+    0:02:18  401303.0      1.88     223.5       0.1                          
+    0:02:18  402439.7      1.85     216.7       0.1                          
+    0:02:18  403215.4      1.82     214.7       0.1                          
+    0:02:19  403215.4      1.82     214.7       0.1                          
+    0:02:19  403215.4      1.82     214.7       0.1                          
+    0:02:19  403284.5      1.82     214.7       0.0                          
+    0:02:19  403522.6      1.82     214.3       0.0                          
+    0:02:19  403522.6      1.82     214.3       0.0                          
+    0:02:19  403522.6      1.82     214.3       0.0                          
+    0:02:19  403522.6      1.82     214.3       0.0                          
+    0:02:19  405849.6      1.71     210.4       0.2 ex_mem_reg/alu_out_reg[19]/D
+    0:02:20  407447.0      1.66     207.4       0.0 ex_mem_reg/alu_out_reg[19]/D
+    0:02:20  409551.4      1.60     199.3       0.0 ex_mem_reg/alu_out_reg[14]/D
+    0:02:21  410941.4      1.54     195.7       0.0 ex_mem_reg/alu_out_reg[30]/D
+    0:02:22  412554.2      1.51     193.8       0.1 if_stage/pc/out_reg[4]/D 
+    0:02:23  423697.9      1.45     188.5       0.1 ex_mem_reg/vector_ex_out_reg[2]/D
+    0:02:24  430202.9      1.28     174.7       0.2 ex_mem_reg/alu_out_reg[31]/D
+    0:02:26  435532.8      1.19     169.7       0.1 ex_mem_reg/alu_out_reg[22]/D
+    0:02:26  438781.4      1.15     167.5       0.1                          
+    0:02:27  440448.0      1.13     158.7       0.1                          
+    0:02:27  442298.9      1.11     156.4       0.2                          
+    0:02:28  444549.1      1.08     156.9       0.3                          
+    0:02:28  445063.7      1.07     156.0       0.3                          
+    0:02:29  447298.6      1.05     149.1       0.3                          
+    0:02:29  449917.4      1.03     147.5       0.2                          
+    0:02:29  451130.9      1.01     146.4       0.3                          
+    0:02:30  452313.6      1.00     145.6       0.3                          
+    0:02:30  453081.6      0.99     144.6       0.2                          
+    0:02:31  454072.3      0.97     143.8       0.2                          
+    0:02:31  456092.2      0.95     143.0       0.2                          
+    0:02:32  457743.4      0.93     141.5       0.2                          
+    0:02:32  458926.1      0.92     133.3       0.2                          
+    0:02:32  460431.4      0.91     132.1       0.2                          
+    0:02:33  461214.7      0.90     131.6       0.2                          
+    0:02:33  462051.8      0.90     131.2       0.3                          
+    0:02:33  463657.0      0.88     131.8       0.3                          
+    0:02:33  464240.6      0.88     131.7       0.3                          
+    0:02:34  464540.2      0.87     131.4       0.3                          
+    0:02:34  465630.7      0.87     130.6       0.3                          
+    0:02:34  466037.8      0.86     130.6       0.3                          
+    0:02:35  467788.8      0.85     130.1       0.3                          
+    0:02:35  468864.0      0.85     129.7       0.3                          
+    0:02:35  469516.8      0.84     129.3       0.3                          
+    0:02:36  471091.2      0.83     127.5       0.3                          
+    0:02:36  473072.6      0.82     116.1       0.3                          
+    0:02:36  474017.3      0.81     115.3       0.3                          
+    0:02:37  474977.3      0.80     115.1       0.4                          
+    0:02:37  475491.8      0.79     114.9       0.4                          
+    0:02:37  476643.8      0.79     114.5       0.3                          
+    0:02:37  478133.8      0.78     113.4       0.3                          
+    0:02:38  479616.0      0.76     112.6       0.3                          
+    0:02:38  479923.2      0.76     112.2       0.3                          
+    0:02:38  481013.8      0.75     112.0       0.3                          
+    0:02:39  481628.2      0.74     110.6       0.4                          
+    0:02:39  481935.4      0.74     107.8       0.4                          
+    0:02:39  482603.5      0.73     103.7       0.4                          
+    0:02:40  483049.0      0.73     103.8       0.4                          
+    0:02:40  483171.8      0.72     103.4       0.4                          
+    0:02:40  484899.8      0.72     103.4       0.4                          
+    0:02:41  485168.6      0.72     103.1       0.5                          
+    0:02:41  486167.0      0.71     103.0       0.5                          
+    0:02:41  486942.7      0.71     102.9       0.5                          
+    0:02:41  486919.7      0.71     102.7       0.4                          
+    0:02:42  486420.5      0.71     102.4       0.5                          
+    0:02:42  486766.1      0.71     102.3       0.5                          
+    0:02:42  487004.2      0.71     102.1       0.5                          
+    0:02:42  486704.6      0.71     100.7       0.4                          
+    0:02:43  486420.5      0.71      98.8       0.7                          
+    0:02:43  486796.8      0.71      94.8       0.7                          
+    0:02:43  487618.6      0.71      94.6       0.7                          
+    0:02:43  487488.0      0.71      94.2       0.7                          
+    0:02:43  487365.1      0.71      93.6       0.5                          
+    0:02:44  487672.3      0.71      93.4       0.6                          
+    0:02:44  488409.6      0.71      93.4       0.5                          
+
+
+
+  Beginning Delay Optimization Phase
+  ----------------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:02:44  488409.6      0.71      93.4       0.5                          
+    0:02:44  489093.1      0.69      93.3       0.5 ex_mem_reg/alu_out_reg[16]/D
+    0:02:45  489945.6      0.66      92.7       0.5 ex_mem_reg/alu_out_reg[21]/D
+    0:02:45  490383.4      0.65      92.2       0.5 ex_mem_reg/alu_out_reg[27]/D
+    0:02:46  491289.6      0.65      92.1       0.5 ex_mem_reg/alu_out_reg[24]/D
+    0:02:46  491888.6      0.64      91.9       0.5 ex_mem_reg/alu_out_reg[24]/D
+    0:02:46  493255.7      0.63      85.8       0.5 ex_mem_reg/vector_ex_out_reg[2]/D
+    0:02:47  493708.8      0.63      77.9       0.8 ex_mem_reg/alu_out_reg[23]/D
+    0:02:47  494200.3      0.63      77.6       0.9 ex_mem_reg/vector_ex_out_reg[2]/D
+    0:02:47  494791.7      0.63      80.2       0.9 if_stage/pc/out_reg[4]/D 
+    0:02:48  495091.2      0.62      80.0       0.9 ex_mem_reg/vector_ex_out_reg[2]/D
+    0:02:48  495029.8      0.62      79.9       0.9 ex_mem_reg/alu_out_reg[21]/D
+    0:02:48  495452.2      0.62      80.0       0.9 if_stage/pc/out_reg[27]/D
+    0:02:48  495559.7      0.61      79.9       0.9 if_stage/pc/out_reg[27]/D
+    0:02:48  495352.3      0.61      79.9       0.9 ex_mem_reg/vector_ex_out_reg[2]/D
+    0:02:49  496212.5      0.60      78.5       0.9 ex_mem_reg/vector_ex_out_reg[2]/D
+    0:02:49  496842.2      0.59      78.0       1.0 ex_mem_reg/alu_out_reg[20]/D
+    0:02:50  497541.1      0.59      73.5       1.0 ex_mem_reg/alu_out_reg[18]/D
+    0:02:50  498501.1      0.58      73.4       1.0 ex_mem_reg/vector_ex_out_reg[3]/D
+    0:02:51  498485.8      0.58      70.3       1.0 ex_mem_reg/alu_out_reg[23]/D
+    0:02:51  500390.4      0.58      70.0       0.9 if_stage/pc/out_reg[26]/D
+    0:02:51  500951.0      0.57      67.4       1.0 ex_mem_reg/alu_out_reg[17]/D
+    0:02:51  501473.3      0.57      66.8       1.0 ex_mem_reg/vector_ex_out_reg[3]/D
+    0:02:52  501749.8      0.56      66.5       1.0 if_stage/pc/out_reg[27]/D
+    0:02:52  502156.8      0.56      66.5       1.0 ex_mem_reg/alu_out_reg[23]/D
+    0:02:52  502202.9      0.56      65.8       1.0 ex_mem_reg/alu_out_reg[23]/D
+    0:02:52  503001.6      0.55      65.5       1.0 ex_mem_reg/alu_out_reg[23]/D
+    0:02:53  503777.3      0.54      64.8       1.0 ex_mem_reg/alu_out_reg[23]/D
+    0:02:53  504783.4      0.53      64.5       1.0 ex_mem_reg/alu_out_reg[28]/D
+    0:02:53  504768.0      0.53      64.2       1.0 ex_mem_reg/alu_out_reg[23]/D
+    0:02:54  506242.6      0.52      62.5       1.0 ex_mem_reg/alu_out_reg[23]/D
+    0:02:54  506357.8      0.51      62.2       1.0 if_stage/pc/out_reg[26]/D
+    0:02:54  506204.2      0.51      62.0       1.0 ex_mem_reg/alu_out_reg[29]/D
+    0:02:55  506188.8      0.51      62.0       1.0 ex_mem_reg/alu_out_reg[29]/D
+    0:02:55  506089.0      0.51      61.9       1.0 ex_mem_reg/vector_ex_out_reg[2]/D
+    0:02:55  506327.0      0.51      61.7       1.0 if_stage/pc/out_reg[26]/D
+    0:02:55  506626.6      0.50      61.6       1.0 ex_mem_reg/alu_out_reg[29]/D
+    0:02:55  506841.6      0.50      61.4       1.0 ex_mem_reg/alu_out_reg[21]/D
+    0:02:56  507125.8      0.50      61.3       1.0 ex_mem_reg/alu_out_reg[22]/D
+    0:02:56  507448.3      0.50      61.2       1.0 ex_mem_reg/alu_out_reg[29]/D
+    0:02:56  508247.0      0.49      60.7       1.0 if_stage/pc/out_reg[26]/D
+    0:02:56  507924.5      0.49      60.7       1.0 ex_mem_reg/alu_out_reg[29]/D
+    0:02:56  508009.0      0.49      60.5       0.8 ex_mem_reg/alu_out_reg[19]/D
+    0:02:57  508254.7      0.49      60.4       0.7 ex_mem_reg/alu_out_reg[18]/D
+    0:02:57  509660.2      0.49      60.3       0.8 ex_mem_reg/alu_out_reg[29]/D
+    0:02:57  510405.1      0.49      60.2       0.8 ex_mem_reg/alu_out_reg[19]/D
+    0:02:57  510796.8      0.49      60.1       0.8 if_stage/pc/out_reg[26]/D
+    0:02:57  512056.3      0.49      59.3       0.8 ex_mem_reg/alu_out_reg[23]/D
+    0:02:57  512386.6      0.48      59.1       0.8 if_stage/pc/out_reg[26]/D
+    0:02:57  512686.1      0.48      59.0       0.8 ex_mem_reg/alu_out_reg[29]/D
+    0:02:58  512455.7      0.48      58.5       0.8 ex_mem_reg/alu_out_reg[21]/D
+    0:02:58  512463.4      0.48      58.4       0.8 ex_mem_reg/alu_out_reg[19]/D
+    0:02:58  512463.4      0.48      58.3       0.8 if_stage/pc/out_reg[26]/D
+    0:02:58  512970.2      0.47      58.3       0.8 if_stage/pc/out_reg[26]/D
+    0:02:58  512878.1      0.47      58.1       0.8 ex_mem_reg/alu_out_reg[15]/D
+    0:02:58  513223.7      0.47      58.1       0.8 ex_mem_reg/alu_out_reg[29]/D
+    0:02:58  513169.9      0.47      57.5       0.8 ex_mem_reg/alu_out_reg[14]/D
+    0:02:59  513377.3      0.47      57.5       0.9 ex_mem_reg/alu_out_reg[18]/D
+    0:02:59  513623.0      0.47      57.4       0.9 ex_mem_reg/alu_out_reg[30]/D
+    0:02:59  513738.2      0.47      57.1       0.9 if_stage/pc/out_reg[26]/D
+    0:02:59  513692.2      0.47      57.0       0.9 if_stage/pc/out_reg[26]/D
+    0:02:59  513761.3      0.46      57.9       0.9 if_stage/pc/out_reg[26]/D
+    0:03:00  514137.6      0.46      57.7       0.9 ex_mem_reg/alu_out_reg[23]/D
+    0:03:00  514260.5      0.46      56.9       0.8 ex_mem_reg/alu_out_reg[27]/D
+    0:03:00  514475.5      0.46      56.9       0.8 ex_mem_reg/alu_out_reg[26]/D
+    0:03:00  514613.8      0.46      56.8       0.8 ex_mem_reg/alu_out_reg[18]/D
+    0:03:00  514690.6      0.46      56.7       0.8 ex_mem_reg/alu_out_reg[15]/D
+    0:03:00  514752.0      0.46      56.5       0.8 ex_mem_reg/alu_out_reg[29]/D
+    0:03:00  515013.1      0.46      56.5       0.8 ex_mem_reg/alu_out_reg[18]/D
+    0:03:01  514936.3      0.45      56.5       0.8 ex_mem_reg/alu_out_reg[11]/D
+    0:03:01  514982.4      0.45      56.4       0.8 ex_mem_reg/alu_out_reg[9]/D
+    0:03:01  515036.2      0.45      56.3       0.8 ex_mem_reg/alu_out_reg[9]/D
+    0:03:01  514805.8      0.45      56.2       0.8 ex_mem_reg/alu_out_reg[23]/D
+    0:03:01  514890.2      0.45      56.2       0.8 ex_mem_reg/alu_out_reg[0]/D
+    0:03:02  514867.2      0.45      56.2       0.8 ex_mem_reg/alu_out_reg[23]/D
+    0:03:02  514644.5      0.45      56.1       0.8 ex_mem_reg/alu_out_reg[29]/D
+    0:03:02  514828.8      0.45      56.1       0.8 ex_mem_reg/alu_out_reg[19]/D
+    0:03:02  514805.8      0.45      56.1       0.8 ex_mem_reg/alu_out_reg[29]/D
+    0:03:02  515120.6      0.45      56.1       0.8 ex_mem_reg/alu_out_reg[21]/D
+    0:03:02  515258.9      0.45      56.1       0.8 ex_mem_reg/alu_out_reg[29]/D
+    0:03:02  515435.5      0.45      56.0       0.8 ex_mem_reg/alu_out_reg[23]/D
+    0:03:03  515566.1      0.44      55.9       0.8 ex_mem_reg/alu_out_reg[20]/D
+    0:03:03  515274.2      0.44      55.9       0.8 ex_mem_reg/alu_out_reg[7]/D
+    0:03:03  515420.2      0.44      55.7       0.9 ex_mem_reg/alu_out_reg[19]/D
+    0:03:03  515512.3      0.44      55.6       0.9 ex_mem_reg/alu_out_reg[29]/D
+    0:03:03  515473.9      0.44      55.6       0.9 ex_mem_reg/alu_out_reg[29]/D
+    0:03:03  515804.2      0.44      55.6       0.9 ex_mem_reg/alu_out_reg[29]/D
+    0:03:03  516096.0      0.44      55.6       0.9 ex_mem_reg/alu_out_reg[23]/D
+    0:03:04  515727.4      0.44      55.6       0.9 ex_mem_reg/alu_out_reg[7]/D
+    0:03:04  515957.8      0.44      54.8       0.9 ex_mem_reg/alu_out_reg[29]/D
+    0:03:04  516288.0      0.44      54.8       0.9 ex_mem_reg/alu_out_reg[21]/D
+    0:03:04  516495.4      0.44      54.8       0.9 ex_mem_reg/alu_out_reg[29]/D
+    0:03:04  516572.2      0.44      54.8       0.9 ex_mem_reg/alu_out_reg[23]/D
+    0:03:04  516572.2      0.44      54.7       0.9 if_stage/pc/out_reg[26]/D
+    0:03:04  516902.4      0.44      54.6       0.9 ex_mem_reg/alu_out_reg[29]/D
+    0:03:05  517255.7      0.44      54.6       0.9 ex_mem_reg/alu_out_reg[23]/D
+    0:03:05  517393.9      0.44      54.5       0.9 ex_mem_reg/vector_ex_out_reg[2]/D
+    0:03:05  517378.6      0.43      54.5       0.9 ex_mem_reg/alu_out_reg[29]/D
+    0:03:05  517532.2      0.43      54.5       0.9 ex_mem_reg/alu_out_reg[7]/D
+    0:03:05  517701.1      0.43      54.5       0.9 ex_mem_reg/alu_out_reg[23]/D
+    0:03:05  518046.7      0.43      54.5       0.9 ex_mem_reg/alu_out_reg[21]/D
+    0:03:06  518300.2      0.43      54.5       0.9 ex_mem_reg/alu_out_reg[23]/D
+    0:03:06  518446.1      0.43      54.5       0.9 if_stage/pc/out_reg[24]/D
+    0:03:06  517900.8      0.43      54.4       0.9 ex_mem_reg/alu_out_reg[29]/D
+    0:03:06  517993.0      0.43      54.4       0.9 ex_mem_reg/alu_out_reg[23]/D
+    0:03:06  518100.5      0.43      54.4       0.9 ex_mem_reg/alu_out_reg[7]/D
+    0:03:06  518269.4      0.43      54.4       0.9 ex_mem_reg/vector_ex_out_reg[2]/D
+    0:03:06  518277.1      0.43      54.3       0.9 ex_mem_reg/alu_out_reg[23]/D
+    0:03:07  518277.1      0.43      54.3       0.9 ex_mem_reg/alu_out_reg[29]/D
+    0:03:07  518369.3      0.43      54.3       0.9 if_stage/pc/out_reg[24]/D
+    0:03:07  518323.2      0.43      54.2       0.9 ex_mem_reg/alu_out_reg[11]/D
+    0:03:07  517593.6      0.43      54.2       0.9 ex_mem_reg/alu_out_reg[23]/D
+    0:03:07  517678.1      0.43      54.2       0.9 ex_mem_reg/vector_ex_out_reg[2]/D
+    0:03:07  517708.8      0.43      54.2       0.9 ex_mem_reg/alu_out_reg[19]/D
+    0:03:08  517632.0      0.43      54.2       0.9 ex_mem_reg/vector_ex_out_reg[2]/D
+    0:03:08  517609.0      0.42      53.5       0.9 if_stage/pc/out_reg[21]/D
+    0:03:08  517655.0      0.42      53.5       0.9 ex_mem_reg/alu_out_reg[18]/D
+    0:03:08  517163.5      0.42      53.4       1.0 ex_mem_reg/alu_out_reg[29]/D
+    0:03:08  517002.2      0.42      53.4       1.0 ex_mem_reg/alu_out_reg[23]/D
+    0:03:08  517194.2      0.42      53.2       1.0 if_stage/pc/out_reg[24]/D
+    0:03:09  517409.3      0.42      53.2       1.0 ex_mem_reg/alu_out_reg[23]/D
+    0:03:10  517286.4      0.42      53.2       1.0 ex_mem_reg/alu_out_reg[23]/D
+    0:03:11  517033.0      0.42      53.2       1.0                          
+    0:03:11  517033.0      0.42      53.2       1.0                          
+
+
+  Beginning Design Rule Fixing  (max_fanout)  (max_capacitance)
+  ----------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:03:11  517033.0      0.42      53.2       1.0                          
+    0:03:11  517885.4      0.42      52.8       0.1 net77881                 
+    0:03:12  517939.2      0.42      51.9       0.0 ex_mem_reg/alu_out_reg[23]/D
+    0:03:12  518000.6      0.42      51.8       0.0 ex_mem_reg/alu_out_reg[19]/D
+    0:03:12  518238.7      0.42      51.7       0.0 ex_mem_reg/alu_out_reg[23]/D
+    0:03:13  518361.6      0.41      51.7       0.0 ex_stage/alu/N251        
+    0:03:13  518231.0      0.41      51.6       0.0 ex_mem_reg/alu_out_reg[11]/D
+    0:03:13  518154.2      0.41      49.5       0.0 ex_mem_reg/alu_out_reg[29]/D
+    0:03:14  518599.7      0.41      49.3       0.0 ex_mem_reg/alu_out_reg[29]/D
+    0:03:14  518507.5      0.41      49.3       0.0 ex_mem_reg/alu_out_reg[29]/D
+    0:03:14  518768.6      0.41      49.2       0.0 ex_mem_reg/alu_out_reg[29]/D
+    0:03:14  518983.7      0.41      49.1       0.0 ex_mem_reg/alu_out_reg[29]/D
+    0:03:14  518584.3      0.40      49.0       0.0 ex_mem_reg/alu_out_reg[17]/D
+    0:03:15  518791.7      0.40      49.0       0.0 ex_mem_reg/alu_out_reg[29]/D
+    0:03:15  519298.6      0.40      47.6       0.0 if_stage/pc/out_reg[22]/D
+    0:03:15  520711.7      0.40      47.0       0.0 ex_mem_reg/alu_out_reg[29]/D
+    0:03:15  521149.4      0.40      46.8       0.0 ex_mem_reg/vector_ex_out_reg[2]/D
+    0:03:16  522347.5      0.39      46.6       0.0 ex_mem_reg/vector_ex_out_reg[2]/D
+    0:03:16  522232.3      0.39      45.9       0.0 ex_mem_reg/alu_out_reg[25]/D
+    0:03:16  522547.2      0.39      45.9       0.0 ex_mem_reg/alu_out_reg[22]/D
+    0:03:17  523315.2      0.38      45.8       0.0 ex_mem_reg/alu_out_reg[17]/D
+    0:03:17  523584.0      0.38      45.7       0.0 ex_mem_reg/alu_out_reg[23]/D
+    0:03:17  524290.6      0.38      45.6       0.0 ex_mem_reg/alu_out_reg[24]/D
+    0:03:17  524774.4      0.38      45.7       0.0 if_stage/pc/out_reg[5]/D 
+    0:03:17  524513.3      0.38      45.7       0.0 ex_mem_reg/alu_out_reg[23]/D
+    0:03:18  524559.4      0.38      45.6       0.0 ex_mem_reg/alu_out_reg[24]/D
+    0:03:18  524858.9      0.38      45.6       0.0 ex_mem_reg/alu_out_reg[17]/D
+    0:03:18  525780.5      0.38      45.4       0.0 ex_mem_reg/alu_out_reg[29]/D
+    0:03:18  525964.8      0.38      45.0       0.0 ex_mem_reg/alu_out_reg[18]/D
+    0:03:18  525104.6      0.38      44.9       0.0 ex_mem_reg/alu_out_reg[6]/D
+    0:03:19  525227.5      0.37      44.8       0.0 ex_mem_reg/alu_out_reg[22]/D
+    0:03:19  525166.1      0.37      44.4       0.0 if_stage/pc/out_reg[5]/D 
+    0:03:19  524974.1      0.37      44.3       0.0 ex_mem_reg/vector_ex_out_reg[2]/D
+    0:03:19  525465.6      0.37      44.2       0.0 ex_mem_reg/alu_out_reg[10]/D
+    0:03:20  525757.4      0.37      43.7       0.0 if_stage/pc/out_reg[5]/D 
+    0:03:20  526371.8      0.36      43.2       0.0 ex_mem_reg/alu_out_reg[18]/D
+    0:03:20  526771.2      0.36      42.3       0.0 ex_mem_reg/vector_ex_out_reg[2]/D
+    0:03:21  527761.9      0.36      42.2       0.0 ex_mem_reg/alu_out_reg[17]/D
+    0:03:21  528714.2      0.36      42.2       0.0 ex_mem_reg/alu_out_reg[22]/D
+    0:03:21  529082.9      0.35      42.0       0.0 ex_mem_reg/alu_out_reg[11]/D
+    0:03:22  529689.6      0.35      41.6       0.0 ex_mem_reg/vector_ex_out_reg[3]/D
+    0:03:22  529797.1      0.35      41.5       0.0 ex_mem_reg/alu_out_reg[29]/D
+    0:03:22  530511.4      0.35      41.4       0.0 ex_mem_reg/alu_out_reg[27]/D
+    0:03:23  530864.6      0.34      41.4       0.0 ex_mem_reg/alu_out_reg[18]/D
+    0:03:23  531049.0      0.34      41.4       0.0 ex_mem_reg/alu_out_reg[0]/D
+    0:03:23  531571.2      0.34      40.6       0.0 if_stage/pc/out_reg[13]/D
+    0:03:23  531893.8      0.34      40.6       0.0 ex_mem_reg/alu_out_reg[27]/D
+    0:03:23  532508.2      0.34      40.6       0.0 if_stage/pc/out_reg[27]/D
+    0:03:24  533122.6      0.34      40.6       0.0 ex_mem_reg/alu_out_reg[27]/D
+    0:03:24  532723.2      0.34      40.4       0.0 ex_mem_reg/alu_out_reg[27]/D
+    0:03:24  533114.9      0.33      40.4       0.0 ex_mem_reg/alu_out_reg[27]/D
+    0:03:24  533314.6      0.33      40.4       0.0 if_stage/pc/out_reg[6]/D 
+    0:03:25  533905.9      0.33      40.2       0.0 ex_mem_reg/alu_out_reg[23]/D
+    0:03:25  533690.9      0.33      40.1       0.0 ex_mem_reg/alu_out_reg[27]/D
+    0:03:25  534420.5      0.33      40.1       0.0 ex_mem_reg/vector_ex_out_reg[3]/D
+    0:03:25  534574.1      0.33      40.0       0.0 ex_mem_reg/alu_out_reg[27]/D
+    0:03:26  535088.6      0.33      39.9       0.0 if_stage/pc/out_reg[4]/D 
+    0:03:26  535342.1      0.33      39.8       0.0 if_stage/pc/out_reg[6]/D 
+    0:03:26  535119.4      0.33      39.8       0.0 ex_mem_reg/alu_out_reg[27]/D
+    0:03:26  535311.4      0.33      39.7       0.0 ex_mem_reg/alu_out_reg[16]/D
+    0:03:26  535388.2      0.32      39.7       0.0 if_stage/pc/out_reg[4]/D 
+    0:03:27  535434.2      0.32      39.4       0.0 if_stage/pc/out_reg[4]/D 
+    0:03:27  535564.8      0.32      39.2       0.0 if_stage/pc/out_reg[4]/D 
+    0:03:27  535895.0      0.32      39.1       0.0 if_stage/pc/out_reg[4]/D 
+    0:03:27  536394.2      0.32      39.1       0.0 ex_mem_reg/alu_out_reg[19]/D
+    0:03:28  536962.6      0.32      38.6       0.0 ex_mem_reg/alu_out_reg[28]/D
+    0:03:28  536901.1      0.32      38.5       0.0 ex_mem_reg/alu_out_reg[26]/D
+    0:03:28  537093.1      0.32      38.5       0.0 if_stage/pc/out_reg[24]/D
+    0:03:28  538990.1      0.31      38.5       0.0 ex_mem_reg/alu_out_reg[27]/D
+    0:03:28  538967.0      0.31      38.4       0.0 ex_mem_reg/alu_out_reg[27]/D
+    0:03:29  539082.2      0.31      38.5       0.0 ex_mem_reg/alu_out_reg[18]/D
+    0:03:29  539243.5      0.31      38.4       0.0 ex_mem_reg/alu_out_reg[18]/D
+    0:03:29  539535.4      0.31      38.1       0.0 if_stage/pc/out_reg[24]/D
+    0:03:30  539865.6      0.31      38.0       0.0 ex_mem_reg/vector_ex_out_reg[3]/D
+    0:03:30  539973.1      0.31      37.9       0.0 ex_mem_reg/alu_out_reg[27]/D
+    0:03:30  540341.8      0.31      37.9       0.0 ex_mem_reg/alu_out_reg[28]/D
+    0:03:30  540272.6      0.31      37.8       0.0 ex_mem_reg/alu_out_reg[23]/D
+    0:03:31  540664.3      0.31      37.1       0.0 mem_wb_reg/data_out_reg[28]/D
+    0:03:31  540556.8      0.31      37.0       0.0 ex_mem_reg/alu_out_reg[14]/D
+    0:03:31  540848.6      0.31      37.0       0.0 ex_mem_reg/alu_out_reg[27]/D
+    0:03:31  541040.6      0.31      36.9       0.0 if_stage/pc/out_reg[24]/D
+    0:03:31  541263.4      0.30      36.9       0.0 ex_mem_reg/alu_out_reg[26]/D
+    0:03:32  541440.0      0.30      36.9       0.0 ex_mem_reg/alu_out_reg[28]/D
+    0:03:32  541662.7      0.30      36.8       0.0 ex_mem_reg/alu_out_reg[27]/D
+    0:03:32  542369.3      0.30      36.7       0.0 ex_mem_reg/alu_out_reg[23]/D
+    0:03:32  542615.0      0.30      35.9       0.0 IAR/pc_out_reg[17]/D     
+    0:03:32  543091.2      0.30      35.9       0.0 ex_mem_reg/alu_out_reg[25]/D
+    0:03:33  542914.6      0.30      34.1       0.0 if_stage/pc/out_reg[6]/D 
+    0:03:33  543152.6      0.30      34.0       0.0 ex_mem_reg/vector_ex_out_reg[2]/D
+    0:03:33  543651.8      0.30      33.9       0.0 ex_mem_reg/vector_ex_out_reg[3]/D
+    0:03:33  544350.7      0.30      33.9       0.0 ex_mem_reg/alu_out_reg[26]/D
+    0:03:34  544519.7      0.30      33.8       0.0 ex_mem_reg/alu_out_reg[27]/D
+    0:03:34  545057.3      0.29      33.8       0.0 if_stage/pc/out_reg[24]/D
+    0:03:34  545111.0      0.29      33.7       0.0 if_stage/pc/out_reg[24]/D
+    0:03:34  545257.0      0.29      33.7       0.0 if_stage/pc/out_reg[27]/D
+    0:03:35  545763.8      0.29      33.7       0.0 ex_mem_reg/alu_out_reg[24]/D
+    0:03:35  546201.6      0.29      32.7       0.0 ex_mem_reg/alu_out_reg[9]/D
+    0:03:35  545971.2      0.29      32.6       0.0 ex_mem_reg/alu_out_reg[27]/D
+    0:03:35  546163.2      0.29      32.6       0.0 ex_mem_reg/vector_ex_out_reg[2]/D
+    0:03:36  546132.5      0.29      32.5       0.0 ex_mem_reg/alu_out_reg[16]/D
+    0:03:36  546462.7      0.29      32.5       0.0 if_stage/pc/out_reg[11]/D
+    0:03:36  546923.5      0.29      32.3       0.0 ex_mem_reg/alu_out_reg[29]/D
+    0:03:36  547230.7      0.29      32.3       0.0 ex_mem_reg/alu_out_reg[29]/D
+    0:03:37  547507.2      0.29      32.3       0.0 ex_mem_reg/alu_out_reg[27]/D
+    0:03:37  547706.9      0.29      32.2       0.0 ex_mem_reg/alu_out_reg[24]/D
+    0:03:37  548167.7      0.29      31.5       0.0 ex_mem_reg/vector_ex_out_reg[3]/D
+    0:03:37  548513.3      0.28      31.4       0.0 if_stage/pc/out_reg[27]/D
+    0:03:38  549112.3      0.28      31.5       0.0 ex_mem_reg/alu_out_reg[27]/D
+    0:03:38  549964.8      0.28      31.4       0.0 ex_mem_reg/alu_out_reg[29]/D
+    0:03:38  549903.4      0.28      31.3       0.0 ex_mem_reg/alu_out_reg[17]/D
+    0:03:38  550110.7      0.28      31.2       0.0 ex_mem_reg/alu_out_reg[20]/D
+    0:03:39  550249.0      0.27      31.1       0.0 ex_mem_reg/alu_out_reg[21]/D
+    0:03:39  550149.1      0.27      30.4       0.0 ex_mem_reg/alu_out_reg[21]/D
+    0:03:39  551063.0      0.27      30.3       0.0 ex_mem_reg/alu_out_reg[25]/D
+    0:03:39  550955.5      0.27      30.2       0.0 ex_mem_reg/alu_out_reg[21]/D
+    0:03:39  551278.1      0.27      30.2       0.0 ex_mem_reg/alu_out_reg[20]/D
+    0:03:40  551447.0      0.27      30.1       0.0 ex_mem_reg/alu_out_reg[27]/D
+    0:03:40  551754.2      0.27      30.1       0.0 ex_mem_reg/alu_out_reg[17]/D
+    0:03:40  552322.6      0.27      30.1       0.0 ex_mem_reg/alu_out_reg[27]/D
+    0:03:40  552675.8      0.27      29.9       0.0 ex_mem_reg/alu_out_reg[27]/D
+    0:03:40  553121.3      0.27      29.9       0.0 ex_mem_reg/alu_out_reg[27]/D
+    0:03:41  553013.8      0.27      29.8       0.0 if_stage/pc/out_reg[12]/D
+    0:03:41  552821.8      0.27      29.8       0.0 ex_mem_reg/alu_out_reg[21]/D
+    0:03:41  553113.6      0.27      29.8       0.0 ex_mem_reg/alu_out_reg[27]/D
+    0:03:41  553159.7      0.26      29.8       0.0 ex_mem_reg/alu_out_reg[29]/D
+    0:03:41  553359.4      0.26      29.8       0.0 ex_mem_reg/alu_out_reg[21]/D
+    0:03:42  553666.6      0.26      29.7       0.0 ex_mem_reg/alu_out_reg[28]/D
+    0:03:42  553904.6      0.26      28.2       0.0 if_stage/pc/out_reg[21]/D
+    0:03:42  553966.1      0.26      26.5       0.0 ex_mem_reg/alu_out_reg[29]/D
+    0:03:42  553935.4      0.26      26.5       0.0 ex_mem_reg/alu_out_reg[10]/D
+    0:03:42  553735.7      0.26      26.5       0.0 if_stage/pc/out_reg[25]/D
+    0:03:43  553843.2      0.26      26.4       0.0 ex_mem_reg/vector_ex_out_reg[3]/D
+    0:03:43  554050.6      0.26      26.4       0.0 ex_mem_reg/alu_out_reg[29]/D
+    0:03:43  554065.9      0.26      26.4       0.0 ex_mem_reg/alu_out_reg[19]/D
+    0:03:43  554135.0      0.26      26.3       0.0 if_stage/pc/out_reg[12]/D
+    0:03:43  554626.6      0.26      26.3       0.0 ex_mem_reg/alu_out_reg[24]/D
+    0:03:44  554626.6      0.26      26.3       0.0 ex_mem_reg/alu_out_reg[28]/D
+    0:03:44  554473.0      0.26      26.2       0.0 ex_mem_reg/alu_out_reg[11]/D
+    0:03:44  554603.5      0.26      26.2       0.0 ex_mem_reg/alu_out_reg[10]/D
+    0:03:44  554257.9      0.26      26.2       0.0 ex_mem_reg/alu_out_reg[27]/D
+    0:03:44  554473.0      0.26      26.2       0.0 ex_mem_reg/vector_ex_out_reg[3]/D
+    0:03:44  554588.2      0.26      26.2       0.0 ex_mem_reg/vector_ex_out_reg[3]/D
+    0:03:45  555310.1      0.26      26.1       0.0 ex_mem_reg/alu_out_reg[30]/D
+    0:03:45  555379.2      0.26      26.1       0.0 ex_mem_reg/alu_out_reg[29]/D
+    0:03:45  555509.8      0.25      26.1       0.0 if_stage/pc/out_reg[15]/D
+    0:03:45  555494.4      0.25      26.1       0.0                          
+    0:03:46  555463.7      0.25      25.9       0.0                          
+    0:03:46  556039.7      0.25      25.9       0.0                          
+    0:03:46  556147.2      0.25      25.9       0.0                          
+    0:03:46  556423.7      0.25      25.6       0.0                          
+    0:03:46  556569.6      0.25      25.5       0.0                          
+    0:03:47  556592.6      0.25      25.4       0.0                          
+    0:03:47  556608.0      0.25      25.4       0.0                          
+    0:03:47  557061.1      0.25      25.4       0.0                          
+    0:03:47  557161.0      0.25      25.4       0.0                          
+    0:03:47  557191.7      0.25      25.4       0.0                          
+    0:03:47  557130.2      0.25      25.4       0.0                          
+    0:03:47  557145.6      0.25      25.3       0.0                          
+    0:03:48  557345.3      0.25      25.3       0.0                          
+    0:03:48  557606.4      0.25      25.2       0.0                          
+    0:03:48  558113.3      0.25      25.2       0.0                          
+    0:03:48  558681.6      0.25      25.1       0.0                          
+    0:03:48  558896.6      0.25      25.3       0.0                          
+    0:03:48  558773.8      0.25      25.3       0.0                          
+    0:03:49  558689.3      0.25      25.3       0.0                          
+    0:03:49  558720.0      0.25      25.2       0.0                          
+    0:03:49  558896.6      0.25      25.1       0.0                          
+    0:03:49  558965.8      0.25      25.1       0.0                          
+    0:03:49  560432.6      0.25      24.9       0.0                          
+    0:03:50  561008.6      0.25      24.8       0.0                          
+    0:03:50  561108.5      0.25      24.7       0.0                          
+    0:03:50  561008.6      0.25      24.7       0.0                          
+    0:03:50  560670.7      0.25      24.7       0.0                          
+    0:03:51  560739.8      0.25      24.5       0.0                          
+    0:03:51  560916.5      0.25      24.5       0.0                          
+    0:03:51  561146.9      0.25      24.5       0.0                          
+    0:03:51  561331.2      0.25      24.4       0.0                          
+    0:03:51  561315.8      0.25      24.5       0.0                          
+    0:03:52  561492.5      0.25      24.4       0.0                          
+    0:03:52  561323.5      0.25      24.2       0.0                          
+    0:03:52  561530.9      0.25      23.5       0.0                          
+    0:03:52  561415.7      0.25      23.5       0.0                          
+
+
+  Beginning Area-Recovery Phase  (max_area 0)
+  -----------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:03:52  561415.7      0.25      23.5       0.0                          
+    0:03:52  561415.7      0.25      23.5       0.0                          
+    0:03:53  547100.2      0.25      19.8       0.0                          
+    0:03:53  541885.4      0.26      20.2       0.0                          
+    0:03:53  539389.4      0.26      20.2       0.0                          
+    0:03:53  537277.4      0.26      20.2       0.0                          
+    0:03:53  536002.6      0.26      20.2       0.0                          
+    0:03:54  534743.0      0.26      20.3       0.0                          
+    0:03:54  533929.0      0.26      20.3       0.0                          
+    0:03:54  533652.5      0.26      20.3       0.0                          
+    0:03:54  533368.3      0.26      20.3       0.0                          
+    0:03:54  532922.9      0.26      20.3       0.0                          
+    0:03:54  532707.8      0.26      20.3       0.0                          
+    0:03:54  532531.2      0.26      20.3       0.0                          
+    0:03:54  532531.2      0.26      20.3       0.0                          
+    0:03:54  532930.6      0.26      20.2       0.0 if_stage/pc/out_reg[9]/D 
+    0:03:55  538083.8      0.25      19.7       0.0                          
+    0:03:56  521564.2      0.64      29.0       0.0                          
+    0:03:56  514644.5      0.68      30.4       0.0                          
+    0:03:57  513008.6      0.68      30.1       0.0                          
+    0:03:57  512962.6      0.68      30.1       0.0                          
+    0:03:57  512962.6      0.68      30.1       0.0                          
+    0:03:57  512962.6      0.68      30.1       0.0                          
+    0:03:57  512962.6      0.68      30.1       0.0                          
+    0:03:57  512962.6      0.68      30.1       0.0                          
+    0:03:57  514744.3      0.35      23.1       0.0 ex_mem_reg/alu_out_reg[22]/D
+    0:03:58  515351.0      0.29      21.4       0.0 ex_mem_reg/alu_out_reg[10]/D
+    0:03:59  515604.5      0.28      21.2       0.0 ex_mem_reg/alu_out_reg[28]/D
+    0:03:59  516288.0      0.28      20.8       0.0 ex_mem_reg/alu_out_reg[22]/D
+    0:04:00  516579.8      0.27      20.8       0.0 ex_mem_reg/alu_out_reg[1]/D
+    0:04:00  516433.9      0.27      20.7       0.0 ex_mem_reg/alu_out_reg[21]/D
+    0:04:01  516710.4      0.27      20.6       0.0 ex_mem_reg/alu_out_reg[0]/D
+    0:04:01  516910.1      0.26      20.5       0.0 ex_mem_reg/alu_out_reg[21]/D
+    0:04:02  516994.6      0.25      20.2       0.0 ex_mem_reg/alu_out_reg[21]/D
+    0:04:02  517355.5      0.25      20.2       0.0 ex_mem_reg/alu_out_reg[21]/D
+    0:04:02  517585.9      0.25      20.0       0.0 ex_mem_reg/alu_out_reg[27]/D
+    0:04:03  518323.2      0.24      20.0       0.0 ex_mem_reg/vector_ex_out_reg[3]/D
+    0:04:03  518315.5      0.24      19.9       0.0 ex_mem_reg/alu_out_reg[18]/D
+    0:04:03  518761.0      0.24      19.8       0.0 ex_mem_reg/alu_out_reg[18]/D
+    0:04:03  518807.0      0.24      19.8       0.0 ex_mem_reg/alu_out_reg[21]/D
+    0:04:04  520558.1      0.24      19.7       0.0 ex_mem_reg/alu_out_reg[28]/D
+    0:04:04  521295.4      0.24      19.6       0.0 ex_mem_reg/alu_out_reg[28]/D
+    0:04:04  521556.5      0.23      19.5       0.0 ex_mem_reg/alu_out_reg[28]/D
+    0:04:04  521786.9      0.23      19.5       0.0 ex_mem_reg/alu_out_reg[15]/D
+    0:04:04  521748.5      0.23      19.4       0.0 ex_mem_reg/vector_ex_out_reg[2]/D
+    0:04:05  521863.7      0.23      19.3       0.0 ex_mem_reg/vector_ex_out_reg[2]/D
+    0:04:05  521909.8      0.23      19.3       0.0 ex_mem_reg/alu_out_reg[0]/D
+    0:04:05  521825.3      0.23      19.2       0.0 ex_mem_reg/vector_ex_out_reg[2]/D
+    0:04:05  522163.2      0.23      19.1       0.0 ex_mem_reg/alu_out_reg[21]/D
+    0:04:05  522293.8      0.23      19.0       0.0 ex_mem_reg/alu_out_reg[21]/D
+    0:04:06  522409.0      0.23      19.0       0.0 ex_mem_reg/alu_out_reg[20]/D
+    0:04:06  522562.6      0.22      18.9       0.0 ex_mem_reg/alu_out_reg[21]/D
+    0:04:06  522631.7      0.22      18.9       0.0 if_stage/pc/out_reg[3]/D 
+    0:04:06  522739.2      0.22      18.9       0.0 ex_mem_reg/alu_out_reg[21]/D
+    0:04:06  523031.0      0.22      18.9       0.0 ex_mem_reg/alu_out_reg[15]/D
+    0:04:07  523261.4      0.22      18.9       0.0 if_stage/pc/out_reg[24]/D
+    0:04:07  523407.4      0.22      19.0       0.0 ex_mem_reg/alu_out_reg[20]/D
+    0:04:07  523660.8      0.22      19.0       0.0 ex_mem_reg/alu_out_reg[20]/D
+    0:04:07  524137.0      0.22      18.9       0.0 ex_mem_reg/alu_out_reg[21]/D
+    0:04:07  524313.6      0.22      18.9       0.0 ex_mem_reg/alu_out_reg[15]/D
+    0:04:07  524605.4      0.22      18.9       0.0 ex_mem_reg/alu_out_reg[21]/D
+    0:04:08  524659.2      0.22      18.9       0.0 ex_mem_reg/vector_ex_out_reg[2]/D
+    0:04:08  524751.4      0.22      18.9       0.0 ex_mem_reg/alu_out_reg[19]/D
+    0:04:08  524713.0      0.22      18.8       0.0 ex_mem_reg/alu_out_reg[9]/D
+    0:04:08  524866.6      0.22      18.8       0.0 if_stage/pc/out_reg[18]/D
+    0:04:08  525066.2      0.22      18.6       0.0 ex_mem_reg/alu_out_reg[18]/D
+    0:04:08  525127.7      0.22      18.6       0.0 ex_mem_reg/vector_ex_out_reg[2]/D
+    0:04:09  525235.2      0.22      18.6       0.0 ex_mem_reg/alu_out_reg[22]/D
+    0:04:09  525626.9      0.21      18.5       0.0 if_stage/pc/out_reg[27]/D
+    0:04:09  525649.9      0.21      18.5       0.0 ex_mem_reg/alu_out_reg[21]/D
+    0:04:09  525465.6      0.21      18.5       0.0 if_stage/pc/out_reg[27]/D
+    0:04:10  525665.3      0.21      18.4       0.0 if_stage/pc/out_reg[27]/D
+    0:04:10  525381.1      0.21      18.4       0.0                          
+    0:04:10  525150.7      0.21      18.4       0.0                          
+    0:04:10  524705.3      0.21      18.4       0.0                          
+    0:04:10  524137.0      0.21      18.4       0.0                          
+    0:04:10  523822.1      0.21      18.4       0.0                          
+    0:04:11  523253.8      0.21      18.4       0.0                          
+    0:04:11  523000.3      0.21      18.4       0.0                          
+    0:04:11  522570.2      0.21      18.4       0.0                          
+    0:04:11  522217.0      0.21      18.3       0.0                          
+    0:04:11  520965.1      0.21      18.3       0.0                          
+    0:04:11  520204.8      0.21      18.3       0.0                          
+    0:04:12  519575.0      0.21      18.6       0.0                          
+    0:04:12  518676.5      0.21      18.8       0.0                          
+    0:04:12  517401.6      0.21      18.9       0.0                          
+    0:04:12  516334.1      0.21      23.0       0.0                          
+    0:04:13  514406.4      0.21      23.0       0.0                          
+    0:04:13  514037.8      0.21      22.7       0.0                          
+    0:04:13  512540.2      0.21      22.7       0.0                          
+    0:04:13  511372.8      0.21      22.7       0.0                          
+    0:04:14  510750.7      0.21      22.5       0.0                          
+    0:04:14  510512.6      0.21      22.5       0.0                          
+    0:04:14  510213.1      0.21      22.5       0.0                          
+    0:04:15  509967.4      0.21      22.5       0.0                          
+    0:04:15  503554.6      0.48      29.0       0.0                          
+    0:04:15  500874.2      0.64      35.6       0.0                          
+    0:04:16  500106.2      0.64      35.5       0.0                          
+    0:04:16  500075.5      0.64      35.5       0.0                          
+    0:04:16  500075.5      0.64      35.5       0.0                          
+    0:04:16  500075.5      0.64      35.5       0.0                          
+    0:04:16  500075.5      0.64      35.5       0.0                          
+    0:04:16  500075.5      0.64      35.5       0.0                          
+    0:04:16  501319.7      0.26      26.0       0.0 ex_mem_reg/alu_out_reg[28]/D
+    0:04:17  502387.2      0.23      24.6       0.0 if_stage/pc/out_reg[26]/D
+    0:04:18  508462.1      0.22      23.4       0.0 ex_mem_reg/alu_out_reg[14]/D
+    0:04:18  509038.1      0.22      23.3       0.0 ex_mem_reg/alu_out_reg[14]/D
+    0:04:19  509314.6      0.22      21.9       0.0 if_stage/pc/out_reg[27]/D
+    0:04:19  509591.0      0.22      22.0       0.0 ex_mem_reg/alu_out_reg[21]/D
+    0:04:19  509829.1      0.21      22.9       0.0 ex_mem_reg/alu_out_reg[21]/D
+    0:04:20  510182.4      0.21      22.7       0.0 ex_mem_reg/alu_out_reg[17]/D
+    0:04:20  510466.6      0.21      22.9       0.0 if_stage/pc/out_reg[26]/D
+    0:04:20  510451.2      0.21      22.8       0.0 ex_mem_reg/alu_out_reg[28]/D
+    0:04:20  510950.4      0.21      17.6       0.0 ex_mem_reg/alu_out_reg[21]/D
+    0:04:20  511257.6      0.21      17.5       0.0 ex_mem_reg/alu_out_reg[21]/D
+    0:04:21  511488.0      0.21      17.5       0.0 ex_mem_reg/alu_out_reg[21]/D
+    0:04:21  511979.5      0.20      17.2       0.0 ex_mem_reg/alu_out_reg[21]/D
+    0:04:21  512302.1      0.20      16.7       0.0 ex_mem_reg/alu_out_reg[21]/D
+    0:04:21  512924.2      0.20      16.7       0.0 ex_mem_reg/vector_ex_out_reg[2]/D
+    0:04:22  513784.3      0.20      16.5       0.0 ex_mem_reg/vector_ex_out_reg[2]/D
+    0:04:22  513907.2      0.20      16.5       0.0 ex_mem_reg/alu_out_reg[21]/D
+    0:04:22  514091.5      0.20      16.4       0.0 ex_mem_reg/alu_out_reg[18]/D
+    0:04:22  514498.6      0.20      16.4       0.0 ex_mem_reg/alu_out_reg[21]/D
+    0:04:22  514544.6      0.20      16.4       0.0 ex_mem_reg/alu_out_reg[28]/D
+    0:04:23  514767.4      0.20      16.4       0.0 ex_mem_reg/vector_ex_out_reg[2]/D
+    0:04:23  515412.5      0.19      16.1       0.0 ex_mem_reg/vector_ex_out_reg[2]/D
+    0:04:23  515781.1      0.19      16.1       0.0 ex_mem_reg/alu_out_reg[14]/D
+    0:04:23  516887.0      0.19      16.0       0.0 ex_mem_reg/alu_out_reg[20]/D
+    0:04:24  517086.7      0.19      16.0       0.0 ex_mem_reg/vector_ex_out_reg[2]/D
+    0:04:24  517340.2      0.19      15.9       0.0 ex_mem_reg/alu_out_reg[21]/D
+    0:04:24  517954.6      0.19      15.9       0.0 ex_mem_reg/alu_out_reg[21]/D
+    0:04:24  518446.1      0.19      15.9       0.0 ex_mem_reg/vector_ex_out_reg[2]/D
+    0:04:24  518645.8      0.19      15.9       0.0 ex_mem_reg/alu_out_reg[29]/D
+    0:04:24  519367.7      0.19      15.9       0.0 ex_mem_reg/alu_out_reg[21]/D
+    0:04:25  519467.5      0.18      15.9       0.0 ex_mem_reg/vector_ex_out_reg[2]/D
+    0:04:25  519552.0      0.18      15.9       0.0 ex_mem_reg/alu_out_reg[20]/D
+    0:04:25  520020.5      0.18      15.8       0.0 ex_mem_reg/alu_out_reg[20]/D
+    0:04:25  520550.4      0.18      15.7       0.0 ex_mem_reg/alu_out_reg[20]/D
+    0:04:26  521287.7      0.18      15.6       0.0 ex_mem_reg/alu_out_reg[18]/D
+    0:04:26  521779.2      0.18      15.5       0.0 ex_mem_reg/alu_out_reg[18]/D
+    0:04:26  522117.1      0.18      15.4       0.0 ex_mem_reg/alu_out_reg[0]/D
+    0:04:26  522309.1      0.18      14.6       0.0 ex_mem_reg/alu_out_reg[21]/D
+    0:04:27  522562.6      0.18      14.6       0.0 ex_mem_reg/alu_out_reg[23]/D
+    0:04:27  523422.7      0.18      14.7       0.0 ex_mem_reg/alu_out_reg[7]/D
+    0:04:27  523829.8      0.18      15.0       0.0 if_stage/pc/out_reg[27]/D
+    0:04:27  524167.7      0.18      15.0       0.0 ex_mem_reg/vector_ex_out_reg[2]/D
+    0:04:27  524567.0      0.17      14.9       0.0 ex_mem_reg/vector_ex_out_reg[3]/D
+    0:04:28  525880.3      0.17      14.7       0.0 ex_mem_reg/alu_out_reg[21]/D
+    0:04:28  525841.9      0.17      14.7       0.0 ex_mem_reg/alu_out_reg[17]/D
+    0:04:28  526149.1      0.17      14.7       0.0 ex_mem_reg/alu_out_reg[21]/D
+    0:04:28  526272.0      0.17      14.7       0.0 ex_mem_reg/alu_out_reg[17]/D
+    0:04:29  527063.0      0.17      14.6       0.0 ex_mem_reg/alu_out_reg[22]/D
+    0:04:29  527216.6      0.17      14.6       0.0 ex_mem_reg/alu_out_reg[21]/D
+    0:04:29  527493.1      0.17      14.6       0.0 ex_mem_reg/alu_out_reg[30]/D
+    0:04:29  527669.8      0.17      14.6       0.0 if_stage/pc/out_reg[3]/D 
+    0:04:29  527946.2      0.17      14.5       0.0 ex_mem_reg/alu_out_reg[17]/D
+    0:04:29  527953.9      0.17      14.4       0.0 ex_mem_reg/alu_out_reg[17]/D
+    0:04:30  528069.1      0.17      14.4       0.0 ex_mem_reg/alu_out_reg[17]/D
+    0:04:30  528176.6      0.17      14.4       0.0 ex_mem_reg/vector_ex_out_reg[2]/D
+    0:04:30  528583.7      0.17      14.4       0.0 ex_mem_reg/alu_out_reg[13]/D
+    0:04:30  529321.0      0.17      14.3       0.0 ex_mem_reg/alu_out_reg[0]/D
+    0:04:30  529297.9      0.17      14.3       0.0 if_stage/pc/out_reg[3]/D 
+    0:04:31  529443.8      0.17      14.3       0.0 ex_mem_reg/vector_ex_out_reg[3]/D
+    0:04:31  529996.8      0.17      14.3       0.0 ex_mem_reg/alu_out_reg[17]/D
+    0:04:31  530304.0      0.17      14.2       0.0 ex_mem_reg/alu_out_reg[17]/D
+    0:04:31  530104.3      0.17      14.2       0.0                          
+    0:04:32  530004.5      0.17      14.2       0.0                          
+    0:04:32  529958.4      0.17      14.2       0.0                          
+    0:04:32  529497.6      0.17      14.2       0.0                          
+    0:04:32  529221.1      0.17      14.2       0.0                          
+    0:04:32  529098.2      0.17      14.2       0.0                          
+    0:04:32  528821.8      0.17      14.2       0.0                          
+    0:04:32  528614.4      0.17      14.2       0.0                          
+    0:04:32  527669.8      0.17      14.2       0.0                          
+    0:04:33  526970.9      0.17      14.2       0.0                          
+    0:04:33  526517.8      0.17      14.2       0.0                          
+    0:04:33  526848.0      0.17      14.1       0.0                          
+    0:04:33  526886.4      0.17      14.1       0.0                          
+    0:04:33  527001.6      0.17      14.1       0.0                          
+    0:04:33  527447.0      0.17      13.5       0.0                          
+    0:04:34  527892.5      0.17      13.5       0.0                          
+    0:04:34  528268.8      0.17      13.5       0.0                          
+    0:04:34  528314.9      0.17      13.4       0.0                          
+    0:04:34  528245.8      0.17      13.4       0.0                          
+    0:04:34  528207.4      0.17      13.4       0.0                          
+    0:04:34  527969.3      0.17      13.4       0.0                          
+    0:04:34  527907.8      0.17      13.4       0.0                          
+    0:04:34  527938.6      0.17      13.4       0.0                          
+    0:04:35  528092.2      0.17      13.4       0.0                          
+    0:04:35  528192.0      0.17      13.4       0.0                          
+    0:04:35  528437.8      0.17      13.3       0.0                          
+    0:04:35  528460.8      0.17      13.2       0.0                          
+    0:04:35  529052.2      0.17      13.2       0.0                          
+    0:04:35  529297.9      0.17      13.2       0.0                          
+    0:04:35  529520.6      0.17      13.2       0.0                          
+    0:04:36  529505.3      0.17      13.2       0.0                          
+    0:04:36  529643.5      0.17      13.2       0.0                          
+    0:04:36  529774.1      0.17      12.8       0.0                          
+    0:04:36  529889.3      0.17      12.7       0.0                          
+    0:04:36  529920.0      0.17      12.7       0.0                          
+    0:04:36  529912.3      0.17      12.7       0.0                          
+    0:04:36  530242.6      0.16      12.7       0.0                          
+    0:04:36  530158.1      0.16      12.6       0.0                          
+    0:04:37  530150.4      0.16      12.6       0.0                          
+    0:04:37  530150.4      0.16      12.6       0.0                          
+    0:04:37  530173.4      0.16      12.6       0.0                          
+    0:04:37  530181.1      0.16      12.6       0.0                          
+    0:04:37  530089.0      0.16      12.5       0.0                          
+    0:04:37  530089.0      0.16      12.5       0.0                          
+    0:04:37  530211.8      0.16      12.5       0.0                          
+    0:04:38  530580.5      0.16      12.4       0.0                          
+    0:04:38  530695.7      0.16      12.2       0.0                          
+    0:04:38  531018.2      0.16      12.0       0.0 ex_mem_reg/vector_ex_out_reg[2]/D
+    0:04:38  531371.5      0.16      12.0       0.0 ex_mem_reg/alu_out_reg[17]/D
+    0:04:38  531379.2      0.16      12.0       0.0 ex_mem_reg/alu_out_reg[17]/D
+    0:04:39  531555.8      0.16      12.0       0.0 ex_mem_reg/alu_out_reg[21]/D
+    0:04:39  531625.0      0.16      12.0       0.0 if_stage/pc/out_reg[27]/D
+    0:04:39  532339.2      0.16      12.0       0.0 ex_mem_reg/alu_out_reg[27]/D
+    0:04:39  532439.0      0.16      12.0       0.0 ex_mem_reg/vector_ex_out_reg[3]/D
+    0:04:39  532654.1      0.16      12.0       0.0 ex_mem_reg/alu_out_reg[17]/D
+    0:04:39  532884.5      0.16      12.0       0.0 ex_mem_reg/alu_out_reg[19]/D
+    0:04:40  533391.4      0.15      12.0       0.0 ex_mem_reg/alu_out_reg[23]/D
+    0:04:40  533998.1      0.15      12.0       0.0 ex_mem_reg/alu_out_reg[17]/D
+    0:04:40  534097.9      0.15      11.9       0.0 ex_mem_reg/alu_out_reg[23]/D
+    0:04:40  534428.2      0.15      11.9       0.0 ex_mem_reg/alu_out_reg[29]/D
+    0:04:40  534205.4      0.15      11.9       0.0 ex_mem_reg/vector_ex_out_reg[2]/D
+    0:04:40  533998.1      0.15      11.9       0.0 ex_mem_reg/alu_out_reg[29]/D
+    0:04:40  533798.4      0.15      11.9       0.0 ex_mem_reg/alu_out_reg[29]/D
+    0:04:41  533829.1      0.15      11.9       0.0 ex_mem_reg/alu_out_reg[17]/D
+    0:04:41  533844.5      0.15      11.9       0.0 ex_mem_reg/alu_out_reg[17]/D
+    0:04:41  534082.6      0.15      11.9       0.0 ex_mem_reg/vector_ex_out_reg[2]/D
+    0:04:41  534351.4      0.15      11.9       0.0 ex_mem_reg/alu_out_reg[17]/D
+    0:04:41  534382.1      0.15      11.8       0.0 ex_mem_reg/alu_out_reg[0]/D
+    0:04:41  534666.2      0.15      11.8       0.0 ex_mem_reg/alu_out_reg[29]/D
+    0:04:42  534766.1      0.15      11.8       0.0 ex_mem_reg/alu_out_reg[23]/D
+    0:04:42  535403.5      0.15      11.7       0.0 if_stage/pc/out_reg[5]/D 
+    0:04:42  535411.2      0.15      11.8       0.0 if_stage/pc/out_reg[6]/D 
+    0:04:42  535534.1      0.15      11.8       0.0 ex_mem_reg/vector_ex_out_reg[2]/D
+    0:04:42  535718.4      0.15      11.8       0.0 ex_mem_reg/alu_out_reg[17]/D
+    0:04:42  535741.4      0.15      11.8       0.0 ex_mem_reg/alu_out_reg[17]/D
+    0:04:43  535741.4      0.15      11.8       0.0 ex_mem_reg/alu_out_reg[19]/D
+    0:04:43  535895.0      0.15      11.7       0.0 if_stage/pc/out_reg[6]/D 
+    0:04:43  536017.9      0.15      11.7       0.0 if_stage/pc/out_reg[24]/D
+    0:04:43  535987.2      0.15      11.7       0.0 ex_mem_reg/alu_out_reg[29]/D
+    0:04:43  535941.1      0.15      11.7       0.0 ex_mem_reg/alu_out_reg[0]/D
+    0:04:44  536071.7      0.15      11.7       0.0 ex_mem_reg/alu_out_reg[17]/D
+    0:04:44  536233.0      0.15      11.7       0.0 ex_mem_reg/alu_out_reg[17]/D
+    0:04:44  536248.3      0.15      11.7       0.0 ex_mem_reg/alu_out_reg[4]/D
+    0:04:44  536248.3      0.15      11.7       0.0 if_stage/pc/out_reg[2]/D 
+    0:04:44  536716.8      0.14      11.7       0.0 ex_mem_reg/alu_out_reg[17]/D
+    0:04:44  537008.6      0.14      11.6       0.0 if_stage/pc/out_reg[2]/D 
+    0:04:44  537277.4      0.14      11.6       0.0 ex_mem_reg/alu_out_reg[17]/D
+    0:04:45  537408.0      0.14      11.7       0.0 ex_mem_reg/alu_out_reg[18]/D
+    0:04:45  537592.3      0.14      11.6       0.0 ex_mem_reg/alu_out_reg[17]/D
+    0:04:45  537738.2      0.14      11.6       0.0 if_stage/pc/out_reg[6]/D 
+    0:04:45  537884.2      0.14      11.6       0.0 ex_mem_reg/alu_out_reg[29]/D
+    0:04:45  537868.8      0.14      11.6       0.0 if_stage/pc/out_reg[6]/D 
+    0:04:46  537953.3      0.14      11.6       0.0 ex_mem_reg/alu_out_reg[17]/D
+    0:04:46  538191.4      0.14      11.5       0.0 ex_mem_reg/alu_out_reg[17]/D
+Loading db file '/home/abe/hit18-lib/kyoto_lib/synopsys/HIT018.db'
+
+  Optimization Complete
+  ---------------------
+1
+#compileここには効かない
+compile -inc
+Warning: The cache_read directory ~ is not readable.  (SYNOPT-10)
+Warning: The cache_write directory ~ is not writable. So no cache elements can be written.   (SYNOPT-11)
+
+Information: There are 319 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
+
+
+
+  Beginning Pass 1 Mapping  (Incremental)
+  ------------------------
+
+  Updating timing information
+Information: Updating design information... (UID-85)
+
+  Beginning Mapping Optimizations  (Medium effort)  (Incremental)
+  -------------------------------
+
+  Beginning Incremental Implementation Selection
+  ----------------------------------------------
+  Selecting critical implementations
+  Building model 'DW01_NAND2'
+  Building model 'DW01_sub_width32' (cla)
+  Building model 'DW01_sub_width32' (rpl)
+  Structuring 'top_DW01_sub_0'
+  Mapping 'top_DW01_sub_0'
+  Building model 'DW01_add_width32' (cla)
+  Structuring 'top_DW01_add_0'
+  Mapping 'top_DW01_add_0'
+  Structuring 'top_DW01_sub_1'
+  Mapping 'top_DW01_sub_1'
+  Structuring 'top_DW01_add_2'
+  Mapping 'top_DW01_add_2'
+  Building model 'DW01_add_width32' (rpl)
+  Structuring 'top_DW01_add_4'
+  Mapping 'top_DW01_add_4'
+  Structuring 'top_DW01_add_5'
+  Mapping 'top_DW01_add_5'
+  Selecting implementations
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:07  558750.7      0.44      17.4       0.0                          
+    0:00:07  558750.7      0.44      17.4       0.0                          
+    0:00:07  558750.7      0.44      17.4       0.0                          
+    0:00:07  558750.7      0.44      17.4       0.0                          
+    0:00:07  558750.7      0.44      17.4       0.0                          
+    0:00:08  534528.0      0.51      19.4       0.0                          
+    0:00:08  518699.5      0.51      22.3       0.0                          
+    0:00:08  516779.5      0.56      23.2       0.0                          
+    0:00:08  516349.4      0.56      23.2       0.0                          
+    0:00:08  516334.1      0.56      23.2       0.0                          
+    0:00:08  516334.1      0.56      23.2       0.0                          
+    0:00:08  516334.1      0.56      23.2       0.0                          
+    0:00:08  516334.1      0.56      23.2       0.0                          
+    0:00:08  516334.1      0.56      23.2       0.0                          
+    0:00:08  516334.1      0.56      23.2       0.0                          
+    0:00:08  516334.1      0.56      23.2       0.0                          
+    0:00:08  516334.1      0.56      23.2       0.0                          
+    0:00:09  519344.6      0.31      17.3       0.0 id_ex_reg/pc_4_out_reg[31]/D
+    0:00:09  519344.6      0.31      17.1       0.0                          
+
+
+
+  Beginning Delay Optimization Phase
+  ----------------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:09  519344.6      0.31      17.1       0.0                          
+    0:00:10  521026.6      0.28      16.3       0.0 ex_mem_reg/vector_ex_out_reg[3]/D
+    0:00:10  521502.7      0.27      16.1       0.0 ex_mem_reg/vector_ex_out_reg[3]/D
+    0:00:10  522447.4      0.26      15.7       0.0 ex_mem_reg/vector_ex_out_reg[3]/D
+    0:00:11  523430.4      0.25      15.1       0.0 if_stage/pc/out_reg[4]/D 
+    0:00:11  524052.5      0.25      15.0       0.1 ex_mem_reg/vector_ex_out_reg[3]/D
+    0:00:11  524167.7      0.25      14.8       0.1 ex_mem_reg/vector_ex_out_reg[3]/D
+    0:00:12  525004.8      0.24      14.4       0.1 ex_mem_reg/vector_ex_out_reg[3]/D
+    0:00:12  525404.2      0.23      14.3       0.1 ex_mem_reg/vector_ex_out_reg[3]/D
+    0:00:12  525596.2      0.23      14.3       0.1 ex_mem_reg/vector_ex_out_reg[3]/D
+    0:00:12  526033.9      0.23      14.2       0.1 ex_mem_reg/vector_ex_out_reg[3]/D
+    0:00:12  526402.6      0.22      14.2       0.1 ex_mem_reg/vector_ex_out_reg[3]/D
+    0:00:13  526417.9      0.22      14.0       0.1 ex_mem_reg/vector_ex_out_reg[3]/D
+    0:00:13  526464.0      0.22      13.9       0.1 ex_mem_reg/vector_ex_out_reg[3]/D
+    0:00:13  526640.6      0.21      13.8       0.1 ex_mem_reg/vector_ex_out_reg[3]/D
+    0:00:13  526924.8      0.21      13.7       0.1 ex_mem_reg/vector_ex_out_reg[3]/D
+    0:00:13  527063.0      0.21      13.7       0.1 ex_mem_reg/alu_out_reg[5]/D
+    0:00:13  527178.2      0.21      13.7       0.1 ex_mem_reg/alu_out_reg[5]/D
+    0:00:14  527301.1      0.21      13.6       0.1 ex_mem_reg/vector_ex_out_reg[3]/D
+    0:00:14  527109.1      0.20      13.5       0.1 ex_mem_reg/vector_ex_out_reg[3]/D
+    0:00:14  527508.5      0.20      13.4       0.1 ex_mem_reg/vector_ex_out_reg[3]/D
+    0:00:14  527600.6      0.20      13.4       0.1 ex_mem_reg/vector_ex_out_reg[3]/D
+    0:00:14  527485.4      0.20      13.4       0.1 ex_mem_reg/vector_ex_out_reg[3]/D
+    0:00:15  527838.7      0.20      13.7       0.1 ex_mem_reg/vector_ex_out_reg[3]/D
+    0:00:15  527869.4      0.20      13.7       0.1 ex_mem_reg/vector_ex_out_reg[3]/D
+    0:00:15  527769.6      0.20      13.7       0.1 ex_mem_reg/vector_ex_out_reg[3]/D
+    0:00:15  528015.4      0.19      13.5       0.1 ex_mem_reg/vector_ex_out_reg[3]/D
+    0:00:16  528069.1      0.19      13.5       0.0 ex_mem_reg/vector_ex_out_reg[3]/D
+    0:00:16  528245.8      0.19      13.4       0.0 ex_mem_reg/vector_ex_out_reg[3]/D
+    0:00:16  528445.4      0.19      13.3       0.0 ex_mem_reg/alu_out_reg[11]/D
+    0:00:16  529228.8      0.19      13.3       0.0 ex_mem_reg/vector_ex_out_reg[3]/D
+    0:00:16  529244.2      0.19      13.3       0.0 ex_mem_reg/vector_ex_out_reg[3]/D
+    0:00:16  530073.6      0.19      13.2       0.0 ex_mem_reg/alu_out_reg[17]/D
+    0:00:17  530542.1      0.18      12.5       0.1 ex_mem_reg/alu_out_reg[26]/D
+    0:00:17  531156.5      0.17      12.4       0.1 ex_mem_reg/vector_ex_out_reg[2]/D
+    0:00:17  531540.5      0.17      12.4       0.1 ex_mem_reg/alu_out_reg[26]/D
+    0:00:18  532323.8      0.17      12.3       0.1 ex_mem_reg/alu_out_reg[18]/D
+    0:00:18  532408.3      0.17      12.2       0.1 ex_mem_reg/vector_ex_out_reg[2]/D
+    0:00:18  532569.6      0.17      12.2       0.2 ex_mem_reg/vector_ex_out_reg[3]/D
+    0:00:18  533099.5      0.16      12.1       0.1 ex_mem_reg/alu_out_reg[18]/D
+    0:00:18  533706.2      0.16      12.1       0.1 ex_mem_reg/alu_out_reg[25]/D
+    0:00:18  534328.3      0.16      12.1       0.1 ex_mem_reg/vector_ex_out_reg[2]/D
+    0:00:19  534297.6      0.16      12.0       0.1 ex_mem_reg/vector_ex_out_reg[2]/D
+    0:00:19  534466.6      0.16      12.0       0.2 ex_mem_reg/alu_out_reg[24]/D
+    0:00:19  533967.4      0.16      11.9       0.2 ex_mem_reg/vector_ex_out_reg[2]/D
+    0:00:19  534474.2      0.16      11.9       0.2 ex_mem_reg/vector_ex_out_reg[2]/D
+    0:00:19  534658.6      0.16      11.9       0.2 if_stage/pc/out_reg[27]/D
+    0:00:20  534704.6      0.16      11.8       0.2 ex_mem_reg/alu_out_reg[10]/D
+    0:00:20  534927.4      0.15      11.7       0.2 ex_mem_reg/vector_ex_out_reg[2]/D
+    0:00:20  535050.2      0.15      11.7       0.2 ex_mem_reg/alu_out_reg[26]/D
+    0:00:20  535081.0      0.15      11.7       0.2 if_stage/pc/out_reg[26]/D
+    0:00:20  535273.0      0.15      11.7       0.2 ex_mem_reg/alu_out_reg[30]/D
+    0:00:20  535380.5      0.15      11.6       0.2 ex_mem_reg/alu_out_reg[22]/D
+    0:00:21  535618.6      0.15      11.6       0.2 ex_mem_reg/alu_out_reg[18]/D
+    0:00:21  535672.3      0.15      11.6       0.2 ex_mem_reg/vector_ex_out_reg[2]/D
+    0:00:21  535680.0      0.15      11.5       0.2 ex_mem_reg/vector_ex_out_reg[2]/D
+    0:00:21  536394.2      0.15      11.5       0.2 ex_mem_reg/alu_out_reg[24]/D
+    0:00:21  536486.4      0.15      11.5       0.2 ex_mem_reg/vector_ex_out_reg[2]/D
+    0:00:21  536739.8      0.15      11.5       0.2 if_stage/pc/out_reg[4]/D 
+    0:00:22  537093.1      0.14      11.7       0.3 ex_mem_reg/alu_out_reg[29]/D
+    0:00:22  537108.5      0.14      11.7       0.3 ex_mem_reg/alu_out_reg[11]/D
+    0:00:22  537154.6      0.14      11.7       0.3 ex_mem_reg/vector_ex_out_reg[2]/D
+    0:00:22  537193.0      0.14      11.7       0.3 ex_mem_reg/alu_out_reg[23]/D
+    0:00:22  537699.8      0.14      11.7       0.3 ex_mem_reg/alu_out_reg[25]/D
+    0:00:22  537646.1      0.14      11.7       0.3 if_stage/pc/out_reg[0]/D 
+    0:00:23  537584.6      0.14      11.6       0.3 if_stage/pc/out_reg[0]/D 
+    0:00:23  537615.4      0.14      11.6       0.3 if_stage/pc/out_reg[0]/D 
+    0:00:23  537730.6      0.14      11.8       0.3 if_stage/pc/out_reg[0]/D 
+    0:00:23  537815.0      0.14      11.8       0.3 if_stage/pc/out_reg[8]/D 
+    0:00:24  538076.2      0.14      11.7       0.3 if_stage/pc/out_reg[4]/D 
+    0:00:24  538613.8      0.14      11.7       0.3 ex_mem_reg/alu_out_reg[24]/D
+    0:00:24  538652.2      0.14      11.6       0.3 if_stage/pc/out_reg[18]/D
+    0:00:24  538828.8      0.14      11.6       0.3 ex_mem_reg/alu_out_reg[30]/D
+    0:00:25  538928.6      0.14      11.6       0.3 ex_mem_reg/alu_out_reg[18]/D
+    0:00:25  539043.8      0.14      11.6       0.3 if_stage/pc/out_reg[26]/D
+    0:00:25  539412.5      0.14      11.6       0.3 ex_mem_reg/alu_out_reg[21]/D
+    0:00:25  539543.0      0.14      11.5       0.3 ex_mem_reg/alu_out_reg[20]/D
+    0:00:25  539535.4      0.14      11.5       0.3 ex_mem_reg/alu_out_reg[24]/D
+    0:00:25  539543.0      0.14      11.5       0.3 if_stage/pc/out_reg[2]/D 
+    0:00:26  539566.1      0.14      11.4       0.3 ex_mem_reg/alu_out_reg[18]/D
+    0:00:26  539619.8      0.14      11.4       0.3 if_stage/pc/out_reg[2]/D 
+    0:00:26  539543.0      0.14      11.4       0.3 ex_mem_reg/vector_ex_out_reg[3]/D
+    0:00:26  539750.4      0.13      11.3       0.5 ex_mem_reg/alu_out_reg[18]/D
+    0:00:26  540080.6      0.13      11.3       0.5 ex_mem_reg/alu_out_reg[27]/D
+    0:00:26  540096.0      0.13      11.3       0.5 ex_mem_reg/alu_out_reg[24]/D
+    0:00:26  540318.7      0.13      11.3       0.5 ex_mem_reg/alu_out_reg[22]/D
+    0:00:27  540303.4      0.13      11.3       0.5 ex_mem_reg/alu_out_reg[27]/D
+    0:00:27  540334.1      0.13      11.3       0.5 ex_mem_reg/alu_out_reg[30]/D
+    0:00:27  540318.7      0.13      11.3       0.5 ex_mem_reg/alu_out_reg[28]/D
+    0:00:27  540349.4      0.13      11.2       0.5 if_stage/pc/out_reg[5]/D 
+    0:00:28  540426.2      0.13      11.2       0.5 if_stage/pc/out_reg[5]/D 
+    0:00:29  540833.3      0.13      11.2       0.5                          
+    0:00:29  540695.0      0.13      11.2       0.5                          
+
+
+  Beginning Design Rule Fixing  (max_fanout)  (max_capacitance)
+  ----------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:29  540695.0      0.13      11.2       0.5                          
+    0:00:30  540618.2      0.13      11.2       0.0 r368/n54                 
+    0:00:30  540725.8      0.13      11.2       0.0                          
+    0:00:31  540917.8      0.13      11.2       0.0                          
+    0:00:31  540940.8      0.13      11.1       0.0                          
+    0:00:31  540940.8      0.13      11.1       0.0                          
+    0:00:31  541056.0      0.13      11.1       0.0                          
+    0:00:31  541655.0      0.13      11.0       0.0                          
+    0:00:31  542023.7      0.13      10.9       0.0                          
+    0:00:32  542023.7      0.13      10.9       0.0                          
+    0:00:32  542261.8      0.13      10.9       0.0                          
+    0:00:32  542277.1      0.13      10.8       0.0                          
+    0:00:32  542530.6      0.13      10.8       0.0                          
+    0:00:32  542599.7      0.13      10.8       0.0                          
+    0:00:33  542883.8      0.13      10.8       0.0                          
+    0:00:33  543152.6      0.13      10.8       0.0                          
+    0:00:33  543114.2      0.13      10.8       0.0                          
+    0:00:33  543160.3      0.13      10.8       0.0                          
+    0:00:33  543352.3      0.13      10.7       0.0                          
+    0:00:33  543459.8      0.13      10.7       0.0                          
+    0:00:34  543529.0      0.13      10.5       0.0                          
+    0:00:34  543897.6      0.13      10.4       0.0                          
+    0:00:34  543897.6      0.13      10.4       0.0                          
+    0:00:34  544128.0      0.13      10.2       0.0                          
+    0:00:34  544519.7      0.13      10.2       0.0                          
+    0:00:34  544688.6      0.13      10.2       0.0                          
+    0:00:34  545218.6      0.13      10.0       0.0                          
+    0:00:35  545449.0      0.13      10.0       0.0                          
+
+
+  Beginning Area-Recovery Phase  (max_area 0)
+  -----------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:35  545449.0      0.13      10.0       0.0                          
+    0:00:35  545449.0      0.13      10.0       0.0                          
+    0:00:35  538659.8      0.37      11.2       0.0                          
+    0:00:36  536048.6      0.37      11.8       0.0                          
+    0:00:36  534781.4      0.37      11.8       0.0                          
+    0:00:36  534428.2      0.37      11.8       0.0                          
+    0:00:36  534190.1      0.37      11.8       0.0                          
+    0:00:36  534190.1      0.37      11.8       0.0                          
+    0:00:36  534266.9      0.13      10.1       0.0                          
+    0:00:37  524651.5      0.51      11.6       0.0                          
+    0:00:37  520788.5      0.57      17.1       0.0                          
+    0:00:38  519897.6      0.57      17.1       0.0                          
+    0:00:38  519889.9      0.57      17.1       0.0                          
+    0:00:38  519889.9      0.57      17.1       0.0                          
+    0:00:38  519889.9      0.57      17.1       0.0                          
+    0:00:38  519889.9      0.57      17.1       0.0                          
+    0:00:38  519889.9      0.57      17.1       0.0                          
+    0:00:38  522263.0      0.17      11.6       0.0 ex_mem_reg/alu_out_reg[24]/D
+    0:00:39  523338.2      0.15      11.0       0.0 ex_mem_reg/alu_out_reg[19]/D
+    0:00:39  523891.2      0.14      10.8       0.0 ex_mem_reg/alu_out_reg[24]/D
+    0:00:40  524736.0      0.14      10.6       0.0 ex_mem_reg/alu_out_reg[3]/D
+    0:00:40  525020.2      0.14      10.5       0.0 ex_mem_reg/alu_out_reg[24]/D
+    0:00:40  525089.3      0.13      10.4       0.0 ex_mem_reg/alu_out_reg[24]/D
+    0:00:41  525196.8      0.13      10.3       0.0 if_stage/pc/out_reg[5]/D 
+    0:00:41  525696.0      0.13      10.2       0.0 ex_mem_reg/alu_out_reg[19]/D
+    0:00:41  525872.6      0.13      10.2       0.0 if_stage/pc/out_reg[5]/D 
+    0:00:41  526080.0      0.13       9.9       0.0 if_stage/pc/out_reg[5]/D 
+    0:00:42  526617.6      0.12       9.8       0.0 ex_mem_reg/vector_ex_out_reg[2]/D
+    0:00:42  527500.8      0.12       9.7       0.0 ex_mem_reg/alu_out_reg[17]/D
+    0:00:42  528184.3      0.12       9.7       0.0 ex_mem_reg/alu_out_reg[18]/D
+    0:00:42  528192.0      0.12       9.6       0.0 if_stage/pc/out_reg[4]/D 
+    0:00:42  528460.8      0.12       9.6       0.0 ex_mem_reg/alu_out_reg[28]/D
+    0:00:43  528737.3      0.12       9.6       0.0 if_stage/pc/out_reg[27]/D
+    0:00:43  528937.0      0.12       9.5       0.0 ex_mem_reg/alu_out_reg[28]/D
+    0:00:43  529313.3      0.12       9.5       0.0 ex_mem_reg/alu_out_reg[18]/D
+    0:00:43  530042.9      0.12       9.4       0.0 ex_mem_reg/alu_out_reg[27]/D
+    0:00:43  530365.4      0.11       9.4       0.0 ex_mem_reg/alu_out_reg[0]/D
+    0:00:44  530595.8      0.11       9.3       0.0 if_stage/pc/out_reg[4]/D 
+    0:00:44  530749.4      0.11       9.3       0.0 ex_mem_reg/alu_out_reg[30]/D
+    0:00:44  530780.2      0.11       9.3       0.0 ex_mem_reg/alu_out_reg[27]/D
+    0:00:44  530810.9      0.11       9.3       0.0 ex_mem_reg/alu_out_reg[20]/D
+    0:00:44  531363.8      0.11       9.2       0.0 ex_mem_reg/alu_out_reg[27]/D
+    0:00:45  532139.5      0.11       9.2       0.0 ex_mem_reg/alu_out_reg[16]/D
+    0:00:45  532369.9      0.11       9.1       0.0 if_stage/pc/out_reg[28]/D
+    0:00:45  532231.7      0.11       9.1       0.0                          
+    0:00:45  532177.9      0.11       9.1       0.0                          
+    0:00:45  531256.3      0.11       9.4       0.0                          
+    0:00:46  531002.9      0.11       9.4       0.0                          
+    0:00:46  530618.9      0.11       9.4       0.0                          
+    0:00:46  529812.5      0.11       9.4       0.0                          
+    0:00:46  528929.3      0.11       9.4       0.0                          
+    0:00:47  528683.5      0.11       9.4       0.0                          
+    0:00:47  526886.4      0.11       9.5       0.0                          
+    0:00:47  526671.4      0.11       9.5       0.0                          
+    0:00:47  526579.2      0.11       9.5       0.0                          
+    0:00:48  526579.2      0.11       9.5       0.0                          
+    0:00:48  521733.1      0.27      10.7       0.0                          
+    0:00:48  520435.2      0.27      10.9       0.0                          
+    0:00:49  520289.3      0.27      10.8       0.0                          
+    0:00:49  520289.3      0.27      10.8       0.0                          
+    0:00:49  520289.3      0.27      10.8       0.0                          
+    0:00:49  520289.3      0.27      10.8       0.0                          
+    0:00:49  520289.3      0.27      10.8       0.0                          
+    0:00:49  520289.3      0.27      10.8       0.0                          
+    0:00:49  521187.8      0.12       9.8       0.0 ex_mem_reg/alu_out_reg[22]/D
+    0:00:49  521664.0      0.11       9.7       0.0 if_stage/pc/out_reg[28]/D
+    0:00:50  521940.5      0.11       9.5       0.0 ex_mem_reg/alu_out_reg[20]/D
+    0:00:50  522025.0      0.11       9.5       0.0 if_stage/pc/out_reg[28]/D
+    0:00:50  522071.0      0.11       9.5       0.0 if_stage/pc/out_reg[28]/D
+    0:00:51  522048.0      0.11       9.5       0.0                          
+    0:00:51  522063.4      0.11       9.5       0.0                          
+    0:00:51  522032.6      0.11       9.5       0.0                          
+    0:00:51  522040.3      0.11       9.5       0.0                          
+    0:00:51  522393.6      0.11       9.4       0.0                          
+    0:00:51  522616.3      0.11       9.4       0.0                          
+    0:00:51  522708.5      0.11       9.4       0.0                          
+    0:00:52  522816.0      0.11       9.0       0.0                          
+    0:00:52  522816.0      0.11       8.9       0.0                          
+    0:00:52  523192.3      0.11       8.9       0.0                          
+    0:00:52  523537.9      0.11       8.8       0.0                          
+    0:00:52  523729.9      0.11       8.8       0.0                          
+    0:00:52  524014.1      0.11       8.8       0.0                          
+    0:00:53  524190.7      0.11       8.8       0.0                          
+    0:00:53  524766.7      0.11       8.7       0.0                          
+    0:00:53  524774.4      0.11       8.7       0.0                          
+    0:00:53  525081.6      0.11       8.7       0.0                          
+    0:00:54  525319.7      0.11       8.7       0.0                          
+    0:00:54  525534.7      0.11       8.6       0.0                          
+    0:00:54  525749.8      0.11       8.6       0.0                          
+    0:00:54  525742.1      0.11       8.6       0.0                          
+    0:00:54  525811.2      0.11       8.6       0.0                          
+    0:00:54  525911.0      0.11       8.6       0.0                          
+    0:00:55  526087.7      0.11       8.5       0.0                          
+    0:00:55  526510.1      0.11       8.5       0.0                          
+    0:00:55  526863.4      0.11       8.3       0.0                          
+    0:00:55  526901.8      0.11       8.3       0.0                          
+    0:00:55  527063.0      0.11       8.2       0.0                          
+    0:00:55  527224.3      0.11       8.2       0.0                          
+    0:00:56  527308.8      0.11       8.2       0.0                          
+    0:00:56  527308.8      0.11       8.2       0.0                          
+    0:00:56  527347.2      0.11       8.1       0.0                          
+    0:00:56  527377.9      0.11       8.1       0.0                          
+    0:00:56  527585.3      0.11       8.1       0.0 if_stage/pc/out_reg[5]/D 
+    0:00:56  527700.5      0.11       8.1       0.0 if_stage/pc/out_reg[5]/D 
+    0:00:56  527907.8      0.10       8.0       0.0 if_stage/pc/out_reg[3]/D 
+Loading db file '/home/abe/hit18-lib/kyoto_lib/synopsys/HIT018.db'
+
+  Optimization Complete
+  ---------------------
+1
+ungroup -all -flatten
+Information: Updating graph... (UID-83)
+1
+compile -inc -map_ef high
+Warning: The cache_read directory ~ is not readable.  (SYNOPT-10)
+Warning: The cache_write directory ~ is not writable. So no cache elements can be written.   (SYNOPT-11)
+
+Information: There are 57 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
+
+
+
+  Beginning Pass 1 Mapping  (Incremental)
+  ------------------------
+
+  Updating timing information
+Information: Updating design information... (UID-85)
+
+  Beginning Mapping Optimizations  (High effort)  (Incremental)
+  -------------------------------
+
+  Beginning Incremental Implementation Selection
+  ----------------------------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:01  527907.8      0.10       8.0       0.0                          
+    0:00:01  527907.8      0.10       8.0       0.0                          
+    0:00:01  527907.8      0.10       8.0       0.0                          
+    0:00:01  527907.8      0.10       8.0       0.0                          
+    0:00:02  527907.8      0.10       8.0       0.0                          
+    0:00:02  521065.0      0.57      12.4       0.0                          
+    0:00:02  519290.9      0.57      12.7       0.0                          
+    0:00:02  519083.5      0.57      12.6       0.0                          
+    0:00:02  519083.5      0.57      12.6       0.0                          
+    0:00:02  519083.5      0.57      12.6       0.0                          
+    0:00:03  519083.5      0.57      12.6       0.0                          
+    0:00:03  519083.5      0.57      12.6       0.0                          
+    0:00:03  519083.5      0.57      12.6       0.0                          
+    0:00:03  519083.5      0.57      12.6       0.0                          
+    0:00:03  519083.5      0.57      12.6       0.0                          
+    0:00:03  520949.8      0.17       9.3       0.0 ex_mem_reg/alu_out_reg[17]/D
+    0:00:04  521771.5      0.14      10.4       0.0 ex_mem_reg/alu_out_reg[19]/D
+    0:00:04  522409.0      0.13      10.2       0.0 ex_mem_reg/alu_out_reg[19]/D
+    0:00:05  522800.6      0.12       9.9       0.0 ex_mem_reg/alu_out_reg[28]/D
+    0:00:05  523407.4      0.11       9.6       0.0 ex_mem_reg/alu_out_reg[29]/D
+    0:00:06  523607.0      0.11       9.5       0.0 ex_mem_reg/alu_out_reg[16]/D
+    0:00:06  524037.1      0.11       8.6       0.0 ex_mem_reg/alu_out_reg[27]/D
+    0:00:06  524628.5      0.10       8.6       0.0 ex_mem_reg/alu_out_reg[27]/D
+    0:00:07  524743.7      0.10       8.5       0.0                          
+    0:00:07  524912.6      0.10       8.5       0.0                          
+    0:00:07  524905.0      0.10       8.5       0.0                          
+    0:00:07  524958.7      0.10       8.4       0.0                          
+    0:00:07  524966.4      0.10       8.4       0.0                          
+    0:00:07  525281.3      0.10       8.4       0.0                          
+    0:00:07  525465.6      0.10       8.4       0.0                          
+    0:00:08  525841.9      0.10       8.3       0.0                          
+    0:00:08  526110.7      0.10       8.3       0.0                          
+    0:00:08  526149.1      0.10       8.3       0.0                          
+    0:00:08  526218.2      0.10       8.3       0.0                          
+    0:00:08  526295.0      0.10       8.3       0.0                          
+    0:00:08  527331.8      0.10       8.3       0.1                          
+    0:00:08  527116.8      0.10       8.3       0.1                          
+    0:00:09  527155.2      0.10       8.3       0.1                          
+    0:00:09  527170.6      0.10       8.2       0.1                          
+
+
+
+  Beginning Delay Optimization Phase
+  ----------------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:09  527170.6      0.10       8.2       0.1                          
+    0:00:09  527170.6      0.10       8.2       0.1 if_stage/pc/out_reg[31]/D
+    0:00:09  527232.0      0.10       8.2       0.1 if_stage/pc/out_reg[31]/D
+    0:00:09  527500.8      0.10       8.2       0.1 if_stage/pc/out_reg[5]/D 
+    0:00:09  527923.2      0.10       8.0       0.1 if_stage/pc/out_reg[23]/D
+    0:00:09  528384.0      0.10       8.0       0.1 ex_mem_reg/alu_out_reg[27]/D
+    0:00:09  528629.8      0.10       8.0       0.1 if_stage/pc/out_reg[2]/D 
+    0:00:10  528875.5      0.10       8.0       0.1 if_stage/pc/out_reg[24]/D
+    0:00:10  529466.9      0.10       7.9       0.1 ex_mem_reg/alu_out_reg[30]/D
+    0:00:10  529474.6      0.10       7.9       0.1 if_stage/pc/out_reg[15]/D
+    0:00:10  529658.9      0.10       7.8       0.1 ex_mem_reg/alu_out_reg[29]/D
+    0:00:10  529943.0      0.10       7.4       0.1 ex_mem_reg/vector_ex_out_reg[3]/D
+    0:00:11  530050.6      0.09       7.4       0.1 if_stage/pc/out_reg[26]/D
+    0:00:11  530135.0      0.09       7.4       0.1 ex_mem_reg/alu_out_reg[19]/D
+    0:00:11  530150.4      0.09       7.4       0.1 if_stage/pc/out_reg[2]/D 
+    0:00:11  530526.7      0.09       7.4       0.1 ex_mem_reg/alu_out_reg[30]/D
+    0:00:11  530718.7      0.09       7.3       0.1 if_stage/pc/out_reg[24]/D
+    0:00:11  530849.3      0.09       7.3       0.1 ex_mem_reg/vector_ex_out_reg[2]/D
+    0:00:12  530880.0      0.09       7.3       0.1 ex_mem_reg/alu_out_reg[24]/D
+    0:00:12  531225.6      0.09       7.3       0.1 ex_mem_reg/vector_ex_out_reg[2]/D
+    0:00:12  531471.4      0.09       7.3       0.1 if_stage/pc/out_reg[2]/D 
+    0:00:12  531632.6      0.09       7.3       0.1 ex_mem_reg/alu_out_reg[22]/D
+    0:00:12  531740.2      0.09       7.3       0.1 ex_mem_reg/alu_out_reg[24]/D
+    0:00:12  532561.9      0.09       7.1       0.1 ex_mem_reg/alu_out_reg[24]/D
+    0:00:13  532669.4      0.09       7.1       0.1 ex_mem_reg/vector_ex_out_reg[2]/D
+    0:00:13  533030.4      0.09       7.1       0.1 if_stage/pc/out_reg[2]/D 
+    0:00:13  533253.1      0.09       7.0       0.1 ex_mem_reg/alu_out_reg[0]/D
+    0:00:13  533237.8      0.09       7.0       0.1 ex_mem_reg/vector_ex_out_reg[2]/D
+    0:00:13  533752.3      0.09       6.9       0.1 ex_mem_reg/alu_out_reg[26]/D
+    0:00:14  534412.8      0.09       6.9       0.1 ex_mem_reg/alu_out_reg[22]/D
+    0:00:14  534627.8      0.09       6.8       0.1 ex_mem_reg/alu_out_reg[29]/D
+    0:00:14  535111.7      0.09       6.8       0.1 if_stage/pc/out_reg[26]/D
+    0:00:14  535211.5      0.08       6.7       0.1 ex_mem_reg/vector_ex_out_reg[2]/D
+    0:00:14  535441.9      0.08       6.8       0.1 ex_mem_reg/alu_out_reg[26]/D
+    0:00:14  535795.2      0.08       6.7       0.1 ex_mem_reg/alu_out_reg[29]/D
+    0:00:15  535902.7      0.08       6.7       0.1 if_stage/pc/out_reg[28]/D
+    0:00:15  536148.5      0.08       6.7       0.1 ex_mem_reg/alu_out_reg[27]/D
+    0:00:15  536233.0      0.08       6.6       0.1 if_stage/pc/out_reg[12]/D
+    0:00:15  536279.0      0.08       6.6       0.1 if_stage/pc/out_reg[12]/D
+    0:00:15  536371.2      0.08       6.6       0.1 ex_mem_reg/alu_out_reg[0]/D
+    0:00:16  536624.6      0.08       6.5       0.1 ex_mem_reg/vector_ex_out_reg[3]/D
+    0:00:16  536739.8      0.08       6.2       0.1 ex_mem_reg/alu_out_reg[21]/D
+    0:00:16  536762.9      0.08       6.2       0.1 ex_mem_reg/alu_out_reg[21]/D
+    0:00:16  536977.9      0.08       6.2       0.1 ex_mem_reg/alu_out_reg[18]/D
+    0:00:16  537354.2      0.08       6.2       0.1 if_stage/pc/out_reg[4]/D 
+    0:00:17  537745.9      0.08       6.1       0.1 ex_mem_reg/vector_ex_out_reg[3]/D
+    0:00:17  538083.8      0.08       6.1       0.1 ex_mem_reg/vector_ex_out_reg[2]/D
+    0:00:17  538168.3      0.08       6.1       0.1 ex_mem_reg/alu_out_reg[8]/D
+    0:00:17  538337.3      0.08       6.1       0.1 ex_mem_reg/alu_out_reg[26]/D
+    0:00:17  538237.4      0.08       6.0       0.1 if_stage/pc/out_reg[2]/D 
+    0:00:18  538759.7      0.08       6.0       0.1 ex_mem_reg/vector_ex_out_reg[2]/D
+    0:00:18  538913.3      0.08       6.0       0.1 ex_mem_reg/alu_out_reg[29]/D
+    0:00:18  538836.5      0.07       5.9       0.1 if_stage/pc/out_reg[2]/D 
+    0:00:18  538844.2      0.07       5.9       0.1 if_stage/pc/out_reg[20]/D
+    0:00:18  538652.2      0.07       5.9       0.1 ex_mem_reg/vector_ex_out_reg[2]/D
+    0:00:18  538690.6      0.07       5.9       0.1 ex_mem_reg/alu_out_reg[18]/D
+    0:00:19  539051.5      0.07       5.9       0.1 ex_mem_reg/vector_ex_out_reg[2]/D
+    0:00:19  539220.5      0.07       5.9       0.1 ex_mem_reg/vector_ex_out_reg[2]/D
+    0:00:19  539197.4      0.07       5.9       0.1 ex_mem_reg/vector_ex_out_reg[2]/D
+    0:00:19  539389.4      0.07       5.8       0.1 ex_mem_reg/alu_out_reg[19]/D
+    0:00:19  539351.0      0.07       5.8       0.1 ex_mem_reg/vector_ex_out_reg[2]/D
+    0:00:20  539558.4      0.07       5.8       0.1 if_stage/pc/out_reg[21]/D
+    0:00:20  539420.2      0.07       5.8       0.1 ex_mem_reg/vector_ex_out_reg[2]/D
+    0:00:20  539412.5      0.07       5.8       0.1 if_stage/pc/out_reg[21]/D
+    0:00:20  539397.1      0.07       5.8       0.1 ex_mem_reg/alu_out_reg[22]/D
+    0:00:20  539573.8      0.07       5.8       0.1 if_stage/pc/out_reg[21]/D
+    0:00:20  539558.4      0.07       5.8       0.1 ex_mem_reg/alu_out_reg[26]/D
+    0:00:21  539719.7      0.07       5.7       0.1 if_stage/pc/out_reg[21]/D
+    0:00:21  539834.9      0.07       5.7       0.1 ex_mem_reg/vector_ex_out_reg[3]/D
+    0:00:21  539742.7      0.07       5.7       0.1 ex_mem_reg/alu_out_reg[26]/D
+    0:00:21  539888.6      0.07       5.7       0.1 ex_mem_reg/vector_ex_out_reg[2]/D
+    0:00:21  539735.0      0.07       5.7       0.1 ex_mem_reg/vector_ex_out_reg[3]/D
+    0:00:21  539827.2      0.07       5.7       0.1 ex_mem_reg/vector_ex_out_reg[2]/D
+    0:00:22  539773.4      0.07       5.7       0.1 ex_mem_reg/vector_ex_out_reg[3]/D
+    0:00:22  539865.6      0.07       5.7       0.1 ex_mem_reg/vector_ex_out_reg[3]/D
+    0:00:22  539727.4      0.07       5.7       0.1 ex_mem_reg/vector_ex_out_reg[3]/D
+    0:00:22  539819.5      0.07       5.7       0.1 ex_mem_reg/alu_out_reg[24]/D
+    0:00:22  539888.6      0.07       5.7       0.1 ex_mem_reg/vector_ex_out_reg[2]/D
+    0:00:23  539873.3      0.07       5.6       0.1 ex_mem_reg/vector_ex_out_reg[2]/D
+    0:00:26  540510.7      0.07       5.6       0.1                          
+    0:00:26  540664.3      0.07       5.6       0.1 if_stage/pc/out_reg[25]/D
+    0:00:26  540633.6      0.07       5.5       0.1 ex_mem_reg/vector_ex_out_reg[3]/D
+    0:00:26  540741.1      0.07       5.5       0.1 if_stage/pc/out_reg[25]/D
+    0:00:27  540741.1      0.07       5.5       0.1 ex_mem_reg/vector_ex_out_reg[2]/D
+    0:00:27  540848.6      0.07       5.5       0.1 ex_mem_reg/vector_ex_out_reg[2]/D
+    0:00:27  541063.7      0.07       5.4       0.1 if_stage/pc/out_reg[25]/D
+    0:00:27  541455.4      0.07       5.4       0.1 if_stage/pc/out_reg[25]/D
+    0:00:27  541424.6      0.07       5.4       0.1 ex_mem_reg/alu_out_reg[22]/D
+    0:00:28  541447.7      0.07       5.4       0.1 ex_mem_reg/alu_out_reg[18]/D
+    0:00:28  541424.6      0.07       5.3       0.1 ex_mem_reg/vector_ex_out_reg[2]/D
+    0:00:28  541532.2      0.07       5.3       0.1 ex_mem_reg/alu_out_reg[18]/D
+    0:00:28  541585.9      0.07       5.3       0.1 if_stage/pc/out_reg[25]/D
+    0:00:35  541716.5      0.06       5.3       0.1 if_stage/pc/out_reg[25]/D
+    0:00:35  542031.4      0.06       5.2       0.1 if_stage/pc/out_reg[27]/D
+    0:00:36  542407.7      0.06       5.2       0.1 ex_mem_reg/alu_out_reg[2]/D
+    0:00:36  542615.0      0.06       5.2       0.1 if_stage/pc/out_reg[6]/D 
+    0:00:36  543129.6      0.06       5.2       0.1 ex_mem_reg/alu_out_reg[17]/D
+    0:00:36  543121.9      0.06       4.9       0.1 ex_mem_reg/alu_out_reg[0]/D
+    0:00:37  543183.4      0.06       4.5       0.1 if_stage/pc/out_reg[15]/D
+    0:00:37  543705.6      0.06       4.5       0.1 ex_mem_reg/alu_out_reg[0]/D
+    0:00:37  544773.1      0.06       4.3       0.1 ex_mem_reg/alu_out_reg[2]/D
+    0:00:37  545410.6      0.06       3.6       0.1 ex_mem_reg/alu_out_reg[29]/D
+    0:00:37  545541.1      0.05       3.6       0.1 ex_mem_reg/alu_out_reg[17]/D
+    0:00:37  545786.9      0.05       3.6       0.1 ex_mem_reg/vector_ex_out_reg[2]/D
+    0:00:38  545809.9      0.05       3.5       0.1 ex_mem_reg/alu_out_reg[0]/D
+    0:00:38  545971.2      0.05       3.5       0.1 ex_mem_reg/vector_ex_out_reg[2]/D
+    0:00:38  547614.7      0.05       3.5       0.1 ex_mem_reg/alu_out_reg[23]/D
+    0:00:38  548121.6      0.05       3.3       0.1 ex_mem_reg/alu_out_reg[20]/D
+    0:00:38  548375.0      0.05       3.1       0.1 ex_mem_reg/alu_out_reg[15]/D
+    0:00:39  549327.4      0.05       3.1       0.2 ex_mem_reg/vector_ex_out_reg[3]/D
+    0:00:39  549926.4      0.05       2.9       0.2 ex_mem_reg/alu_out_reg[15]/D
+    0:00:39  550118.4      0.05       2.9       0.2 ex_mem_reg/vector_ex_out_reg[2]/D
+    0:00:39  550471.7      0.05       2.9       0.2 ex_mem_reg/alu_out_reg[19]/D
+    0:00:39  550709.8      0.04       2.9       0.2 ex_mem_reg/vector_ex_out_reg[2]/D
+    0:00:40  550924.8      0.04       2.9       0.2 ex_mem_reg/vector_ex_out_reg[2]/D
+    0:00:40  551239.7      0.04       2.8       0.2 if_stage/pc/out_reg[15]/D
+    0:00:40  551447.0      0.04       2.8       0.2 ex_mem_reg/vector_ex_out_reg[3]/D
+    0:00:40  551393.3      0.04       2.6       0.2 if_stage/pc/out_reg[15]/D
+    0:00:40  551424.0      0.04       2.6       0.2 ex_mem_reg/alu_out_reg[0]/D
+    0:00:40  551447.0      0.04       2.5       0.2 ex_mem_reg/vector_ex_out_reg[2]/D
+    0:00:41  551424.0      0.04       2.5       0.2 ex_mem_reg/alu_out_reg[0]/D
+    0:00:42  551662.1      0.04       2.4       0.2 if_stage/pc/out_reg[15]/D
+    0:00:42  551662.1      0.04       2.4       0.2 ex_mem_reg/alu_out_reg[23]/D
+    0:00:42  551846.4      0.04       2.4       0.2 ex_mem_reg/vector_ex_out_reg[3]/D
+    0:00:42  552215.0      0.04       2.3       0.2 ex_mem_reg/alu_out_reg[0]/D
+    0:00:43  552384.0      0.04       2.3       0.2 ex_mem_reg/vector_ex_out_reg[2]/D
+    0:00:43  553082.9      0.04       2.3       0.2 ex_mem_reg/vector_ex_out_reg[2]/D
+    0:00:43  553635.8      0.04       2.3       0.2 ex_mem_reg/vector_ex_out_reg[2]/D
+    0:00:43  553912.3      0.04       2.3       0.2 ex_mem_reg/alu_out_reg[22]/D
+    0:00:43  554150.4      0.04       2.2       0.2 ex_mem_reg/alu_out_reg[24]/D
+    0:00:44  554465.3      0.04       2.2       0.2 if_stage/pc/out_reg[15]/D
+    0:00:44  554618.9      0.04       2.2       0.2 ex_mem_reg/vector_ex_out_reg[2]/D
+    0:00:44  554588.2      0.04       2.2       0.2 ex_mem_reg/alu_out_reg[19]/D
+    0:00:45  554565.1      0.04       2.2       0.2 ex_mem_reg/alu_out_reg[0]/D
+    0:00:45  554649.6      0.04       2.2       0.2 ex_mem_reg/vector_ex_out_reg[2]/D
+    0:00:46  554734.1      0.04       2.3       0.2 ex_mem_reg/vector_ex_out_reg[2]/D
+    0:00:47  554757.1      0.04       2.3       0.2 ex_mem_reg/vector_ex_out_reg[2]/D
+    0:00:48  554810.9      0.04       2.3       0.2 if_stage/pc/out_reg[19]/D
+    0:00:48  554857.0      0.04       2.3       0.2 ex_mem_reg/vector_ex_out_reg[2]/D
+    0:00:49  554657.3      0.04       2.3       0.2 ex_mem_reg/alu_out_reg[15]/D
+    0:00:50  554680.3      0.04       2.3       0.2 ex_mem_reg/vector_ex_out_reg[2]/D
+    0:00:50  554787.8      0.04       2.3       0.2 ex_mem_reg/alu_out_reg[28]/D
+    0:00:50  555141.1      0.04       2.3       0.2 ex_mem_reg/alu_out_reg[28]/D
+    0:00:51  555248.6      0.04       2.2       0.2 ex_mem_reg/vector_ex_out_reg[2]/D
+    0:00:51  555317.8      0.04       2.2       0.2 ex_mem_reg/alu_out_reg[30]/D
+    0:00:51  555509.8      0.04       2.2       0.2 ex_mem_reg/alu_out_reg[22]/D
+    0:00:51  555763.2      0.04       2.2       0.2 ex_mem_reg/alu_out_reg[19]/D
+    0:00:52  555939.8      0.04       2.2       0.2 ex_mem_reg/vector_ex_out_reg[2]/D
+    0:00:52  556162.6      0.04       2.2       0.2 ex_mem_reg/alu_out_reg[30]/D
+    0:00:52  556085.8      0.04       2.2       0.2 ex_mem_reg/alu_out_reg[22]/D
+    0:00:52  556393.0      0.03       2.1       0.2 if_stage/pc/out_reg[20]/D
+    0:00:53  556700.2      0.03       2.1       0.2 ex_mem_reg/alu_out_reg[21]/D
+    0:00:53  556523.5      0.03       2.1       0.2 ex_mem_reg/alu_out_reg[18]/D
+    0:00:53  556585.0      0.03       2.1       0.2 ex_mem_reg/alu_out_reg[22]/D
+    0:00:54  556823.0      0.03       2.1       0.2 ex_mem_reg/vector_ex_out_reg[2]/D
+    0:00:54  557184.0      0.03       2.1       0.2 ex_mem_reg/alu_out_reg[10]/D
+    0:00:54  557268.5      0.03       2.0       0.2 ex_mem_reg/alu_out_reg[14]/D
+    0:00:54  557429.8      0.03       2.0       0.2 ex_mem_reg/vector_ex_out_reg[2]/D
+    0:00:54  557583.4      0.03       2.0       0.2 ex_mem_reg/alu_out_reg[21]/D
+    0:00:55  558013.4      0.03       2.0       0.2 ex_mem_reg/alu_out_reg[18]/D
+    0:00:55  558082.6      0.03       2.0       0.2 ex_mem_reg/alu_out_reg[0]/D
+    0:00:55  558243.8      0.03       2.0       0.2 if_stage/pc/out_reg[20]/D
+    0:00:56  558313.0      0.03       2.0       0.2 ex_mem_reg/vector_ex_out_reg[2]/D
+    0:00:56  558420.5      0.03       2.0       0.2 ex_mem_reg/vector_ex_out_reg[2]/D
+    0:00:56  559242.2      0.03       2.0       0.2 ex_mem_reg/vector_ex_out_reg[3]/D
+    0:00:56  559395.8      0.03       2.0       0.2 if_stage/pc/out_reg[20]/D
+    0:00:57  559633.9      0.03       1.9       0.2 ex_mem_reg/vector_ex_out_reg[2]/D
+    0:00:57  559633.9      0.03       1.9       0.2                          
+    0:00:58  558458.9      0.03       1.9       0.2                          
+
+
+  Beginning Design Rule Fixing  (max_capacitance)
+  ----------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:58  558458.9      0.03       1.9       0.2                          
+    0:00:58  558366.7      0.03       1.7       0.0 ex_mem_reg/alu_out_reg[29]/D
+    0:00:58  558389.8      0.03       1.7       0.0 ex_mem_reg/vector_ex_out_reg[2]/D
+    0:00:59  558558.7      0.03       1.6       0.0 ex_mem_reg/vector_ex_out_reg[2]/D
+    0:00:59  558520.3      0.03       1.6       0.0 ex_mem_reg/vector_ex_out_reg[2]/D
+    0:00:59  558474.2      0.03       1.6       0.0 ex_mem_reg/vector_ex_out_reg[2]/D
+    0:00:59  558643.2      0.03       1.5       0.0 ex_mem_reg/vector_ex_out_reg[3]/D
+    0:01:00  559081.0      0.03       1.5       0.0 ex_mem_reg/alu_out_reg[4]/D
+    0:01:00  559157.8      0.02       1.4       0.0 ex_mem_reg/vector_ex_out_reg[3]/D
+    0:01:00  559280.6      0.02       1.3       0.0 if_stage/pc/out_reg[20]/D
+    0:01:01  559649.3      0.02       1.1       0.0 if_stage/pc/out_reg[20]/D
+    0:01:01  559303.7      0.02       1.0       0.0 ex_mem_reg/alu_out_reg[21]/D
+    0:01:01  559572.5      0.02       0.9       0.0 if_stage/pc/out_reg[18]/D
+    0:01:01  559872.0      0.02       0.9       0.0 ex_mem_reg/alu_out_reg[0]/D
+    0:01:01  559902.7      0.02       0.8       0.0 if_stage/pc/out_reg[2]/D 
+    0:01:02  560271.4      0.02       0.8       0.0 if_stage/pc/out_reg[2]/D 
+    0:01:02  560547.8      0.02       0.8       0.0 ex_mem_reg/vector_ex_out_reg[2]/D
+    0:01:02  560670.7      0.02       0.7       0.0 if_stage/pc/out_reg[24]/D
+    0:01:02  560624.6      0.02       0.7       0.0 if_stage/pc/out_reg[26]/D
+    0:01:02  561024.0      0.02       0.7       0.0 ex_mem_reg/alu_out_reg[18]/D
+    0:01:03  560855.0      0.02       0.7       0.0 ex_mem_reg/vector_ex_out_reg[2]/D
+    0:01:03  560693.8      0.01       0.7       0.0 ex_mem_reg/vector_ex_out_reg[2]/D
+    0:01:03  560471.0      0.01       0.6       0.0 ex_mem_reg/vector_ex_out_reg[2]/D
+    0:01:03  560486.4      0.01       0.6       0.0 ex_mem_reg/alu_out_reg[22]/D
+    0:01:03  560593.9      0.01       0.6       0.0 ex_mem_reg/vector_ex_out_reg[2]/D
+    0:01:04  560494.1      0.01       0.6       0.0 ex_mem_reg/vector_ex_out_reg[3]/D
+    0:01:04  560363.5      0.01       0.5       0.0 if_stage/pc/out_reg[7]/D 
+    0:01:04  560440.3      0.01       0.5       0.0 if_stage/pc/out_reg[20]/D
+    0:01:04  560425.0      0.01       0.5       0.0 ex_mem_reg/vector_ex_out_reg[2]/D
+    0:01:04  560363.5      0.01       0.5       0.0 if_stage/pc/out_reg[28]/D
+    0:01:04  560701.4      0.01       0.4       0.0 if_stage/pc/out_reg[5]/D 
+    0:01:04  560716.8      0.01       0.5       0.0 if_stage/pc/out_reg[5]/D 
+    0:01:05  560778.2      0.01       0.4       0.0 ex_mem_reg/vector_ex_out_reg[2]/D
+    0:01:05  560724.5      0.01       0.4       0.0 if_stage/pc/out_reg[23]/D
+    0:01:05  560770.6      0.01       0.4       0.0 ex_mem_reg/vector_ex_out_reg[2]/D
+    0:01:05  561085.4      0.01       0.4       0.0 if_stage/pc/out_reg[23]/D
+    0:01:05  561262.1      0.01       0.3       0.0 if_stage/pc/out_reg[26]/D
+    0:01:06  561315.8      0.01       0.3       0.0 if_stage/pc/out_reg[13]/D
+    0:01:06  561623.0      0.01       0.3       0.0 ex_mem_reg/vector_ex_out_reg[2]/D
+    0:01:06  561968.6      0.01       0.3       0.0 ex_mem_reg/vector_ex_out_reg[2]/D
+    0:01:06  562076.2      0.01       0.3       0.0 ex_mem_reg/vector_ex_out_reg[2]/D
+    0:01:06  561968.6      0.01       0.3       0.0 ex_mem_reg/vector_ex_out_reg[2]/D
+    0:01:07  561815.0      0.01       0.2       0.0 n9612                    
+    0:01:07  561753.6      0.01       0.2       0.0 if_stage/pc/out_reg[23]/D
+    0:01:07  561799.7      0.01       0.2       0.0                          
+    0:01:07  561961.0      0.01       0.2       0.0                          
+    0:01:08  561976.3      0.01       0.2       0.0                          
+    0:01:08  562114.6      0.01       0.2       0.0                          
+    0:01:08  561861.1      0.01       0.2       0.0                          
+    0:01:08  561838.1      0.01       0.2       0.0                          
+
+
+  Beginning Area-Recovery Phase  (max_area 0)
+  -----------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:01:08  561838.1      0.01       0.2       0.0                          
+    0:01:08  561838.1      0.01       0.2       0.0                          
+    0:01:09  550241.3      0.17       2.3       0.0                          
+    0:01:09  547292.2      0.16       2.2       0.0                          
+    0:01:09  545833.0      0.04       1.0       0.0                          
+    0:01:09  545364.5      0.04       1.0       0.0                          
+    0:01:09  545065.0      0.04       1.0       0.0                          
+    0:01:09  544727.0      0.04       1.0       0.0                          
+    0:01:09  544727.0      0.04       1.0       0.0                          
+    0:01:10  545233.9      0.02       0.6       0.0 ex_mem_reg/alu_out_reg[23]/D
+    0:01:10  545272.3      0.01       0.6       0.0 ex_mem_reg/alu_out_reg[18]/D
+    0:01:11  545763.8      0.01       0.3       0.0 ex_mem_reg/vector_ex_out_reg[2]/D
+    0:01:11  546255.4      0.01       0.3       0.0 ex_mem_reg/vector_ex_out_reg[2]/D
+    0:01:11  546347.5      0.01       0.2       0.0 ex_mem_reg/alu_out_reg[26]/D
+    0:01:12  546355.2      0.01       0.2       0.0 if_stage/pc/out_reg[7]/D 
+    0:01:12  546362.9      0.01       0.2       0.0 if_stage/pc/out_reg[23]/D
+    0:01:12  546355.2      0.01       0.2       0.0 if_stage/pc/out_reg[7]/D 
+    0:01:12  546217.0      0.01       0.2       0.0 if_stage/pc/out_reg[30]/D
+    0:01:12  546217.0      0.01       0.2       0.0                          
+    0:01:13  528460.8      0.35      12.4       0.0                          
+    0:01:14  520842.2      0.35      12.8       0.0                          
+    0:01:14  519321.6      0.35      13.4       0.0                          
+    0:01:14  518807.0      0.35      13.4       0.0                          
+    0:01:14  518807.0      0.35      13.4       0.0                          
+    0:01:14  518807.0      0.35      13.4       0.0                          
+    0:01:14  518807.0      0.35      13.4       0.0                          
+    0:01:14  518807.0      0.35      13.4       0.0                          
+    0:01:15  521003.5      0.09       5.8       0.0 ex_mem_reg/alu_out_reg[27]/D
+    0:01:15  522601.0      0.07       3.7       0.0 ex_mem_reg/alu_out_reg[17]/D
+    0:01:15  522985.0      0.07       3.6       0.0 ex_mem_reg/vector_ex_out_reg[2]/D
+    0:01:16  523906.6      0.05       2.5       0.0 if_stage/pc/out_reg[22]/D
+    0:01:17  525035.5      0.04       1.7       0.0 ex_mem_reg/alu_out_reg[19]/D
+    0:01:17  525465.6      0.03       1.3       0.0 if_stage/pc/out_reg[21]/D
+    0:01:17  525987.8      0.03       1.2       0.0 if_stage/pc/out_reg[19]/D
+    0:01:18  526648.3      0.02       1.0       0.0 ex_mem_reg/vector_ex_out_reg[3]/D
+    0:01:18  526871.0      0.02       0.8       0.0 if_stage/pc/out_reg[5]/D 
+    0:01:19  527032.3      0.02       0.7       0.0 ex_mem_reg/alu_out_reg[3]/D
+    0:01:19  527070.7      0.01       0.6       0.0 ex_mem_reg/alu_out_reg[21]/D
+    0:01:19  527470.1      0.01       0.6       0.0 ex_mem_reg/alu_out_reg[22]/D
+    0:01:19  527401.0      0.01       0.5       0.0 if_stage/pc/out_reg[25]/D
+    0:01:19  527623.7      0.01       0.5       0.0 if_stage/pc/out_reg[25]/D
+    0:01:20  528122.9      0.01       0.4       0.0 ex_mem_reg/alu_out_reg[15]/D
+    0:01:20  528069.1      0.01       0.4       0.0 ex_mem_reg/alu_out_reg[29]/D
+    0:01:20  528076.8      0.01       0.4       0.0 if_stage/pc/out_reg[5]/D 
+    0:01:20  528169.0      0.01       0.4       0.0 ex_mem_reg/alu_out_reg[18]/D
+    0:01:20  528253.4      0.01       0.4       0.0 ex_mem_reg/vector_ex_out_reg[3]/D
+    0:01:21  528376.3      0.01       0.4       0.0 if_stage/pc/out_reg[25]/D
+    0:01:21  528330.2      0.01       0.3       0.0 if_stage/pc/out_reg[25]/D
+    0:01:21  528529.9      0.01       0.3       0.0 if_stage/pc/out_reg[5]/D 
+    0:01:21  528614.4      0.01       0.3       0.0 if_stage/pc/out_reg[5]/D 
+    0:01:21  528668.2      0.01       0.3       0.0 if_stage/pc/out_reg[19]/D
+    0:01:22  528721.9      0.01       0.3       0.0 ex_mem_reg/alu_out_reg[18]/D
+    0:01:22  528668.2      0.01       0.2       0.0 if_stage/pc/out_reg[5]/D 
+    0:01:22  528975.4      0.01       0.2       0.0 ex_mem_reg/alu_out_reg[21]/D
+    0:01:22  529159.7      0.01       0.2       0.0 ex_mem_reg/alu_out_reg[5]/D
+    0:01:22  529152.0      0.01       0.2       0.0 if_stage/pc/out_reg[26]/D
+    0:01:22  529413.1      0.01       0.2       0.0 if_stage/pc/out_reg[26]/D
+    0:01:23  529582.1      0.00       0.1       0.0 if_stage/pc/out_reg[19]/D
+    0:01:23  529881.6      0.00       0.1       0.0 if_stage/pc/out_reg[5]/D 
+    0:01:23  529820.2      0.00       0.1       0.0 if_stage/pc/out_reg[5]/D 
+    0:01:23  529797.1      0.00       0.1       0.0                          
+    0:01:23  529428.5      0.00       0.1       0.0                          
+    0:01:23  529274.9      0.00       0.1       0.0                          
+    0:01:24  529090.6      0.00       0.1       0.0                          
+    0:01:24  528721.9      0.00       0.1       0.0                          
+    0:01:24  528015.4      0.00       0.1       0.0                          
+    0:01:24  527700.5      0.00       0.1       0.0                          
+    0:01:24  527662.1      0.00       0.1       0.0                          
+    0:01:24  527162.9      0.00       0.1       0.0                          
+    0:01:24  526709.8      0.00       0.1       0.0                          
+    0:01:25  526225.9      0.00       0.1       0.0                          
+    0:01:25  525949.4      0.00       0.1       0.0                          
+    0:01:25  525696.0      0.00       0.1       0.0                          
+    0:01:25  525358.1      0.00       0.1       0.0                          
+    0:01:26  524774.4      0.00       0.1       0.0                          
+    0:01:26  524728.3      0.00       0.1       0.0                          
+    0:01:26  524574.7      0.00       0.1       0.0                          
+    0:01:26  524574.7      0.00       0.1       0.0                          
+    0:01:27  512916.5      0.53      10.8       0.0                          
+    0:01:27  508761.6      0.53      16.0       0.0                          
+    0:01:28  507471.4      0.53      16.3       0.0                          
+    0:01:28  507409.9      0.53      16.3       0.0                          
+    0:01:28  507409.9      0.53      16.3       0.0                          
+    0:01:28  507409.9      0.53      16.3       0.0                          
+    0:01:28  507409.9      0.53      16.3       0.0                          
+    0:01:28  507409.9      0.53      16.3       0.0                          
+    0:01:28  509276.2      0.07       3.6       0.0 ex_mem_reg/alu_out_reg[22]/D
+    0:01:29  510451.2      0.04       2.1       0.0 if_stage/pc/out_reg[5]/D 
+    0:01:29  511895.0      0.03       1.3       0.0 if_stage/pc/out_reg[10]/D
+    0:01:30  512686.1      0.03       1.1       0.0 if_stage/pc/out_reg[19]/D
+    0:01:30  512778.2      0.03       1.0       0.0 ex_mem_reg/vector_ex_out_reg[2]/D
+    0:01:31  513338.9      0.02       0.8       0.0 ex_mem_reg/vector_ex_out_reg[3]/D
+    0:01:31  513315.8      0.02       0.7       0.0 if_stage/pc/out_reg[11]/D
+    0:01:31  513577.0      0.02       0.6       0.0 ex_mem_reg/alu_out_reg[19]/D
+    0:01:31  513899.5      0.01       0.6       0.0 ex_mem_reg/alu_out_reg[18]/D
+    0:01:31  513792.0      0.01       0.6       0.0 ex_mem_reg/alu_out_reg[18]/D
+    0:01:32  514583.0      0.01       0.4       0.0 ex_mem_reg/alu_out_reg[15]/D
+    0:01:32  514813.4      0.01       0.4       0.0 ex_mem_reg/alu_out_reg[20]/D
+    0:01:32  514844.2      0.01       0.4       0.0 ex_mem_reg/alu_out_reg[24]/D
+    0:01:33  514813.4      0.01       0.3       0.0 ex_mem_reg/alu_out_reg[24]/D
+    0:01:33  514759.7      0.01       0.3       0.0 ex_mem_reg/alu_out_reg[24]/D
+    0:01:35  514821.1      0.01       0.3       0.0                          
+    0:01:35  514959.4      0.01       0.3       0.0                          
+    0:01:35  515020.8      0.01       0.3       0.0                          
+    0:01:36  515043.8      0.01       0.3       0.0                          
+    0:01:36  514974.7      0.01       0.3       0.0                          
+    0:01:36  514782.7      0.01       0.3       0.0                          
+    0:01:36  514537.0      0.01       0.3       0.0                          
+    0:01:36  514191.4      0.01       0.3       0.0                          
+    0:01:37  513692.2      0.01       0.3       0.0                          
+    0:01:37  513676.8      0.01       0.3       0.0                          
+    0:01:37  513561.6      0.01       0.3       0.0                          
+    0:01:40  511672.3      0.01       0.3       0.0                          
+    0:01:43  510144.0      0.01       0.3       0.0                          
+    0:01:44  508907.5      0.02       0.3       0.0                          
+    0:01:46  507770.9      0.02       0.3       0.0                          
+    0:01:47  507164.2      0.02       0.3       0.0                          
+    0:01:48  506649.6      0.02       0.3       0.0                          
+    0:01:49  506119.7      0.02       0.3       0.0                          
+    0:01:50  505612.8      0.02       0.2       0.0                          
+    0:01:51  504821.8      0.02       0.2       0.0                          
+    0:01:52  504414.7      0.02       0.2       0.0                          
+    0:01:52  504314.9      0.02       0.2       0.0                          
+    0:01:53  504023.0      0.02       0.2       0.0                          
+    0:01:53  503685.1      0.02       0.2       0.0                          
+    0:01:53  503354.9      0.02       0.2       0.0                          
+    0:01:54  503178.2      0.02       0.2       0.0                          
+    0:01:54  503078.4      0.02       0.2       0.0                          
+    0:01:54  503078.4      0.02       0.2       0.0                          
+    0:01:54  503078.4      0.02       0.2       0.0                          
+    0:01:54  493801.0      0.47      16.4       0.0                          
+    0:01:55  489116.2      0.47      17.2       0.0                          
+    0:01:55  488202.2      0.47      17.4       0.0                          
+    0:01:55  488202.2      0.47      17.4       0.0                          
+    0:01:55  488202.2      0.47      17.4       0.0                          
+    0:01:55  488202.2      0.47      17.4       0.0                          
+    0:01:55  488202.2      0.47      17.4       0.0                          
+    0:01:55  488202.2      0.47      17.4       0.0                          
+    0:01:55  490974.7      0.10       6.3       0.0 ex_mem_reg/alu_out_reg[28]/D
+    0:01:56  492272.6      0.07       3.2       0.0 ex_mem_reg/alu_out_reg[0]/D
+    0:01:56  493731.8      0.06       2.8       0.0 ex_mem_reg/alu_out_reg[0]/D
+    0:01:57  494622.7      0.05       2.4       0.0 ex_mem_reg/alu_out_reg[14]/D
+    0:01:58  495482.9      0.04       2.1       0.0 if_stage/pc/out_reg[22]/D
+    0:01:58  496112.6      0.03       1.5       0.0 ex_mem_reg/alu_out_reg[19]/D
+    0:01:59  499706.9      0.03       1.1       0.0 ex_mem_reg/vector_ex_out_reg[2]/D
+    0:01:59  499614.7      0.03       1.0       0.0 ex_mem_reg/vector_ex_out_reg[2]/D
+    0:02:00  500098.6      0.02       0.7       0.0 if_stage/pc/out_reg[9]/D 
+    0:02:00  500067.8      0.02       0.6       0.0 ex_mem_reg/vector_ex_out_reg[2]/D
+    0:02:00  500305.9      0.02       0.6       0.0 ex_mem_reg/alu_out_reg[18]/D
+    0:02:00  500851.2      0.01       0.5       0.0 ex_mem_reg/alu_out_reg[17]/D
+    0:02:01  501335.0      0.01       0.4       0.0 ex_mem_reg/alu_out_reg[29]/D
+    0:02:01  501626.9      0.01       0.3       0.0 ex_mem_reg/vector_ex_out_reg[2]/D
+    0:02:01  501588.5      0.01       0.3       0.0 ex_mem_reg/vector_ex_out_reg[2]/D
+    0:02:01  501941.8      0.01       0.3       0.0 ex_mem_reg/alu_out_reg[24]/D
+    0:02:02  502087.7      0.01       0.2       0.0                          
+    0:02:02  502287.4      0.01       0.2       0.0                          
+    0:02:02  502563.8      0.01       0.2       0.0                          
+    0:02:02  502801.9      0.01       0.1       0.0                          
+    0:02:02  503001.6      0.00       0.1       0.0                          
+    0:02:03  503347.2      0.00       0.1       0.0                          
+    0:02:03  503569.9      0.00       0.1       0.0                          
+    0:02:03  503539.2      0.00       0.0       0.0                          
+    0:02:03  503577.6      0.00       0.0       0.0                          
+    0:02:03  503746.6      0.00       0.0       0.0 if_stage/pc/out_reg[7]/D 
+Loading db file '/home/abe/hit18-lib/kyoto_lib/synopsys/HIT018.db'
+
+  Optimization Complete
+  ---------------------
+1
+report_timing -net -input_pins -max_paths 1
+Information: Updating design information... (UID-85)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -input_pins
+        -nets
+        -max_paths 1
+Design : top
+Version: H-2013.03-SP4
+Date   : Fri Jul  8 22:47:55 2016
+****************************************
+
+Operating Conditions: TYPICAL   Library: HIT018
+Wire Load Model Mode: top
+
+  Startpoint: ex_mem_reg/regdst_out_reg[3]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: if_stage/pc/out_reg[7]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  top                8k                    HIT018
+
+  Point                                       Fanout      Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  ex_mem_reg/regdst_out_reg[3]/C (HIT18DFRP060)           0.00       0.00 r
+  ex_mem_reg/regdst_out_reg[3]/Q (HIT18DFRP060)           0.42       0.42 r
+  regdst_out_mem[3] (net)                       7         0.00       0.42 r
+  U7778/A (HIT18XNOR2P030)                                0.00       0.42 r
+  U7778/Y (HIT18XNOR2P030)                                0.25       0.66 r
+  n8943 (net)                                   2         0.00       0.66 r
+  U6486/B (HIT18NAND4P080S)                               0.00       0.67 r
+  U6486/Y (HIT18NAND4P080S)                               0.13       0.79 f
+  n8944 (net)                                   2         0.00       0.79 f
+  U6955/A (HIT18NOR4P060)                                 0.00       0.79 f
+  U6955/Y (HIT18NOR4P060)                                 0.41       1.21 r
+  n6567 (net)                                   4         0.00       1.21 r
+  U7710/A (HIT18INVP040)                                  0.00       1.21 r
+  U7710/Y (HIT18INVP040)                                  0.09       1.29 f
+  n7039 (net)                                   9         0.00       1.29 f
+  U7250/A (HIT18OAI22P020)                                0.00       1.29 f
+  U7250/Y (HIT18OAI22P020)                                0.12       1.41 r
+  id_stage/rt[9] (net)                          1         0.00       1.41 r
+  r290/U108/A (HIT18XNOR2P020)                            0.00       1.41 r
+  r290/U108/Y (HIT18XNOR2P020)                            0.23       1.64 r
+  r290/n88 (net)                                1         0.00       1.64 r
+  r290/U71/A (HIT18AND2P080S)                             0.00       1.65 r
+  r290/U71/Y (HIT18AND2P080S)                             0.15       1.79 r
+  r290/n35 (net)                                1         0.00       1.79 r
+  r290/U107/A (HIT18NAND3P080S)                           0.00       1.80 r
+  r290/U107/Y (HIT18NAND3P080S)                           0.08       1.88 f
+  r290/n82 (net)                                1         0.00       1.88 f
+  r290/U98/A (HIT18NOR2P080S)                             0.00       1.88 f
+  r290/U98/Y (HIT18NOR2P080S)                             0.10       1.98 r
+  r290/n70 (net)                                1         0.00       1.98 r
+  U11156/B (HIT18NAND2P060S)                              0.00       1.98 r
+  U11156/Y (HIT18NAND2P060S)                              0.07       2.05 f
+  n10347 (net)                                  1         0.00       2.05 f
+  U11157/B (HIT18NOR2P080S)                               0.00       2.06 f
+  U11157/Y (HIT18NOR2P080S)                               0.10       2.16 r
+  n10348 (net)                                  3         0.00       2.16 r
+  U5849/A (HIT18NOR2P030S)                                0.00       2.16 r
+  U5849/Y (HIT18NOR2P030S)                                0.05       2.21 f
+  n9084 (net)                                   3         0.00       2.21 f
+  U5627/A (HIT18BUFP050)                                  0.00       2.21 f
+  U5627/Y (HIT18BUFP050)                                  0.13       2.34 f
+  n6275 (net)                                   2         0.00       2.34 f
+  U5460/B (HIT18NOR2P080S)                                0.00       2.35 f
+  U5460/Y (HIT18NOR2P080S)                                0.12       2.47 r
+  n6202 (net)                                   3         0.00       2.47 r
+  U6207/A (HIT18OR2P080S)                                 0.00       2.47 r
+  U6207/Y (HIT18OR2P080S)                                 0.11       2.57 r
+  n9432 (net)                                   6         0.00       2.57 r
+  U11268/A (HIT18OR2P030)                                 0.00       2.57 r
+  U11268/Y (HIT18OR2P030)                                 0.15       2.72 r
+  n9507 (net)                                   2         0.00       2.72 r
+  U10049/A (HIT18INVP040)                                 0.00       2.72 r
+  U10049/Y (HIT18INVP040)                                 0.04       2.76 f
+  n9487 (net)                                   1         0.00       2.76 f
+  U10035/A (HIT18NAND2P060S)                              0.00       2.76 f
+  U10035/Y (HIT18NAND2P060S)                              0.05       2.81 r
+  n6929 (net)                                   1         0.00       2.81 r
+  U10034/B (HIT18NAND2P060S)                              0.00       2.81 r
+  U10034/Y (HIT18NAND2P060S)                              0.05       2.86 f
+  n9433 (net)                                   1         0.00       2.86 f
+  U5695/A (HIT18OR3P015)                                  0.00       2.86 f
+  U5695/Y (HIT18OR3P015)                                  0.21       3.07 f
+  n1809 (net)                                   1         0.00       3.07 f
+  if_stage/pc/out_reg[7]/D (HIT18DFP160)                  0.00       3.07 f
+  data arrival time                                                  3.07
+
+  clock clk (rise edge)                                   3.24       3.24
+  clock network delay (ideal)                             0.00       3.24
+  if_stage/pc/out_reg[7]/C (HIT18DFP160)                  0.00       3.24 r
+  library setup time                                     -0.17       3.07
+  data required time                                                 3.07
+  --------------------------------------------------------------------------
+  data required time                                                 3.07
+  data arrival time                                                 -3.07
+  --------------------------------------------------------------------------
+  slack (VIOLATED: increase significant digits)                      0.00
+
+
+1
+#report_timing -path end delay max -max_path 80 -nworsr 1
+#report_timing -max_paths 1
+report_area
+ 
+****************************************
+Report : area
+Design : top
+Version: H-2013.03-SP4
+Date   : Fri Jul  8 22:47:55 2016
+****************************************
+
+Library(s) Used:
+
+    HIT018 (File: /home/abe/hit18-lib/kyoto_lib/synopsys/HIT018.db)
+
+Number of ports:                          140
+Number of nets:                          8208
+Number of cells:                         8101
+Number of combinational cells:           7579
+Number of sequential cells:               522
+Number of macros/black boxes:               0
+Number of buf/inv:                       1690
+Number of references:                     213
+
+Combinational area:             424166.404797
+Buf/Inv area:                    55695.361509
+Noncombinational area:           79580.162540
+Macro/Black Box area:                0.000000
+Net Interconnect area:      undefined  (Wire load has zero net area)
+
+Total cell area:                503746.567337
+Total area:                 undefined
+1
+report_power
+Loading db file '/home/abe/hit18-lib/kyoto_lib/synopsys/HIT018.db'
+Warning: Main library 'HIT018' does not specify the following unit required for power: 'Leakage Power'. (PWR-424)
+Information: Propagating switching activity (low effort zero delay simulation). (PWR-6)
+Warning: Design has unannotated primary inputs. (PWR-414)
+Warning: Design has unannotated sequential cell outputs. (PWR-415)
+Warning: Design has unannotated black box outputs. (PWR-428)
+ 
+****************************************
+Report : power
+        -analysis_effort low
+Design : top
+Version: H-2013.03-SP4
+Date   : Fri Jul  8 22:47:56 2016
+****************************************
+
+
+Library(s) Used:
+
+    HIT018 (File: /home/abe/hit18-lib/kyoto_lib/synopsys/HIT018.db)
+
+
+Operating Conditions: TYPICAL   Library: HIT018
+Wire Load Model Mode: top
+
+Design        Wire Load Model            Library
+------------------------------------------------
+top                    8k                HIT018
+
+
+Global Operating Voltage = 1.8  
+Power-specific unit information :
+    Voltage Units = 1V
+    Capacitance Units = 1.000000pf
+    Time Units = 1ns
+    Dynamic Power Units = 1mW    (derived from V,C,T units)
+    Leakage Power Units = Unitless
+
+
+  Cell Internal Power  =  18.2594 mW   (43%)
+  Net Switching Power  =  23.8625 mW   (57%)
+                         ---------
+Total Dynamic Power    =  42.1219 mW  (100%)
+
+Cell Leakage Power     =   0.0000 
+
+Error: Either dynamic power or leakage power, in the library, is unitless. Unable to display complete power group summary. (PWR-799)
+
+                 Internal         Switching           Leakage            Total
+Power Group      Power            Power               Power              Power   (   %    )  Attrs
+--------------------------------------------------------------------------------------------------
+io_pad             0.0000            0.0000            0.0000               NA   (     N/A)
+memory             0.0000            0.0000            0.0000               NA   (     N/A)
+black_box          0.0000            0.1880            0.0000               NA   (     N/A)
+clock_network      1.4795            1.5220            0.0000               NA   (     N/A)
+register           1.9592            1.6427            0.0000               NA   (     N/A)
+sequential         0.0000            0.0000            0.0000               NA   (     N/A)
+combinational     14.8207           20.5083            0.0000               NA   (     N/A)
+--------------------------------------------------------------------------------------------------
+Total             18.2594 mW        23.8609 mW         0.0000               NA        
+1
+write -hier -format verilog -output HOGEHOGE_PROC.vnet
+Writing verilog file '/home/koyo/verilog/HOGEHOGE_PROC.vnet'.
+Warning: Verilog 'assign' or 'tran' statements are written out. (VO-4)
+1
+write -hier -output HOGEHOGE_PROC.db
+Writing ddc file 'HOGEHOGE_PROC.db'.
+1
+quit
+
+Thank you...

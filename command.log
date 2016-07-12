@@ -1,6 +1,6 @@
 #@ # 
 #@ # Running dc_shell Version H-2013.03-SP4 for linux -- Sep 01, 2013
-#@ # Date:   Sat Jul  2 00:12:36 2016
+#@ # Date:   Fri Jul  8 22:39:43 2016
 #@ # Run by: @horn.cpc.ait.kyushu-u.ac.jp
 #@ 
 
@@ -4845,13 +4845,22 @@ source -echo -verbose /home/koyo/verilog/runscript_improved.tcl
 #@ #read_verilog topmodule
 #@ ##current_design "TOP_MODULE_NAME"
 #@ 
+#@ #hlo_transform_constant_multiplication =true
+#@ 
+#@ ungroup -all -flatten
+#@ compile
+#@ #compile
+#@ 
+#@ #これ要る
 #@ group_path -to find(cell,"ex_mem_reg/regdst_out_reg*/D") -name clk -weight 10 
+#@ 
 #@ #group_path -to find(cell,"id_ex_reg/id_ex_rt_reg[1]/Q")  -name clk -weight 10
+#@ #group_path -name clk -critical_range 1
 #@ 
 #@ set_max_area 0 -ignore_tns
 #@ set_max_fanout 64 [current_design]
 #@ 
-#@ create_clock -period 3.60 -w {0 1.8} clk
+#@ create_clock -period 3.24 -w {0 1.62} clk
 #@ set_clock_uncertainty -setup 0.0 [get_clock clk]
 #@ set_clock_uncertainty -hold 0.0 [get_clock clk]
 #@ set_input_delay  0.0 -clock clk [remove_from_collection [all_inputs] clk]
@@ -4862,13 +4871,20 @@ source -echo -verbose /home/koyo/verilog/runscript_improved.tcl
 #@ ##compile -map_effort medium -area_effort high -incremental_mapping
 #@ #ungroup forward -flatten
 #@ #ungroup ex_stage -flatten
-#@ compile
+#@ 
+#@ #set_ideal_net find(net,all_connected(find(port,"RST_X")))
+#@ #set_load load_of(asc018_MAX/NI1l/!)*3 all_outputs()
+#@ 
+#@ #ここをincにするとよくない
+#@ compile  
+#@ #compileここには効かない
+#@ compile -inc
 #@ ungroup -all -flatten
 #@ compile -inc -map_ef high
 #@ 
-#@ #report_timing -net -input_pins -max_paths 1
+#@ report_timing -net -input_pins -max_paths 1
 #@ #report_timing -path end delay max -max_path 80 -nworsr 1
-#@ report_timing -max_paths 1
+#@ #report_timing -max_paths 1
 #@ report_area
 #@ report_power
 #@ 

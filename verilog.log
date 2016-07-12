@@ -27,10 +27,10 @@ Command arguments:
     /home/koyo/verilog/SR.v
     /home/koyo/verilog/top.v
     /home/koyo/verilog/wb_stage.v
-    /home/koyo/verilog/top_oint_test.v
+    /home/koyo/verilog/top_branch_test.v
 
-Tool:	VERILOG-XL	06.20.001-s log file created Jul  1, 2016  14:38:01
-Tool:	VERILOG-XL	06.20.001-s   Jul  1, 2016  14:38:01
+Tool:	VERILOG-XL	06.20.001-s log file created Jul 12, 2016  10:38:13
+Tool:	VERILOG-XL	06.20.001-s   Jul 12, 2016  10:38:13
 
 Copyright (c) 1995-2004 Cadence Design Systems, Inc.  All Rights Reserved.
 Unpublished -- rights reserved under the copyright laws of the United States.
@@ -86,13 +86,11 @@ Compiling source file "/home/koyo/verilog/rf32x32.v"
 Compiling source file "/home/koyo/verilog/SR.v"
 Compiling source file "/home/koyo/verilog/top.v"
 Compiling source file "/home/koyo/verilog/wb_stage.v"
-Compiling source file "/home/koyo/verilog/top_oint_test.v"
-Highest level modules:
-top_test
-
-
+Compiling source file "/home/koyo/verilog/top_branch_test.v"
+Highest level modul
 Reach IN_TOTAL.
-L122 "/home/koyo/verilog/top_oint_test.v": $finish at simulation time 655365000
+L113 "/home/koyo/verilog/top_test.v": $finish at simulation time 1000000005000
 0 simulation events (use +profile or +listcounts option to count)
-CPU time: 0.0 secs to compile + 0.1 secs to link + 17.6 secs in simulation
-End of Tool:	VERILOG-XL	06.20.001-s   Jul  1, 2016  14:38:21
+CPU time: 0.0 secs to compile + 0.0 secs to link + 858.1 secs in simulation
+End of Tool:	VERILOG-XL	06.20.001-s   Jul 12, 2016  10:48:11
+d of Tool:	VERILOG-XL	06.20.001-s   Jul 12, 2016  10:41:53
