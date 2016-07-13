@@ -1,0 +1,10 @@
+ram[          0]:10
+ram[          1]:00
+ram[          2]:11
+ram[          3]:01
+ram[          4]:10
+ram[          5]:00
+ram[          6]:10
+ram[          7]:00
+
+        2067 branch       1939 true hitrate=0.938075

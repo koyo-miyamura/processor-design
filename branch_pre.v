@@ -1,14 +1,14 @@
 `timescale              1 ns/1 ps
 module branch_pre(predict,
-	      Iadd,Badd,Idata,Bdata,result);
+	      Iadd,Badd,Idata,Bdata,result,if_id_write,clk);
 	input [31:0]Iadd,Badd,Idata,Bdata;
-	input result;
+	input result,if_id_write,clk;
 	output predict;
 
 	parameter bal=6'b000001,bs=4'b0001;
 	parameter WIDTH=2;
-	parameter ENTRY=1024;
-	parameter ADDRESS=10;
+	parameter ENTRY=128;
+	parameter ADDRESS=7;
 	parameter Initial=2'b01;
 
 	reg  [WIDTH-1:0]  ram [ENTRY-1:0];
@@ -25,9 +25,26 @@ module branch_pre(predict,
 		       ( (ram[I_index]==2'b11)||(ram[I_index]==2'b10) )? 1:0;
 
         //更新
-	always @(result)
+	always @(posedge clk)
 	begin
-		if(B_branch_check==0)
+
+		//counter
+		//if((B_branch_check==0)||(Badd==32'h00010044))
+		if((B_branch_check==0)||(if_id_write==0))
+		begin
+			corect_counter=corect_counter;
+		end
+		//else if(result==predict)
+		else if( ( (result==1)&& ((ram[B_index]==2'b11)||(ram[B_index]==2'b10)) )||( (result==0)&& ((ram[B_index]==2'b01)||(ram[B_index]==2'b00)) ) )
+		begin
+			corect_counter=corect_counter+1;
+		end
+		else 
+		begin
+			corect_counter=corect_counter;
+		end
+
+		if((B_branch_check==0)||(if_id_write==0))
 		begin
 			ram[B_index]<=ram[B_index];
 		end
@@ -44,20 +61,6 @@ module branch_pre(predict,
 			ram[B_index]<=ram[B_index]-1;
 		end
 
-		//counter
-		//if((B_branch_check==0)||(Badd==32'h00010044))
-		if(B_branch_check==0)
-		begin
-			corect_counter=corect_counter;
-		end
-		else if( ( (result==1)&& ((ram[B_index]==2'b11)||(ram[B_index]==2'b10)) )||( (result==0)&& ((ram[B_index]==2'b01)||(ram[B_index]==2'b00)) ) )
-		begin
-			corect_counter=corect_counter+1;
-		end
-		else 
-		begin
-			corect_counter=corect_counter;
-		end
 	end
 
 	integer i;

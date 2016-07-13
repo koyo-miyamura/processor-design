@@ -1,5 +1,5 @@
 `timescale 1ns/1ps
-`define IN_TOTAL 10000
+`define IN_TOTAL 10000000
 
 module top_test;
    
@@ -17,7 +17,7 @@ module top_test;
    parameter STDOUT_ADDR = 32'hf0000000;
    parameter EXIT_ADDR = 32'hff000000;
   //追加
-   parameter ENTRY=1024;
+   parameter ENTRY=128;
    //*** reg,wire declarations ***//
    reg       clk,rst;
    reg       ACKD_n;
@@ -303,6 +303,7 @@ module top_test;
              //$display("\n ram[%d]=%b",i, u_top_1.branch_pre.ram[i]);
              $fwrite(branch_data, "ram[%d]:%b\n", i, u_top_1.branch_pre.ram[i]);
           end
+        $fwrite(branch_data, "\n %d branch %d true hitrate=%f",branch_counter,u_top_1.branch_pre.corect_counter,hit_rate);
 
         $fclose(branch_data);
 

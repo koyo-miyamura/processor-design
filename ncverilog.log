@@ -1,5 +1,5 @@
 ncverilog: 06.20-s004: (c) Copyright 1995-2008 Cadence Design Systems, Inc.
-TOOL:	ncverilog	06.20-s004: Started on Jul 12, 2016 at 22:44:39 JST
+TOOL:	ncverilog	06.20-s004: Started on Jul 13, 2016 at 16:12:35 JST
 ncverilog
 	-s
 	+gui
@@ -34,8 +34,8 @@ ncverilog
 	/home/koyo/verilog/wb_stage.v
 	/home/koyo/verilog/top_branch_test.v
 Recompiling... reason: file './branch_pre.v' is newer than expected.
-	expected: Tue Jul 12 16:24:52 2016
-	actual:   Tue Jul 12 20:21:16 2016
+	expected: Wed Jul 13 14:27:16 2016
+	actual:   Wed Jul 13 16:11:46 2016
 file: /home/koyo/verilog/alu_control.v
 file: /home/koyo/verilog/alu.v
 file: /home/koyo/verilog/branch_pre.v
@@ -119,6 +119,8 @@ file: /home/koyo/verilog/pc.v
 file: /home/koyo/verilog/rf32x32.v
 file: /home/koyo/verilog/SR.v
 file: /home/koyo/verilog/top.v
+	module worklib.top:v
+		errors: 0, warnings: 0
 file: /home/koyo/verilog/wb_stage.v
 file: /home/koyo/verilog/top_branch_test.v
   //追加
@@ -292,9 +294,11 @@ ncvlog: *W,NONPRT (/home/koyo/verilog/top_branch_test.v,294|8): non-printable ch
 	Elaborating the design hierarchy:
 	Building instance overlay tables: .................... Done
 	Generating native compiled code:
-		worklib.branch_pre:v <0x5eb36d84>
-			streams:  11, words:  4697
-		worklib.top_test:v <0x567bdeb4>
+		worklib.branch_pre:v <0x3dc52b0e>
+			streams:  11, words:  4843
+		worklib.top:v <0x6540a31d>
+			streams:  12, words:  2764
+		worklib.top_test:v <0x2387f873>
 			streams:  11, words: 18867
 	Loading native compiled code:     .................... Done
 	Building instance specific data structures.
@@ -318,7 +322,7 @@ ncsim>
 ncsim> source /opt/cadence/CDROM/IUS06.20.004/tools/inca/files/ncsimrc
 ncsim> database -open waves -into waves.shm -default
 Created default SHM database waves
-ncsim> probe -create -shm top_test.u_top_1.branch_pre.B_branch_check top_test.u_top_1.branch_pre.B_index top_test.u_top_1.branch_pre.Badd top_test.u_top_1.branch_pre.Bdata top_test.u_top_1.branch_pre.I_branch_check top_test.u_top_1.branch_pre.I_index top_test.u_top_1.branch_pre.Iadd top_test.u_top_1.branch_pre.Idata top_test.u_top_1.branch_pre.corect_counter top_test.u_top_1.branch_pre.i top_test.u_top_1.branch_pre.predict top_test.u_top_1.branch_pre.ram top_test.u_top_1.branch_pre.result
+ncsim> probe -create -shm top_test.u_top_1.branch_pre.B_branch_check top_test.u_top_1.branch_pre.B_index top_test.u_top_1.branch_pre.Badd top_test.u_top_1.branch_pre.Bdata top_test.u_top_1.branch_pre.I_branch_check top_test.u_top_1.branch_pre.I_index top_test.u_top_1.branch_pre.Iadd top_test.u_top_1.branch_pre.Idata top_test.u_top_1.branch_pre.clk top_test.u_top_1.branch_pre.corect_counter top_test.u_top_1.branch_pre.i top_test.u_top_1.branch_pre.if_id_write top_test.u_top_1.branch_pre.predict top_test.u_top_1.branch_pre.ram top_test.u_top_1.branch_pre.result
 Created probe 1
 ncsim> reset
 Loaded snapshot worklib.top_test:v
@@ -328,12 +332,24 @@ Reach IN_TOTAL.
 
         4973 branch
 
-       4956 true
+       4962 true
 
- 0.996582
+ 0.997788
 Simulation complete via $finish(1) at time 100005 NS + 0
 ./top_branch_test.v:137         $finish;
-ncsim> ...Regained control from SimVision
--------------------------------------
+ncsim> probe -create -shm top_test.u_top_1.id_stage.branch_unit.func top_test.u_top_1.id_stage.branch_unit.op top_test.u_top_1.id_stage.branch_unit.pc_src top_test.u_top_1.id_stage.branch_unit.rs top_test.u_top_1.id_stage.branch_unit.rt top_test.u_top_1.id_stage.branch_unit.rt_field
+Created probe 2
+ncsim> reset
+Loaded snapshot worklib.top_test:v
+ncsim> run
 
-ncsim> TOOL:	ncverilog	06.20-s004: Exiting on Jul 13, 2016 at 01:07:03 JST  (total: 02:22:24)
+Reach IN_TOTAL.
+
+        4973 branch
+
+       4962 true
+
+ 0.997788
+Simulation complete via $finish(1) at time 100005 NS + 0
+./top_branch_test.v:137         $finish;
+ncsim> 

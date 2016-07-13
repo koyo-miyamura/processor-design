@@ -165,5 +165,5 @@ module top(DAD,MREQ,WRITE,SIZE,IAD,
 	wire result=(pc_src==2'b10)? 1:0;
 	wire [31:0]pc_id=pc_4_in_id-4;
 	branch_pre branch_pre(.predict(predict),
-			      .Iadd(IAD), .Badd(pc_id), .Idata(IDT), .Bdata(ins), .result(result));
+			      .Iadd(IAD), .Badd(pc_id), .Idata(IDT), .Bdata(ins), .result(result), .if_id_write(if_id_write), .clk(clk));
 endmodule
