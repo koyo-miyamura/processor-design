@@ -1,5 +1,5 @@
 `timescale 1ns/1ps
-`define IN_TOTAL 1000000000
+`define IN_TOTAL 10000
 
 module top_test;
    
@@ -16,7 +16,8 @@ module top_test;
    parameter DMEM_SIZE = 8000000;  // data memory size
    parameter STDOUT_ADDR = 32'hf0000000;
    parameter EXIT_ADDR = 32'hff000000;
-
+  //追加
+   parameter ENTRY=1024;
    //*** reg,wire declarations ***//
    reg       clk,rst;
    reg       ACKD_n;
@@ -36,9 +37,12 @@ module top_test;
    integer              i;
    integer              CIL, CDLL, CDSL;  // counter for emulate memory access latency
    integer              Reg_data, Dmem_data;   // file pointer for "Reg_out.dat", "Dmem.out"
+   integer              branch_data;//追加
    integer              Max_Daddr;  // integer for remenbering maximum accessed addr of data memory
    //追加
    integer		branch_counter;
+   real 		hit_rate;
+
    reg [BIT_WIDTH-1:0]  Daddr, Iaddr;
 
    reg [BYTE_SIZE-1:0]   DATA_Imem[0:IMEM_SIZE];   // use in readmemh  (Instruction mem)       
@@ -100,9 +104,11 @@ module top_test;
 
              Iaddr = u_top_1.IAD;
              fetch_task1;
+
 	     //追加
    	     //branch_counter=((IDT[31:26]==6'b000001)||(IDT[31:28]==4'b0001))? (branch_counter+1): (branch_counter);
-	     if((IDT[31:26]==6'b000001)||(IDT[31:28]==4'b0001))
+	     if(((IDT[31:26]==6'b000001)||(IDT[31:28]==4'b0001))&&(Iaddr!=32'h00010044))
+	     //if((IDT[31:26]==6'b000001)||(IDT[31:28]==4'b0001))
 	     begin
 	     branch_counter=branch_counter+1;
 	     end
@@ -123,8 +129,8 @@ module top_test;
 
         $display("\nReach IN_TOTAL.");
 
-	//追加
-        $display("\n %d branch",branch_counter);
+	//追加task
+	branch_prediction;
 
         dump_task1;
 
@@ -208,8 +214,8 @@ module top_test;
                 begin
                    $display("\nExited by program.");
                    dump_task1;
-		   //追加
-        	   $display("\n %d branch",branch_counter);
+		   //追加task
+		   branch_prediction;
                    $finish;
                 end
               else if (Daddr != STDOUT_ADDR)
@@ -281,5 +287,26 @@ module top_test;
       end
 
    endtask // dump_task1
+
+//追加
+   task branch_prediction;
+   	begin
+	//追加
+	branch_data = $fopen("./branch_data.txt");
+
+        $display("\n %d branch",branch_counter);
+        $display("\n %d true",u_top_1.branch_pre.corect_counter);
+	hit_rate=$itor(u_top_1.branch_pre.corect_counter)/$itor(branch_counter);
+        $display("\n %f",hit_rate);
+        for (i =0; i < ENTRY; i = i+1) 
+          begin
+             //$display("\n ram[%d]=%b",i, u_top_1.branch_pre.ram[i]);
+             $fwrite(branch_data, "ram[%d]:%b\n", i, u_top_1.branch_pre.ram[i]);
+          end
+
+        $fclose(branch_data);
+
+   	end
+   endtask
 
 endmodule // top_test

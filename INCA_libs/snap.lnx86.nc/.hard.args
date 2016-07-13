@@ -1,5 +1,6 @@
 /home/koyo/verilog/alu_control.v
 /home/koyo/verilog/alu.v
+/home/koyo/verilog/branch_pre.v
 /home/koyo/verilog/branch.v
 /home/koyo/verilog/control.v
 /home/koyo/verilog/DW_ram_2r_w_s_dff.v
@@ -25,5 +26,5 @@
 /home/koyo/verilog/SR.v
 /home/koyo/verilog/top.v
 /home/koyo/verilog/wb_stage.v
-/home/koyo/verilog/top_oint_test.v
+/home/koyo/verilog/top_branch_test.v
 -ACCESS +r

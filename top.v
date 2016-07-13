@@ -161,4 +161,9 @@ module top(DAD,MREQ,WRITE,SIZE,IAD,
 	Exception Exception(.exception(exception), .vector(vector), .IACK(IACK_n),
 	                    .IE_c(IE_c), .vector_mem(vector_mem_out), .rst(rst), .OINT(OINT_n));
 
+	wire predict;
+	wire result=(pc_src==2'b10)? 1:0;
+	wire [31:0]pc_id=pc_4_in_id-4;
+	branch_pre branch_pre(.predict(predict),
+			      .Iadd(IAD), .Badd(pc_id), .Idata(IDT), .Bdata(ins), .result(result));
 endmodule
