@@ -1,317 +1,382 @@
 ncverilog: 06.20-s004: (c) Copyright 1995-2008 Cadence Design Systems, Inc.
-TOOL:	ncverilog	06.20-s004: Started on Jul 13, 2016 at 16:12:35 JST
+TOOL:	ncverilog	06.20-s004: Started on Jul 14, 2016 at 16:30:01 JST
 ncverilog
 	-s
 	+gui
 	+access+r
-	/home/koyo/verilog/alu_control.v
-	/home/koyo/verilog/alu.v
-	/home/koyo/verilog/branch_pre.v
-	/home/koyo/verilog/branch.v
-	/home/koyo/verilog/control.v
-	/home/koyo/verilog/DW_ram_2r_w_s_dff.v
-	/home/koyo/verilog/Exception.v
-	/home/koyo/verilog/ex_mem_reg.v
-	/home/koyo/verilog/ex_stage.v
-	/home/koyo/verilog/forward.v
-	/home/koyo/verilog/hazard.v
-	/home/koyo/verilog/IAR.v
-	/home/koyo/verilog/id_ex_reg.v
-	/home/koyo/verilog/id_stage.v
-	/home/koyo/verilog/if_id_reg.v
-	/home/koyo/verilog/if_stage.v
-	/home/koyo/verilog/Iv_ex.v
-	/home/koyo/verilog/Iv_id.v
-	/home/koyo/verilog/Iv_if.v
-	/home/koyo/verilog/Iv_mem.v
-	/home/koyo/verilog/mem_stage.v
-	/home/koyo/verilog/mem_wb_reg.v
-	/home/koyo/verilog/mux_4.v
-	/home/koyo/verilog/pc.v
-	/home/koyo/verilog/rf32x32.v
-	/home/koyo/verilog/SR.v
-	/home/koyo/verilog/top.v
-	/home/koyo/verilog/wb_stage.v
-	/home/koyo/verilog/top_branch_test.v
-Recompiling... reason: file './branch_pre.v' is newer than expected.
-	expected: Wed Jul 13 14:27:16 2016
-	actual:   Wed Jul 13 16:11:46 2016
-file: /home/koyo/verilog/alu_control.v
-file: /home/koyo/verilog/alu.v
-file: /home/koyo/verilog/branch_pre.v
+	./alu_control.v
+	./alu.v
+	./branch_glpre.v
+	./branch_pre.v
+	./branch.v
+	./control.v
+	./DW_ram_2r_w_s_dff.v
+	./Exception.v
+	./ex_mem_reg.v
+	./ex_stage.v
+	./forward.v
+	./hazard.v
+	./IAR.v
+	./id_ex_reg.v
+	./id_stage.v
+	./if_id_reg.v
+	./if_stage.v
+	./Iv_ex.v
+	./Iv_id.v
+	./Iv_if.v
+	./Iv_mem.v
+	./mem_stage.v
+	./mem_wb_reg.v
+	./mux_4.v
+	./pc.v
+	./rf32x32.v
+	./SR.v
+	./top.v
+	./wb_stage.v
+	./top_branch_test.v
+Recompiling... reason: file './top_branch_test.v' is newer than expected.
+	expected: Thu Jul 14 16:18:12 2016
+	actual:   Thu Jul 14 16:30:00 2016
+file: ./alu_control.v
+file: ./alu.v
+file: ./branch_glpre.v
 	//読み出し
 	  |
-ncvlog: *W,NONPRT (/home/koyo/verilog/branch_pre.v,23|3): non-printable character (0xe8) ignored.
+ncvlog: *W,NONPRT (./branch_glpre.v,29|3): non-printable character (0xe8) ignored.
 	//読み出し
 	   |
-ncvlog: *W,NONPRT (/home/koyo/verilog/branch_pre.v,23|4): non-printable character (0xaa) ignored.
+ncvlog: *W,NONPRT (./branch_glpre.v,29|4): non-printable character (0xaa) ignored.
 	//読み出し
 	    |
-ncvlog: *W,NONPRT (/home/koyo/verilog/branch_pre.v,23|5): non-printable character (0xad) ignored.
+ncvlog: *W,NONPRT (./branch_glpre.v,29|5): non-printable character (0xad) ignored.
 	//読み出し
 	     |
-ncvlog: *W,NONPRT (/home/koyo/verilog/branch_pre.v,23|6): non-printable character (0xe3) ignored.
+ncvlog: *W,NONPRT (./branch_glpre.v,29|6): non-printable character (0xe3) ignored.
 	//読み出し
 	      |
-ncvlog: *W,NONPRT (/home/koyo/verilog/branch_pre.v,23|7): non-printable character (0x81) ignored.
+ncvlog: *W,NONPRT (./branch_glpre.v,29|7): non-printable character (0x81) ignored.
 	//読み出し
 	       |
-ncvlog: *W,NONPRT (/home/koyo/verilog/branch_pre.v,23|8): non-printable character (0xbf) ignored.
+ncvlog: *W,NONPRT (./branch_glpre.v,29|8): non-printable character (0xbf) ignored.
 	//読み出し
 	        |
-ncvlog: *W,NONPRT (/home/koyo/verilog/branch_pre.v,23|9): non-printable character (0xe5) ignored.
+ncvlog: *W,NONPRT (./branch_glpre.v,29|9): non-printable character (0xe5) ignored.
 	//読み出し
 	         |
-ncvlog: *W,NONPRT (/home/koyo/verilog/branch_pre.v,23|10): non-printable character (0x87) ignored.
+ncvlog: *W,NONPRT (./branch_glpre.v,29|10): non-printable character (0x87) ignored.
 	//読み出し
 	          |
-ncvlog: *W,NONPRT (/home/koyo/verilog/branch_pre.v,23|11): non-printable character (0xba) ignored.
+ncvlog: *W,NONPRT (./branch_glpre.v,29|11): non-printable character (0xba) ignored.
 	//読み出し
 	           |
-ncvlog: *W,NONPRT (/home/koyo/verilog/branch_pre.v,23|12): non-printable character (0xe3) ignored.
+ncvlog: *W,NONPRT (./branch_glpre.v,29|12): non-printable character (0xe3) ignored.
 	//読み出し
 	            |
-ncvlog: *W,NONPRT (/home/koyo/verilog/branch_pre.v,23|13): non-printable character (0x81) ignored.
+ncvlog: *W,NONPRT (./branch_glpre.v,29|13): non-printable character (0x81) ignored.
 	//読み出し
 	             |
-ncvlog: *W,NONPRT (/home/koyo/verilog/branch_pre.v,23|14): non-printable character (0x97) ignored.
+ncvlog: *W,NONPRT (./branch_glpre.v,29|14): non-printable character (0x97) ignored.
         //更新
           |
-ncvlog: *W,NONPRT (/home/koyo/verilog/branch_pre.v,27|10): non-printable character (0xe6) ignored.
+ncvlog: *W,NONPRT (./branch_glpre.v,33|10): non-printable character (0xe6) ignored.
         //更新
            |
-ncvlog: *W,NONPRT (/home/koyo/verilog/branch_pre.v,27|11): non-printable character (0x9b) ignored.
-        //更新
-            |
-ncvlog: *W,NONPRT (/home/koyo/verilog/branch_pre.v,27|12): non-printable character (0xb4) ignored.
-        //更新
-             |
-ncvlog: *W,NONPRT (/home/koyo/verilog/branch_pre.v,27|13): non-printable character (0xe6) ignored.
+ncvlog: *W,NONPRT (./branch_glpre.v,33|11): non-printable character (0x9b) ignored.
+        /run
+Simulation interrupted at 22193570 NS + 0
+ncsim> exit
+TOOL:	ncverilog	06.20-s004: Exiting on Jul 14, 2016 at 16:30:26 JST  (total: 00:03:04)
+ *W,NONPRT (./branch_glpre.v,33|13): non-printable character (0xe6) ignored.
         //更新
               |
-ncvlog: *W,NONPRT (/home/koyo/verilog/branch_pre.v,27|14): non-printable character (0x96) ignored.
+ncvlog: *W,NONPRT (./branch_glpre.v,33|14): non-printable character (0x96) ignored.
         //更新
                |
-ncvlog: *W,NONPRT (/home/koyo/verilog/branch_pre.v,27|15): non-printable character (0xb0) ignored.
-	module worklib.branch_pre:v
-		errors: 0, warnings: 18
-file: /home/koyo/verilog/branch.v
-file: /home/koyo/verilog/control.v
-file: /home/koyo/verilog/DW_ram_2r_w_s_dff.v
-file: /home/koyo/verilog/Exception.v
-file: /home/koyo/verilog/ex_mem_reg.v
-file: /home/koyo/verilog/ex_stage.v
-file: /home/koyo/verilog/forward.v
-file: /home/koyo/verilog/hazard.v
-file: /home/koyo/verilog/IAR.v
-file: /home/koyo/verilog/id_ex_reg.v
-file: /home/koyo/verilog/id_stage.v
-file: /home/koyo/verilog/if_id_reg.v
-file: /home/koyo/verilog/if_stage.v
-file: /home/koyo/verilog/Iv_ex.v
-file: /home/koyo/verilog/Iv_id.v
-file: /home/koyo/verilog/Iv_if.v
-file: /home/koyo/verilog/Iv_mem.v
-file: /home/koyo/verilog/mem_stage.v
-file: /home/koyo/verilog/mem_wb_reg.v
-file: /home/koyo/verilog/mux_4.v
-file: /home/koyo/verilog/pc.v
-file: /home/koyo/verilog/rf32x32.v
-file: /home/koyo/verilog/SR.v
-file: /home/koyo/verilog/top.v
-	module worklib.top:v
-		errors: 0, warnings: 0
-file: /home/koyo/verilog/wb_stage.v
-file: /home/koyo/verilog/top_branch_test.v
+ncvlog: *W,NONPRT (./branch_glpre.v,33|15): non-printable character (0xb0) ignored.
+file: ./branch_pre.v
+	//読み出し
+	  |
+ncvlog: *W,NONPRT (./branch_pre.v,24|3): non-printable character (0xe8) ignored.
+	//読み出し
+	   |
+ncvlog: *W,NONPRT (./branch_pre.v,24|4): non-printable character (0xaa) ignored.
+	//読み出し
+	    |
+ncvlog: *W,NONPRT (./branch_pre.v,24|5): non-printable character (0xad) ignored.
+	//読み出し
+	     |
+ncvlog: *W,NONPRT (./branch_pre.v,24|6): non-printable character (0xe3) ignored.
+	//読み出し
+	      |
+ncvlog: *W,NONPRT (./branch_pre.v,24|7): non-printable character (0x81) ignored.
+	//読み出し
+	       |
+ncvlog: *W,NONPRT (./branch_pre.v,24|8): non-printable character (0xbf) ignored.
+	//読み出し
+	        |
+ncvlog: *W,NONPRT (./branch_pre.v,24|9): non-printable character (0xe5) ignored.
+	//読み出し
+	         |
+ncvlog: *W,NONPRT (./branch_pre.v,24|10): non-printable character (0x87) ignored.
+	//読み出し
+	          |
+ncvlog: *W,NONPRT (./branch_pre.v,24|11): non-printable character (0xba) ignored.
+	//読み出し
+	           |
+ncvlog: *W,NONPRT (./branch_pre.v,24|12): non-printable character (0xe3) ignored.
+	//読み出し
+	            |
+ncvlog: *W,NONPRT (./branch_pre.v,24|13): non-printable character (0x81) ignored.
+	//読み出し
+	             |
+ncvlog: *W,NONPRT (./branch_pre.v,24|14): non-printable character (0x97) ignored.
+        //更新
+          |
+ncvlog: *W,NONPRT (./branch_pre.v,28|10): non-printable character (0xe6) ignored.
+        //更新
+           |
+ncvlog: *W,NONPRT (./branch_pre.v,28|11): non-printable character (0x9b) ignored.
+        //更新
+            |
+ncvlog: *W,NONPRT (./branch_pre.v,28|12): non-printable character (0xb4) ignored.
+        //更新
+             |
+ncvlog: *W,NONPRT (./branch_pre.v,28|13): non-printable character (0xe6) ignored.
+        //更新
+              |
+ncvlog: *W,NONPRT (./branch_pre.v,28|14): non-printable character (0x96) ignored.
+        //更新
+               |
+ncvlog: *W,NONPRT (./branch_pre.v,28|15): non-printable character (0xb0) ignored.
+file: ./branch.v
+file: ./control.v
+file: ./DW_ram_2r_w_s_dff.v
+file: ./Exception.v
+file: ./ex_mem_reg.v
+file: ./ex_stage.v
+file: ./forward.v
+file: ./hazard.v
+file: ./IAR.v
+file: ./id_ex_reg.v
+file: ./id_stage.v
+file: ./if_id_reg.v
+file: ./if_stage.v
+file: ./Iv_ex.v
+file: ./Iv_id.v
+file: ./Iv_if.v
+file: ./Iv_mem.v
+file: ./mem_stage.v
+file: ./mem_wb_reg.v
+file: ./mux_4.v
+file: ./pc.v
+file: ./rf32x32.v
+file: ./SR.v
+file: ./top.v
+file: ./wb_stage.v
+file: ./top_branch_test.v
   //追加
     |
-ncvlog: *W,NONPRT (/home/koyo/verilog/top_branch_test.v,19|4): non-printable character (0xe8) ignored.
+ncvlog: *W,NONPRT (./top_branch_test.v,19|4): non-printable character (0xe8) ignored.
   //追加
      |
-ncvlog: *W,NONPRT (/home/koyo/verilog/top_branch_test.v,19|5): non-printable character (0xbf) ignored.
+ncvlog: *W,NONPRT (./top_branch_test.v,19|5): non-printable character (0xbf) ignored.
   //追加
       |
-ncvlog: *W,NONPRT (/home/koyo/verilog/top_branch_test.v,19|6): non-printable character (0xbd) ignored.
+ncvlog: *W,NONPRT (./top_branch_test.v,19|6): non-printable character (0xbd) ignored.
   //追加
        |
-ncvlog: *W,NONPRT (/home/koyo/verilog/top_branch_test.v,19|7): non-printable character (0xe5) ignored.
+ncvlog: *W,NONPRT (./top_branch_test.v,19|7): non-printable character (0xe5) ignored.
   //追加
         |
-ncvlog: *W,NONPRT (/home/koyo/verilog/top_branch_test.v,19|8): non-printable character (0x8a) ignored.
+ncvlog: *W,NONPRT (./top_branch_test.v,19|8): non-printable character (0x8a) ignored.
   //追加
          |
-ncvlog: *W,NONPRT (/home/koyo/verilog/top_branch_test.v,19|9): non-printable character (0xa0) ignored.
+ncvlog: *W,NONPRT (./top_branch_test.v,19|9): non-printable character (0xa0) ignored.
    integer              branch_data;//追加
                                       |
-ncvlog: *W,NONPRT (/home/koyo/verilog/top_branch_test.v,40|38): non-printable character (0xe8) ignored.
+ncvlog: *W,NONPRT (./top_branch_test.v,41|38): non-printable character (0xe8) ignored.
    integer              branch_data;//追加
                                        |
-ncvlog: *W,NONPRT (/home/koyo/verilog/top_branch_test.v,40|39): non-printable character (0xbf) ignored.
+ncvlog: *W,NONPRT (./top_branch_test.v,41|39): non-printable character (0xbf) ignored.
    integer              branch_data;//追加
                                         |
-ncvlog: *W,NONPRT (/home/koyo/verilog/top_branch_test.v,40|40): non-printable character (0xbd) ignored.
+ncvlog: *W,NONPRT (./top_branch_test.v,41|40): non-printable character (0xbd) ignored.
    integer              branch_data;//追加
                                          |
-ncvlog: *W,NONPRT (/home/koyo/verilog/top_branch_test.v,40|41): non-printable character (0xe5) ignored.
+ncvlog: *W,NONPRT (./top_branch_test.v,41|41): non-printable character (0xe5) ignored.
    integer              branch_data;//追加
                                           |
-ncvlog: *W,NONPRT (/home/koyo/verilog/top_branch_test.v,40|42): non-printable character (0x8a) ignored.
+ncvlog: *W,NONPRT (./top_branch_test.v,41|42): non-printable character (0x8a) ignored.
    integer              branch_data;//追加
                                            |
-ncvlog: *W,NONPRT (/home/koyo/verilog/top_branch_test.v,40|43): non-printable character (0xa0) ignored.
+ncvlog: *W,NONPRT (./top_branch_test.v,41|43): non-printable character (0xa0) ignored.
    //追加
      |
-ncvlog: *W,NONPRT (/home/koyo/verilog/top_branch_test.v,42|5): non-printable character (0xe8) ignored.
+ncvlog: *W,NONPRT (./top_branch_test.v,43|5): non-printable character (0xe8) ignored.
    //追加
       |
-ncvlog: *W,NONPRT (/home/koyo/verilog/top_branch_test.v,42|6): non-printable character (0xbf) ignored.
+ncvlog: *W,NONPRT (./top_branch_test.v,43|6): non-printable character (0xbf) ignored.
    //追加
        |
-ncvlog: *W,NONPRT (/home/koyo/verilog/top_branch_test.v,42|7): non-printable character (0xbd) ignored.
+ncvlog: *W,NONPRT (./top_branch_test.v,43|7): non-printable character (0xbd) ignored.
    //追加
         |
-ncvlog: *W,NONPRT (/home/koyo/verilog/top_branch_test.v,42|8): non-printable character (0xe5) ignored.
+ncvlog: *W,NONPRT (./top_branch_test.v,43|8): non-printable character (0xe5) ignored.
    //追加
          |
-ncvlog: *W,NONPRT (/home/koyo/verilog/top_branch_test.v,42|9): non-printable character (0x8a) ignored.
+ncvlog: *W,NONPRT (./top_branch_test.v,43|9): non-printable character (0x8a) ignored.
    //追加
           |
-ncvlog: *W,NONPRT (/home/koyo/verilog/top_branch_test.v,42|10): non-printable character (0xa0) ignored.
+ncvlog: *W,NONPRT (./top_branch_test.v,43|10): non-printable character (0xa0) ignored.
 	//追加
 	  |
-ncvlog: *W,NONPRT (/home/koyo/verilog/top_branch_test.v,81|3): non-printable character (0xe8) ignored.
+ncvlog: *W,NONPRT (./top_branch_test.v,82|3): non-printable character (0xe8) ignored.
 	//追加
 	   |
-ncvlog: *W,NONPRT (/home/koyo/verilog/top_branch_test.v,81|4): non-printable character (0xbf) ignored.
+ncvlog: *W,NONPRT (./top_branch_test.v,82|4): non-printable character (0xbf) ignored.
 	//追加
 	    |
-ncvlog: *W,NONPRT (/home/koyo/verilog/top_branch_test.v,81|5): non-printable character (0xbd) ignored.
+ncvlog: *W,NONPRT (./top_branch_test.v,82|5): non-printable character (0xbd) ignored.
 	//追加
 	     |
-ncvlog: *W,NONPRT (/home/koyo/verilog/top_branch_test.v,81|6): non-printable character (0xe5) ignored.
+ncvlog: *W,NONPRT (./top_branch_test.v,82|6): non-printable character (0xe5) ignored.
 	//追加
 	      |
-ncvlog: *W,NONPRT (/home/koyo/verilog/top_branch_test.v,81|7): non-printable character (0x8a) ignored.
+ncvlog: *W,NONPRT (./top_branch_test.v,82|7): non-printable character (0x8a) ignored.
 	//追加
 	       |
-ncvlog: *W,NONPRT (/home/koyo/verilog/top_branch_test.v,81|8): non-printable character (0xa0) ignored.
+ncvlog: *W,NONPRT (./top_branch_test.v,82|8): non-printable character (0xa0) ignored.
 	     //追加
 	       |
-ncvlog: *W,NONPRT (/home/koyo/verilog/top_branch_test.v,108|8): non-printable character (0xe8) ignored.
+ncvlog: *W,NONPRT (./top_branch_test.v,109|8): non-printable character (0xe8) ignored.
 	     //追加
 	        |
-ncvlog: *W,NONPRT (/home/koyo/verilog/top_branch_test.v,108|9): non-printable character (0xbf) ignored.
+ncvlog: *W,NONPRT (./top_branch_test.v,109|9): non-printable character (0xbf) ignored.
 	     //追加
 	         |
-ncvlog: *W,NONPRT (/home/koyo/verilog/top_branch_test.v,108|10): non-printable character (0xbd) ignored.
+ncvlog: *W,NONPRT (./top_branch_test.v,109|10): non-printable character (0xbd) ignored.
 	     //追加
 	          |
-ncvlog: *W,NONPRT (/home/koyo/verilog/top_branch_test.v,108|11): non-printable character (0xe5) ignored.
+ncvlog: *W,NONPRT (./top_branch_test.v,109|11): non-printable character (0xe5) ignored.
 	     //追加
 	           |
-ncvlog: *W,NONPRT (/home/koyo/verilog/top_branch_test.v,108|12): non-printable character (0x8a) ignored.
+ncvlog: *W,NONPRT (./top_branch_test.v,109|12): non-printable character (0x8a) ignored.
 	     //追加
 	            |
-ncvlog: *W,NONPRT (/home/koyo/verilog/top_branch_test.v,108|13): non-printable character (0xa0) ignored.
+ncvlog: *W,NONPRT (./top_branch_test.v,109|13): non-printable character (0xa0) ignored.
 	//追加task
 	  |
-ncvlog: *W,NONPRT (/home/koyo/verilog/top_branch_test.v,132|3): non-printable character (0xe8) ignored.
+ncvlog: *W,NONPRT (./top_branch_test.v,133|3): non-printable character (0xe8) ignored.
 	//追加task
 	   |
-ncvlog: *W,NONPRT (/home/koyo/verilog/top_branch_test.v,132|4): non-printable character (0xbf) ignored.
+ncvlog: *W,NONPRT (./top_branch_test.v,133|4): non-printable character (0xbf) ignored.
 	//追加task
 	    |
-ncvlog: *W,NONPRT (/home/koyo/verilog/top_branch_test.v,132|5): non-printable character (0xbd) ignored.
+ncvlog: *W,NONPRT (./top_branch_test.v,133|5): non-printable character (0xbd) ignored.
 	//追加task
 	     |
-ncvlog: *W,NONPRT (/home/koyo/verilog/top_branch_test.v,132|6): non-printable character (0xe5) ignored.
+ncvlog: *W,NONPRT (./top_branch_test.v,133|6): non-printable character (0xe5) ignored.
 	//追加task
 	      |
-ncvlog: *W,NONPRT (/home/koyo/verilog/top_branch_test.v,132|7): non-printable character (0x8a) ignored.
+ncvlog: *W,NONPRT (./top_branch_test.v,133|7): non-printable character (0x8a) ignored.
 	//追加task
 	       |
-ncvlog: *W,NONPRT (/home/koyo/verilog/top_branch_test.v,132|8): non-printable character (0xa0) ignored.
+ncvlog: *W,NONPRT (./top_branch_test.v,133|8): non-printable character (0xa0) ignored.
    //*** description for wave form 
      |
-ncvlog: *W,NOCMIC (/home/koyo/verilog/top_branch_test.v,141|5): error-prone block comment nested within block comment [2.3(IEEE)].
+ncvlog: *W,NOCMIC (./top_branch_test.v,142|5): error-prone block comment nested within block comment [2.3(IEEE)].
 		   //追加task
 		     |
-ncvlog: *W,NONPRT (/home/koyo/verilog/top_branch_test.v,217|7): non-printable character (0xe8) ignored.
+ncvlog: *W,NONPRT (./top_branch_test.v,218|7): non-printable character (0xe8) ignored.
 		   //追加task
 		      |
-ncvlog: *W,NONPRT (/home/koyo/verilog/top_branch_test.v,217|8): non-printable character (0xbf) ignored.
+ncvlog: *W,NONPRT (./top_branch_test.v,218|8): non-printable character (0xbf) ignored.
 		   //追加task
 		       |
-ncvlog: *W,NONPRT (/home/koyo/verilog/top_branch_test.v,217|9): non-printable character (0xbd) ignored.
+ncvlog: *W,NONPRT (./top_branch_test.v,218|9): non-printable character (0xbd) ignored.
 		   //追加task
 		        |
-ncvlog: *W,NONPRT (/home/koyo/verilog/top_branch_test.v,217|10): non-printable character (0xe5) ignored.
+ncvlog: *W,NONPRT (./top_branch_test.v,218|10): non-printable character (0xe5) ignored.
 		   //追加task
 		         |
-ncvlog: *W,NONPRT (/home/koyo/verilog/top_branch_test.v,217|11): non-printable character (0x8a) ignored.
+ncvlog: *W,NONPRT (./top_branch_test.v,218|11): non-printable character (0x8a) ignored.
 		   //追加task
 		          |
-ncvlog: *W,NONPRT (/home/koyo/verilog/top_branch_test.v,217|12): non-printable character (0xa0) ignored.
+ncvlog: *W,NONPRT (./top_branch_test.v,218|12): non-printable character (0xa0) ignored.
 //追加
   |
-ncvlog: *W,NONPRT (/home/koyo/verilog/top_branch_test.v,291|2): non-printable character (0xe8) ignored.
+ncvlog: *W,NONPRT (./top_branch_test.v,293|2): non-printable character (0xe8) ignored.
 //追加
    |
-ncvlog: *W,NONPRT (/home/koyo/verilog/top_branch_test.v,291|3): non-printable character (0xbf) ignored.
+ncvlog: *W,NONPRT (./top_branch_test.v,293|3): non-printable character (0xbf) ignored.
 //追加
     |
-ncvlog: *W,NONPRT (/home/koyo/verilog/top_branch_test.v,291|4): non-printable character (0xbd) ignored.
+ncvlog: *W,NONPRT (./top_branch_test.v,293|4): non-printable character (0xbd) ignored.
 //追加
      |
-ncvlog: *W,NONPRT (/home/koyo/verilog/top_branch_test.v,291|5): non-printable character (0xe5) ignored.
+ncvlog: *W,NONPRT (./top_branch_test.v,293|5): non-printable character (0xe5) ignored.
 //追加
       |
-ncvlog: *W,NONPRT (/home/koyo/verilog/top_branch_test.v,291|6): non-printable character (0x8a) ignored.
+ncvlog: *W,NONPRT (./top_branch_test.v,293|6): non-printable character (0x8a) ignored.
 //追加
        |
-ncvlog: *W,NONPRT (/home/koyo/verilog/top_branch_test.v,291|7): non-printable character (0xa0) ignored.
+ncvlog: *W,NONPRT (./top_branch_test.v,293|7): non-printable character (0xa0) ignored.
 	//追加
 	  |
-ncvlog: *W,NONPRT (/home/koyo/verilog/top_branch_test.v,294|3): non-printable character (0xe8) ignored.
+ncvlog: *W,NONPRT (./top_branch_test.v,296|3): non-printable character (0xe8) ignored.
 	//追加
 	   |
-ncvlog: *W,NONPRT (/home/koyo/verilog/top_branch_test.v,294|4): non-printable character (0xbf) ignored.
+ncvlog: *W,NONPRT (./top_branch_test.v,296|4): non-printable character (0xbf) ignored.
 	//追加
 	    |
-ncvlog: *W,NONPRT (/home/koyo/verilog/top_branch_test.v,294|5): non-printable character (0xbd) ignored.
+ncvlog: *W,NONPRT (./top_branch_test.v,296|5): non-printable character (0xbd) ignored.
 	//追加
 	     |
-ncvlog: *W,NONPRT (/home/koyo/verilog/top_branch_test.v,294|6): non-printable character (0xe5) ignored.
+ncvlog: *W,NONPRT (./top_branch_test.v,296|6): non-printable character (0xe5) ignored.
 	//追加
 	      |
-ncvlog: *W,NONPRT (/home/koyo/verilog/top_branch_test.v,294|7): non-printable character (0x8a) ignored.
+ncvlog: *W,NONPRT (./top_branch_test.v,296|7): non-printable character (0x8a) ignored.
 	//追加
 	       |
-ncvlog: *W,NONPRT (/home/koyo/verilog/top_branch_test.v,294|8): non-printable character (0xa0) ignored.
+ncvlog: *W,NONPRT (./top_branch_test.v,296|8): non-printable character (0xa0) ignored.
+	//追加
+	  |
+ncvlog: *W,NONPRT (./top_branch_test.v,317|3): non-printable character (0xe8) ignored.
+	//追加
+	   |
+ncvlog: *W,NONPRT (./top_branch_test.v,317|4): non-printable character (0xbf) ignored.
+	//追加
+	    |
+ncvlog: *W,NONPRT (./top_branch_test.v,317|5): non-printable character (0xbd) ignored.
+	//追加
+	     |
+ncvlog: *W,NONPRT (./top_branch_test.v,317|6): non-printable character (0xe5) ignored.
+	//追加
+	      |
+ncvlog: *W,NONPRT (./top_branch_test.v,317|7): non-printable character (0x8a) ignored.
+	//追加
+	       |
+ncvlog: *W,NONPRT (./top_branch_test.v,317|8): non-printable character (0xa0) ignored.
 	module worklib.top_test:v
-		errors: 0, warnings: 55
+		errors: 0, warnings: 61
 		Caching library 'worklib' ....... Done
 	Elaborating the design hierarchy:
 	Building instance overlay tables: .................... Done
 	Generating native compiled code:
-		worklib.branch_pre:v <0x3dc52b0e>
-			streams:  11, words:  4843
-		worklib.top:v <0x6540a31d>
-			streams:  12, words:  2764
-		worklib.top_test:v <0x2387f873>
-			streams:  11, words: 18867
+		worklib.top_test:v <0x1b279332>
+			streams:  12, words: 22133
 	Loading native compiled code:     .................... Done
 	Building instance specific data structures.
 	Design hierarchy summary:
 		                 Instances  Unique
-		Modules:                29      29
-		Registers:              84      84
-		Scalar wires:           51       -
+		Modules:                30      30
+		Registers:              91      91
+		Scalar wires:           54       -
 		Expanded wires:         32       1
-		Vectored wires:         98       -
-		Always blocks:          12      12
-		Initial blocks:          4       4
-		Cont. assignments:      78     107
+		Vectored wires:        100       -
+		Always blocks:          13      13
+		Initial blocks:          5       5
+		Cont. assignments:      83     112
 		Pseudo assignments:      1       1
 		Simulation timescale:  1ps
 	Writing initial simulation snapshot: worklib.top_test:v
@@ -322,7 +387,7 @@ ncsim>
 ncsim> source /opt/cadence/CDROM/IUS06.20.004/tools/inca/files/ncsimrc
 ncsim> database -open waves -into waves.shm -default
 Created default SHM database waves
-ncsim> probe -create -shm top_test.u_top_1.branch_pre.B_branch_check top_test.u_top_1.branch_pre.B_index top_test.u_top_1.branch_pre.Badd top_test.u_top_1.branch_pre.Bdata top_test.u_top_1.branch_pre.I_branch_check top_test.u_top_1.branch_pre.I_index top_test.u_top_1.branch_pre.Iadd top_test.u_top_1.branch_pre.Idata top_test.u_top_1.branch_pre.clk top_test.u_top_1.branch_pre.corect_counter top_test.u_top_1.branch_pre.i top_test.u_top_1.branch_pre.if_id_write top_test.u_top_1.branch_pre.predict top_test.u_top_1.branch_pre.ram top_test.u_top_1.branch_pre.result
+ncsim> probe -create -shm top_test.u_top_1.branch_glpre.B_branch_check top_test.u_top_1.branch_glpre.B_index top_test.u_top_1.branch_glpre.Badd top_test.u_top_1.branch_glpre.Bdata top_test.u_top_1.branch_glpre.I_branch_check top_test.u_top_1.branch_glpre.I_index top_test.u_top_1.branch_glpre.Iadd top_test.u_top_1.branch_glpre.Idata top_test.u_top_1.branch_glpre.branch_counter top_test.u_top_1.branch_glpre.clk top_test.u_top_1.branch_glpre.corect_counter top_test.u_top_1.branch_glpre.i top_test.u_top_1.branch_glpre.if_id_write top_test.u_top_1.branch_glpre.predict top_test.u_top_1.branch_glpre.ram top_test.u_top_1.branch_glpre.result top_test.u_top_1.branch_glpre.shift top_test.u_top_1.branch_glpre.shift_pre top_test.u_top_1.branch_pre.B_branch_check top_test.u_top_1.branch_pre.B_index top_test.u_top_1.branch_pre.Badd top_test.u_top_1.branch_pre.Bdata top_test.u_top_1.branch_pre.I_branch_check top_test.u_top_1.branch_pre.I_index top_test.u_top_1.branch_pre.Iadd top_test.u_top_1.branch_pre.Idata top_test.u_top_1.branch_pre.branch_counter top_test.u_top_1.branch_pre.clk top_test.u_top_1.branch_pre.corect_counter top_test.u_top_1.branch_pre.i top_test.u_top_1.branch_pre.if_id_write top_test.u_top_1.branch_pre.predict top_test.u_top_1.branch_pre.ram top_test.u_top_1.branch_pre.result
 Created probe 1
 ncsim> reset
 Loaded snapshot worklib.top_test:v
@@ -330,26 +395,19 @@ ncsim> run
 
 Reach IN_TOTAL.
 
-        4973 branch
+local        4973 branch        4973 branch_counter
 
-       4962 true
+       4960 true
 
- 0.997788
+ 0.997386
+
+global        4973 branch        4973 branch_counter
+
+       4956 true
+
+ 0.996582
 Simulation complete via $finish(1) at time 100005 NS + 0
-./top_branch_test.v:137         $finish;
-ncsim> probe -create -shm top_test.u_top_1.id_stage.branch_unit.func top_test.u_top_1.id_stage.branch_unit.op top_test.u_top_1.id_stage.branch_unit.pc_src top_test.u_top_1.id_stage.branch_unit.rs top_test.u_top_1.id_stage.branch_unit.rt top_test.u_top_1.id_stage.branch_unit.rt_field
-Created probe 2
-ncsim> reset
-Loaded snapshot worklib.top_test:v
-ncsim> run
-
-Reach IN_TOTAL.
-
-        4973 branch
-
-       4962 true
-
- 0.997788
-Simulation complete via $finish(1) at time 100005 NS + 0
-./top_branch_test.v:137         $finish;
-ncsim> 
+./top_branch_test.v:138         $finish;
+ncsim> ^C
+ncsim> exit
+TOOL:	ncverilog	06.20-s004: Exiting on Jul 14, 2016 at 16:36:20 JST  (total: 00:06:19)

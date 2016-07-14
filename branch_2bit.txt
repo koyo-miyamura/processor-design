@@ -1,0 +1,4 @@
+ram[          0]:11
+ram[          1]:01
+
+       10324 branch       6849 true hitrate=0.663406

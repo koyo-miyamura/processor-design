@@ -1,5 +1,5 @@
 `timescale 1ns/1ps
-`define IN_TOTAL 10000000
+`define IN_TOTAL 10000
 
 module top_test;
    
@@ -17,7 +17,8 @@ module top_test;
    parameter STDOUT_ADDR = 32'hf0000000;
    parameter EXIT_ADDR = 32'hff000000;
   //追加
-   parameter ENTRY=128;
+   parameter ENTRY=4096;
+   parameter GLENTRY=4096;
    //*** reg,wire declarations ***//
    reg       clk,rst;
    reg       ACKD_n;
@@ -131,7 +132,7 @@ module top_test;
 
 	//追加task
 	branch_prediction;
-
+	branch_prediction_gl;
         dump_task1;
 
         $finish;
@@ -216,6 +217,7 @@ module top_test;
                    dump_task1;
 		   //追加task
 		   branch_prediction;
+		   branch_prediction_gl;
                    $finish;
                 end
               else if (Daddr != STDOUT_ADDR)
@@ -294,7 +296,7 @@ module top_test;
 	//追加
 	branch_data = $fopen("./branch_data.txt");
 
-        $display("\n %d branch",branch_counter);
+        $display("\nlocal %d branch  %d branch_counter",branch_counter,u_top_1.branch_pre.branch_counter);
         $display("\n %d true",u_top_1.branch_pre.corect_counter);
 	hit_rate=$itor(u_top_1.branch_pre.corect_counter)/$itor(branch_counter);
         $display("\n %f",hit_rate);
@@ -303,11 +305,31 @@ module top_test;
              //$display("\n ram[%d]=%b",i, u_top_1.branch_pre.ram[i]);
              $fwrite(branch_data, "ram[%d]:%b\n", i, u_top_1.branch_pre.ram[i]);
           end
-        $fwrite(branch_data, "\n %d branch %d true hitrate=%f",branch_counter,u_top_1.branch_pre.corect_counter,hit_rate);
+        $fwrite(branch_data, "\nlocal %d branch %d true hitrate=%f",branch_counter,u_top_1.branch_pre.corect_counter,hit_rate);
 
         $fclose(branch_data);
 
    	end
    endtask
 
+   task branch_prediction_gl;
+   	begin
+	//追加
+	branch_data = $fopen("./branch_gldata.txt");
+
+        $display("\nglobal %d branch  %d branch_counter",branch_counter,u_top_1.branch_glpre.branch_counter);
+        $display("\n %d true",u_top_1.branch_glpre.corect_counter);
+	hit_rate=$itor(u_top_1.branch_glpre.corect_counter)/$itor(branch_counter);
+        $display("\n %f",hit_rate);
+        for (i =0; i < GLENTRY; i = i+1) 
+          begin
+             //$display("\n ram[%d]=%b",i, u_top_1.branch_glpre.ram[i]);
+             $fwrite(branch_data, "ram[%d]:%b\n", i, u_top_1.branch_glpre.ram[i]);
+          end
+        $fwrite(branch_data, "\nglobal %d branch %d true hitrate=%f",branch_counter,u_top_1.branch_glpre.corect_counter,hit_rate);
+
+        $fclose(branch_data);
+
+   	end
+   endtask
 endmodule // top_test

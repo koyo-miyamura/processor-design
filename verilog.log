@@ -1,37 +1,38 @@
 Host command: /opt/cadence/CDROM/IUS06.20.004/tools/verilog/bin/verilog.exe
 Command arguments:
-    /home/koyo/verilog/alu_control.v
-    /home/koyo/verilog/alu.v
-    /home/koyo/verilog/branch_pre.v
-    /home/koyo/verilog/branch.v
-    /home/koyo/verilog/control.v
-    /home/koyo/verilog/DW_ram_2r_w_s_dff.v
-    /home/koyo/verilog/Exception.v
-    /home/koyo/verilog/ex_mem_reg.v
-    /home/koyo/verilog/ex_stage.v
-    /home/koyo/verilog/forward.v
-    /home/koyo/verilog/hazard.v
-    /home/koyo/verilog/IAR.v
-    /home/koyo/verilog/id_ex_reg.v
-    /home/koyo/verilog/id_stage.v
-    /home/koyo/verilog/if_id_reg.v
-    /home/koyo/verilog/if_stage.v
-    /home/koyo/verilog/Iv_ex.v
-    /home/koyo/verilog/Iv_id.v
-    /home/koyo/verilog/Iv_if.v
-    /home/koyo/verilog/Iv_mem.v
-    /home/koyo/verilog/mem_stage.v
-    /home/koyo/verilog/mem_wb_reg.v
-    /home/koyo/verilog/mux_4.v
-    /home/koyo/verilog/pc.v
-    /home/koyo/verilog/rf32x32.v
-    /home/koyo/verilog/SR.v
-    /home/koyo/verilog/top.v
-    /home/koyo/verilog/wb_stage.v
-    /home/koyo/verilog/top_branch_test.v
+    ./alu_control.v
+    ./alu.v
+    ./branch_glpre.v
+    ./branch_pre.v
+    ./branch.v
+    ./control.v
+    ./DW_ram_2r_w_s_dff.v
+    ./Exception.v
+    ./ex_mem_reg.v
+    ./ex_stage.v
+    ./forward.v
+    ./hazard.v
+    ./IAR.v
+    ./id_ex_reg.v
+    ./id_stage.v
+    ./if_id_reg.v
+    ./if_stage.v
+    ./Iv_ex.v
+    ./Iv_id.v
+    ./Iv_if.v
+    ./Iv_mem.v
+    ./mem_stage.v
+    ./mem_wb_reg.v
+    ./mux_4.v
+    ./pc.v
+    ./rf32x32.v
+    ./SR.v
+    ./top.v
+    ./wb_stage.v
+    ./top_branch_test.v
 
-Tool:	VERILOG-XL	06.20.001-s log file created Jul 13, 2016  17:37:12
-Tool:	VERILOG-XL	06.20.001-s   Jul 13, 2016  17:37:12
+Tool:	VERILOG-XL	06.20.001-s log file created Jul 14, 2016  16:20:23
+Tool:	VERILOG-XL	06.20.001-s   Jul 14, 2016  16:20:23
 
 Copyright (c) 1995-2004 Cadence Design Systems, Inc.  All Rights Reserved.
 Unpublished -- rights reserved under the copyright laws of the United States.
@@ -60,48 +61,69 @@ For technical assistance please contact the Cadence Response Center at
 For more information on Cadence's Verilog-XL product line send email to
 talkv@cadence.com
 
-Compiling source file "/home/koyo/verilog/alu_control.v"
-Compiling source file "/home/koyo/verilog/alu.v"
-Compiling source file "/home/koyo/verilog/branch_pre.v"
-Compiling source file "/home/koyo/verilog/branch.v"
-Compiling source file "/home/koyo/verilog/control.v"
-Compiling source file "/home/koyo/verilog/DW_ram_2r_w_s_dff.v"
-Compiling source file "/home/koyo/verilog/Exception.v"
-Compiling source file "/home/koyo/verilog/ex_mem_reg.v"
-Compiling source file "/home/koyo/verilog/ex_stage.v"
-Compiling source file "/home/koyo/verilog/forward.v"
-Compiling source file "/home/koyo/verilog/hazard.v"
-Compiling source file "/home/koyo/verilog/IAR.v"
-Compiling source file "/home/koyo/verilog/id_ex_reg.v"
-Compiling source file "/home/koyo/verilog/id_stage.v"
-Compiling source file "/home/koyo/verilog/if_id_reg.v"
-Compiling source file "/home/koyo/verilog/if_stage.v"
-Compiling source file "/home/koyo/verilog/Iv_ex.v"
-Compiling source file "/home/koyo/verilog/Iv_id.v"
-Compiling source file "/home/koyo/verilog/Iv_if.v"
-Compiling source file "/home/koyo/verilog/Iv_mem.v"
-Compiling source file "/home/koyo/verilog/mem_stage.v"
-Compiling source file "/home/koyo/verilog/mem_wb_reg.v"
-Compiling source file "/home/koyo/verilog/mux_4.v"
-Compiling source file "/home/koyo/verilog/pc.v"
-Compiling source file "/home/koyo/verilog/rf32x32.v"
-Compiling source file "/home/koyo/verilog/SR.v"
-Compiling source file "/home/koyo/verilog/top.v"
-Compiling source file "/home/koyo/verilog/wb_stage.v"
-Compiling source file "/home/koyo/verilog/top_branch_test.v"
+Compiling source file "./alu_control.v"
+Compiling source file "./alu.v"
+Compiling source file "./branch_glpre.v"
+Compiling source file "./branch_pre.v"
+Compiling source file "./branch.v"
+Compiling source file "./control.v"
+Compiling source file "./DW_ram_2r_w_s_dff.v"
+Compiling source file "./Exception.v"
+Compiling source file "./ex_mem_reg.v"
+Compiling source file "./ex_stage.v"
+Compiling source file "./forward.v"
+Compiling source file "./hazard.v"
+Compiling source file "./IAR.v"
+Compiling source file "./id_ex_reg.v"
+Compiling source file "./id_stage.v"
+Compiling source file "./if_id_reg.v"
+Compiling source file "./if_stage.v"
+Compiling source file "./Iv_ex.v"
+Compiling source file "./Iv_id.v"
+Compiling source file "./Iv_if.v"
+Compiling source file "./Iv_mem.v"
+Compiling source file "./mem_stage.v"
+Compiling source file "./mem_wb_reg.v"
+Compiling source file "./mux_4.v"
+Compiling source file "./pc.v"
+Compiling source file "./rf32x32.v"
+Compiling source file "./SR.v"
+Compiling source file "./top.v"
+Compiling source file "./wb_stage.v"
+Compiling source file "./top_branch_test.v"
 Highest level modules:
 top_test
 
-CHECK PASSED !!
 
-Exited by program.
+Reach IN_TOTAL.
+local
+    49999973 branch    49999973 branch_counter
 
-        2067 branch
+   49999962 true
 
-       1974 true
+ 1.000000
+global
+    49999973 branch    49999973 branch_counter
 
- 0.955007
-L219 "/home/koyo/verilog/top_branch_test.v": $finish at simulation time 109205000
+   49999960 true
+
+ 1.000000
+L138 "./top_branch_test.v": $finish at simulation time 1000000005000
 0 simulation events (use +profile or +listcounts option to count)
-CPU time: 0.0 secs to compile + 0.0 secs to link + 1.6 secs in simulation
-End of Tool:	VERILOG-XL	06.20.001-s   Jul 13, 2016  17:37:14
+CPU time: 0.0 secs to compile + 0.1 secs to link + 4018.3 secs in simulation
+End of Tool:	VERILOG-XL	06.20.001-s   Jul 14, 2016  16:44:47
+
+
+       9973 true
+
+ 0.966002
+
+global       10324 branch       10324 branch_counter
+
+       9968 true
+
+ 0.965517
+L221 "./top_branch_test.v": $finish at simulation time 721165000
+0 simulation events (use +profile or +listcounts option to count)
+CPU time: 0.0 secs to compile + 0.0 secs to link + 5.4 secs in simulation
+End of Tool:	VERILOG-XL	06.20.001-s   Jul 14, 2016  16:20:34

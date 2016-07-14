@@ -2,6 +2,6 @@
 #!/bin/sh
 
 ncverilog -s +gui +access+r \
-	/home/koyo/verilog/*[!t].v \
-	/home/koyo/verilog/top_branch_test.v \
+	./*[!t].v \
+	./top_branch_test.v \
 	&

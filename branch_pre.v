@@ -7,12 +7,13 @@ module branch_pre(predict,
 
 	parameter bal=6'b000001,bs=4'b0001;
 	parameter WIDTH=2;
-	parameter ENTRY=128;
-	parameter ADDRESS=7;
+	parameter ENTRY=4098;
+	parameter ADDRESS=12;
 	parameter Initial=2'b01;
 
 	reg  [WIDTH-1:0]  ram [ENTRY-1:0];
 	reg  [31:0]       corect_counter;
+	reg  [31:0]	  branch_counter;
 	wire [ADDRESS-1:0]I_index=Iadd[ADDRESS+1:2];
 	wire [ADDRESS-1:0]B_index=Badd[ADDRESS+1:2];
 	
@@ -61,11 +62,20 @@ module branch_pre(predict,
 			ram[B_index]<=ram[B_index]-1;
 		end
 
+		if(I_branch_check==1)
+		begin
+			branch_counter=branch_counter+1;
+		end
+		else
+		begin
+			branch_counter=branch_counter;
+		end
 	end
 
 	integer i;
         initial begin
 	corect_counter=0;
+	branch_counter=0;
         for(i=0;i<ENTRY;i=i+1)
             ram[i]=Initial;
 	end
