@@ -31,8 +31,8 @@ Command arguments:
     ./wb_stage.v
     ./top_branch_test.v
 
-Tool:	VERILOG-XL	06.20.001-s log file created Jul 14, 2016  16:20:23
-Tool:	VERILOG-XL	06.20.001-s   Jul 14, 2016  16:20:23
+Tool:	VERILOG-XL	06.20.001-s log file created Jul 15, 2016  11:09:49
+Tool:	VERILOG-XL	06.20.001-s   Jul 15, 2016  11:09:49
 
 Copyright (c) 1995-2004 Cadence Design Systems, Inc.  All Rights Reserved.
 Unpublished -- rights reserved under the copyright laws of the United States.
@@ -96,34 +96,20 @@ top_test
 
 
 Reach IN_TOTAL.
-local
-    49999973 branch    49999973 branch_counter
 
-   49999962 true
+local   499999973 branch   499999973 branch_counter
 
- 1.000000
-global
-    49999973 branch    49999973 branch_counter
-
-   49999960 true
+  499999960 true
 
  1.000000
-L138 "./top_branch_test.v": $finish at simulation time 1000000005000
+
+global   499999973 branch   499999973 branch_counter
+
+  499999956 true
+
+ 1.000000
+L138 "./top_branch_test.v": $finish at simulation time 10000000005000
 0 simulation events (use +profile or +listcounts option to count)
-CPU time: 0.0 secs to compile + 0.1 secs to link + 4018.3 secs in simulation
-End of Tool:	VERILOG-XL	06.20.001-s   Jul 14, 2016  16:44:47
-
-
-       9973 true
-
- 0.966002
-
-global       10324 branch       10324 branch_counter
-
-       9968 true
-
- 0.965517
-L221 "./top_branch_test.v": $finish at simulation time 721165000
-0 simulation events (use +profile or +listcounts option to count)
-CPU time: 0.0 secs to compile + 0.0 secs to link + 5.4 secs in simulation
-End of Tool:	VERILOG-XL	06.20.001-s   Jul 14, 2016  16:20:34
+CPU time: 0.0 secs to compile + 0.0 secs to link + 38973.3 secs in simulation
+End of Tool:	VERILOG-XL	06.20.001-s   Jul 15, 2016  22:26:44
+016  11:19:04

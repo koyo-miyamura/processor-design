@@ -1,5 +1,5 @@
 `timescale 1ns/1ps
-`define IN_TOTAL 10000
+`define IN_TOTAL 1000000000
 
 module top_test;
    
@@ -17,7 +17,7 @@ module top_test;
    parameter STDOUT_ADDR = 32'hf0000000;
    parameter EXIT_ADDR = 32'hff000000;
   //追加
-   parameter ENTRY=4096;
+   parameter ENTRY=128;
    parameter GLENTRY=4096;
    //*** reg,wire declarations ***//
    reg       clk,rst;

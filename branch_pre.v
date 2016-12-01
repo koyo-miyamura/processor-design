@@ -7,7 +7,7 @@ module branch_pre(predict,
 
 	parameter bal=6'b000001,bs=4'b0001;
 	parameter WIDTH=2;
-	parameter ENTRY=4098;
+	parameter ENTRY=4096;
 	parameter ADDRESS=12;
 	parameter Initial=2'b01;
 
